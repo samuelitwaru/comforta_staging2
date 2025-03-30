@@ -1,0 +1,546 @@
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    1d8fed57-601e-46eb-bb6c-66613565cdd8 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    f10da583-2c8b-44f8-bb8f-7dcce6fb68e2 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Content Page Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Service 1 Found!
+{"Rows":[{"Id":"UHAUzYMDfIShBiT","Tiles":[{"Id":"BTWpfScDrPtBbmo","Name":"Reception","Text":"Reception","Color":"","Align":"left","Icon":"Reception","BGColor":"#00000063","BGImageUrl":"https://staging.comforta.yukon.software/media/receptie-197@3x.png","Opacity":39,"Action":{"ObjectType":"Reception","ObjectId":"ffaa56c7-141d-4143-8cbf-ed3a8424f772","ObjectUrl":""}}]},{"Id":"kliuQByVrVxtYXO","Tiles":[{"Id":"zYRUbmsaSgxBDGZ","Name":"","Text":"","Color":"","Align":"center","Icon":"Key","BGColor":"#000000b0","BGImageUrl":"https://staging.comforta.yukon.software/media/Calendar.png","Opacity":69,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"sdAbprAxYmYfWsv","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"Intercom","BGColor":"#000000ff","BGImageUrl":"https://staging.comforta.yukon.software/media/LocationInfo.png","Opacity":100,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}},{"Id":"pHLIJYuxvoNydPC","Name":"My Activity","Text":"My Activity","Color":"","Align":"center","Icon":"Monitor","BGColor":"#173f5f","BGImageUrl":"","Opacity":100,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"vdRoacbWFFqiTMd","Tiles":[{"Id":"vMeimRckSQMIEZa","Name":"My Care","Text":"My Care","Color":"","Align":"center","Icon":"","BGColor":"#eea622","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Care","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ZOqHVIGwcDEkvay","Name":"My Living","Text":"My Living","Color":"","Align":"center","Icon":"","BGColor":"#986b5d","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"My Living","ObjectId":"00000000-0000-0000-0000-000000000000","ObjectUrl":""}},{"Id":"ePUrLejSTyfKJPU","Name":"My Services","Text":"My Services","Color":"","Align":"center","Icon":"","BGColor":"#788799","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"MyService","ObjectId":"dd28e535-8c40-4768-877b-aa7feb7b168e","ObjectUrl":""}}]},{"Id":"QlEhKlxuHujNWga","Tiles":[{"Id":"PnwvTkWIYUrZOeT","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"13f31bbf-c84b-4684-a32b-ab396c8e0585","ObjectUrl":""}}]},{"Id":"NeiRYjFjgbZPFae","Tiles":[{"Id":"FAxjEmNrWvFllFo","Name":"Content Page","Text":"Content Page","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"72e8c924-33d5-4a8e-8cab-5f45960d28c1","ObjectUrl":""}},{"Id":"MGWIqPpKfloEOHa","Name":"Title","Text":"Title","Color":"","Align":"center","Icon":"","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"zNtnUAyabXauMdX","Name":"Location","Text":"Location","Color":"","Align":"center","Icon":"","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Location","ObjectId":"b7c11a6d-b69b-45a2-bf97-b96d94a819db","ObjectUrl":""}}]},{"Id":"GTznRMcnnLKhNxH","Tiles":[{"Id":"bgXFyaWyABvrFVO","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"dce639e8-1f27-47da-9f0a-a25f66acd718","ObjectUrl":""}}]},{"Id":"PbAritTGqndGqZm","Tiles":[{"Id":"cVtmJmZJLunaMrP","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Content","ObjectId":"c03bf013-6eb8-483d-ba48-7cb69700b3c2","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    e19ee11e-42f5-4add-8885-857d5d6c0100 Not Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Untitled Found!
+{"Rows":[{"Id":"CryCwycLiZqTwET","Tiles":[{"Id":"CvlrsZFlAFHgiKA","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"branwGGvwVEkZXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#535353","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"xyoeVJPMgOJyHjO","Tiles":[{"Id":"UJeMnBexUENbQGg","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}},{"Id":"BlipmJrApbkPopN","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"Calendar","BGColor":"#a72928","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"pXmxBhgxCazsvEG","Tiles":[{"Id":"fIDldpNGRyZJbxg","Name":"Food Delivery","Text":"Food Delivery","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]},{"Id":"FTOkwfPTsiXDRnY","Tiles":[{"Id":"ooxDvSGHxjMFOlj","Name":"Untitled","Text":"Untitled","Color":"","Align":"left","Icon":"","BGColor":"transparent","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"ab0e7b81-69ab-4ce3-8df7-24273b19400d","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"yNANJmPfGQbNxZz","Tiles":[{"Id":"qfDjwyUpndCREXG","Name":"Title","Text":"Title","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"evVdnvzWSginbmF","Tiles":[{"Id":"oAtKCeHjYGruPjy","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    00000000-0000-0000-0000-000000000000 Not Found!
+{"Rows":[{"Id":"fDYGeIVBMgcBjFJ","Tiles":[{"Id":"kbUMekDxjCCsIer","Name":"","Text":"","Color":"","Align":"left","Icon":"icon-name","BGColor":"#ffffff","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    Transport1 Found!
+AppVersion: f16d9178-3bb2-43f1-96cf-d14b716c5b0a
+    039fbad2-7a24-4111-8394-638e8e44a680 Not Found!
+{"Rows":[{"Id":"MHAMSfpxLHDPwfI","Tiles":[{"Id":"daGjrrbsEGLUTHF","Name":"Transport","Text":"Transport","Color":"","Align":"left","Icon":"icon-name","BGColor":"#173f5f","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"Menu","ObjectId":"115b34ad-debe-4ef1-916c-c24e44374b39","ObjectUrl":""}}]},{"Id":"dzsSjUvjDZMoFoN","Tiles":[{"Id":"VGJGJgMuibeHNWr","Name":"Laundry","Text":"Laundry","Color":"","Align":"left","Icon":"","BGColor":"#758a71","BGImageUrl":"","Opacity":0,"Action":{"ObjectType":"","ObjectId":"","ObjectUrl":""}}]}]}
