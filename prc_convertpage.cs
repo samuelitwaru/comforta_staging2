@@ -119,6 +119,7 @@ namespace GeneXus.Programs {
          AV8BC_Page.gxTpr_Pagename = AV9BC_Trn_Page.gxTpr_Trn_pagename;
          AV8BC_Page.gxTpr_Pagestructure = "";
          AV8BC_Page.gxTpr_Pagepublishedstructure = "";
+         new prc_logtoserver(context ).execute(  context.GetMessage( "ReceptionPageId ", "")+AV24ReceptionPageId.ToString()) ;
          if ( ( StringUtil.StrCmp(AV9BC_Trn_Page.gxTpr_Trn_pagename, context.GetMessage( "My Activity", "")) == 0 ) || ( StringUtil.StrCmp(AV9BC_Trn_Page.gxTpr_Trn_pagename, context.GetMessage( "Mailbox", "")) == 0 ) )
          {
             AV8BC_Page.gxTpr_Pagetype = "MyActivity";
@@ -224,8 +225,6 @@ namespace GeneXus.Programs {
                      cleanup();
                      if (true) return;
                   }
-                  AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid.ToString();
-                  AV16TileItem.gxTpr_Action.gxTpr_Objecturl = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecturl;
                   AV13RowItem.gxTpr_Tiles.Add(AV16TileItem, 0);
                   AV39GXV4 = (int)(AV39GXV4+1);
                }
@@ -250,6 +249,7 @@ namespace GeneXus.Programs {
          {
             new prc_logtoserver(context ).execute(  "            "+AV15SDT_Tile.gxTpr_Tiletext+" : "+AV15SDT_Tile.gxTpr_Tilename+" : "+AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype) ;
          }
+         AV16TileItem.gxTpr_Action.gxTpr_Objecturl = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecturl;
          if ( StringUtil.StrCmp(AV15SDT_Tile.gxTpr_Tilename, context.GetMessage( "My Care", "")) == 0 )
          {
             AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "My Care";
