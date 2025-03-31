@@ -61,9 +61,9 @@ namespace GeneXus.Programs
 			{
 				AddObjectProperty("Summary", gxTv_SdtSDT_DebugResults_Summary, false);
 			}
-			if (gxTv_SdtSDT_DebugResults_Urllist != null)
+			if (gxTv_SdtSDT_DebugResults_Pages != null)
 			{
-				AddObjectProperty("UrlList", gxTv_SdtSDT_DebugResults_Urllist, false);
+				AddObjectProperty("Pages", gxTv_SdtSDT_DebugResults_Pages, false);
 			}
 			return;
 		}
@@ -109,38 +109,38 @@ namespace GeneXus.Programs
 
 
 
-		[SoapElement(ElementName="UrlList" )]
-		[XmlArray(ElementName="UrlList"  )]
-		[XmlArrayItemAttribute(ElementName="UrlListItem" , IsNullable=false )]
-		public GXBaseCollection<SdtSDT_DebugResults_UrlListItem> gxTpr_Urllist
+		[SoapElement(ElementName="Pages" )]
+		[XmlArray(ElementName="Pages"  )]
+		[XmlArrayItemAttribute(ElementName="PagesItem" , IsNullable=false )]
+		public GXBaseCollection<SdtSDT_DebugResults_PagesItem> gxTpr_Pages
 		{
 			get {
-				if ( gxTv_SdtSDT_DebugResults_Urllist == null )
+				if ( gxTv_SdtSDT_DebugResults_Pages == null )
 				{
-					gxTv_SdtSDT_DebugResults_Urllist = new GXBaseCollection<SdtSDT_DebugResults_UrlListItem>( context, "SDT_DebugResults.UrlListItem", "");
+					gxTv_SdtSDT_DebugResults_Pages = new GXBaseCollection<SdtSDT_DebugResults_PagesItem>( context, "SDT_DebugResults.PagesItem", "");
 				}
-				return gxTv_SdtSDT_DebugResults_Urllist;
+				return gxTv_SdtSDT_DebugResults_Pages;
 			}
 			set {
-				gxTv_SdtSDT_DebugResults_Urllist_N = false;
-				gxTv_SdtSDT_DebugResults_Urllist = value;
-				SetDirty("Urllist");
+				gxTv_SdtSDT_DebugResults_Pages_N = false;
+				gxTv_SdtSDT_DebugResults_Pages = value;
+				SetDirty("Pages");
 			}
 		}
 
-		public void gxTv_SdtSDT_DebugResults_Urllist_SetNull()
+		public void gxTv_SdtSDT_DebugResults_Pages_SetNull()
 		{
-			gxTv_SdtSDT_DebugResults_Urllist_N = true;
-			gxTv_SdtSDT_DebugResults_Urllist = null;
+			gxTv_SdtSDT_DebugResults_Pages_N = true;
+			gxTv_SdtSDT_DebugResults_Pages = null;
 		}
 
-		public bool gxTv_SdtSDT_DebugResults_Urllist_IsNull()
+		public bool gxTv_SdtSDT_DebugResults_Pages_IsNull()
 		{
-			return gxTv_SdtSDT_DebugResults_Urllist == null;
+			return gxTv_SdtSDT_DebugResults_Pages == null;
 		}
-		public bool ShouldSerializegxTpr_Urllist_GxSimpleCollection_Json()
+		public bool ShouldSerializegxTpr_Pages_GxSimpleCollection_Json()
 		{
-			return gxTv_SdtSDT_DebugResults_Urllist != null && gxTv_SdtSDT_DebugResults_Urllist.Count > 0;
+			return gxTv_SdtSDT_DebugResults_Pages != null && gxTv_SdtSDT_DebugResults_Pages.Count > 0;
 
 		}
 
@@ -149,7 +149,7 @@ namespace GeneXus.Programs
 		{
 			return (
 				ShouldSerializegxTpr_Summary_Json() ||
-				ShouldSerializegxTpr_Urllist_GxSimpleCollection_Json() || 
+				ShouldSerializegxTpr_Pages_GxSimpleCollection_Json() || 
 				false);
 		}
 
@@ -172,7 +172,7 @@ namespace GeneXus.Programs
 			gxTv_SdtSDT_DebugResults_Summary_N = true;
 
 
-			gxTv_SdtSDT_DebugResults_Urllist_N = true;
+			gxTv_SdtSDT_DebugResults_Pages_N = true;
 
 			return  ;
 		}
@@ -186,8 +186,8 @@ namespace GeneXus.Programs
 		protected bool gxTv_SdtSDT_DebugResults_Summary_N;
 		protected SdtSDT_DebugResults_Summary gxTv_SdtSDT_DebugResults_Summary = null; 
 
-		protected bool gxTv_SdtSDT_DebugResults_Urllist_N;
-		protected GXBaseCollection<SdtSDT_DebugResults_UrlListItem> gxTv_SdtSDT_DebugResults_Urllist = null; 
+		protected bool gxTv_SdtSDT_DebugResults_Pages_N;
+		protected GXBaseCollection<SdtSDT_DebugResults_PagesItem> gxTv_SdtSDT_DebugResults_Pages = null; 
 
 
 
@@ -224,18 +224,18 @@ namespace GeneXus.Programs
 
 		}
 
-		[DataMember(Name="UrlList", Order=1, EmitDefaultValue=false)]
-		public GxGenericCollection<SdtSDT_DebugResults_UrlListItem_RESTInterface> gxTpr_Urllist
+		[DataMember(Name="Pages", Order=1, EmitDefaultValue=false)]
+		public GxGenericCollection<SdtSDT_DebugResults_PagesItem_RESTInterface> gxTpr_Pages
 		{
 			get {
-				if (sdt.ShouldSerializegxTpr_Urllist_GxSimpleCollection_Json())
-					return new GxGenericCollection<SdtSDT_DebugResults_UrlListItem_RESTInterface>(sdt.gxTpr_Urllist);
+				if (sdt.ShouldSerializegxTpr_Pages_GxSimpleCollection_Json())
+					return new GxGenericCollection<SdtSDT_DebugResults_PagesItem_RESTInterface>(sdt.gxTpr_Pages);
 				else
 					return null;
 
 			}
 			set {
-				value.LoadCollection(sdt.gxTpr_Urllist);
+				value.LoadCollection(sdt.gxTpr_Pages);
 			}
 		}
 

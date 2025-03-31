@@ -141,7 +141,7 @@ namespace GeneXus.Programs {
                         if ( ! String.IsNullOrEmpty(StringUtil.RTrim( StringUtil.Trim( AV11SDT_Col.gxTpr_Tile.gxTpr_Tileaction.gxTpr_Objecttype))) )
                         {
                            AV25BC_Trn_Page = new SdtTrn_Page(context);
-                           AV25BC_Trn_Page.Load(AV11SDT_Col.gxTpr_Tile.gxTpr_Tileaction.gxTpr_Objectid, new prc_getuserlocationid(context).executeUdp( ));
+                           AV25BC_Trn_Page.Load(StringUtil.StrToGuid( AV11SDT_Col.gxTpr_Tile.gxTpr_Tileaction.gxTpr_Objectid), new prc_getuserlocationid(context).executeUdp( ));
                            if ( ! (Guid.Empty==AV25BC_Trn_Page.gxTpr_Trn_pageid) )
                            {
                               AV15SDT_PageStructure = new SdtSDT_PageStructure(context);
@@ -162,7 +162,7 @@ namespace GeneXus.Programs {
                                        if ( ! String.IsNullOrEmpty(StringUtil.RTrim( StringUtil.Trim( AV11SDT_Col.gxTpr_Tile.gxTpr_Tileaction.gxTpr_Objecttype))) )
                                        {
                                           AV25BC_Trn_Page = new SdtTrn_Page(context);
-                                          AV25BC_Trn_Page.Load(AV11SDT_Col.gxTpr_Tile.gxTpr_Tileaction.gxTpr_Objectid, new prc_getuserlocationid(context).executeUdp( ));
+                                          AV25BC_Trn_Page.Load(StringUtil.StrToGuid( AV11SDT_Col.gxTpr_Tile.gxTpr_Tileaction.gxTpr_Objectid), new prc_getuserlocationid(context).executeUdp( ));
                                           if ( ! (Guid.Empty==AV25BC_Trn_Page.gxTpr_Trn_pageid) )
                                           {
                                              AV19SDT_PageChild = new SdtSDT_PageStructure_ChildrenItem(context);

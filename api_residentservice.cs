@@ -239,6 +239,10 @@ namespace GeneXus.Programs {
          {
             return GAMSecurityLevel.SecurityNone ;
          }
+         else if ( StringUtil.StrCmp(permissionMethod, "gxep_updatepagetitle") == 0 )
+         {
+            return GAMSecurityLevel.SecurityNone ;
+         }
          else if ( StringUtil.StrCmp(permissionMethod, "gxep_debugappversion") == 0 )
          {
             return GAMSecurityLevel.SecurityNone ;
@@ -1142,17 +1146,19 @@ namespace GeneXus.Programs {
       }
 
       public void gxep_copyappversion( Guid aP0_AppVersionId ,
-                                       out SdtSDT_AppVersion aP1_AppVersion ,
-                                       out SdtSDT_Error aP2_error )
+                                       string aP1_AppVersionName ,
+                                       out SdtSDT_AppVersion aP2_AppVersion ,
+                                       out SdtSDT_Error aP3_error )
       {
          this.AV92AppVersionId = aP0_AppVersionId;
+         this.AV99AppVersionName = aP1_AppVersionName;
          AV98AppVersion = new SdtSDT_AppVersion(context);
          AV69error = new SdtSDT_Error(context);
          initialize();
          /* CopyAppVersion Constructor */
-         new prc_copyappversion(context ).execute(  AV92AppVersionId, out  AV98AppVersion, out  AV69error) ;
-         aP1_AppVersion=this.AV98AppVersion;
-         aP2_error=this.AV69error;
+         new prc_copyappversion(context ).execute(  AV92AppVersionId,  AV99AppVersionName, out  AV98AppVersion, out  AV69error) ;
+         aP2_AppVersion=this.AV98AppVersion;
+         aP3_error=this.AV69error;
       }
 
       public void gxep_updateappversion( Guid aP0_AppVersionId ,
@@ -1263,7 +1269,22 @@ namespace GeneXus.Programs {
          aP3_error=this.AV69error;
       }
 
-      public void gxep_debugappversion( GxSimpleCollection<string> aP0_UrlList ,
+      public void gxep_updatepagetitle( Guid aP0_AppVersionId ,
+                                        Guid aP1_PageId ,
+                                        string aP2_PageName ,
+                                        out SdtSDT_Error aP3_error )
+      {
+         this.AV92AppVersionId = aP0_AppVersionId;
+         this.AV37PageId = aP1_PageId;
+         this.AV43PageName = aP2_PageName;
+         AV69error = new SdtSDT_Error(context);
+         initialize();
+         /* UpdatePageTitle Constructor */
+         new prc_updatepagetitle(context ).execute(  AV92AppVersionId,  AV37PageId,  AV43PageName, out  AV69error) ;
+         aP3_error=this.AV69error;
+      }
+
+      public void gxep_debugappversion( GXBaseCollection<SdtSDT_PageUrl> aP0_UrlList ,
                                         out SdtSDT_DebugResults aP1_DebugResults ,
                                         out SdtSDT_Error aP2_error )
       {
@@ -1670,7 +1691,7 @@ namespace GeneXus.Programs {
       protected SdtSDT_AppVersion_PagesItem aP2_MenuPage ;
       protected SdtSDT_AppVersion_PagesItem AV95ContentPage ;
       protected SdtSDT_AppVersion_PagesItem aP2_ContentPage ;
-      protected GxSimpleCollection<string> AV102UrlList ;
+      protected GXBaseCollection<SdtSDT_PageUrl> AV102UrlList ;
       protected SdtSDT_DebugResults AV101DebugResults ;
       protected SdtSDT_DebugResults aP1_DebugResults ;
       protected SdtTrn_Location AV129BC_Trn_Location ;

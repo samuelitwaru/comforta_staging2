@@ -252,12 +252,12 @@ namespace GeneXus.Programs {
          AV16TileItem.gxTpr_Action.gxTpr_Objecturl = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecturl;
          if ( StringUtil.StrCmp(AV15SDT_Tile.gxTpr_Tilename, context.GetMessage( "My Care", "")) == 0 )
          {
-            AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "My Care";
+            AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "MyCare";
             AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV26CarePageId.ToString();
          }
          else if ( StringUtil.StrCmp(AV15SDT_Tile.gxTpr_Tiletext, context.GetMessage( "My Living", "")) == 0 )
          {
-            AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "My Living";
+            AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "MyLiving";
             AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV27LivingPageId.ToString();
          }
          else if ( StringUtil.StrCmp(AV15SDT_Tile.gxTpr_Tiletext, context.GetMessage( "My Services", "")) == 0 )
@@ -288,12 +288,12 @@ namespace GeneXus.Programs {
          else if ( StringUtil.StartsWith( AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype, context.GetMessage( "Service/Product Page", "")) )
          {
             AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "Content";
-            AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid.ToString();
+            AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid;
          }
          else if ( StringUtil.StartsWith( AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype, context.GetMessage( "Page", "")) )
          {
             AV16TileItem.gxTpr_Action.gxTpr_Objecttype = "Menu";
-            AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid.ToString();
+            AV16TileItem.gxTpr_Action.gxTpr_Objectid = AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid;
          }
          else if ( StringUtil.Contains( AV15SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype, context.GetMessage( "Link", "")) )
          {

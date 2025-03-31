@@ -728,7 +728,7 @@ public class prc_updatelocationthemesetting__default : DataStoreHelperBase, IDat
        new ParDef("OrganisationId",GXType.UniqueIdentifier,36,0)
        };
        def= new CursorDef[] {
-           new CursorDef("P00DB2", "SELECT Trn_ThemeName, Trn_ThemeId FROM Trn_Theme WHERE Trn_ThemeName = ( 'Modern') ORDER BY Trn_ThemeName ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DB2,100, GxCacheFrequency.OFF ,true,false )
+           new CursorDef("P00DB2", "SELECT Trn_ThemeName, Trn_ThemeId FROM Trn_Theme WHERE Trn_ThemeName = ( 'Modern') ORDER BY Trn_ThemeId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DB2,100, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("P00DB3", "SELECT Trn_ThemeId, LocationThemeId, LocationId, OrganisationId FROM Trn_Location WHERE LocationId = :AV10LocationId ORDER BY LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DB3,100, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("P00DB4", "SELECT Trn_ThemeId, Trn_ThemeName, Trn_ThemeFontFamily, Trn_ThemeFontSize FROM Trn_Theme WHERE Trn_ThemeId = :LocationThemeId ORDER BY Trn_ThemeId  FOR UPDATE OF Trn_Theme",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DB4,1, GxCacheFrequency.OFF ,true,true )
           ,new CursorDef("P00DB5", "DELETE FROM Trn_ThemeColor  WHERE Trn_ThemeId = :Trn_ThemeId", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00DB5)

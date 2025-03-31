@@ -103,8 +103,6 @@ namespace GeneXus.Programs {
             n576LocationThemeId = P00C33_n576LocationThemeId[0];
             A29LocationId = P00C33_A29LocationId[0];
             A11OrganisationId = P00C33_A11OrganisationId[0];
-            new prc_logtoserver(context ).execute(  context.GetMessage( "LocationId : ", "")+AV26LocationId.ToString()) ;
-            new prc_logtoserver(context ).execute(  context.GetMessage( "LocationThemeId : ", "")+A576LocationThemeId.ToString()) ;
             /* Using cursor P00C34 */
             pr_default.execute(2, new Object[] {n576LocationThemeId, A576LocationThemeId});
             while ( (pr_default.getStatus(2) != 101) )
@@ -291,7 +289,7 @@ namespace GeneXus.Programs {
           new ParDef("AV27OrganisationThemeId",GXType.UniqueIdentifier,36,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00C32", "SELECT DISTINCT NULL AS ThemeIsPredefined, Trn_ThemeName, Trn_ThemeId FROM ( SELECT ThemeIsPredefined, Trn_ThemeName, Trn_ThemeId FROM Trn_Theme WHERE (Not (char_length(trim(trailing ' ' from RTRIM(LTRIM(Trn_ThemeName))))=0)) AND (ThemeIsPredefined = TRUE) ORDER BY Trn_ThemeName, Trn_ThemeId) DistinctT ORDER BY Trn_ThemeName, Trn_ThemeId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C32,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00C32", "SELECT ThemeIsPredefined, Trn_ThemeName, Trn_ThemeId FROM Trn_Theme WHERE (Not (char_length(trim(trailing ' ' from RTRIM(LTRIM(Trn_ThemeName))))=0)) AND (ThemeIsPredefined = TRUE) ORDER BY Trn_ThemeName ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C32,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00C33", "SELECT Trn_ThemeId, LocationThemeId, LocationId, OrganisationId FROM Trn_Location WHERE LocationId = :AV26LocationId ORDER BY LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C33,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00C34", "SELECT Trn_ThemeId FROM Trn_Theme WHERE Trn_ThemeId = :LocationThemeId ORDER BY Trn_ThemeId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C34,1, GxCacheFrequency.OFF ,true,true )
              ,new CursorDef("P00C35", "SELECT OrganisationId, Trn_ThemeId, OrganisationSettingid FROM Trn_OrganisationSetting WHERE OrganisationId = :AV16OrganisationId ORDER BY OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C35,100, GxCacheFrequency.OFF ,true,false )

@@ -45,35 +45,40 @@ namespace GeneXus.Programs {
       }
 
       public void execute( Guid aP0_AppVersionId ,
-                           out SdtSDT_AppVersion aP1_SDT_AppVersion ,
-                           out SdtSDT_Error aP2_SDT_Error )
+                           string aP1_AppVersionName ,
+                           out SdtSDT_AppVersion aP2_SDT_AppVersion ,
+                           out SdtSDT_Error aP3_SDT_Error )
       {
          this.AV23AppVersionId = aP0_AppVersionId;
+         this.AV22AppVersionName = aP1_AppVersionName;
          this.AV8SDT_AppVersion = new SdtSDT_AppVersion(context) ;
          this.AV9SDT_Error = new SdtSDT_Error(context) ;
          initialize();
          ExecuteImpl();
-         aP1_SDT_AppVersion=this.AV8SDT_AppVersion;
-         aP2_SDT_Error=this.AV9SDT_Error;
+         aP2_SDT_AppVersion=this.AV8SDT_AppVersion;
+         aP3_SDT_Error=this.AV9SDT_Error;
       }
 
       public SdtSDT_Error executeUdp( Guid aP0_AppVersionId ,
-                                      out SdtSDT_AppVersion aP1_SDT_AppVersion )
+                                      string aP1_AppVersionName ,
+                                      out SdtSDT_AppVersion aP2_SDT_AppVersion )
       {
-         execute(aP0_AppVersionId, out aP1_SDT_AppVersion, out aP2_SDT_Error);
+         execute(aP0_AppVersionId, aP1_AppVersionName, out aP2_SDT_AppVersion, out aP3_SDT_Error);
          return AV9SDT_Error ;
       }
 
       public void executeSubmit( Guid aP0_AppVersionId ,
-                                 out SdtSDT_AppVersion aP1_SDT_AppVersion ,
-                                 out SdtSDT_Error aP2_SDT_Error )
+                                 string aP1_AppVersionName ,
+                                 out SdtSDT_AppVersion aP2_SDT_AppVersion ,
+                                 out SdtSDT_Error aP3_SDT_Error )
       {
          this.AV23AppVersionId = aP0_AppVersionId;
+         this.AV22AppVersionName = aP1_AppVersionName;
          this.AV8SDT_AppVersion = new SdtSDT_AppVersion(context) ;
          this.AV9SDT_Error = new SdtSDT_Error(context) ;
          SubmitImpl();
-         aP1_SDT_AppVersion=this.AV8SDT_AppVersion;
-         aP2_SDT_Error=this.AV9SDT_Error;
+         aP2_SDT_AppVersion=this.AV8SDT_AppVersion;
+         aP3_SDT_Error=this.AV9SDT_Error;
       }
 
       protected override void ExecutePrivate( )
@@ -152,6 +157,7 @@ namespace GeneXus.Programs {
       }
 
       private int AV26GXV2 ;
+      private string AV22AppVersionName ;
       private Guid AV23AppVersionId ;
       private Guid AV10LocationId ;
       private Guid AV13OrganisationId ;
@@ -165,8 +171,8 @@ namespace GeneXus.Programs {
       private IDataStoreProvider pr_default ;
       private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV25GXV1 ;
       private GeneXus.Utils.SdtMessages_Message AV21Message ;
-      private SdtSDT_AppVersion aP1_SDT_AppVersion ;
-      private SdtSDT_Error aP2_SDT_Error ;
+      private SdtSDT_AppVersion aP2_SDT_AppVersion ;
+      private SdtSDT_Error aP3_SDT_Error ;
       private IDataStoreProvider pr_datastore1 ;
       private IDataStoreProvider pr_gam ;
    }

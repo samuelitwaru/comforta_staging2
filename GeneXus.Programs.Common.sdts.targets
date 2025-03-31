@@ -40,7 +40,8 @@
  	<Compile Include="$(WebDirectory)\type_SdtSDT_CtaThemeColors.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_DebugResults.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_DebugResults_Summary.cs" />
- 	<Compile Include="$(WebDirectory)\type_SdtSDT_DebugResults_UrlListItem.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_DebugResults_PagesItem.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_DebugResults_PagesItem_UrlListItem.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_DynamicForms.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_Error.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_ErrorResponse.cs" />
@@ -74,6 +75,8 @@
  	<Compile Include="$(WebDirectory)\type_SdtSDT_PageChildren.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_PageStructure.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_PageStructure_ChildrenItem.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_PageUrl.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_PageUrl_UrlsItem.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_PageV2.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_ProductService.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_ProductServiceSupplierGroup_SDT_ProductServiceSupplierGroupItem.cs" />

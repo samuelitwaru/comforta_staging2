@@ -96,7 +96,7 @@ namespace GeneXus.Programs {
                AV11PageStructure = "";
                AV13SDT_ContentPage = new SdtSDT_ContentPage(context);
                AV14SDT_MenuPage = new SdtSDT_MenuPage(context);
-               if ( StringUtil.StrCmp(AV10PageItem.gxTpr_Pagetype, "Menu") == 0 )
+               if ( ( ( StringUtil.StrCmp(AV10PageItem.gxTpr_Pagetype, "Menu") == 0 ) ) || ( ( StringUtil.StrCmp(AV10PageItem.gxTpr_Pagetype, "MyLiving") == 0 ) ) || ( ( StringUtil.StrCmp(AV10PageItem.gxTpr_Pagetype, "MyCare") == 0 ) ) || ( ( StringUtil.StrCmp(AV10PageItem.gxTpr_Pagetype, "MyService") == 0 ) ) )
                {
                   AV14SDT_MenuPage.FromJSonString(A518PageStructure, null);
                   new prc_validatemenupage(context ).execute(  AV8BC_Trn_AppVersion.gxTpr_Appversionid, ref  AV14SDT_MenuPage) ;

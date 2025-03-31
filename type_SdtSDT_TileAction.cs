@@ -32,6 +32,8 @@ namespace GeneXus.Programs
 			/* Constructor for serialization */
 			gxTv_SdtSDT_TileAction_Objecttype = "";
 
+			gxTv_SdtSDT_TileAction_Objectid = "";
+
 			gxTv_SdtSDT_TileAction_Objecturl = "";
 
 		}
@@ -93,7 +95,7 @@ namespace GeneXus.Programs
 
 		[SoapElement(ElementName="ObjectId")]
 		[XmlElement(ElementName="ObjectId")]
-		public Guid gxTpr_Objectid
+		public string gxTpr_Objectid
 		{
 			get {
 				return gxTv_SdtSDT_TileAction_Objectid; 
@@ -144,7 +146,7 @@ namespace GeneXus.Programs
 		public void initialize( )
 		{
 			gxTv_SdtSDT_TileAction_Objecttype = "";
-
+			gxTv_SdtSDT_TileAction_Objectid = "";
 			gxTv_SdtSDT_TileAction_Objecturl = "";
 			return  ;
 		}
@@ -158,7 +160,7 @@ namespace GeneXus.Programs
 		protected string gxTv_SdtSDT_TileAction_Objecttype;
 		 
 
-		protected Guid gxTv_SdtSDT_TileAction_Objectid;
+		protected string gxTv_SdtSDT_TileAction_Objectid;
 		 
 
 		protected string gxTv_SdtSDT_TileAction_Objecturl;
@@ -194,14 +196,14 @@ namespace GeneXus.Programs
 		}
 
 		[DataMember(Name="ObjectId", Order=1)]
-		public Guid gxTpr_Objectid
+		public  string gxTpr_Objectid
 		{
 			get { 
 				return sdt.gxTpr_Objectid;
 
 			}
 			set { 
-				sdt.gxTpr_Objectid = value;
+				 sdt.gxTpr_Objectid = value;
 			}
 		}
 

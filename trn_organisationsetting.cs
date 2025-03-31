@@ -741,7 +741,6 @@ namespace GeneXus.Programs {
                Ddc_selectcolor_Load = cgiGet( "DDC_SELECTCOLOR_Load");
                Ddc_selectcolor_Keepopened = StringUtil.StrToBool( cgiGet( "DDC_SELECTCOLOR_Keepopened"));
                Ddc_selectcolor_Trigger = cgiGet( "DDC_SELECTCOLOR_Trigger");
-               Ddc_selectcolor_Gxcontroltype = (int)(Math.Round(context.localUtil.CToN( cgiGet( "DDC_SELECTCOLOR_Gxcontroltype"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                /* Read variables values. */
                A101OrganisationSettingLogo = cgiGet( imgOrganisationSettingLogo_Internalname);
                AssignAttri("", false, "A101OrganisationSettingLogo", A101OrganisationSettingLogo);
@@ -1445,7 +1444,7 @@ namespace GeneXus.Programs {
          {
             if ( ! ( (Guid.Empty==A273Trn_ThemeId) ) )
             {
-               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Trn_Theme", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "TRN_THEMEID");
+               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), "", "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "TRN_THEMEID");
                AnyError = 1;
             }
          }
@@ -1493,7 +1492,7 @@ namespace GeneXus.Programs {
          {
             if ( ! ( (Guid.Empty==A273Trn_ThemeId) ) )
             {
-               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Trn_Theme", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "TRN_THEMEID");
+               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), "", "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "TRN_THEMEID");
                AnyError = 1;
             }
          }
@@ -2552,7 +2551,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025327513239", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20253315215713", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2568,7 +2567,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("trn_organisationsetting.js", "?2025327513242", false, true);
+         context.AddJavascriptSource("trn_organisationsetting.js", "?20253315215715", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js", "", false, true);
@@ -3023,7 +3022,6 @@ namespace GeneXus.Programs {
       private int edtOrganisationSettingBaseColor_Enabled ;
       private int Combo_organisationsettinglanguage_Datalistupdateminimumcharacters ;
       private int Combo_organisationsettinglanguage_Gxcontroltype ;
-      private int Ddc_selectcolor_Gxcontroltype ;
       private int AV32GXV1 ;
       private int idxLst ;
       private string sPrefix ;

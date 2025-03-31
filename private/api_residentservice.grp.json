@@ -526,6 +526,16 @@
 },
 {
 "Verb":"POST",
+"PathRegexp":"toolbox/v2/update-page-title",
+"Path":"toolbox/v2/update-page-title",
+"Name":"updatepagetitle",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_updatepagetitle",
+"Implementation":"Prc_UpdatePageTitle"
+},
+{
+"Verb":"POST",
 "PathRegexp":"toolbox/v2/debug",
 "Path":"toolbox/v2/debug",
 "Name":"debugappversion",

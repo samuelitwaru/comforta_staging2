@@ -239,7 +239,7 @@ namespace GeneXus.Programs {
        {
           Object[] prmP00C52;
           prmP00C52 = new Object[] {
-          new ParDef("AV8UserId",GXType.VarChar,40,0)
+          new ParDef("AV8UserId",GXType.VarChar,4,0)
           };
           Object[] prmP00C53;
           prmP00C53 = new Object[] {

@@ -73,7 +73,17 @@ namespace GeneXus.Programs
 
 		[SoapElement(ElementName="TotalUrls")]
 		[XmlElement(ElementName="TotalUrls")]
-		public short gxTpr_Totalurls
+		public string gxTpr_Totalurls_double
+		{
+			get {
+				return Convert.ToString(gxTv_SdtSDT_DebugResults_Summary_Totalurls, System.Globalization.CultureInfo.InvariantCulture);
+			}
+			set {
+				gxTv_SdtSDT_DebugResults_Summary_Totalurls = (decimal)(Convert.ToDecimal(value, System.Globalization.CultureInfo.InvariantCulture));
+			}
+		}
+		[XmlIgnore]
+		public decimal gxTpr_Totalurls
 		{
 			get {
 				return gxTv_SdtSDT_DebugResults_Summary_Totalurls; 
@@ -86,10 +96,19 @@ namespace GeneXus.Programs
 
 
 
-
 		[SoapElement(ElementName="SuccessCount")]
 		[XmlElement(ElementName="SuccessCount")]
-		public short gxTpr_Successcount
+		public string gxTpr_Successcount_double
+		{
+			get {
+				return Convert.ToString(gxTv_SdtSDT_DebugResults_Summary_Successcount, System.Globalization.CultureInfo.InvariantCulture);
+			}
+			set {
+				gxTv_SdtSDT_DebugResults_Summary_Successcount = (decimal)(Convert.ToDecimal(value, System.Globalization.CultureInfo.InvariantCulture));
+			}
+		}
+		[XmlIgnore]
+		public decimal gxTpr_Successcount
 		{
 			get {
 				return gxTv_SdtSDT_DebugResults_Summary_Successcount; 
@@ -102,10 +121,19 @@ namespace GeneXus.Programs
 
 
 
-
 		[SoapElement(ElementName="FailureCount")]
 		[XmlElement(ElementName="FailureCount")]
-		public short gxTpr_Failurecount
+		public string gxTpr_Failurecount_double
+		{
+			get {
+				return Convert.ToString(gxTv_SdtSDT_DebugResults_Summary_Failurecount, System.Globalization.CultureInfo.InvariantCulture);
+			}
+			set {
+				gxTv_SdtSDT_DebugResults_Summary_Failurecount = (decimal)(Convert.ToDecimal(value, System.Globalization.CultureInfo.InvariantCulture));
+			}
+		}
+		[XmlIgnore]
+		public decimal gxTpr_Failurecount
 		{
 			get {
 				return gxTv_SdtSDT_DebugResults_Summary_Failurecount; 
@@ -148,13 +176,13 @@ namespace GeneXus.Programs
 
 		#region Declaration
 
-		protected short gxTv_SdtSDT_DebugResults_Summary_Totalurls;
+		protected decimal gxTv_SdtSDT_DebugResults_Summary_Totalurls;
 		 
 
-		protected short gxTv_SdtSDT_DebugResults_Summary_Successcount;
+		protected decimal gxTv_SdtSDT_DebugResults_Summary_Successcount;
 		 
 
-		protected short gxTv_SdtSDT_DebugResults_Summary_Failurecount;
+		protected decimal gxTv_SdtSDT_DebugResults_Summary_Failurecount;
 		 
 
 
@@ -175,38 +203,38 @@ namespace GeneXus.Programs
 
 		#region Rest Properties
 		[DataMember(Name="TotalUrls", Order=0)]
-		public short gxTpr_Totalurls
+		public  string gxTpr_Totalurls
 		{
 			get { 
-				return sdt.gxTpr_Totalurls;
+				return StringUtil.LTrim( StringUtil.Str(  sdt.gxTpr_Totalurls, 10, 5));
 
 			}
 			set { 
-				sdt.gxTpr_Totalurls = value;
+				sdt.gxTpr_Totalurls =  NumberUtil.Val( value, ".");
 			}
 		}
 
 		[DataMember(Name="SuccessCount", Order=1)]
-		public short gxTpr_Successcount
+		public  string gxTpr_Successcount
 		{
 			get { 
-				return sdt.gxTpr_Successcount;
+				return StringUtil.LTrim( StringUtil.Str(  sdt.gxTpr_Successcount, 10, 5));
 
 			}
 			set { 
-				sdt.gxTpr_Successcount = value;
+				sdt.gxTpr_Successcount =  NumberUtil.Val( value, ".");
 			}
 		}
 
 		[DataMember(Name="FailureCount", Order=2)]
-		public short gxTpr_Failurecount
+		public  string gxTpr_Failurecount
 		{
 			get { 
-				return sdt.gxTpr_Failurecount;
+				return StringUtil.LTrim( StringUtil.Str(  sdt.gxTpr_Failurecount, 10, 5));
 
 			}
 			set { 
-				sdt.gxTpr_Failurecount = value;
+				sdt.gxTpr_Failurecount =  NumberUtil.Val( value, ".");
 			}
 		}
 

@@ -2202,7 +2202,7 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal1L95( ) ;
-         if ( ! ( ( StringUtil.StrCmp(A525PageType, "Menu") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Content") == 0 ) || ( StringUtil.StrCmp(A525PageType, "WebLink") == 0 ) || ( StringUtil.StrCmp(A525PageType, "DynamicForm") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Calendar") == 0 ) || ( StringUtil.StrCmp(A525PageType, "MyActivity") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Maps") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Reception") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Location") == 0 ) || ( StringUtil.StrCmp(A525PageType, "My Care") == 0 ) || ( StringUtil.StrCmp(A525PageType, "My Living") == 0 ) || ( StringUtil.StrCmp(A525PageType, "MyService") == 0 ) ) )
+         if ( ! ( ( StringUtil.StrCmp(A525PageType, "Menu") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Content") == 0 ) || ( StringUtil.StrCmp(A525PageType, "WebLink") == 0 ) || ( StringUtil.StrCmp(A525PageType, "DynamicForm") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Calendar") == 0 ) || ( StringUtil.StrCmp(A525PageType, "MyActivity") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Maps") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Reception") == 0 ) || ( StringUtil.StrCmp(A525PageType, "Location") == 0 ) || ( StringUtil.StrCmp(A525PageType, "MyCare") == 0 ) || ( StringUtil.StrCmp(A525PageType, "MyLiving") == 0 ) || ( StringUtil.StrCmp(A525PageType, "MyService") == 0 ) ) )
          {
             GXCCtl = "PAGETYPE_" + sGXsfl_63_idx;
             GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_OutOfRange", ""), context.GetMessage( "Page Type", ""), "", "", "", "", "", "", "", ""), "OutOfRange", 1, GXCCtl);
@@ -2727,8 +2727,8 @@ namespace GeneXus.Programs {
             cmbPageType.addItem("Maps", context.GetMessage( "Maps", ""), 0);
             cmbPageType.addItem("Reception", context.GetMessage( "Reception", ""), 0);
             cmbPageType.addItem("Location", context.GetMessage( "Location", ""), 0);
-            cmbPageType.addItem("My Care", context.GetMessage( "My Care", ""), 0);
-            cmbPageType.addItem("My Living", context.GetMessage( "My Living", ""), 0);
+            cmbPageType.addItem("MyCare", context.GetMessage( "My Care", ""), 0);
+            cmbPageType.addItem("MyLiving", context.GetMessage( "My Living", ""), 0);
             cmbPageType.addItem("MyService", context.GetMessage( "My Service", ""), 0);
             if ( cmbPageType.ItemCount > 0 )
             {
@@ -3080,7 +3080,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20253281854760", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20253315223071", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -3096,7 +3096,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("trn_appversion.js", "?20253281854760", false, true);
+         context.AddJavascriptSource("trn_appversion.js", "?20253315223072", false, true);
          /* End function include_jscripts */
       }
 
@@ -3296,8 +3296,8 @@ namespace GeneXus.Programs {
          cmbPageType.addItem("Maps", context.GetMessage( "Maps", ""), 0);
          cmbPageType.addItem("Reception", context.GetMessage( "Reception", ""), 0);
          cmbPageType.addItem("Location", context.GetMessage( "Location", ""), 0);
-         cmbPageType.addItem("My Care", context.GetMessage( "My Care", ""), 0);
-         cmbPageType.addItem("My Living", context.GetMessage( "My Living", ""), 0);
+         cmbPageType.addItem("MyCare", context.GetMessage( "My Care", ""), 0);
+         cmbPageType.addItem("MyLiving", context.GetMessage( "My Living", ""), 0);
          cmbPageType.addItem("MyService", context.GetMessage( "My Service", ""), 0);
          if ( cmbPageType.ItemCount > 0 )
          {

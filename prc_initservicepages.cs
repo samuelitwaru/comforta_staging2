@@ -77,7 +77,7 @@ namespace GeneXus.Programs {
          AV18BC_LivingPage.gxTpr_Pageid = Guid.NewGuid( );
          AV18BC_LivingPage.gxTpr_Pagename = "My Living";
          AV18BC_LivingPage.gxTpr_Ispredefined = false;
-         AV18BC_LivingPage.gxTpr_Pagetype = "My Living";
+         AV18BC_LivingPage.gxTpr_Pagetype = "MyLiving";
          AV19SDT_MenuPage = new SdtSDT_MenuPage(context);
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV21TilesItem;
          new prc_createpagetile(context ).execute(  context.GetMessage( "Tile", ""),  "#333333",  context.GetMessage( "left", ""),  "",  0,  "",  "",  "",  "",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
@@ -90,7 +90,7 @@ namespace GeneXus.Programs {
          AV15BC_CarePage.gxTpr_Pageid = Guid.NewGuid( );
          AV15BC_CarePage.gxTpr_Pagename = "My Care";
          AV15BC_CarePage.gxTpr_Ispredefined = false;
-         AV15BC_CarePage.gxTpr_Pagetype = "My Care";
+         AV15BC_CarePage.gxTpr_Pagetype = "MyCare";
          AV19SDT_MenuPage = new SdtSDT_MenuPage(context);
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV21TilesItem;
          new prc_createpagetile(context ).execute(  context.GetMessage( "Tile", ""),  "#333333",  context.GetMessage( "left", ""),  "",  0,  "",  "",  "",  "",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;

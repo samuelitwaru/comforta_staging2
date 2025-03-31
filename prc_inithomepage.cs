@@ -237,7 +237,7 @@ namespace GeneXus.Programs {
          AV16RowsItem = new SdtSDT_MenuPage_RowsItem(context);
          AV16RowsItem.gxTpr_Id = new SdtRandomStringGenerator(context).generate(15);
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV15TilesItem;
-         new prc_createpagetile(context ).execute(  context.GetMessage( "Maps", ""),  "#333333",  context.GetMessage( "left", ""),  "",  0,  "",  "",  AV19CalendarId.ToString(),  context.GetMessage( "Map", ""),  AV24MapsPageId.ToString(), out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
+         new prc_createpagetile(context ).execute(  context.GetMessage( "Maps", ""),  "#333333",  context.GetMessage( "left", ""),  "",  0,  "",  "",  AV24MapsPageId.ToString(),  context.GetMessage( "Map", ""),  AV24MapsPageId.ToString(), out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
          AV15TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
          AV16RowsItem.gxTpr_Tiles.Add(AV15TilesItem, 0);
          AV14SDT_MenuPage.gxTpr_Rows.Add(AV16RowsItem, 0);

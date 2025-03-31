@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250328150607"
+  version: "20250331025529"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/api
 paths:
@@ -1402,6 +1402,32 @@ paths:
         404:
           description: "Not found"
 
+  /toolbox/v2/update-page-title:
+    post:
+      tags:
+        - API_ResidentService  
+      operationId: "API_ResidentService.UpdatePageTitle"
+      summary: "Update pageTitle v2"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdatePageTitleInput"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SDT_Error"  
+
+        404:
+          description: "Not found"
+
   /toolbox/v2/debug:
     post:
       tags:
@@ -2015,6 +2041,7 @@ components:
           description: "SDT_Error"
           $ref: "#/components/schemas/SDT_Error"
 
+
     DebugAppVersionOutput:
       properties:
         DebugResults:
@@ -2250,6 +2277,8 @@ components:
         AppVersionId:
           type: "string"
           format: "uuid"
+        AppVersionName:
+          type: "string"
 
     UpdateAppVersionInput:  
       properties:
@@ -2314,12 +2343,24 @@ components:
           type: "string"
           format: "uuid"
 
+    UpdatePageTitleInput:  
+      properties:
+        AppVersionId:
+          type: "string"
+          format: "uuid"
+        PageId:
+          type: "string"
+          format: "uuid"
+        PageName:
+          type: "string"
+
     DebugAppVersionInput:  
       properties:
         UrlList:
+          description: "SDT_Page Url"
           type: array
           items:
-            type: "string"
+            $ref: "#/components/schemas/SDT_PageUrl"
 
     UpdateProductServiceAPIInput:  
       properties:
@@ -3250,38 +3291,86 @@ components:
 
       x-gx-level: "SDT_AppVersion"
 
+    SDT_PageUrl:
+      properties:
+        Page:
+          description: "Page"
+          type: "string"
+
+        Urls:
+          type: array
+          items:
+            description: UrlsItem
+            $ref: "#/components/schemas/SDT_PageUrl.Urls_UrlsItem"
+
+
+    SDT_PageUrl.Urls_UrlsItem:
+      properties:
+        Url:
+          description: "Url"
+          type: "string"
+        AffectedType:
+          description: "Affected Type"
+          type: "string"
+        AffectedName:
+          description: "Affected Name"
+          type: "string"
+        StatusCode:
+          description: "Status Code"
+          type: "string"
+        StatusMessage:
+          description: "Status Message"
+          type: "string"
+
+
+      x-gx-level: "SDT_PageUrl"
+
     SDT_DebugResults:
       properties:
         Summary:
           $ref: "#/components/schemas/SDT_DebugResults.Summary"
 
-        UrlList:
+        Pages:
           type: array
           items:
-            description: UrlListItem
-            $ref: "#/components/schemas/SDT_DebugResults.UrlList_UrlListItem"
+            description: PagesItem
+            $ref: "#/components/schemas/SDT_DebugResults.Pages_PagesItem"
 
 
     SDT_DebugResults.Summary:
       properties:
         TotalUrls:
           description: "Total Urls"
-          type: "integer"
-          format: "int32"
+          type: "number"
+          format: "double"
         SuccessCount:
           description: "Success Count"
-          type: "integer"
-          format: "int32"
+          type: "number"
+          format: "double"
         FailureCount:
           description: "Failure Count"
-          type: "integer"
-          format: "int32"
+          type: "number"
+          format: "double"
 
 
       x-gx-level: "SDT_DebugResults"
 
 
-    SDT_DebugResults.UrlList_UrlListItem:
+    SDT_DebugResults.Pages_PagesItem:
+      properties:
+        Page:
+          description: "Page"
+          type: "string"
+
+        UrlList:
+          type: array
+          items:
+            description: UrlListItem
+            $ref: "#/components/schemas/SDT_DebugResults.Pages.UrlList_UrlListItem"
+
+      x-gx-level: "SDT_DebugResults"
+
+    SDT_DebugResults.Pages.UrlList_UrlListItem:
       properties:
         Url:
           description: "Url"
@@ -3292,9 +3381,15 @@ components:
         StatusMessage:
           description: "Status Message"
           type: "string"
+        AffectedType:
+          description: "Affected Type"
+          type: "string"
+        AffectedName:
+          description: "Affected Name"
+          type: "string"
 
 
-      x-gx-level: "SDT_DebugResults"
+      x-gx-level: "SDT_DebugResults.Pages"
 
     Trn_Location:
       properties:
@@ -3773,7 +3868,6 @@ components:
         ObjectId:
           description: "Object Id"
           type: "string"
-          format: "uuid"
         ObjectUrl:
           description: "Object Url"
           type: "string"
