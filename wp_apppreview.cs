@@ -245,8 +245,6 @@ namespace GeneXus.Programs {
 
       protected void send_integrity_footer_hashes( )
       {
-         GxWebStd.gx_hidden_field( context, "vAPPVERSIONID", AV9AppVersionId.ToString());
-         GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
          GXKey = Crypto.GetSiteKey( );
       }
 
@@ -264,7 +262,6 @@ namespace GeneXus.Programs {
             context.httpAjaxContext.ajax_rsp_assign_hidden_sdt("vSDT_APPVERSION2", AV12SDT_AppVersion2);
          }
          GxWebStd.gx_hidden_field( context, "vAPPVERSIONID", AV9AppVersionId.ToString());
-         GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
       }
 
       protected void RenderHtmlCloseFormB02( )
@@ -523,7 +520,6 @@ namespace GeneXus.Programs {
                   {
                      AV9AppVersionId = StringUtil.StrToGuid( gxfirstwebparm);
                      AssignAttri("", false, "AV9AppVersionId", AV9AppVersionId.ToString());
-                     GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
                   }
                   if ( toggleJsOutput )
                   {
@@ -652,10 +648,15 @@ namespace GeneXus.Programs {
       {
          /* Start Routine */
          returnInSub = false;
+         AV9AppVersionId = StringUtil.StrToGuid( context.GetMessage( "9ab830c4-fff4-4cc4-80fe-d4a516500940", ""));
+         AssignAttri("", false, "AV9AppVersionId", AV9AppVersionId.ToString());
+         new prc_logtoserver(context ).execute(  context.GetMessage( "AppversionId>: ", "")+AV9AppVersionId.ToString()) ;
          Form.Headerrawhtml = Form.Headerrawhtml+"<link rel=\"stylesheet\" href=\"/Resources/AppPreview/public/styles.css\">"+"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\" integrity=\"sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />"+"<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap\" >"+"<script type=\"module\" src=\"/Resources/AppPreview/dist/bundle.js\"></script>";
+         new prc_logtoserver(context ).execute(  context.GetMessage( "AppversionId>: ", "")+AV9AppVersionId.ToString()) ;
          AV8BC_Trn_AppVersion = new SdtTrn_AppVersion(context);
          AV8BC_Trn_AppVersion.Load(AV9AppVersionId);
          new prc_loadappversionsdt(context ).execute(  AV8BC_Trn_AppVersion, out  AV7SDT_AppVersion) ;
+         new prc_logtoserver(context ).execute(  context.GetMessage( "App version: >>>", "")+AV8BC_Trn_AppVersion.ToJSonString(true, true)) ;
          AV12SDT_AppVersion2 = new SdtSDT_AppVersion2(context);
          AV12SDT_AppVersion2.gxTpr_Appversionid = AV7SDT_AppVersion.gxTpr_Appversionid;
          AV12SDT_AppVersion2.gxTpr_Appversionname = AV7SDT_AppVersion.gxTpr_Appversionname;
@@ -756,7 +757,6 @@ namespace GeneXus.Programs {
          initialize();
          AV9AppVersionId = (Guid)getParm(obj,0);
          AssignAttri("", false, "AV9AppVersionId", AV9AppVersionId.ToString());
-         GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
       }
 
       public override string getresponse( string sGXDynURL )
@@ -792,7 +792,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20253315242213", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202533112122569", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -810,7 +810,7 @@ namespace GeneXus.Programs {
          if ( nGXWrapped != 1 )
          {
             context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-            context.AddJavascriptSource("wp_apppreview.js", "?20253315242214", false, true);
+            context.AddJavascriptSource("wp_apppreview.js", "?202533112122570", false, true);
             context.AddJavascriptSource("UserControls/UC_AppPreviewRender.js", "", false, true);
          }
          /* End function include_jscripts */
@@ -853,7 +853,7 @@ namespace GeneXus.Programs {
 
       public override void InitializeDynEvents( )
       {
-         setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[{"av":"AV9AppVersionId","fld":"vAPPVERSIONID","hsh":true}]}""");
+         setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[]}""");
          return  ;
       }
 

@@ -73,6 +73,7 @@ type_SdtTrn_Memo.cs
 type_SdtQRCodeLibrary.cs
 type_SdtEO_Base64Image.cs
 type_SdtRandomStringGenerator.cs
+type_SdtUrlCheckItem.cs
 type_SdtSummary.cs
 type_SdtUrlChecker.cs
 type_SdtUrlStatus.cs

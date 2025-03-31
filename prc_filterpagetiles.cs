@@ -80,6 +80,7 @@ namespace GeneXus.Programs {
          /* Output device settings */
          AV11Filtered_SDT_MobilePage.FromJSonString(AV9SDT_MobilePage.ToJSonString(false, true), null);
          AV10ModuleCollection.FromJSonString(context.GetMessage( "[\"my care\",\"my living\",\"my services\"]", ""), null);
+         new prc_logtoserver(context ).execute(  context.GetMessage( "User: ", "")+AV8UserId) ;
          /* Using cursor P00C52 */
          pr_default.execute(0, new Object[] {AV8UserId});
          while ( (pr_default.getStatus(0) != 101) )
@@ -104,6 +105,7 @@ namespace GeneXus.Programs {
             pr_default.readNext(0);
          }
          pr_default.close(0);
+         new prc_logtoserver(context ).execute(  context.GetMessage( "User Modules: ", "")+AV15UserModuleCollection.ToJSonString(false)) ;
          AV11Filtered_SDT_MobilePage.gxTpr_Row.Clear();
          AV21GXV1 = 1;
          while ( AV21GXV1 <= AV9SDT_MobilePage.gxTpr_Row.Count )

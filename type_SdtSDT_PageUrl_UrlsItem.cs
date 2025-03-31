@@ -36,10 +36,6 @@ namespace GeneXus.Programs
 
 			gxTv_SdtSDT_PageUrl_UrlsItem_Affectedname = "";
 
-			gxTv_SdtSDT_PageUrl_UrlsItem_Statuscode = "";
-
-			gxTv_SdtSDT_PageUrl_UrlsItem_Statusmessage = "";
-
 		}
 
 		public SdtSDT_PageUrl_UrlsItem(IGxContext context)
@@ -74,12 +70,6 @@ namespace GeneXus.Programs
 
 
 			AddObjectProperty("AffectedName", gxTpr_Affectedname, false);
-
-
-			AddObjectProperty("StatusCode", gxTpr_Statuscode, false);
-
-
-			AddObjectProperty("StatusMessage", gxTpr_Statusmessage, false);
 
 			return;
 		}
@@ -134,38 +124,6 @@ namespace GeneXus.Programs
 
 
 
-
-		[SoapElement(ElementName="StatusCode")]
-		[XmlElement(ElementName="StatusCode")]
-		public string gxTpr_Statuscode
-		{
-			get {
-				return gxTv_SdtSDT_PageUrl_UrlsItem_Statuscode; 
-			}
-			set {
-				gxTv_SdtSDT_PageUrl_UrlsItem_Statuscode = value;
-				SetDirty("Statuscode");
-			}
-		}
-
-
-
-
-		[SoapElement(ElementName="StatusMessage")]
-		[XmlElement(ElementName="StatusMessage")]
-		public string gxTpr_Statusmessage
-		{
-			get {
-				return gxTv_SdtSDT_PageUrl_UrlsItem_Statusmessage; 
-			}
-			set {
-				gxTv_SdtSDT_PageUrl_UrlsItem_Statusmessage = value;
-				SetDirty("Statusmessage");
-			}
-		}
-
-
-
 		public override bool ShouldSerializeSdtJson()
 		{
 			return true;
@@ -190,8 +148,6 @@ namespace GeneXus.Programs
 			gxTv_SdtSDT_PageUrl_UrlsItem_Url = "";
 			gxTv_SdtSDT_PageUrl_UrlsItem_Affectedtype = "";
 			gxTv_SdtSDT_PageUrl_UrlsItem_Affectedname = "";
-			gxTv_SdtSDT_PageUrl_UrlsItem_Statuscode = "";
-			gxTv_SdtSDT_PageUrl_UrlsItem_Statusmessage = "";
 			return  ;
 		}
 
@@ -208,12 +164,6 @@ namespace GeneXus.Programs
 		 
 
 		protected string gxTv_SdtSDT_PageUrl_UrlsItem_Affectedname;
-		 
-
-		protected string gxTv_SdtSDT_PageUrl_UrlsItem_Statuscode;
-		 
-
-		protected string gxTv_SdtSDT_PageUrl_UrlsItem_Statusmessage;
 		 
 
 
@@ -266,30 +216,6 @@ namespace GeneXus.Programs
 			}
 			set { 
 				 sdt.gxTpr_Affectedname = value;
-			}
-		}
-
-		[DataMember(Name="StatusCode", Order=3)]
-		public  string gxTpr_Statuscode
-		{
-			get { 
-				return sdt.gxTpr_Statuscode;
-
-			}
-			set { 
-				 sdt.gxTpr_Statuscode = value;
-			}
-		}
-
-		[DataMember(Name="StatusMessage", Order=4)]
-		public  string gxTpr_Statusmessage
-		{
-			get { 
-				return sdt.gxTpr_Statusmessage;
-
-			}
-			set { 
-				 sdt.gxTpr_Statusmessage = value;
 			}
 		}
 

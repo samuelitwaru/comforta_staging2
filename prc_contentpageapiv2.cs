@@ -171,11 +171,11 @@ namespace GeneXus.Programs {
                      AV11SDT_ContentPage.gxTpr_Content.Clear();
                      AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
                      AV15ContentItem.gxTpr_Contenttype = context.GetMessage( "Image", "");
-                     AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Locationimage_gxi;
+                     AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Receptionimage_gxi;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                      AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
                      AV15ContentItem.gxTpr_Contenttype = context.GetMessage( "Description", "");
-                     AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Locationdescription;
+                     AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Receptiondescription;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                   }
                   AV11SDT_ContentPage.gxTpr_Cta.Clear();

@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250331051355"
+  version: "20250331080510"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
@@ -2926,12 +2926,6 @@ components:
           type: "string"
         AffectedName:
           description: "Affected Name"
-          type: "string"
-        StatusCode:
-          description: "Status Code"
-          type: "string"
-        StatusMessage:
-          description: "Status Message"
           type: "string"
       x-gx-level: "SDT_PageUrl"
     SDT_ProductService:

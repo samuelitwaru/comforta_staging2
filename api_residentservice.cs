@@ -1284,15 +1284,15 @@ namespace GeneXus.Programs {
          aP3_error=this.AV69error;
       }
 
-      public void gxep_debugappversion( GXBaseCollection<SdtSDT_PageUrl> aP0_UrlList ,
+      public void gxep_debugappversion( GXBaseCollection<SdtSDT_PageUrl> aP0_PageUrlList ,
                                         out SdtSDT_DebugResults aP1_DebugResults ,
                                         out SdtSDT_Error aP2_error )
       {
-         this.AV102UrlList = aP0_UrlList;
+         this.AV133PageUrlList = aP0_PageUrlList;
          AV69error = new SdtSDT_Error(context);
          initialize();
          /* DebugAppVersion Constructor */
-         new prc_debugappversion(context ).execute(  AV102UrlList, out  AV101DebugResults, out  AV69error) ;
+         new prc_debugappversion(context ).execute(  AV133PageUrlList, out  AV101DebugResults, out  AV69error) ;
          aP1_DebugResults=this.AV101DebugResults;
          aP2_error=this.AV69error;
       }
@@ -1691,7 +1691,7 @@ namespace GeneXus.Programs {
       protected SdtSDT_AppVersion_PagesItem aP2_MenuPage ;
       protected SdtSDT_AppVersion_PagesItem AV95ContentPage ;
       protected SdtSDT_AppVersion_PagesItem aP2_ContentPage ;
-      protected GXBaseCollection<SdtSDT_PageUrl> AV102UrlList ;
+      protected GXBaseCollection<SdtSDT_PageUrl> AV133PageUrlList ;
       protected SdtSDT_DebugResults AV101DebugResults ;
       protected SdtSDT_DebugResults aP1_DebugResults ;
       protected SdtTrn_Location AV129BC_Trn_Location ;

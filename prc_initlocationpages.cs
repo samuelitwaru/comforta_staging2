@@ -228,7 +228,6 @@ namespace GeneXus.Programs {
             {
                context.CommitDataStores("prc_initlocationpages",pr_default);
                AV23ReceptionPageId = AV18BC_Trn_Page.gxTpr_Trn_pageid;
-               new prc_logtofile(context ).execute(  context.GetMessage( "created reception... ", "")+AV23ReceptionPageId.ToString()) ;
             }
             else
             {
@@ -248,7 +247,7 @@ namespace GeneXus.Programs {
       {
          /* 'CREATECALENDARPAGE' Routine */
          returnInSub = false;
-         AV39GXLvl104 = 0;
+         AV39GXLvl103 = 0;
          /* Using cursor P00A04 */
          pr_default.execute(2, new Object[] {AV8LocationId, AV12OrganisationId});
          while ( (pr_default.getStatus(2) != 101) )
@@ -258,14 +257,13 @@ namespace GeneXus.Programs {
             A11OrganisationId = P00A04_A11OrganisationId[0];
             A29LocationId = P00A04_A29LocationId[0];
             A392Trn_PageId = P00A04_A392Trn_PageId[0];
-            AV39GXLvl104 = 1;
+            AV39GXLvl103 = 1;
             AV24CalendarPageId = A392Trn_PageId;
             pr_default.readNext(2);
          }
          pr_default.close(2);
-         if ( AV39GXLvl104 == 0 )
+         if ( AV39GXLvl103 == 0 )
          {
-            new prc_logtofile(context ).execute(  context.GetMessage( "Creating calendar...", "")) ;
             AV15File = new GxFile(context.GetPhysicalPath());
             AV15File.Source = AV25Folder+"DefaultCalendar.json";
             AV13PageGJSJson = AV15File.ReadAllText("");
@@ -287,7 +285,6 @@ namespace GeneXus.Programs {
             {
                context.CommitDataStores("prc_initlocationpages",pr_default);
                AV24CalendarPageId = AV18BC_Trn_Page.gxTpr_Trn_pageid;
-               new prc_logtofile(context ).execute(  context.GetMessage( "created calendar...", "")+AV24CalendarPageId.ToString()) ;
             }
             else
             {
@@ -307,7 +304,7 @@ namespace GeneXus.Programs {
       {
          /* 'CREATELOCATIONPAGE' Routine */
          returnInSub = false;
-         AV42GXLvl144 = 0;
+         AV42GXLvl141 = 0;
          /* Using cursor P00A05 */
          pr_default.execute(3, new Object[] {AV8LocationId, AV12OrganisationId});
          while ( (pr_default.getStatus(3) != 101) )
@@ -317,12 +314,12 @@ namespace GeneXus.Programs {
             A11OrganisationId = P00A05_A11OrganisationId[0];
             A29LocationId = P00A05_A29LocationId[0];
             A392Trn_PageId = P00A05_A392Trn_PageId[0];
-            AV42GXLvl144 = 1;
+            AV42GXLvl141 = 1;
             AV26LocationPageId = A392Trn_PageId;
             pr_default.readNext(3);
          }
          pr_default.close(3);
-         if ( AV42GXLvl144 == 0 )
+         if ( AV42GXLvl141 == 0 )
          {
             new prc_logtofile(context ).execute(  context.GetMessage( "Creating location...", "")) ;
             AV15File = new GxFile(context.GetPhysicalPath());
@@ -370,7 +367,7 @@ namespace GeneXus.Programs {
       {
          /* 'CREATEMAILBOXPAGE' Routine */
          returnInSub = false;
-         AV45GXLvl188 = 0;
+         AV45GXLvl185 = 0;
          /* Using cursor P00A06 */
          pr_default.execute(4, new Object[] {AV8LocationId, AV12OrganisationId});
          while ( (pr_default.getStatus(4) != 101) )
@@ -380,12 +377,12 @@ namespace GeneXus.Programs {
             A11OrganisationId = P00A06_A11OrganisationId[0];
             A29LocationId = P00A06_A29LocationId[0];
             A392Trn_PageId = P00A06_A392Trn_PageId[0];
-            AV45GXLvl188 = 1;
+            AV45GXLvl185 = 1;
             AV27MailboxPageId = A392Trn_PageId;
             pr_default.readNext(4);
          }
          pr_default.close(4);
-         if ( AV45GXLvl188 == 0 )
+         if ( AV45GXLvl185 == 0 )
          {
             new prc_logtofile(context ).execute(  context.GetMessage( "Creating mailbox...", "")) ;
             AV15File = new GxFile(context.GetPhysicalPath());
@@ -429,7 +426,7 @@ namespace GeneXus.Programs {
       {
          /* 'CREATEWEBLINKPAGE' Routine */
          returnInSub = false;
-         AV48GXLvl228 = 0;
+         AV48GXLvl225 = 0;
          /* Using cursor P00A07 */
          pr_default.execute(5, new Object[] {AV8LocationId, AV12OrganisationId});
          while ( (pr_default.getStatus(5) != 101) )
@@ -440,12 +437,12 @@ namespace GeneXus.Programs {
             A11OrganisationId = P00A07_A11OrganisationId[0];
             A29LocationId = P00A07_A29LocationId[0];
             A392Trn_PageId = P00A07_A392Trn_PageId[0];
-            AV48GXLvl228 = 1;
+            AV48GXLvl225 = 1;
             AV31WebLinkPageId = A392Trn_PageId;
             pr_default.readNext(5);
          }
          pr_default.close(5);
-         if ( AV48GXLvl228 == 0 )
+         if ( AV48GXLvl225 == 0 )
          {
             AV18BC_Trn_Page = new SdtTrn_Page(context);
             AV18BC_Trn_Page.gxTpr_Trn_pageid = Guid.NewGuid( );
@@ -481,7 +478,7 @@ namespace GeneXus.Programs {
       {
          /* 'CREATEDYNAMICPAGE' Routine */
          returnInSub = false;
-         AV51GXLvl259 = 0;
+         AV51GXLvl256 = 0;
          /* Using cursor P00A08 */
          pr_default.execute(6, new Object[] {AV8LocationId, AV12OrganisationId});
          while ( (pr_default.getStatus(6) != 101) )
@@ -492,11 +489,11 @@ namespace GeneXus.Programs {
             A11OrganisationId = P00A08_A11OrganisationId[0];
             A29LocationId = P00A08_A29LocationId[0];
             A392Trn_PageId = P00A08_A392Trn_PageId[0];
-            AV51GXLvl259 = 1;
+            AV51GXLvl256 = 1;
             pr_default.readNext(6);
          }
          pr_default.close(6);
-         if ( AV51GXLvl259 == 0 )
+         if ( AV51GXLvl256 == 0 )
          {
             AV18BC_Trn_Page = new SdtTrn_Page(context);
             AV18BC_Trn_Page.gxTpr_Trn_pageid = Guid.NewGuid( );
@@ -639,11 +636,11 @@ namespace GeneXus.Programs {
 
       private short AV33GXLvl15 ;
       private short AV36GXLvl64 ;
-      private short AV39GXLvl104 ;
-      private short AV42GXLvl144 ;
-      private short AV45GXLvl188 ;
-      private short AV48GXLvl228 ;
-      private short AV51GXLvl259 ;
+      private short AV39GXLvl103 ;
+      private short AV42GXLvl141 ;
+      private short AV45GXLvl185 ;
+      private short AV48GXLvl225 ;
+      private short AV51GXLvl256 ;
       private int AV35GXV2 ;
       private int AV38GXV4 ;
       private int AV41GXV6 ;

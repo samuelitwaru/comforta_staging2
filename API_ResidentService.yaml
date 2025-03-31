@@ -2,9 +2,9 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250331051356"
+  version: "20250331080511"
 servers:
-  - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/api
+  - url: https://staging.comforta.yukon.software/api
 paths:
   /auth/resident-login:
     post:
@@ -1790,7 +1790,7 @@ components:
       description: GAM OAuth 2
       flows:
         password:          
-          tokenUrl: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/oauth/gam/v2.0/access_token
+          tokenUrl: https://staging.comforta.yukon.software/oauth/gam/v2.0/access_token
           scopes: 
             fullcontrol: Full access
 
@@ -2356,7 +2356,7 @@ components:
 
     DebugAppVersionInput:  
       properties:
-        UrlList:
+        PageUrlList:
           description: "SDT_Page Url"
           type: array
           items:
@@ -3314,12 +3314,6 @@ components:
           type: "string"
         AffectedName:
           description: "Affected Name"
-          type: "string"
-        StatusCode:
-          description: "Status Code"
-          type: "string"
-        StatusMessage:
-          description: "Status Message"
           type: "string"
 
 

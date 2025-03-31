@@ -104,7 +104,7 @@ namespace GeneXus.Programs {
                A517PageName = P00DL3_A517PageName[0];
                AV15SDT_MenuPage.FromJSonString(A536PagePublishedStructure, null);
                GXt_SdtSDT_MobilePage1 = AV16SDT_MobilePage;
-               new prc_convertnewtooldmenustructure(context ).execute(  AV15SDT_MenuPage,  A516PageId,  A517PageName, out  GXt_SdtSDT_MobilePage1) ;
+               new prc_convertnewtooldmenustructure(context ).execute(  AV15SDT_MenuPage,  A516PageId,  A517PageName,  AV8LocationId, out  GXt_SdtSDT_MobilePage1) ;
                AV16SDT_MobilePage = GXt_SdtSDT_MobilePage1;
                new prc_logtoserver(context ).execute(  A517PageName+" "+AV16SDT_MobilePage.ToJSonString(false, true)) ;
                if ( StringUtil.StrCmp(AV16SDT_MobilePage.gxTpr_Pagename, context.GetMessage( "Home", "")) == 0 )

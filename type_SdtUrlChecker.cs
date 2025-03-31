@@ -35,7 +35,7 @@ namespace GeneXus.Programs {
          return (string)mapper[value]; ;
       }
 
-      public GXExternalCollection<SdtUrlStatus> checkurls( GxSimpleCollection<string> gxTp_urls )
+      public GXExternalCollection<SdtUrlStatus> checkurls( GXExternalCollection<SdtUrlCheckItem> gxTp_urlItems )
       {
          GXExternalCollection<SdtUrlStatus> returncheckurls;
          if ( UrlChecker_externalReference == null )
@@ -44,8 +44,8 @@ namespace GeneXus.Programs {
          }
          returncheckurls = new GXExternalCollection<SdtUrlStatus>( context, "SdtUrlStatus", "GeneXus.Programs");
          System.Collections.Generic.List< UrlValidator.UrlStatus> externalParm0;
-         System.Collections.Generic.List< System.String> externalParm1;
-         externalParm1 = (System.Collections.Generic.List< System.String>)CollectionUtils.ConvertToExternal( typeof(System.Collections.Generic.List< System.String>), gxTp_urls.ExternalInstance);
+         System.Collections.Generic.List< UrlValidator.UrlCheckItem> externalParm1;
+         externalParm1 = (System.Collections.Generic.List< UrlValidator.UrlCheckItem>)CollectionUtils.ConvertToExternal( typeof(System.Collections.Generic.List< UrlValidator.UrlCheckItem>), gxTp_urlItems.ExternalInstance);
          externalParm0 = UrlChecker_externalReference.CheckUrls(externalParm1);
          returncheckurls.ExternalInstance = (IList)CollectionUtils.ConvertToInternal( typeof(System.Collections.Generic.List< UrlValidator.UrlStatus>), externalParm0);
          return returncheckurls ;

@@ -100,6 +100,10 @@ namespace GeneXus.Programs {
             cleanup();
             if (true) return;
          }
+         new prc_logtofile(context ).execute(  context.GetMessage( "&AppVersionId: ", "")+AV9AppVersionId.ToString()) ;
+         new prc_logtofile(context ).execute(  context.GetMessage( "&PageName: ", "")+AV15PageName) ;
+         new prc_logtofile(context ).execute(  context.GetMessage( "&PageStructure: ", "")+AV16PageStructure) ;
+         new prc_logtofile(context ).execute(  context.GetMessage( "&PageType: ", "")+AV17PageType) ;
          /* Using cursor P00BG2 */
          pr_default.execute(0, new Object[] {AV9AppVersionId});
          while ( (pr_default.getStatus(0) != 101) )
@@ -115,7 +119,7 @@ namespace GeneXus.Programs {
                A525PageType = P00BG3_A525PageType[0];
                A518PageStructure = P00BG3_A518PageStructure[0];
                A517PageName = AV15PageName;
-               if ( StringUtil.StrCmp(A525PageType, "Menu") == 0 )
+               if ( ( ( StringUtil.StrCmp(A525PageType, "Menu") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "MyLiving") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "MyService") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "MyCare") == 0 ) ) )
                {
                   AV19SDT_MenuPage.FromJSonString(AV16PageStructure, null);
                   AV10CleanedPageStructure = AV19SDT_MenuPage.ToJSonString(false, true);

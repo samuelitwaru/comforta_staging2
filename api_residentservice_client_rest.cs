@@ -1690,7 +1690,7 @@ namespace GeneXus.Programs {
          /* UpdatePageTitle Constructor */
       }
 
-      public void gxep_debugappversion( GXBaseCollection<SdtSDT_PageUrl> aP0_UrlList ,
+      public void gxep_debugappversion( GXBaseCollection<SdtSDT_PageUrl> aP0_PageUrlList ,
                                         out SdtSDT_DebugResults aP1_DebugResults ,
                                         out SdtSDT_Error aP2_error )
       {
@@ -1702,7 +1702,7 @@ namespace GeneXus.Programs {
          restLocation.ResourceName = "/toolbox/v2/debug";
          restCliDebugAppVersion.Location = restLocation;
          restCliDebugAppVersion.HttpMethod = "POST";
-         restCliDebugAppVersion.AddBodyVar("UrlList", aP0_UrlList);
+         restCliDebugAppVersion.AddBodyVar("PageUrlList", aP0_PageUrlList);
          restCliDebugAppVersion.RestExecute();
          if ( restCliDebugAppVersion.ErrorCode != 0 )
          {

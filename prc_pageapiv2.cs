@@ -108,7 +108,7 @@ namespace GeneXus.Programs {
                AV11SDT_MenuPage = new SdtSDT_MenuPage(context);
                AV11SDT_MenuPage.FromJSonString(A536PagePublishedStructure, null);
                GXt_SdtSDT_MobilePage1 = AV14SDT_MobilePage;
-               new prc_convertnewtooldmenustructure(context ).execute(  AV11SDT_MenuPage,  A516PageId,  A517PageName, out  GXt_SdtSDT_MobilePage1) ;
+               new prc_convertnewtooldmenustructure(context ).execute(  AV11SDT_MenuPage,  A516PageId,  A517PageName,  AV10LocationId, out  GXt_SdtSDT_MobilePage1) ;
                AV14SDT_MobilePage = GXt_SdtSDT_MobilePage1;
                /* Exiting from a For First loop. */
                if (true) break;
