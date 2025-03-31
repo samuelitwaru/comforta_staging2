@@ -1,4 +1,5 @@
 media/*
 !.gitignore
 PublicTempStorage/*
+!.gitignore
 Resources/UCGrapes1/TB
