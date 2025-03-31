@@ -104,9 +104,12 @@ namespace GeneXus.Programs {
             {
                A516PageId = P00DI3_A516PageId[0];
                A536PagePublishedStructure = P00DI3_A536PagePublishedStructure[0];
+               A517PageName = P00DI3_A517PageName[0];
                AV11SDT_MenuPage = new SdtSDT_MenuPage(context);
                AV11SDT_MenuPage.FromJSonString(A536PagePublishedStructure, null);
-               new prc_convertnewtooldmenustructure(context ).execute(  AV11SDT_MenuPage, out  AV14SDT_MobilePage) ;
+               GXt_SdtSDT_MobilePage1 = AV14SDT_MobilePage;
+               new prc_convertnewtooldmenustructure(context ).execute(  AV11SDT_MenuPage,  A516PageId,  A517PageName, out  GXt_SdtSDT_MobilePage1) ;
+               AV14SDT_MobilePage = GXt_SdtSDT_MobilePage1;
                /* Exiting from a For First loop. */
                if (true) break;
             }
@@ -142,16 +145,19 @@ namespace GeneXus.Programs {
          P00DI3_A523AppVersionId = new Guid[] {Guid.Empty} ;
          P00DI3_A516PageId = new Guid[] {Guid.Empty} ;
          P00DI3_A536PagePublishedStructure = new string[] {""} ;
+         P00DI3_A517PageName = new string[] {""} ;
          A516PageId = Guid.Empty;
          A536PagePublishedStructure = "";
+         A517PageName = "";
          AV11SDT_MenuPage = new SdtSDT_MenuPage(context);
+         GXt_SdtSDT_MobilePage1 = new SdtSDT_MobilePage(context);
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_pageapiv2__default(),
             new Object[][] {
                 new Object[] {
                P00DI2_A523AppVersionId, P00DI2_A11OrganisationId, P00DI2_n11OrganisationId, P00DI2_A29LocationId, P00DI2_n29LocationId, P00DI2_A535IsActive
                }
                , new Object[] {
-               P00DI3_A523AppVersionId, P00DI3_A516PageId, P00DI3_A536PagePublishedStructure
+               P00DI3_A523AppVersionId, P00DI3_A516PageId, P00DI3_A536PagePublishedStructure, P00DI3_A517PageName
                }
             }
          );
@@ -163,6 +169,7 @@ namespace GeneXus.Programs {
       private bool A535IsActive ;
       private string A536PagePublishedStructure ;
       private string AV13UserId ;
+      private string A517PageName ;
       private Guid AV12PageId ;
       private Guid AV10LocationId ;
       private Guid AV8OrganisationId ;
@@ -184,7 +191,9 @@ namespace GeneXus.Programs {
       private Guid[] P00DI3_A523AppVersionId ;
       private Guid[] P00DI3_A516PageId ;
       private string[] P00DI3_A536PagePublishedStructure ;
+      private string[] P00DI3_A517PageName ;
       private SdtSDT_MenuPage AV11SDT_MenuPage ;
+      private SdtSDT_MobilePage GXt_SdtSDT_MobilePage1 ;
       private SdtSDT_MobilePage aP4_SDT_MobilePage ;
    }
 
@@ -216,7 +225,7 @@ namespace GeneXus.Programs {
           };
           def= new CursorDef[] {
               new CursorDef("P00DI2", "SELECT AppVersionId, OrganisationId, LocationId, IsActive FROM Trn_AppVersion WHERE (LocationId = :AV10LocationId and OrganisationId = :AV8OrganisationId) AND (IsActive = TRUE) ORDER BY LocationId, OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DI2,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00DI3", "SELECT AppVersionId, PageId, PagePublishedStructure FROM Trn_AppVersionPage WHERE AppVersionId = :AppVersionId and PageId = :AV12PageId ORDER BY AppVersionId, PageId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DI3,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("P00DI3", "SELECT AppVersionId, PageId, PagePublishedStructure, PageName FROM Trn_AppVersionPage WHERE AppVersionId = :AppVersionId and PageId = :AV12PageId ORDER BY AppVersionId, PageId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DI3,1, GxCacheFrequency.OFF ,true,true )
           };
        }
     }
@@ -239,6 +248,7 @@ namespace GeneXus.Programs {
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);
                 ((Guid[]) buf[1])[0] = rslt.getGuid(2);
                 ((string[]) buf[2])[0] = rslt.getLongVarchar(3);
+                ((string[]) buf[3])[0] = rslt.getVarchar(4);
                 return;
        }
     }

@@ -30,6 +30,8 @@ namespace GeneXus.Programs
 		public SdtSDT_Tile( )
 		{
 			/* Constructor for serialization */
+			gxTv_SdtSDT_Tile_Tileid = "";
+
 			gxTv_SdtSDT_Tile_Tilename = "";
 
 			gxTv_SdtSDT_Tile_Tiletext = "";
@@ -109,7 +111,7 @@ namespace GeneXus.Programs
 
 		[SoapElement(ElementName="TileId")]
 		[XmlElement(ElementName="TileId")]
-		public Guid gxTpr_Tileid
+		public string gxTpr_Tileid
 		{
 			get {
 				return gxTv_SdtSDT_Tile_Tileid; 
@@ -303,6 +305,7 @@ namespace GeneXus.Programs
 
 		public void initialize( )
 		{
+			gxTv_SdtSDT_Tile_Tileid = "";
 			gxTv_SdtSDT_Tile_Tilename = "";
 			gxTv_SdtSDT_Tile_Tiletext = "";
 			gxTv_SdtSDT_Tile_Tilecolor = "";
@@ -323,7 +326,7 @@ namespace GeneXus.Programs
 
 		#region Declaration
 
-		protected Guid gxTv_SdtSDT_Tile_Tileid;
+		protected string gxTv_SdtSDT_Tile_Tileid;
 		 
 
 		protected string gxTv_SdtSDT_Tile_Tilename;
@@ -372,14 +375,14 @@ namespace GeneXus.Programs
 
 		#region Rest Properties
 		[DataMember(Name="TileId", Order=0)]
-		public Guid gxTpr_Tileid
+		public  string gxTpr_Tileid
 		{
 			get { 
 				return sdt.gxTpr_Tileid;
 
 			}
 			set { 
-				sdt.gxTpr_Tileid = value;
+				 sdt.gxTpr_Tileid = value;
 			}
 		}
 

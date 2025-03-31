@@ -849,7 +849,7 @@ namespace GeneXus.Programs {
          this.AV8userId = aP2_userId;
          initialize();
          /* PagesAPI Constructor */
-         new prc_pagesapi(context ).execute(  AV12locationId,  AV16organisationId,  AV8userId, out  AV52SDT_MobilePageCollection) ;
+         new prc_pagesapiv2(context ).execute(  AV12locationId,  AV16organisationId,  AV8userId, out  AV52SDT_MobilePageCollection) ;
          aP3_SDT_MobilePageCollection=this.AV52SDT_MobilePageCollection;
       }
 
@@ -865,7 +865,7 @@ namespace GeneXus.Programs {
          this.AV8userId = aP3_userId;
          initialize();
          /* PageAPI Constructor */
-         new prc_pageapi(context ).execute(  AV37PageId,  AV12locationId,  AV16organisationId,  AV8userId, out  AV56SDT_MobilePage) ;
+         new prc_pageapiv2(context ).execute(  AV37PageId,  AV12locationId,  AV16organisationId,  AV8userId, out  AV56SDT_MobilePage) ;
          aP4_SDT_MobilePage=this.AV56SDT_MobilePage;
       }
 
@@ -877,7 +877,7 @@ namespace GeneXus.Programs {
          this.AV16organisationId = aP1_organisationId;
          initialize();
          /* ContentPagesAPI Constructor */
-         new prc_contentpagesapi(context ).execute(  AV12locationId,  AV16organisationId, out  AV51SDT_ContentPageCollection) ;
+         new prc_contentpagesapiv2(context ).execute(  AV12locationId,  AV16organisationId, out  AV51SDT_ContentPageCollection) ;
          aP2_SDT_ContentPageCollection=this.AV51SDT_ContentPageCollection;
       }
 
@@ -891,7 +891,7 @@ namespace GeneXus.Programs {
          this.AV16organisationId = aP2_organisationId;
          initialize();
          /* ContentPageAPI Constructor */
-         new prc_contentpageapi(context ).execute(  AV37PageId,  AV12locationId,  AV16organisationId, out  AV61SDT_ContentPage) ;
+         new prc_contentpageapiv2(context ).execute(  AV37PageId,  AV12locationId,  AV16organisationId, out  AV61SDT_ContentPage) ;
          aP3_SDT_ContentPage=this.AV61SDT_ContentPage;
       }
 

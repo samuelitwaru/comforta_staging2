@@ -37,28 +37,38 @@ namespace GeneXus.Programs {
       }
 
       public void execute( SdtSDT_ContentPage aP0_SDT_ContentPage ,
-                           out SdtSDT_ContentPageV1 aP1_SDT_ContentPageV1 )
+                           Guid aP1_PageId ,
+                           string aP2_PageName ,
+                           out SdtSDT_ContentPageV1 aP3_SDT_ContentPageV1 )
       {
          this.AV10SDT_ContentPage = aP0_SDT_ContentPage;
+         this.AV16PageId = aP1_PageId;
+         this.AV15PageName = aP2_PageName;
          this.AV11SDT_ContentPageV1 = new SdtSDT_ContentPageV1(context) ;
          initialize();
          ExecuteImpl();
-         aP1_SDT_ContentPageV1=this.AV11SDT_ContentPageV1;
+         aP3_SDT_ContentPageV1=this.AV11SDT_ContentPageV1;
       }
 
-      public SdtSDT_ContentPageV1 executeUdp( SdtSDT_ContentPage aP0_SDT_ContentPage )
+      public SdtSDT_ContentPageV1 executeUdp( SdtSDT_ContentPage aP0_SDT_ContentPage ,
+                                              Guid aP1_PageId ,
+                                              string aP2_PageName )
       {
-         execute(aP0_SDT_ContentPage, out aP1_SDT_ContentPageV1);
+         execute(aP0_SDT_ContentPage, aP1_PageId, aP2_PageName, out aP3_SDT_ContentPageV1);
          return AV11SDT_ContentPageV1 ;
       }
 
       public void executeSubmit( SdtSDT_ContentPage aP0_SDT_ContentPage ,
-                                 out SdtSDT_ContentPageV1 aP1_SDT_ContentPageV1 )
+                                 Guid aP1_PageId ,
+                                 string aP2_PageName ,
+                                 out SdtSDT_ContentPageV1 aP3_SDT_ContentPageV1 )
       {
          this.AV10SDT_ContentPage = aP0_SDT_ContentPage;
+         this.AV16PageId = aP1_PageId;
+         this.AV15PageName = aP2_PageName;
          this.AV11SDT_ContentPageV1 = new SdtSDT_ContentPageV1(context) ;
          SubmitImpl();
-         aP1_SDT_ContentPageV1=this.AV11SDT_ContentPageV1;
+         aP3_SDT_ContentPageV1=this.AV11SDT_ContentPageV1;
       }
 
       protected override void ExecutePrivate( )
@@ -66,11 +76,13 @@ namespace GeneXus.Programs {
          /* GeneXus formulas */
          /* Output device settings */
          AV11SDT_ContentPageV1.FromJSonString(AV10SDT_ContentPage.ToJSonString(false, true), null);
+         AV11SDT_ContentPageV1.gxTpr_Pageid = AV16PageId;
+         AV11SDT_ContentPageV1.gxTpr_Pagename = AV15PageName;
          AV11SDT_ContentPageV1.gxTpr_Cta.Clear();
-         AV15GXV1 = 1;
-         while ( AV15GXV1 <= AV10SDT_ContentPage.gxTpr_Cta.Count )
+         AV17GXV1 = 1;
+         while ( AV17GXV1 <= AV10SDT_ContentPage.gxTpr_Cta.Count )
          {
-            AV13CtaItem = ((SdtSDT_ContentPage_CtaItem)AV10SDT_ContentPage.gxTpr_Cta.Item(AV15GXV1));
+            AV13CtaItem = ((SdtSDT_ContentPage_CtaItem)AV10SDT_ContentPage.gxTpr_Cta.Item(AV17GXV1));
             AV14CtaItemV1 = new SdtSDT_ContentPageV1_CtaItem(context);
             AV14CtaItemV1.gxTpr_Ctaid = StringUtil.StrToGuid( AV13CtaItem.gxTpr_Ctaid);
             AV14CtaItemV1.gxTpr_Ctatype = AV13CtaItem.gxTpr_Ctatype;
@@ -95,7 +107,7 @@ namespace GeneXus.Programs {
                AV14CtaItemV1.gxTpr_Isimagebutton = false;
                AV14CtaItemV1.gxTpr_Isfullwidth = false;
             }
-            AV15GXV1 = (int)(AV15GXV1+1);
+            AV17GXV1 = (int)(AV17GXV1+1);
          }
          cleanup();
       }
@@ -118,12 +130,14 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private int AV15GXV1 ;
+      private int AV17GXV1 ;
+      private string AV15PageName ;
+      private Guid AV16PageId ;
       private SdtSDT_ContentPage AV10SDT_ContentPage ;
       private SdtSDT_ContentPageV1 AV11SDT_ContentPageV1 ;
       private SdtSDT_ContentPage_CtaItem AV13CtaItem ;
       private SdtSDT_ContentPageV1_CtaItem AV14CtaItemV1 ;
-      private SdtSDT_ContentPageV1 aP1_SDT_ContentPageV1 ;
+      private SdtSDT_ContentPageV1 aP3_SDT_ContentPageV1 ;
    }
 
 }

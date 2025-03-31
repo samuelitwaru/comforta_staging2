@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250331025529"
+  version: "20250331051356"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/api
 paths:
@@ -3828,7 +3828,6 @@ components:
         TileId:
           description: "Tile Id"
           type: "string"
-          format: "uuid"
         TileName:
           description: "Tile Name"
           type: "string"

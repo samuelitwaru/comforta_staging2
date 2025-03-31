@@ -23,44 +23,31 @@ using System.Threading;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
 namespace GeneXus.Programs {
-   public class aprc_migratetoolbox : GXWebProcedure
+   public class aprc_migratetoolbox : GXProcedure
    {
-      public override void webExecute( )
+      public static int Main( string[] args )
       {
-         context.SetDefaultTheme("WorkWithPlusDS", true);
-         initialize();
-         GXKey = Crypto.GetSiteKey( );
-         if ( ( StringUtil.StrCmp(context.GetRequestQueryString( ), "") != 0 ) && ( GxWebError == 0 ) )
+         return new aprc_migratetoolbox().MainImpl(args); ;
+      }
+
+      public int executeCmdLine( string[] args )
+      {
+         return ExecuteCmdLine(args); ;
+      }
+
+      protected override int ExecuteCmdLine( string[] args )
+      {
+         Guid aP0_LocationId = new Guid()  ;
+         if ( 0 < args.Length )
          {
-            GXDecQS = UriDecrypt64( context.GetRequestQueryString( ), GXKey);
-            if ( ( StringUtil.StrCmp(StringUtil.Right( GXDecQS, 6), Crypto.CheckSum( StringUtil.Left( GXDecQS, (short)(StringUtil.Len( GXDecQS)-6)), 6)) == 0 ) && ( StringUtil.StrCmp(StringUtil.Substring( GXDecQS, 1, StringUtil.Len( "aprc_migratetoolbox.aspx")), "aprc_migratetoolbox.aspx") == 0 ) )
-            {
-               SetQueryString( StringUtil.Right( StringUtil.Left( GXDecQS, (short)(StringUtil.Len( GXDecQS)-6)), (short)(StringUtil.Len( StringUtil.Left( GXDecQS, (short)(StringUtil.Len( GXDecQS)-6)))-StringUtil.Len( "aprc_migratetoolbox.aspx")))) ;
-            }
-            else
-            {
-               GxWebError = 1;
-               context.HttpContext.Response.StatusCode = 403;
-               context.WriteHtmlText( "<title>403 Forbidden</title>") ;
-               context.WriteHtmlText( "<h1>403 Forbidden</h1>") ;
-               context.WriteHtmlText( "<p /><hr />") ;
-               GXUtil.WriteLog("send_http_error_code " + 403.ToString());
-            }
+            aP0_LocationId=((Guid)(StringUtil.StrToGuid( (string)(args[0]))));
          }
-         if ( nGotPars == 0 )
+         else
          {
-            entryPointCalled = false;
-            gxfirstwebparm = GetFirstPar( "LocationId");
-            if ( ! entryPointCalled )
-            {
-               AV8LocationId = StringUtil.StrToGuid( gxfirstwebparm);
-            }
+            aP0_LocationId=Guid.Empty;
          }
-         if ( GxWebError == 0 )
-         {
-            ExecutePrivate();
-         }
-         cleanup();
+         execute(aP0_LocationId);
+         return GX.GXRuntime.ExitCode ;
       }
 
       public aprc_migratetoolbox( )
@@ -100,8 +87,6 @@ namespace GeneXus.Programs {
       {
          /* GeneXus formulas */
          /* Output device settings */
-         AV8LocationId = StringUtil.StrToGuid( context.GetMessage( "a81dfcef-c383-44ce-8cad-891516e1a568", ""));
-         AV14HttpResponse.AddString(context.GetMessage( "Location: ", "")+AV8LocationId.ToString()+StringUtil.NewLine( ));
          new prc_logtoserver(context ).execute(  context.GetMessage( "Location: ", "")+AV8LocationId.ToString()) ;
          /* Using cursor P00DD2 */
          pr_default.execute(0, new Object[] {AV8LocationId});
@@ -115,7 +100,6 @@ namespace GeneXus.Programs {
             pr_default.readNext(0);
          }
          pr_default.close(0);
-         AV14HttpResponse.AddString(context.GetMessage( "Organisation: ", "")+AV15OrganisationId.ToString()+StringUtil.NewLine( ));
          new prc_logtoserver(context ).execute(  context.GetMessage( "Organisation: ", "")+AV15OrganisationId.ToString()) ;
          AV28GXLvl15 = 0;
          /* Using cursor P00DD3 */
@@ -139,12 +123,6 @@ namespace GeneXus.Programs {
                cleanup();
                if (true) return;
             }
-         }
-         AV14HttpResponse.AddString(context.GetMessage( "AppVersion: ", "")+AV9BC_Trn_AppVersion.ToJSonString(true, true)+StringUtil.NewLine( ));
-         if ( context.WillRedirect( ) )
-         {
-            context.Redirect( context.wjLoc );
-            context.wjLoc = "";
          }
          cleanup();
       }
@@ -238,7 +216,6 @@ namespace GeneXus.Programs {
       public override void cleanup( )
       {
          CloseCursors();
-         base.cleanup();
          if ( IsMain )
          {
             context.CloseConnections();
@@ -248,10 +225,6 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
-         GXKey = "";
-         GXDecQS = "";
-         gxfirstwebparm = "";
-         AV14HttpResponse = new GxHttpResponse( context);
          P00DD2_A29LocationId = new Guid[] {Guid.Empty} ;
          P00DD2_n29LocationId = new bool[] {false} ;
          P00DD2_A11OrganisationId = new Guid[] {Guid.Empty} ;
@@ -310,14 +283,8 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private short GxWebError ;
-      private short nGotPars ;
       private short AV28GXLvl15 ;
       private int AV31GXV2 ;
-      private string GXKey ;
-      private string GXDecQS ;
-      private string gxfirstwebparm ;
-      private bool entryPointCalled ;
       private bool n29LocationId ;
       private bool n11OrganisationId ;
       private bool returnInSub ;
@@ -328,7 +295,6 @@ namespace GeneXus.Programs {
       private Guid AV15OrganisationId ;
       private Guid A523AppVersionId ;
       private Guid A392Trn_PageId ;
-      private GxHttpResponse AV14HttpResponse ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
