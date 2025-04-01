@@ -126,7 +126,7 @@ namespace GeneXus.Programs {
                AV19Title = context.GetMessage( "New Updates Available", "");
                AV20NotificationMessage = context.GetMessage( "The latest updates have been published and are now live! Open the app to explore the changes", "");
                AV21Metadata.gxTpr_Notificationcategory = "Toolbox";
-               new prc_sendresidentnotification(context ).execute(  AV19Title,  AV20NotificationMessage,  context.GetMessage( "Toolbox", ""),  AV21Metadata,  AV22ResidentIdCollectionEmpty) ;
+               new prc_sendresidentnotification(context ).execute(  AV19Title,  AV20NotificationMessage,  "Toolbox",  AV21Metadata,  AV22ResidentIdCollectionEmpty) ;
             }
          }
          else
