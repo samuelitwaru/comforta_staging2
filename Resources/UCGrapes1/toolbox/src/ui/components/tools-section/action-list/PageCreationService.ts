@@ -1,5 +1,6 @@
 import { ChildEditor } from "../../../../controls/editor/ChildEditor";
 import { AppVersionManager } from "../../../../controls/versions/AppVersionManager";
+import { i18n } from "../../../../i18n/i18n";
 import { ActionPage } from "../../../../interfaces/ActionPage";
 import { baseURL, ToolBoxService } from "../../../../services/ToolBoxService";
 import { Alert } from "../../Alert";
@@ -95,9 +96,10 @@ export class PageCreationService {
     }
 
     async handleDynamicForms(form: any) {
+        alert(1)
         const selectedComponent = (globalThis as any).selectedComponent;
         if (!selectedComponent) return;
-
+        alert(2)
         const tileTitle = selectedComponent.find(".tile-title")[0];
         if (tileTitle) tileTitle.components(form.PageName);
 
@@ -136,7 +138,7 @@ export class PageCreationService {
             this.updateActionListDropDown("Home", res.MenuPage.PageName);
             this.updateTileAfterPageCreation(res.MenuPage);
 
-            new Alert('success', 'Page created successfully');
+            new Alert('success', i18n.t("messages.success.page_Created"));
         });
     }
 
@@ -145,7 +147,7 @@ export class PageCreationService {
         
         this.toolBoxService.createContentPage(version.AppVersionId, formData.page_title).then((res: any) => { 
             this.updateTileAfterPageCreation(res.ContentPage);
-            new Alert('success', 'Page created successfully');
+            new Alert('success', i18n.t("messages.success.page_Created"));
         });
     }
 
@@ -213,7 +215,7 @@ export class PageCreationService {
         const updates = [
             ["Text", formData.link_label],
             ["Name", formData.link_label],
-            ["Action.ObjectType", "Web Link"],
+            ["Action.ObjectType", "WebLink"],
             ["Action.ObjectId", childPage?.PageId],
             ["Action.ObjectUrl", formData.link_url],
         ];
