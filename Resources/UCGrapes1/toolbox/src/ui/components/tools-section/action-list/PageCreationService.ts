@@ -96,10 +96,8 @@ export class PageCreationService {
     }
 
     async handleDynamicForms(form: any) {
-        alert(1)
         const selectedComponent = (globalThis as any).selectedComponent;
         if (!selectedComponent) return;
-        alert(2)
         const tileTitle = selectedComponent.find(".tile-title")[0];
         if (tileTitle) tileTitle.components(form.PageName);
 
