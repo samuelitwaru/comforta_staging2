@@ -132,7 +132,7 @@ namespace GeneXus.Programs {
          /* 'DEFAULTMENUPAGETILE' Routine */
          returnInSub = false;
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV13TilesItem;
-         new prc_createpagetile(context ).execute(  context.GetMessage( "Title", ""),  "#000000",  context.GetMessage( "center", ""),  "",  0,  "",  "",  "",  "",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
+         new prc_createpagetile(context ).execute(  "Title",  "#000000",  "center",  "",  0,  "",  "",  "",  "",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
          AV13TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
          AV14RowsItem = new SdtSDT_MenuPage_RowsItem(context);
          AV14RowsItem.gxTpr_Id = Guid.NewGuid( ).ToString();

@@ -51,6 +51,9 @@ trn_location
 trn_manager
 trn_organisationtype
 trn_organisation
+wp_example
+wp_apppreview1
+wp_apppreview1
 trn_organisationtrn_locationwc
 wp_apppreview
 wp_apppreview
@@ -368,9 +371,10 @@ gx0050
 gx0040
 general\ui\masterprompt
 general\ui\masterunanimosidebar
+aprc_createapppreview
+aprc_createapppreview
 aprc_contentpagesapiv2
 trn_organisationtrn_locationwcgetfilterdata
-aprc_migratetoolbox
 trn_memowwgetfilterdata
 trn_memoloaddvcombo
 trn_memocategorywwgetfilterdata

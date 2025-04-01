@@ -1258,7 +1258,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202532622565617", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111474610", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1276,7 +1276,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       {
          if ( nGXWrapped != 1 )
          {
-            context.AddJavascriptSource("wwpbaseobjects/discussions/wwp_discussionsonethreadcollapsedwc.js", "?202532622565618", false, true);
+            context.AddJavascriptSource("wwpbaseobjects/discussions/wwp_discussionsonethreadcollapsedwc.js", "?20254111474611", false, true);
          }
          /* End function include_jscripts */
       }

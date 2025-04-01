@@ -813,7 +813,6 @@ namespace GeneXus.Programs {
          new prc_getuserorganisationid(context ).execute( out  GXt_guid2) ;
          AV40OrganisationId = GXt_guid2;
          AssignAttri("", false, "AV40OrganisationId", AV40OrganisationId.ToString());
-         new prc_migratetoolbox(context ).execute(  AV39LocationId) ;
          new prc_initlocationpages(context ).execute(  AV39LocationId,  AV40OrganisationId) ;
          new prc_initlocationpagesv2(context ).execute(  AV39LocationId,  AV40OrganisationId) ;
          Apptoolbox1_Locationid = AV39LocationId.ToString();
@@ -1020,7 +1019,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20253319575878", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254112295934", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1036,7 +1035,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("wp_applicationdesign.js", "?20253319575879", false, true);
+         context.AddJavascriptSource("wp_applicationdesign.js", "?20254112295935", false, true);
          context.AddJavascriptSource("UserControls/UC_AppToolBox1Render.js", "", false, true);
          /* End function include_jscripts */
       }
