@@ -93,6 +93,7 @@ namespace GeneXus.Programs {
          AV9SDT_MobilePage.gxTpr_Pagename = AV18PageName;
          AV9SDT_MobilePage.gxTpr_Pageiscontentpage = false;
          AV9SDT_MobilePage.gxTpr_Pageispublished = true;
+         AV21ObjectTypeDictionary.fromjson( context.GetMessage( "{\"Content\":\"Product\", \"\"}", ""));
          /* Using cursor P00DJ2 */
          pr_default.execute(0, new Object[] {AV19LocationId});
          while ( (pr_default.getStatus(0) != 101) )
@@ -105,15 +106,15 @@ namespace GeneXus.Programs {
             pr_default.readNext(0);
          }
          pr_default.close(0);
-         AV22GXV1 = 1;
-         while ( AV22GXV1 <= AV8SDT_MenuPage.gxTpr_Rows.Count )
+         AV23GXV1 = 1;
+         while ( AV23GXV1 <= AV8SDT_MenuPage.gxTpr_Rows.Count )
          {
-            AV13RowsItem = ((SdtSDT_MenuPage_RowsItem)AV8SDT_MenuPage.gxTpr_Rows.Item(AV22GXV1));
+            AV13RowsItem = ((SdtSDT_MenuPage_RowsItem)AV8SDT_MenuPage.gxTpr_Rows.Item(AV23GXV1));
             AV10SDT_Row = new SdtSDT_Row(context);
-            AV23GXV2 = 1;
-            while ( AV23GXV2 <= AV13RowsItem.gxTpr_Tiles.Count )
+            AV24GXV2 = 1;
+            while ( AV24GXV2 <= AV13RowsItem.gxTpr_Tiles.Count )
             {
-               AV15TilesItem = ((SdtSDT_MenuPage_RowsItem_TilesItem)AV13RowsItem.gxTpr_Tiles.Item(AV23GXV2));
+               AV15TilesItem = ((SdtSDT_MenuPage_RowsItem_TilesItem)AV13RowsItem.gxTpr_Tiles.Item(AV24GXV2));
                AV16SDT_Col = new SdtSDT_Col(context);
                AV12SDT_Tile = new SdtSDT_Tile(context);
                AV12SDT_Tile.gxTpr_Tileid = AV15TilesItem.gxTpr_Id;
@@ -128,16 +129,48 @@ namespace GeneXus.Programs {
                AV12SDT_Tile.gxTpr_Tilebgimageurl = AV15TilesItem.gxTpr_Bgimageurl;
                AV12SDT_Tile.gxTpr_Tilebgimageopacity = AV15TilesItem.gxTpr_Opacity;
                AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid = AV15TilesItem.gxTpr_Action.gxTpr_Objectid;
-               AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = AV15TilesItem.gxTpr_Action.gxTpr_Objecttype;
                AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecturl = AV15TilesItem.gxTpr_Action.gxTpr_Objecturl;
+               /* Execute user subroutine: 'MAPACTIONOBJECTTYPE' */
+               S111 ();
+               if ( returnInSub )
+               {
+                  cleanup();
+                  if (true) return;
+               }
                AV16SDT_Col.gxTpr_Tile = AV12SDT_Tile;
                AV10SDT_Row.gxTpr_Col.Add(AV16SDT_Col, 0);
-               AV23GXV2 = (int)(AV23GXV2+1);
+               AV24GXV2 = (int)(AV24GXV2+1);
             }
             AV9SDT_MobilePage.gxTpr_Row.Add(AV10SDT_Row, 0);
-            AV22GXV1 = (int)(AV22GXV1+1);
+            AV23GXV1 = (int)(AV23GXV1+1);
          }
          cleanup();
+      }
+
+      protected void S111( )
+      {
+         /* 'MAPACTIONOBJECTTYPE' Routine */
+         returnInSub = false;
+         if ( ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "Content", "")) == 0 ) ) || ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "Location", "")) == 0 ) ) || ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "Reception", "")) == 0 ) ) )
+         {
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Service/Product Page", "");
+         }
+         else if ( ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "MyActivity", "")) == 0 ) ) || ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "Calendar", "")) == 0 ) ) )
+         {
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Predefined Page", "");
+         }
+         else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "DynamicForm") == 0 )
+         {
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Dynamic Forms", "");
+         }
+         else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "WebLink") == 0 )
+         {
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Web Link", "");
+         }
+         else
+         {
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = "";
+         }
       }
 
       public override void cleanup( )
@@ -153,6 +186,7 @@ namespace GeneXus.Programs {
       public override void initialize( )
       {
          AV9SDT_MobilePage = new SdtSDT_MobilePage(context);
+         AV21ObjectTypeDictionary = new GeneXus.Core.genexus.common.SdtDictionary<string, string>();
          P00DJ2_A29LocationId = new Guid[] {Guid.Empty} ;
          P00DJ2_A273Trn_ThemeId = new Guid[] {Guid.Empty} ;
          P00DJ2_n273Trn_ThemeId = new bool[] {false} ;
@@ -177,10 +211,11 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private int AV22GXV1 ;
-      private int AV23GXV2 ;
+      private int AV23GXV1 ;
+      private int AV24GXV2 ;
       private string GXt_char1 ;
       private bool n273Trn_ThemeId ;
+      private bool returnInSub ;
       private string AV18PageName ;
       private Guid AV17PageId ;
       private Guid AV19LocationId ;
@@ -193,6 +228,7 @@ namespace GeneXus.Programs {
       private IGxDataStore dsDefault ;
       private SdtSDT_MenuPage AV8SDT_MenuPage ;
       private SdtSDT_MobilePage AV9SDT_MobilePage ;
+      private GeneXus.Core.genexus.common.SdtDictionary<string, string> AV21ObjectTypeDictionary ;
       private IDataStoreProvider pr_default ;
       private Guid[] P00DJ2_A29LocationId ;
       private Guid[] P00DJ2_A273Trn_ThemeId ;

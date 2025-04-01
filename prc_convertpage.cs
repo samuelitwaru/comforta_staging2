@@ -213,7 +213,14 @@ namespace GeneXus.Programs {
                   AV16TileItem.gxTpr_Name = AV15SDT_Tile.gxTpr_Tilename;
                   AV16TileItem.gxTpr_Text = AV15SDT_Tile.gxTpr_Tiletext;
                   AV16TileItem.gxTpr_Icon = AV15SDT_Tile.gxTpr_Tileicon;
-                  AV16TileItem.gxTpr_Color = AV15SDT_Tile.gxTpr_Tilecolor;
+                  if ( String.IsNullOrEmpty(StringUtil.RTrim( AV15SDT_Tile.gxTpr_Tilecolor)) )
+                  {
+                     AV16TileItem.gxTpr_Color = "#333333";
+                  }
+                  else
+                  {
+                     AV16TileItem.gxTpr_Color = AV15SDT_Tile.gxTpr_Tilecolor;
+                  }
                   AV16TileItem.gxTpr_Bgcolor = AV15SDT_Tile.gxTpr_Tilebgcolor;
                   AV16TileItem.gxTpr_Bgimageurl = AV15SDT_Tile.gxTpr_Tilebgimageurl;
                   AV16TileItem.gxTpr_Align = AV15SDT_Tile.gxTpr_Tilealignment;
