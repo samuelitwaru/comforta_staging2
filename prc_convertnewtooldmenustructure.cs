@@ -151,7 +151,11 @@ namespace GeneXus.Programs {
       {
          /* 'MAPACTIONOBJECTTYPE' Routine */
          returnInSub = false;
-         if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "Menu") == 0 )
+         if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "Maps") == 0 )
+         {
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = "Maps";
+         }
+         else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "Menu") == 0 )
          {
             AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Page", "");
          }
@@ -159,7 +163,7 @@ namespace GeneXus.Programs {
          {
             AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Service/Product Page", "");
          }
-         else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "MyActivity", "")) == 0 )
+         else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "My Activity", "")) == 0 )
          {
             AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Predefined Page, Mailbox", "");
          }
