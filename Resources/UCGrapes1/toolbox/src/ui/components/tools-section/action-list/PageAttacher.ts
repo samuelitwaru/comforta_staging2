@@ -25,6 +25,7 @@ export class PageAttacher {
         "PageId": serviceId,
         "PageName": newService.ProductServiceName,
         "TileName": newService.ProductServiceTileName,
+        "PageType": "Content"
       }
       this.attachToTile(page, "Content", i18n.t("sidebar.action_list.services"))
     }

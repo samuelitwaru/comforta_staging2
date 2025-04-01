@@ -165,7 +165,8 @@ export class ActionListDropDown {
       ).map((page: any) => ({
         PageId: page.PageId,
         PageName: page.PageName,
-        TileName: page.PageName
+        TileName: page.PageName,
+        PageType: page.PageType
       }))
       return pages;
     } catch (error) {
