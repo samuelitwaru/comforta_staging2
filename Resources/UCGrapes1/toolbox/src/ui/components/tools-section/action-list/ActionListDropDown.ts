@@ -64,9 +64,9 @@ export class ActionListDropDown {
         canCreatePage: false,
       },
       {
-        name: "Content Page",
-        displayName: i18n.t("sidebar.action_list.content"),
-        label: i18n.t("sidebar.action_list.content"),
+        name: "Content",
+        displayName: i18n.t("sidebar.action_list.services"),
+        label: i18n.t("sidebar.action_list.services"),
         options: await this.getContentPages(),
         canCreatePage: true,
       },

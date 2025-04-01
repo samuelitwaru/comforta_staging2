@@ -26,7 +26,7 @@ export class PageAttacher {
         "PageName": newService.ProductServiceName,
         "TileName": newService.ProductServiceTileName,
       }
-      this.attachToTile(page, "Service/Product Page", i18n.t("sidebar.action_list.services"))
+      this.attachToTile(page, "Content", i18n.t("sidebar.action_list.services"))
     }
   }
 
@@ -62,7 +62,7 @@ export class PageAttacher {
         tileId
       );
       
-      new PageCreationService().updateActionListDropDown("Dynamic Form", page.PageName);
+      // new PageCreationService().updateActionListDropDown("Dynamic Form", page.PageName);
   
       const version = await this.appVersionManager.getActiveVersion(); 
       this.attachPage(page, version, tileAttributes);

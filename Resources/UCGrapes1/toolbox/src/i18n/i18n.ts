@@ -69,7 +69,7 @@ export const i18n = new I18n({
       action_list: {
         page: "Pages",
         services: "Services",
-        forms: "Dynamic Forms",
+        forms: "Forms",
         weblink: "Web link",
         module: "Modules",
         content: "Content",
@@ -175,7 +175,7 @@ export const i18n = new I18n({
       action_list: {
         page: "Pagina's",
         services: "Diensten",
-        forms: "Dynamische formulieren",
+        forms: "Formulieren",
         weblink: "Weblink",
         module: "Modules",
         content: "Inhoud",
