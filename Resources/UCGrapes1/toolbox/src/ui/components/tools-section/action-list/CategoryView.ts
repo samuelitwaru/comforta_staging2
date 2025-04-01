@@ -82,7 +82,6 @@ export class CategoryView {
           return;
         }
 
-        alert(this.categoryData.name)
 
         if (this.categoryData.name === "Dynamic Forms") {
           this.pageCreationService.handleDynamicForms(page);
