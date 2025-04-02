@@ -82,7 +82,7 @@ namespace GeneXus.Programs {
          AV10ModuleCollection.FromJSonString(context.GetMessage( "[\"my care\",\"my living\",\"my services\"]", ""), null);
          new prc_logtoserver(context ).execute(  context.GetMessage( "User: ", "")+AV8UserId) ;
          /* Using cursor P00C52 */
-         pr_default.execute(0, new Object[] {AV8UserId});
+         pr_default.execute(0);
          while ( (pr_default.getStatus(0) != 101) )
          {
             A527ResidentPackageId = P00C52_A527ResidentPackageId[0];
@@ -244,14 +244,13 @@ namespace GeneXus.Programs {
        {
           Object[] prmP00C52;
           prmP00C52 = new Object[] {
-          new ParDef("AV8UserId",GXType.VarChar,4,0)
           };
           Object[] prmP00C53;
           prmP00C53 = new Object[] {
           new ParDef("ResidentPackageId",GXType.UniqueIdentifier,36,0){Nullable=true}
           };
           def= new CursorDef[] {
-              new CursorDef("P00C52", "SELECT T1.ResidentPackageId, T2.ResidentPackageModules, T1.ResidentGUID, T1.ResidentId, T1.LocationId, T1.OrganisationId FROM (Trn_Resident T1 LEFT JOIN Trn_ResidentPackage T2 ON T2.ResidentPackageId = T1.ResidentPackageId) WHERE T1.ResidentGUID = ( :AV8UserId) ORDER BY T1.ResidentId, T1.LocationId, T1.OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C52,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00C52", "SELECT T1.ResidentPackageId, T2.ResidentPackageModules, T1.ResidentGUID, T1.ResidentId, T1.LocationId, T1.OrganisationId FROM (Trn_Resident T1 LEFT JOIN Trn_ResidentPackage T2 ON T2.ResidentPackageId = T1.ResidentPackageId) ORDER BY T1.ResidentId, T1.LocationId, T1.OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C52,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00C53", "SELECT ResidentPackageId FROM Trn_ResidentPackage WHERE ResidentPackageId = :ResidentPackageId ORDER BY ResidentPackageId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C53,1, GxCacheFrequency.OFF ,false,true )
           };
        }
