@@ -83,7 +83,8 @@ export class NewPageButton {
         menuItem2.textContent = "Add content page";
         menuItem2.addEventListener("click", () => {
             const config = AppConfig.getInstance();
-            window.localStorage.setItem("ServiceCreationParentPageType", this.parentPage.PageType)
+            // window.localStorage.setItem("ServiceCreationParentPageType", this.parentPage.PageType)
+            config.UC.ServiceCreationParentPageType = this.parentPage.PageType
             config.addServiceButtonEvent();
         });
 
