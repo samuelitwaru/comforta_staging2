@@ -108,6 +108,21 @@ namespace GeneXus.Programs {
                AV16SDT_MobilePage = GXt_SdtSDT_MobilePage1;
                AV17SDT_MobilePageCollection.Add(AV16SDT_MobilePage, 0);
                new prc_logtoserver(context ).execute(  A517PageName+" "+AV16SDT_MobilePage.ToJSonString(false, true)) ;
+               if ( StringUtil.StrCmp(AV16SDT_MobilePage.gxTpr_Pagename, context.GetMessage( "Home", "")) == 0 )
+               {
+                  new prc_logtoserver(context ).execute(  "    "+A517PageName+" "+AV16SDT_MobilePage.ToJSonString(false, true)) ;
+                  GXt_SdtSDT_MobilePage1 = AV13Filtered_SDT_MobilePage;
+                  new prc_filterpagetiles(context ).execute(  AV16SDT_MobilePage,  AV10UserId, out  GXt_SdtSDT_MobilePage1) ;
+                  AV13Filtered_SDT_MobilePage = GXt_SdtSDT_MobilePage1;
+                  AV17SDT_MobilePageCollection.Add(AV13Filtered_SDT_MobilePage, 0);
+               }
+               else
+               {
+                  if ( ! String.IsNullOrEmpty(StringUtil.RTrim( StringUtil.Trim( AV16SDT_MobilePage.gxTpr_Pagename))) )
+                  {
+                     AV17SDT_MobilePageCollection.Add(AV16SDT_MobilePage, 0);
+                  }
+               }
                pr_default.readNext(1);
             }
             pr_default.close(1);
@@ -152,6 +167,7 @@ namespace GeneXus.Programs {
          A517PageName = "";
          AV15SDT_MenuPage = new SdtSDT_MenuPage(context);
          AV16SDT_MobilePage = new SdtSDT_MobilePage(context);
+         AV13Filtered_SDT_MobilePage = new SdtSDT_MobilePage(context);
          GXt_SdtSDT_MobilePage1 = new SdtSDT_MobilePage(context);
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_pagesapiv2__default(),
             new Object[][] {
@@ -198,6 +214,7 @@ namespace GeneXus.Programs {
       private string[] P00DL3_A517PageName ;
       private SdtSDT_MenuPage AV15SDT_MenuPage ;
       private SdtSDT_MobilePage AV16SDT_MobilePage ;
+      private SdtSDT_MobilePage AV13Filtered_SDT_MobilePage ;
       private SdtSDT_MobilePage GXt_SdtSDT_MobilePage1 ;
       private GXBaseCollection<SdtSDT_MobilePage> aP3_SDT_MobilePageCollection ;
    }
