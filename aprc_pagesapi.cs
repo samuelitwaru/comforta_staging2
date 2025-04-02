@@ -131,9 +131,6 @@ namespace GeneXus.Programs {
             AV8SDT_Page.FromJSonString(A420PageJsonContent, null);
             if ( StringUtil.StrCmp(AV8SDT_Page.gxTpr_Pagename, context.GetMessage( "Home", "")) == 0 )
             {
-               GXt_SdtSDT_MobilePage1 = AV19Filtered_SDT_MobilePage;
-               new prc_filterpagetiles(context ).execute(  AV8SDT_Page,  AV18UserId, out  GXt_SdtSDT_MobilePage1) ;
-               AV19Filtered_SDT_MobilePage = GXt_SdtSDT_MobilePage1;
                AV9SDT_PageCollection.Add(AV19Filtered_SDT_MobilePage, 0);
             }
             else
@@ -175,7 +172,6 @@ namespace GeneXus.Programs {
          A392Trn_PageId = Guid.Empty;
          AV8SDT_Page = new SdtSDT_MobilePage(context);
          AV19Filtered_SDT_MobilePage = new SdtSDT_MobilePage(context);
-         GXt_SdtSDT_MobilePage1 = new SdtSDT_MobilePage(context);
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.aprc_pagesapi__default(),
             new Object[][] {
                 new Object[] {
@@ -210,7 +206,6 @@ namespace GeneXus.Programs {
       private Guid[] P008D2_A392Trn_PageId ;
       private SdtSDT_MobilePage AV8SDT_Page ;
       private SdtSDT_MobilePage AV19Filtered_SDT_MobilePage ;
-      private SdtSDT_MobilePage GXt_SdtSDT_MobilePage1 ;
       private GXBaseCollection<SdtSDT_MobilePage> aP3_SDT_PageCollection ;
    }
 
@@ -235,7 +230,7 @@ namespace GeneXus.Programs {
           new ParDef("AV17OrganisationId",GXType.UniqueIdentifier,36,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P008D2", "SELECT PageIsContentPage, OrganisationId, LocationId, PageJsonContent, Trn_PageId FROM Trn_Page WHERE (LocationId = :AV16LocationId) AND (OrganisationId = :AV17OrganisationId) AND (PageIsContentPage = FALSE) ORDER BY Trn_PageId, LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP008D2,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P008D2", "SELECT PageIsContentPage, OrganisationId, LocationId, PageJsonContent, Trn_PageId FROM Trn_Page WHERE (LocationId = :AV16LocationId) AND (OrganisationId = :AV17OrganisationId) AND (PageIsContentPage = FALSE) ORDER BY Trn_PageId, LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP008D2,100, GxCacheFrequency.OFF ,false,false )
           };
        }
     }
