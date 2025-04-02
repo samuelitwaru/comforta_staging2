@@ -103,6 +103,7 @@ namespace GeneXus.Programs {
                A536PagePublishedStructure = P00DM3_A536PagePublishedStructure[0];
                AV22PageName = A517PageName;
                AV11SDT_ContentPage.FromJSonString(A536PagePublishedStructure, null);
+               new prc_logtoserver(context ).execute(  context.GetMessage( "Content: ", "")+AV11SDT_ContentPage.ToJSonString(false, true)) ;
                if ( StringUtil.StrCmp(A525PageType, "Content") == 0 )
                {
                   AV12BC_Trn_ProductService.Load(AV9PageId, AV10LocationId, AV8OrganisationId);
@@ -150,6 +151,7 @@ namespace GeneXus.Programs {
                      AV26GXV2 = (int)(AV26GXV2+1);
                   }
                }
+               new prc_logtoserver(context ).execute(  context.GetMessage( "Content2: ", "")+AV11SDT_ContentPage.ToJSonString(false, true)) ;
                if ( ( ( StringUtil.StrCmp(A525PageType, "Location") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "Reception") == 0 ) ) )
                {
                   if ( StringUtil.StrCmp(A525PageType, "Location") == 0 )
@@ -194,6 +196,11 @@ namespace GeneXus.Programs {
                   AV16CtaItem.gxTpr_Ctaaction = AV14BC_Trn_Location.gxTpr_Locationphone;
                   AV11SDT_ContentPage.gxTpr_Cta.Add(AV16CtaItem, 0);
                }
+               new prc_logtoserver(context ).execute(  context.GetMessage( "Content:3 ", "")+AV11SDT_ContentPage.ToJSonString(false, true)) ;
+               GXt_SdtSDT_ContentPageV11 = AV20SDT_ContentPageV1;
+               new prc_convertnewtooldcontentstructure(context ).execute(  AV11SDT_ContentPage,  AV9PageId,  AV22PageName, out  GXt_SdtSDT_ContentPageV11) ;
+               AV20SDT_ContentPageV1 = GXt_SdtSDT_ContentPageV11;
+               new prc_logtoserver(context ).execute(  context.GetMessage( "Content:3 ", "")+AV20SDT_ContentPageV1.ToJSonString(false, true)) ;
                /* Exiting from a For First loop. */
                if (true) break;
             }
@@ -201,9 +208,8 @@ namespace GeneXus.Programs {
             pr_default.readNext(0);
          }
          pr_default.close(0);
-         GXt_SdtSDT_ContentPageV11 = AV20SDT_ContentPageV1;
-         new prc_convertnewtooldcontentstructure(context ).execute(  AV11SDT_ContentPage,  AV9PageId,  AV22PageName, out  GXt_SdtSDT_ContentPageV11) ;
-         AV20SDT_ContentPageV1 = GXt_SdtSDT_ContentPageV11;
+         new prc_logtoserver(context ).execute(  context.GetMessage( "Content:>> ", "")) ;
+         new prc_logtoserver(context ).execute(  context.GetMessage( "Content:3 ", "")+AV20SDT_ContentPageV1.ToJSonString(false, true)) ;
          cleanup();
       }
 

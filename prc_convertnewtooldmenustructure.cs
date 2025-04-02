@@ -163,7 +163,7 @@ namespace GeneXus.Programs {
          {
             AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Service/Product Page", "");
          }
-         else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "My Activity", "")) == 0 )
+         else if ( ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "MyActivity") == 0 ) ) || ( ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, context.GetMessage( "My Activity", "")) == 0 ) ) )
          {
             AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = context.GetMessage( "Predefined Page, Mailbox", "");
          }

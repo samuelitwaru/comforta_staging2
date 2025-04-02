@@ -117,6 +117,12 @@
 			"Name": "NewProductServiceId",
 			"Type": "string",
 			"Default": ""
+		} ,
+		{
+			"Id": "ServiceCreationParentPageType",
+			"Name": "ServiceCreationParentPageType",
+			"Type": "string",
+			"Default": ""
 		} 
 	],
 	"Methods": {
@@ -130,6 +136,13 @@
 						"Name": "ProductServiceId",
 						"Type": "ProductServiceId"
 					} 
+				]
+			} ,
+			{
+				"Name": "SetServiceCreationParentPageType",
+				"Source": "		this.ServiceCreationParentPageType = localStorage.getItem(\"ServiceCreationParentPageType\")			",
+				"Return": "",
+				"Parameters": [
 				]
 			} 
 		],

@@ -163,7 +163,7 @@ namespace GeneXus.Programs {
          AV16RowsItem = new SdtSDT_MenuPage_RowsItem(context);
          AV16RowsItem.gxTpr_Id = new SdtRandomStringGenerator(context).generate(15);
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV15TilesItem;
-         new prc_createpagetile(context ).execute(  "Reception",  "#333333",  "left",  "Reception",  0,  "",  AV23BC_Trn_Location.gxTpr_Receptionimage_gxi,  AV8ReceptionPageId.ToString(),  "Content",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
+         new prc_createpagetile(context ).execute(  "Reception",  "#333333",  "left",  "Reception",  0,  "",  AV23BC_Trn_Location.gxTpr_Receptionimage_gxi,  AV8ReceptionPageId.ToString(),  "Reception",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
          AV15TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
          AV16RowsItem.gxTpr_Tiles.Add(AV15TilesItem, 0);
          AV14SDT_MenuPage.gxTpr_Rows.Add(AV16RowsItem, 0);
@@ -180,7 +180,7 @@ namespace GeneXus.Programs {
          AV15TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
          AV16RowsItem.gxTpr_Tiles.Add(AV15TilesItem, 0);
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV15TilesItem;
-         new prc_createpagetile(context ).execute(  "My Activity",  "#333333",  "left",  "",  0,  "",  "",  AV20MyActivityId.ToString(),  "My Activity",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
+         new prc_createpagetile(context ).execute(  "My Activity",  "#333333",  "left",  "",  0,  "",  "",  AV20MyActivityId.ToString(),  "MyActivity",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
          AV15TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
          AV16RowsItem.gxTpr_Tiles.Add(AV15TilesItem, 0);
          AV14SDT_MenuPage.gxTpr_Rows.Add(AV16RowsItem, 0);
@@ -193,7 +193,7 @@ namespace GeneXus.Programs {
          AV16RowsItem = new SdtSDT_MenuPage_RowsItem(context);
          AV16RowsItem.gxTpr_Id = new SdtRandomStringGenerator(context).generate(15);
          GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV15TilesItem;
-         new prc_createpagetile(context ).execute(  "Location",  "#333333",  "left",  "",  0,  "",  AV23BC_Trn_Location.gxTpr_Locationimage_gxi,  AV9LocationPageId.ToString(),  "Content",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
+         new prc_createpagetile(context ).execute(  "Location",  "#333333",  "left",  "",  0,  "",  AV23BC_Trn_Location.gxTpr_Locationimage_gxi,  AV9LocationPageId.ToString(),  "Location",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
          AV15TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
          AV15TilesItem = new SdtSDT_MenuPage_RowsItem_TilesItem(context);
          AV15TilesItem.gxTpr_Id = new SdtRandomStringGenerator(context).generate(15);

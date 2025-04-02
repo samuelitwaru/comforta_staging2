@@ -49,16 +49,19 @@ namespace GeneXus.Programs {
                            string aP1_PreviousStep ,
                            bool aP2_GoingBack ,
                            ref bool aP3_IsPopup ,
-                           ref Guid aP4_FromToolBox_ProductServiceId )
+                           ref Guid aP4_FromToolBox_ProductServiceId ,
+                           ref string aP5_PageType )
       {
          this.AV25WebSessionKey = aP0_WebSessionKey;
          this.AV12PreviousStep = aP1_PreviousStep;
          this.AV10GoingBack = aP2_GoingBack;
          this.AV52IsPopup = aP3_IsPopup;
          this.AV53FromToolBox_ProductServiceId = aP4_FromToolBox_ProductServiceId;
+         this.AV54PageType = aP5_PageType;
          ExecuteImpl();
          aP3_IsPopup=this.AV52IsPopup;
          aP4_FromToolBox_ProductServiceId=this.AV53FromToolBox_ProductServiceId;
+         aP5_PageType=this.AV54PageType;
       }
 
       protected override void ExecutePrivate( )
@@ -129,8 +132,10 @@ namespace GeneXus.Programs {
                   AssignAttri(sPrefix, false, "AV52IsPopup", AV52IsPopup);
                   AV53FromToolBox_ProductServiceId = StringUtil.StrToGuid( GetPar( "FromToolBox_ProductServiceId"));
                   AssignAttri(sPrefix, false, "AV53FromToolBox_ProductServiceId", AV53FromToolBox_ProductServiceId.ToString());
+                  AV54PageType = GetPar( "PageType");
+                  AssignAttri(sPrefix, false, "AV54PageType", AV54PageType);
                   setjustcreated();
-                  componentprepare(new Object[] {(string)sCompPrefix,(string)sSFPrefix,(string)AV25WebSessionKey,(string)AV12PreviousStep,(bool)AV10GoingBack,(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId});
+                  componentprepare(new Object[] {(string)sCompPrefix,(string)sSFPrefix,(string)AV25WebSessionKey,(string)AV12PreviousStep,(bool)AV10GoingBack,(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId,(string)AV54PageType});
                   componentstart();
                   context.httpAjaxContext.ajax_rspStartCmp(sPrefix);
                   componentdraw();
@@ -329,7 +334,7 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( FormProcess+">") ;
             context.skipLines(1);
             GXKey = Crypto.GetSiteKey( );
-            GXEncryptionTmp = "wp_productservicestep1.aspx"+UrlEncode(StringUtil.RTrim(AV25WebSessionKey)) + "," + UrlEncode(StringUtil.RTrim(AV12PreviousStep)) + "," + UrlEncode(StringUtil.BoolToStr(AV10GoingBack)) + "," + UrlEncode(StringUtil.BoolToStr(AV52IsPopup)) + "," + UrlEncode(AV53FromToolBox_ProductServiceId.ToString());
+            GXEncryptionTmp = "wp_productservicestep1.aspx"+UrlEncode(StringUtil.RTrim(AV25WebSessionKey)) + "," + UrlEncode(StringUtil.RTrim(AV12PreviousStep)) + "," + UrlEncode(StringUtil.BoolToStr(AV10GoingBack)) + "," + UrlEncode(StringUtil.BoolToStr(AV52IsPopup)) + "," + UrlEncode(AV53FromToolBox_ProductServiceId.ToString()) + "," + UrlEncode(StringUtil.RTrim(AV54PageType));
             context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("wp_productservicestep1.aspx") + "?" + UriEncrypt64( GXEncryptionTmp+Crypto.CheckSum( GXEncryptionTmp, 6), GXKey)+"\">") ;
             GxWebStd.gx_hidden_field( context, "_EventName", "");
             GxWebStd.gx_hidden_field( context, "_EventGridId", "");
@@ -436,12 +441,14 @@ namespace GeneXus.Programs {
          GxWebStd.gx_boolean_hidden_field( context, sPrefix+"wcpOAV10GoingBack", wcpOAV10GoingBack);
          GxWebStd.gx_boolean_hidden_field( context, sPrefix+"wcpOAV52IsPopup", wcpOAV52IsPopup);
          GxWebStd.gx_hidden_field( context, sPrefix+"wcpOAV53FromToolBox_ProductServiceId", wcpOAV53FromToolBox_ProductServiceId.ToString());
+         GxWebStd.gx_hidden_field( context, sPrefix+"wcpOAV54PageType", wcpOAV54PageType);
          GxWebStd.gx_boolean_hidden_field( context, sPrefix+"vGOINGBACK", AV10GoingBack);
          GxWebStd.gx_hidden_field( context, sPrefix+"vFROMTOOLBOX_PRODUCTSERVICEID", AV53FromToolBox_ProductServiceId.ToString());
          GxWebStd.gx_boolean_hidden_field( context, sPrefix+"vCHECKREQUIREDFIELDSRESULT", AV31CheckRequiredFieldsResult);
          GxWebStd.gx_boolean_hidden_field( context, sPrefix+"vHASVALIDATIONERRORS", AV11HasValidationErrors);
          GxWebStd.gx_hidden_field( context, sPrefix+"gxhash_vHASVALIDATIONERRORS", GetSecureSignedToken( sPrefix, AV11HasValidationErrors, context));
          GxWebStd.gx_boolean_hidden_field( context, sPrefix+"vISPOPUP", AV52IsPopup);
+         GxWebStd.gx_hidden_field( context, sPrefix+"vPAGETYPE", AV54PageType);
          GxWebStd.gx_hidden_field( context, sPrefix+"vFILETYPE", AV33FileType);
          GxWebStd.gx_hidden_field( context, sPrefix+"vWEBSESSIONKEY", AV25WebSessionKey);
          GxWebStd.gx_hidden_field( context, sPrefix+"PRODUCTSERVICENAME", A59ProductServiceName);
@@ -1606,6 +1613,7 @@ namespace GeneXus.Programs {
             wcpOAV10GoingBack = StringUtil.StrToBool( cgiGet( sPrefix+"wcpOAV10GoingBack"));
             wcpOAV52IsPopup = StringUtil.StrToBool( cgiGet( sPrefix+"wcpOAV52IsPopup"));
             wcpOAV53FromToolBox_ProductServiceId = StringUtil.StrToGuid( cgiGet( sPrefix+"wcpOAV53FromToolBox_ProductServiceId"));
+            wcpOAV54PageType = cgiGet( sPrefix+"wcpOAV54PageType");
             Combo_suppliergenid_Selectedvalue_get = cgiGet( sPrefix+"COMBO_SUPPLIERGENID_Selectedvalue_get");
             Combo_supplieragbid_Selectedvalue_get = cgiGet( sPrefix+"COMBO_SUPPLIERAGBID_Selectedvalue_get");
             /* Read variables values. */
@@ -1827,6 +1835,24 @@ namespace GeneXus.Programs {
             AV34LocationId = GXt_guid1;
             AssignAttri(sPrefix, false, "AV34LocationId", AV34LocationId.ToString());
          }
+         if ( StringUtil.StrCmp(AV54PageType, "MyCare") == 0 )
+         {
+            cmbavProductserviceclass.removeItem(context.GetMessage( "My Services", ""));
+            cmbavProductserviceclass.removeItem(context.GetMessage( "My Living", ""));
+         }
+         else if ( StringUtil.StrCmp(AV54PageType, "MyService") == 0 )
+         {
+            cmbavProductserviceclass.removeItem(context.GetMessage( "My Care", ""));
+            cmbavProductserviceclass.removeItem(context.GetMessage( "My Living", ""));
+         }
+         else if ( StringUtil.StrCmp(AV54PageType, "MyLiving") == 0 )
+         {
+            cmbavProductserviceclass.removeItem(context.GetMessage( "My Care", ""));
+            cmbavProductserviceclass.removeItem(context.GetMessage( "My Services", ""));
+         }
+         else
+         {
+         }
       }
 
       protected void E146C2( )
@@ -1863,7 +1889,7 @@ namespace GeneXus.Programs {
                S182 ();
                if (returnInSub) return;
                GXKey = Crypto.GetSiteKey( );
-               GXEncryptionTmp = "wp_productservice.aspx"+UrlEncode(StringUtil.RTrim("Step1")) + "," + UrlEncode(StringUtil.RTrim("Step2")) + "," + UrlEncode(StringUtil.BoolToStr(false)) + "," + UrlEncode(StringUtil.BoolToStr(AV52IsPopup)) + "," + UrlEncode(AV53FromToolBox_ProductServiceId.ToString());
+               GXEncryptionTmp = "wp_productservice.aspx"+UrlEncode(StringUtil.RTrim("Step1")) + "," + UrlEncode(StringUtil.RTrim("Step2")) + "," + UrlEncode(StringUtil.BoolToStr(false)) + "," + UrlEncode(StringUtil.BoolToStr(AV52IsPopup)) + "," + UrlEncode(AV53FromToolBox_ProductServiceId.ToString()) + "," + UrlEncode(StringUtil.RTrim(AV54PageType));
                CallWebObject(formatLink("wp_productservice.aspx") + "?" + UriEncrypt64( GXEncryptionTmp+Crypto.CheckSum( GXEncryptionTmp, 6), GXKey));
                context.wjLocDisableFrm = 1;
             }
@@ -1898,15 +1924,15 @@ namespace GeneXus.Programs {
          }
          else
          {
-            context.setWebReturnParms(new Object[] {(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId});
-            context.setWebReturnParmsMetadata(new Object[] {"AV52IsPopup","AV53FromToolBox_ProductServiceId"});
+            context.setWebReturnParms(new Object[] {(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId,(string)AV54PageType});
+            context.setWebReturnParmsMetadata(new Object[] {"AV52IsPopup","AV53FromToolBox_ProductServiceId","AV54PageType"});
             context.wjLocDisableFrm = 1;
             context.nUserReturn = 1;
             returnInSub = true;
             if (true) return;
          }
-         context.setWebReturnParms(new Object[] {(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId});
-         context.setWebReturnParmsMetadata(new Object[] {"AV52IsPopup","AV53FromToolBox_ProductServiceId"});
+         context.setWebReturnParms(new Object[] {(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId,(string)AV54PageType});
+         context.setWebReturnParmsMetadata(new Object[] {"AV52IsPopup","AV53FromToolBox_ProductServiceId","AV54PageType"});
          context.wjLocDisableFrm = 1;
          context.nUserReturn = 1;
          returnInSub = true;
@@ -2172,8 +2198,8 @@ namespace GeneXus.Programs {
       {
          /* 'DoUserAction1' Routine */
          returnInSub = false;
-         context.setWebReturnParms(new Object[] {(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId});
-         context.setWebReturnParmsMetadata(new Object[] {"AV52IsPopup","AV53FromToolBox_ProductServiceId"});
+         context.setWebReturnParms(new Object[] {(bool)AV52IsPopup,(Guid)AV53FromToolBox_ProductServiceId,(string)AV54PageType});
+         context.setWebReturnParmsMetadata(new Object[] {"AV52IsPopup","AV53FromToolBox_ProductServiceId","AV54PageType"});
          context.wjLocDisableFrm = 1;
          context.nUserReturn = 1;
          returnInSub = true;
@@ -2577,6 +2603,8 @@ namespace GeneXus.Programs {
          AssignAttri(sPrefix, false, "AV52IsPopup", AV52IsPopup);
          AV53FromToolBox_ProductServiceId = (Guid)getParm(obj,4);
          AssignAttri(sPrefix, false, "AV53FromToolBox_ProductServiceId", AV53FromToolBox_ProductServiceId.ToString());
+         AV54PageType = (string)getParm(obj,5);
+         AssignAttri(sPrefix, false, "AV54PageType", AV54PageType);
       }
 
       public override string getresponse( string sGXDynURL )
@@ -2618,6 +2646,7 @@ namespace GeneXus.Programs {
          sCtrlAV10GoingBack = (string)((string)getParm(obj,2));
          sCtrlAV52IsPopup = (string)((string)getParm(obj,3));
          sCtrlAV53FromToolBox_ProductServiceId = (string)((string)getParm(obj,4));
+         sCtrlAV54PageType = (string)((string)getParm(obj,5));
       }
 
       public override void componentrestorestate( string sPPrefix ,
@@ -2661,13 +2690,16 @@ namespace GeneXus.Programs {
             AssignAttri(sPrefix, false, "AV52IsPopup", AV52IsPopup);
             AV53FromToolBox_ProductServiceId = (Guid)getParm(obj,6);
             AssignAttri(sPrefix, false, "AV53FromToolBox_ProductServiceId", AV53FromToolBox_ProductServiceId.ToString());
+            AV54PageType = (string)getParm(obj,7);
+            AssignAttri(sPrefix, false, "AV54PageType", AV54PageType);
          }
          wcpOAV25WebSessionKey = cgiGet( sPrefix+"wcpOAV25WebSessionKey");
          wcpOAV12PreviousStep = cgiGet( sPrefix+"wcpOAV12PreviousStep");
          wcpOAV10GoingBack = StringUtil.StrToBool( cgiGet( sPrefix+"wcpOAV10GoingBack"));
          wcpOAV52IsPopup = StringUtil.StrToBool( cgiGet( sPrefix+"wcpOAV52IsPopup"));
          wcpOAV53FromToolBox_ProductServiceId = StringUtil.StrToGuid( cgiGet( sPrefix+"wcpOAV53FromToolBox_ProductServiceId"));
-         if ( ! GetJustCreated( ) && ( ( StringUtil.StrCmp(AV25WebSessionKey, wcpOAV25WebSessionKey) != 0 ) || ( StringUtil.StrCmp(AV12PreviousStep, wcpOAV12PreviousStep) != 0 ) || ( AV10GoingBack != wcpOAV10GoingBack ) || ( AV52IsPopup != wcpOAV52IsPopup ) || ( AV53FromToolBox_ProductServiceId != wcpOAV53FromToolBox_ProductServiceId ) ) )
+         wcpOAV54PageType = cgiGet( sPrefix+"wcpOAV54PageType");
+         if ( ! GetJustCreated( ) && ( ( StringUtil.StrCmp(AV25WebSessionKey, wcpOAV25WebSessionKey) != 0 ) || ( StringUtil.StrCmp(AV12PreviousStep, wcpOAV12PreviousStep) != 0 ) || ( AV10GoingBack != wcpOAV10GoingBack ) || ( AV52IsPopup != wcpOAV52IsPopup ) || ( AV53FromToolBox_ProductServiceId != wcpOAV53FromToolBox_ProductServiceId ) || ( StringUtil.StrCmp(AV54PageType, wcpOAV54PageType) != 0 ) ) )
          {
             setjustcreated();
          }
@@ -2676,6 +2708,7 @@ namespace GeneXus.Programs {
          wcpOAV10GoingBack = AV10GoingBack;
          wcpOAV52IsPopup = AV52IsPopup;
          wcpOAV53FromToolBox_ProductServiceId = AV53FromToolBox_ProductServiceId;
+         wcpOAV54PageType = AV54PageType;
       }
 
       protected void WCParametersGet( )
@@ -2730,6 +2763,16 @@ namespace GeneXus.Programs {
          else
          {
             AV53FromToolBox_ProductServiceId = StringUtil.StrToGuid( cgiGet( sPrefix+"AV53FromToolBox_ProductServiceId_PARM"));
+         }
+         sCtrlAV54PageType = cgiGet( sPrefix+"AV54PageType_CTRL");
+         if ( StringUtil.Len( sCtrlAV54PageType) > 0 )
+         {
+            AV54PageType = cgiGet( sCtrlAV54PageType);
+            AssignAttri(sPrefix, false, "AV54PageType", AV54PageType);
+         }
+         else
+         {
+            AV54PageType = cgiGet( sPrefix+"AV54PageType_PARM");
          }
       }
 
@@ -2801,6 +2844,11 @@ namespace GeneXus.Programs {
          {
             GxWebStd.gx_hidden_field( context, sPrefix+"AV53FromToolBox_ProductServiceId_CTRL", StringUtil.RTrim( sCtrlAV53FromToolBox_ProductServiceId));
          }
+         GxWebStd.gx_hidden_field( context, sPrefix+"AV54PageType_PARM", AV54PageType);
+         if ( StringUtil.Len( StringUtil.RTrim( sCtrlAV54PageType)) > 0 )
+         {
+            GxWebStd.gx_hidden_field( context, sPrefix+"AV54PageType_CTRL", StringUtil.RTrim( sCtrlAV54PageType));
+         }
       }
 
       public override void componentdraw( )
@@ -2853,7 +2901,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111452217", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202542747528", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2869,7 +2917,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("wp_productservicestep1.js", "?20254111452220", false, true);
+         context.AddJavascriptSource("wp_productservicestep1.js", "?2025427475210", false, true);
          context.AddJavascriptSource("FileUpload/fileupload.min.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
@@ -3057,16 +3105,16 @@ namespace GeneXus.Programs {
       {
          setEventMetadata("REFRESH","""{"handler":"Refresh","iparms":[{"av":"AV10GoingBack","fld":"vGOINGBACK"},{"av":"dynavLocationid"},{"av":"AV34LocationId","fld":"vLOCATIONID"},{"av":"dynavProductservicegroup"},{"av":"AV14ProductServiceGroup","fld":"vPRODUCTSERVICEGROUP"},{"av":"AV47noFilterAgb","fld":"vNOFILTERAGB"},{"av":"AV48noFilterGen","fld":"vNOFILTERGEN"},{"av":"AV11HasValidationErrors","fld":"vHASVALIDATIONERRORS","hsh":true},{"av":"AV36OrganisationId","fld":"vORGANISATIONID","hsh":true},{"av":"AV44PreferredAgbSuppliers","fld":"vPREFERREDAGBSUPPLIERS","hsh":true}]""");
          setEventMetadata("REFRESH",""","oparms":[{"av":"AV10GoingBack","fld":"vGOINGBACK"},{"av":"Btnwizardfirstprevious_Visible","ctrl":"BTNWIZARDFIRSTPREVIOUS","prop":"Visible"}]}""");
-         setEventMetadata("ENTER","""{"handler":"E156C2","iparms":[{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV31CheckRequiredFieldsResult","fld":"vCHECKREQUIREDFIELDSRESULT"},{"av":"AV11HasValidationErrors","fld":"vHASVALIDATIONERRORS","hsh":true},{"av":"AV52IsPopup","fld":"vISPOPUP"},{"av":"dynavLocationid"},{"av":"AV34LocationId","fld":"vLOCATIONID"},{"av":"AV17ProductServiceName","fld":"vPRODUCTSERVICENAME"},{"av":"AV18ProductServiceTileName","fld":"vPRODUCTSERVICETILENAME"},{"av":"cmbavProductserviceclass"},{"av":"AV40ProductServiceClass","fld":"vPRODUCTSERVICECLASS"},{"av":"AV15ProductServiceId","fld":"vPRODUCTSERVICEID"},{"av":"AV23UploadedFiles","fld":"vUPLOADEDFILES"},{"av":"AV37ProductServiceImageVar","fld":"vPRODUCTSERVICEIMAGEVAR"},{"av":"AV32FileName","fld":"vFILENAME"},{"av":"AV33FileType","fld":"vFILETYPE"},{"av":"dynavProductservicegroup"},{"av":"AV14ProductServiceGroup","fld":"vPRODUCTSERVICEGROUP"},{"av":"AV25WebSessionKey","fld":"vWEBSESSIONKEY"},{"av":"AV13ProductServiceDescription","fld":"vPRODUCTSERVICEDESCRIPTION"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV48noFilterGen","fld":"vNOFILTERGEN"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"AV47noFilterAgb","fld":"vNOFILTERAGB"},{"av":"A59ProductServiceName","fld":"PRODUCTSERVICENAME"},{"av":"A29LocationId","fld":"LOCATIONID"},{"av":"A11OrganisationId","fld":"ORGANISATIONID"},{"av":"AV36OrganisationId","fld":"vORGANISATIONID","hsh":true}]""");
-         setEventMetadata("ENTER",""","oparms":[{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV52IsPopup","fld":"vISPOPUP"},{"av":"AV31CheckRequiredFieldsResult","fld":"vCHECKREQUIREDFIELDSRESULT"},{"av":"AV33FileType","fld":"vFILETYPE"},{"av":"AV37ProductServiceImageVar","fld":"vPRODUCTSERVICEIMAGEVAR"},{"av":"AV32FileName","fld":"vFILENAME"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV15ProductServiceId","fld":"vPRODUCTSERVICEID"}]}""");
-         setEventMetadata("'WIZARDPREVIOUS'","""{"handler":"E166C2","iparms":[{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV52IsPopup","fld":"vISPOPUP"}]}""");
+         setEventMetadata("ENTER","""{"handler":"E156C2","iparms":[{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV31CheckRequiredFieldsResult","fld":"vCHECKREQUIREDFIELDSRESULT"},{"av":"AV11HasValidationErrors","fld":"vHASVALIDATIONERRORS","hsh":true},{"av":"AV52IsPopup","fld":"vISPOPUP"},{"av":"AV54PageType","fld":"vPAGETYPE"},{"av":"dynavLocationid"},{"av":"AV34LocationId","fld":"vLOCATIONID"},{"av":"AV17ProductServiceName","fld":"vPRODUCTSERVICENAME"},{"av":"AV18ProductServiceTileName","fld":"vPRODUCTSERVICETILENAME"},{"av":"cmbavProductserviceclass"},{"av":"AV40ProductServiceClass","fld":"vPRODUCTSERVICECLASS"},{"av":"AV15ProductServiceId","fld":"vPRODUCTSERVICEID"},{"av":"AV23UploadedFiles","fld":"vUPLOADEDFILES"},{"av":"AV37ProductServiceImageVar","fld":"vPRODUCTSERVICEIMAGEVAR"},{"av":"AV32FileName","fld":"vFILENAME"},{"av":"AV33FileType","fld":"vFILETYPE"},{"av":"dynavProductservicegroup"},{"av":"AV14ProductServiceGroup","fld":"vPRODUCTSERVICEGROUP"},{"av":"AV25WebSessionKey","fld":"vWEBSESSIONKEY"},{"av":"AV13ProductServiceDescription","fld":"vPRODUCTSERVICEDESCRIPTION"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV48noFilterGen","fld":"vNOFILTERGEN"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"AV47noFilterAgb","fld":"vNOFILTERAGB"},{"av":"A59ProductServiceName","fld":"PRODUCTSERVICENAME"},{"av":"A29LocationId","fld":"LOCATIONID"},{"av":"A11OrganisationId","fld":"ORGANISATIONID"},{"av":"AV36OrganisationId","fld":"vORGANISATIONID","hsh":true}]""");
+         setEventMetadata("ENTER",""","oparms":[{"av":"AV54PageType","fld":"vPAGETYPE"},{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV52IsPopup","fld":"vISPOPUP"},{"av":"AV31CheckRequiredFieldsResult","fld":"vCHECKREQUIREDFIELDSRESULT"},{"av":"AV33FileType","fld":"vFILETYPE"},{"av":"AV37ProductServiceImageVar","fld":"vPRODUCTSERVICEIMAGEVAR"},{"av":"AV32FileName","fld":"vFILENAME"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV15ProductServiceId","fld":"vPRODUCTSERVICEID"}]}""");
+         setEventMetadata("'WIZARDPREVIOUS'","""{"handler":"E166C2","iparms":[{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV54PageType","fld":"vPAGETYPE"},{"av":"AV52IsPopup","fld":"vISPOPUP"}]}""");
          setEventMetadata("'DOUSERACTIONDELETE'","""{"handler":"E236C1","iparms":[]""");
          setEventMetadata("'DOUSERACTIONDELETE'",""","oparms":[{"av":"AV37ProductServiceImageVar","fld":"vPRODUCTSERVICEIMAGEVAR"},{"av":"AV32FileName","fld":"vFILENAME"},{"av":"lblUseractiondelete_Visible","ctrl":"USERACTIONDELETE","prop":"Visible"}]}""");
          setEventMetadata("COMBO_SUPPLIERGENID.ONOPTIONCLICKED","""{"handler":"E126C2","iparms":[{"av":"Combo_suppliergenid_Selectedvalue_get","ctrl":"COMBO_SUPPLIERGENID","prop":"SelectedValue_get"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"A44SupplierGenCompanyName","fld":"SUPPLIERGENCOMPANYNAME"},{"av":"A11OrganisationId","fld":"ORGANISATIONID"},{"av":"AV36OrganisationId","fld":"vORGANISATIONID","hsh":true},{"av":"A42SupplierGenId","fld":"SUPPLIERGENID"}]""");
          setEventMetadata("COMBO_SUPPLIERGENID.ONOPTIONCLICKED",""","oparms":[{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"Combo_suppliergenid_Selectedvalue_set","ctrl":"COMBO_SUPPLIERGENID","prop":"SelectedValue_set"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV22SupplierGenId_Data","fld":"vSUPPLIERGENID_DATA"},{"av":"Combo_suppliergenid_Includeaddnewoption","ctrl":"COMBO_SUPPLIERGENID","prop":"IncludeAddNewOption"}]}""");
          setEventMetadata("COMBO_SUPPLIERAGBID.ONOPTIONCLICKED","""{"handler":"E116C2","iparms":[{"av":"Combo_supplieragbid_Selectedvalue_get","ctrl":"COMBO_SUPPLIERAGBID","prop":"SelectedValue_get"}]""");
          setEventMetadata("COMBO_SUPPLIERAGBID.ONOPTIONCLICKED",""","oparms":[{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"}]}""");
-         setEventMetadata("'DOUSERACTION1'","""{"handler":"E176C2","iparms":[{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV52IsPopup","fld":"vISPOPUP"}]}""");
+         setEventMetadata("'DOUSERACTION1'","""{"handler":"E176C2","iparms":[{"av":"AV54PageType","fld":"vPAGETYPE"},{"av":"AV53FromToolBox_ProductServiceId","fld":"vFROMTOOLBOX_PRODUCTSERVICEID"},{"av":"AV52IsPopup","fld":"vISPOPUP"}]}""");
          setEventMetadata("VPRODUCTSERVICEGROUP.CONTROLVALUECHANGED","""{"handler":"E186C2","iparms":[{"av":"dynavProductservicegroup"},{"av":"AV14ProductServiceGroup","fld":"vPRODUCTSERVICEGROUP"},{"av":"AV47noFilterAgb","fld":"vNOFILTERAGB"},{"av":"A51SupplierAgbName","fld":"SUPPLIERAGBNAME"},{"av":"A49SupplierAgbId","fld":"SUPPLIERAGBID"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"AV44PreferredAgbSuppliers","fld":"vPREFERREDAGBSUPPLIERS","hsh":true},{"av":"AV50isStart","fld":"vISSTART"},{"av":"AV48noFilterGen","fld":"vNOFILTERGEN"},{"av":"A44SupplierGenCompanyName","fld":"SUPPLIERGENCOMPANYNAME"},{"av":"A11OrganisationId","fld":"ORGANISATIONID"},{"av":"AV36OrganisationId","fld":"vORGANISATIONID","hsh":true},{"av":"A42SupplierGenId","fld":"SUPPLIERGENID"},{"av":"AV45PreferredGenSuppliers","fld":"vPREFERREDGENSUPPLIERS"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"}]""");
          setEventMetadata("VPRODUCTSERVICEGROUP.CONTROLVALUECHANGED",""","oparms":[{"av":"AV47noFilterAgb","fld":"vNOFILTERAGB"},{"av":"AV48noFilterGen","fld":"vNOFILTERGEN"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"divTablesupplieragb_Visible","ctrl":"TABLESUPPLIERAGB","prop":"Visible"},{"av":"divTablesuppliergen_Visible","ctrl":"TABLESUPPLIERGEN","prop":"Visible"},{"av":"AV20SupplierAgbId_Data","fld":"vSUPPLIERAGBID_DATA"},{"av":"AV22SupplierGenId_Data","fld":"vSUPPLIERGENID_DATA"},{"av":"Combo_supplieragbid_Selectedvalue_set","ctrl":"COMBO_SUPPLIERAGBID","prop":"SelectedValue_set"},{"av":"Combo_suppliergenid_Selectedvalue_set","ctrl":"COMBO_SUPPLIERGENID","prop":"SelectedValue_set"},{"av":"AV50isStart","fld":"vISSTART"}]}""");
          setEventMetadata("VNOFILTERGEN.CONTROLVALUECHANGED","""{"handler":"E196C2","iparms":[{"av":"AV47noFilterAgb","fld":"vNOFILTERAGB"},{"av":"dynavProductservicegroup"},{"av":"AV14ProductServiceGroup","fld":"vPRODUCTSERVICEGROUP"},{"av":"A51SupplierAgbName","fld":"SUPPLIERAGBNAME"},{"av":"A49SupplierAgbId","fld":"SUPPLIERAGBID"},{"av":"AV19SupplierAgbId","fld":"vSUPPLIERAGBID"},{"av":"AV44PreferredAgbSuppliers","fld":"vPREFERREDAGBSUPPLIERS","hsh":true},{"av":"AV50isStart","fld":"vISSTART"},{"av":"AV48noFilterGen","fld":"vNOFILTERGEN"},{"av":"A44SupplierGenCompanyName","fld":"SUPPLIERGENCOMPANYNAME"},{"av":"A11OrganisationId","fld":"ORGANISATIONID"},{"av":"AV36OrganisationId","fld":"vORGANISATIONID","hsh":true},{"av":"A42SupplierGenId","fld":"SUPPLIERGENID"},{"av":"AV45PreferredGenSuppliers","fld":"vPREFERREDGENSUPPLIERS"},{"av":"AV21SupplierGenId","fld":"vSUPPLIERGENID"}]""");
@@ -3101,6 +3149,7 @@ namespace GeneXus.Programs {
          wcpOAV25WebSessionKey = "";
          wcpOAV12PreviousStep = "";
          wcpOAV53FromToolBox_ProductServiceId = Guid.Empty;
+         wcpOAV54PageType = "";
          Combo_suppliergenid_Selectedvalue_get = "";
          Combo_supplieragbid_Selectedvalue_get = "";
          gxfirstwebparm = "";
@@ -3207,6 +3256,7 @@ namespace GeneXus.Programs {
          sCtrlAV10GoingBack = "";
          sCtrlAV52IsPopup = "";
          sCtrlAV53FromToolBox_ProductServiceId = "";
+         sCtrlAV54PageType = "";
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.wp_productservicestep1__default(),
             new Object[][] {
                 new Object[] {
@@ -3389,6 +3439,7 @@ namespace GeneXus.Programs {
       private string sCtrlAV10GoingBack ;
       private string sCtrlAV52IsPopup ;
       private string sCtrlAV53FromToolBox_ProductServiceId ;
+      private string sCtrlAV54PageType ;
       private bool AV10GoingBack ;
       private bool AV52IsPopup ;
       private bool wcpOAV10GoingBack ;
@@ -3423,8 +3474,10 @@ namespace GeneXus.Programs {
       private string AV37ProductServiceImageVar ;
       private string AV25WebSessionKey ;
       private string AV12PreviousStep ;
+      private string AV54PageType ;
       private string wcpOAV25WebSessionKey ;
       private string wcpOAV12PreviousStep ;
+      private string wcpOAV54PageType ;
       private string AV33FileType ;
       private string A59ProductServiceName ;
       private string A44SupplierGenCompanyName ;
@@ -3462,6 +3515,7 @@ namespace GeneXus.Programs {
       private IGxDataStore dsDefault ;
       private bool aP3_IsPopup ;
       private Guid aP4_FromToolBox_ProductServiceId ;
+      private string aP5_PageType ;
       private GXCombobox dynavLocationid ;
       private GXCombobox cmbavProductserviceclass ;
       private GXCombobox dynavProductservicegroup ;

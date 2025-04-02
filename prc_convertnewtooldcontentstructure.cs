@@ -79,10 +79,10 @@ namespace GeneXus.Programs {
          AV11SDT_ContentPageV1.gxTpr_Pageid = AV16PageId;
          AV11SDT_ContentPageV1.gxTpr_Pagename = AV15PageName;
          AV11SDT_ContentPageV1.gxTpr_Cta.Clear();
-         AV17GXV1 = 1;
-         while ( AV17GXV1 <= AV10SDT_ContentPage.gxTpr_Cta.Count )
+         AV20GXV1 = 1;
+         while ( AV20GXV1 <= AV10SDT_ContentPage.gxTpr_Cta.Count )
          {
-            AV13CtaItem = ((SdtSDT_ContentPage_CtaItem)AV10SDT_ContentPage.gxTpr_Cta.Item(AV17GXV1));
+            AV13CtaItem = ((SdtSDT_ContentPage_CtaItem)AV10SDT_ContentPage.gxTpr_Cta.Item(AV20GXV1));
             AV14CtaItemV1 = new SdtSDT_ContentPageV1_CtaItem(context);
             AV14CtaItemV1.gxTpr_Ctaid = StringUtil.StrToGuid( AV13CtaItem.gxTpr_Ctaid);
             AV14CtaItemV1.gxTpr_Ctatype = AV13CtaItem.gxTpr_Ctatype;
@@ -107,7 +107,8 @@ namespace GeneXus.Programs {
                AV14CtaItemV1.gxTpr_Isimagebutton = false;
                AV14CtaItemV1.gxTpr_Isfullwidth = false;
             }
-            AV17GXV1 = (int)(AV17GXV1+1);
+            AV11SDT_ContentPageV1.gxTpr_Cta.Add(AV14CtaItemV1, 0);
+            AV20GXV1 = (int)(AV20GXV1+1);
          }
          cleanup();
       }
@@ -130,7 +131,7 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private int AV17GXV1 ;
+      private int AV20GXV1 ;
       private string AV15PageName ;
       private Guid AV16PageId ;
       private SdtSDT_ContentPage AV10SDT_ContentPage ;

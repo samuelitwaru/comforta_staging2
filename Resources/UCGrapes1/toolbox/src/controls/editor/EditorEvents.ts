@@ -39,6 +39,7 @@ export class EditorEvents {
     new FrameEvent(this.frameId);
     this.onDragAndDrop();
     this.onSelected();
+    this.onComponentUpdate();
     this.onLoad();
   }
 
@@ -68,6 +69,14 @@ export class EditorEvents {
     }
   }
 
+  onComponentUpdate() {
+    this.editor.on("component:update", (model: any) => {
+      // console.log("Component updated", model);
+      window.dispatchEvent(new CustomEvent('pageChanged', { 
+        detail: { pageId: this.pageId } 
+      }));
+    })
+  }
   onDragAndDrop() {
     let sourceComponent: any;
     let destinationComponent: any;
@@ -230,9 +239,8 @@ export class EditorEvents {
       if (Object.keys(data).length > 0) {
         childPage = data
       } else {
-        const version = await this.appVersionManager.getActiveVersion();
-        console.log('version', version)
-        childPage = version?.Pages.find((page: any) => page.PageId === objectId);
+        // const version = await this.appVersionManager.getActiveVersion();
+        childPage = this.appVersionManager.getPages()?.find((page: any) => page.PageId === objectId);
       }
 
       this.removeOtherEditors();
@@ -243,7 +251,7 @@ export class EditorEvents {
     } else{
       this.removeOtherEditors();
       if (selectedComponent.getClasses().includes('template-block')) {
-        const newPageButton = new NewPageButton(this.toolboxService, this.appVersionManager)
+        const newPageButton = new NewPageButton(this.toolboxService, this.appVersionManager, this.pageData)
         newPageButton.render();
         const activateNav = this.activateNavigators();
         activateNav.scrollBy(200)

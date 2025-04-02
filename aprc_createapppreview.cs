@@ -91,9 +91,7 @@ namespace GeneXus.Programs {
       {
          /* GeneXus formulas */
          /* Output device settings */
-         GXKey = Crypto.GetSiteKey( );
-         GXEncryptionTmp = "wp_apppreview.aspx"+UrlEncode(AV8AppVersionId.ToString());
-         CallWebObject(formatLink("wp_apppreview.aspx") + "?" + UriEncrypt64( GXEncryptionTmp+Crypto.CheckSum( GXEncryptionTmp, 6), GXKey));
+         CallWebObject(formatLink("wp_apppreview.aspx", new object[] {UrlEncode(AV8AppVersionId.ToString())}, new string[] {"AppVersionId"}) );
          context.wjLocDisableFrm = 1;
          if ( context.WillRedirect( ) )
          {
@@ -119,7 +117,6 @@ namespace GeneXus.Programs {
          GXKey = "";
          GXDecQS = "";
          gxfirstwebparm = "";
-         GXEncryptionTmp = "";
          /* GeneXus formulas. */
       }
 
@@ -128,7 +125,6 @@ namespace GeneXus.Programs {
       private string GXKey ;
       private string GXDecQS ;
       private string gxfirstwebparm ;
-      private string GXEncryptionTmp ;
       private bool entryPointCalled ;
       private Guid AV8AppVersionId ;
    }

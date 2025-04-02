@@ -52,8 +52,6 @@ export class ChildEditor {
       }
     }
     let converter;
-    console.log("PageType:", this.pageData?.PageType);
-    console.log("PageType:", this.pageData);
     if (
         this.pageData?.PageType === "Menu" ||
         this.pageData?.PageType === "MyLiving" ||
@@ -83,7 +81,6 @@ export class ChildEditor {
       const mapsPageEditor = new MapsPageEditor(childEditor);
       mapsPageEditor.initialise(tileAttributes.Action);
     } else if (this.pageData?.PageType === "MyActivity") {
-      console.log("MyActivity")
       const activityEditor = new LoadMyActivityData(childEditor);
       activityEditor.load();
     } else if (this.pageData?.PageType === "Calendar") {

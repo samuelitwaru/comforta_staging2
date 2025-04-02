@@ -111,6 +111,12 @@ namespace GeneXus.Programs {
                }
                gxfirstwebparm = gxfirstwebparm_bkp;
             }
+            if ( ! entryPointCalled && ! ( isAjaxCallMode( ) || isFullAjaxMode( ) ) )
+            {
+               AV9AppVersionId = StringUtil.StrToGuid( gxfirstwebparm);
+               AssignAttri("", false, "AV9AppVersionId", AV9AppVersionId.ToString());
+               GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
+            }
             if ( toggleJsOutput )
             {
                if ( context.isSpaRequest( ) )
@@ -123,30 +129,6 @@ namespace GeneXus.Programs {
          {
             context.PushCurrentUrl();
          }
-      }
-
-      protected override bool IntegratedSecurityEnabled
-      {
-         get {
-            return true ;
-         }
-
-      }
-
-      protected override GAMSecurityLevel IntegratedSecurityLevel
-      {
-         get {
-            return GAMSecurityLevel.SecurityHigh ;
-         }
-
-      }
-
-      protected override string ExecutePermissionPrefix
-      {
-         get {
-            return "wp_apppreview_Execute" ;
-         }
-
       }
 
       public override void webExecute( )
@@ -251,9 +233,7 @@ namespace GeneXus.Programs {
          context.skipLines(1);
          if ( nGXWrapped != 1 )
          {
-            GXKey = Crypto.GetSiteKey( );
-            GXEncryptionTmp = "wp_apppreview.aspx"+UrlEncode(AV9AppVersionId.ToString());
-            context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("wp_apppreview.aspx") + "?" + UriEncrypt64( GXEncryptionTmp+Crypto.CheckSum( GXEncryptionTmp, 6), GXKey)+"\">") ;
+            context.WriteHtmlTextNl( "<form id=\"MAINFORM\" autocomplete=\"off\" name=\"MAINFORM\" method=\"post\" tabindex=-1  class=\"form-horizontal Form\" data-gx-class=\"form-horizontal Form\" novalidate action=\""+formatLink("wp_apppreview.aspx", new object[] {UrlEncode(AV9AppVersionId.ToString())}, new string[] {"AppVersionId"}) +"\">") ;
             GxWebStd.gx_hidden_field( context, "_EventName", "");
             GxWebStd.gx_hidden_field( context, "_EventGridId", "");
             GxWebStd.gx_hidden_field( context, "_EventRowId", "");
@@ -271,7 +251,7 @@ namespace GeneXus.Programs {
       {
          GxWebStd.gx_hidden_field( context, "vAPPVERSIONID", AV9AppVersionId.ToString());
          GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
-         GXKey = Crypto.GetSiteKey( );
+         GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
       }
 
       protected void SendCloseFormHiddens( )
@@ -514,50 +494,11 @@ namespace GeneXus.Programs {
       {
          if ( nDonePA == 0 )
          {
-            GXKey = Crypto.GetSiteKey( );
-            if ( ( StringUtil.StrCmp(context.GetRequestQueryString( ), "") != 0 ) && ( GxWebError == 0 ) && ! ( isAjaxCallMode( ) || isFullAjaxMode( ) ) )
+            if ( String.IsNullOrEmpty(StringUtil.RTrim( context.GetCookie( "GX_SESSION_ID"))) )
             {
-               GXDecQS = UriDecrypt64( context.GetRequestQueryString( ), GXKey);
-               if ( ( StringUtil.StrCmp(StringUtil.Right( GXDecQS, 6), Crypto.CheckSum( StringUtil.Left( GXDecQS, (short)(StringUtil.Len( GXDecQS)-6)), 6)) == 0 ) && ( StringUtil.StrCmp(StringUtil.Substring( GXDecQS, 1, StringUtil.Len( "wp_apppreview.aspx")), "wp_apppreview.aspx") == 0 ) )
-               {
-                  SetQueryString( StringUtil.Right( StringUtil.Left( GXDecQS, (short)(StringUtil.Len( GXDecQS)-6)), (short)(StringUtil.Len( StringUtil.Left( GXDecQS, (short)(StringUtil.Len( GXDecQS)-6)))-StringUtil.Len( "wp_apppreview.aspx")))) ;
-               }
-               else
-               {
-                  GxWebError = 1;
-                  context.HttpContext.Response.StatusCode = 403;
-                  context.WriteHtmlText( "<title>403 Forbidden</title>") ;
-                  context.WriteHtmlText( "<h1>403 Forbidden</h1>") ;
-                  context.WriteHtmlText( "<p /><hr />") ;
-                  GXUtil.WriteLog("send_http_error_code " + 403.ToString());
-               }
+               gxcookieaux = context.SetCookie( "GX_SESSION_ID", Encrypt64( Crypto.GetEncryptionKey( ), Crypto.GetServerKey( )), "", (DateTime)(DateTime.MinValue), "", (short)(context.GetHttpSecure( )));
             }
-            if ( ! ( isAjaxCallMode( ) || isFullAjaxMode( ) ) )
-            {
-               if ( nGotPars == 0 )
-               {
-                  entryPointCalled = false;
-                  gxfirstwebparm = GetFirstPar( "AppVersionId");
-                  toggleJsOutput = isJsOutputEnabled( );
-                  if ( context.isSpaRequest( ) )
-                  {
-                     disableJsOutput();
-                  }
-                  if ( ! entryPointCalled && ! ( isAjaxCallMode( ) || isFullAjaxMode( ) ) )
-                  {
-                     AV9AppVersionId = StringUtil.StrToGuid( gxfirstwebparm);
-                     AssignAttri("", false, "AV9AppVersionId", AV9AppVersionId.ToString());
-                     GxWebStd.gx_hidden_field( context, "gxhash_vAPPVERSIONID", GetSecureSignedToken( "", AV9AppVersionId, context));
-                  }
-                  if ( toggleJsOutput )
-                  {
-                     if ( context.isSpaRequest( ) )
-                     {
-                        enableJsOutput();
-                     }
-                  }
-               }
-            }
+            GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
             toggleJsOutput = isJsOutputEnabled( );
             if ( context.isSpaRequest( ) )
             {
@@ -657,7 +598,7 @@ namespace GeneXus.Programs {
             /* Read variables values. */
             /* Read subfile selected row values. */
             /* Read hidden variables. */
-            GXKey = Crypto.GetSiteKey( );
+            GXKey = Decrypt64( context.GetCookie( "GX_SESSION_ID"), Crypto.GetServerKey( ));
          }
          else
          {
@@ -816,7 +757,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025411259432", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254266451", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -834,7 +775,7 @@ namespace GeneXus.Programs {
          if ( nGXWrapped != 1 )
          {
             context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-            context.AddJavascriptSource("wp_apppreview.js", "?2025411259433", false, true);
+            context.AddJavascriptSource("wp_apppreview.js", "?20254266452", false, true);
             context.AddJavascriptSource("UserControls/UC_AppPreviewRender.js", "", false, true);
          }
          /* End function include_jscripts */
@@ -899,7 +840,6 @@ namespace GeneXus.Programs {
          FormProcess = "";
          bodyStyle = "";
          GXKey = "";
-         GXEncryptionTmp = "";
          AV12SDT_AppVersion2 = new SdtSDT_AppVersion2(context);
          GX_FocusControl = "";
          sPrefix = "";
@@ -911,7 +851,6 @@ namespace GeneXus.Programs {
          EvtGridId = "";
          EvtRowId = "";
          sEvtType = "";
-         GXDecQS = "";
          AV8BC_Trn_AppVersion = new SdtTrn_AppVersion(context);
          AV7SDT_AppVersion = new SdtSDT_AppVersion(context);
          H00B02_A11OrganisationId = new Guid[] {Guid.Empty} ;
@@ -998,6 +937,7 @@ namespace GeneXus.Programs {
       private short wbEnd ;
       private short wbStart ;
       private short nDonePA ;
+      private short gxcookieaux ;
       private short A405Trn_ThemeFontSize ;
       private int idxLst ;
       private string gxfirstwebparm ;
@@ -1006,7 +946,6 @@ namespace GeneXus.Programs {
       private string FormProcess ;
       private string bodyStyle ;
       private string GXKey ;
-      private string GXEncryptionTmp ;
       private string GX_FocusControl ;
       private string sPrefix ;
       private string divLayoutmaintable_Internalname ;
@@ -1019,7 +958,6 @@ namespace GeneXus.Programs {
       private string EvtGridId ;
       private string EvtRowId ;
       private string sEvtType ;
-      private string GXDecQS ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
       private bool wbLoad ;
