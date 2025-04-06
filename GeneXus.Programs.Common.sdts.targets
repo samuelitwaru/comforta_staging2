@@ -14,6 +14,8 @@
  	<Compile Include="$(WebDirectory)\type_SdtGxMap_Line.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtGxMap_Line_Point.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtGxMap_RoutePoint.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDTLanguageRequestBody.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDTLanguageResponseBody.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_AgendaLocation.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_ApiListResponse.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_ApiResidentFilledForms.cs" />
@@ -98,6 +100,9 @@
  	<Compile Include="$(WebDirectory)\type_SdtSDT_Theme_CtaColorsItem.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_Tile.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtSDT_TileAction.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_TrnAttributes.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_TrnAttributes_Transaction.cs" />
+ 	<Compile Include="$(WebDirectory)\type_SdtSDT_TrnAttributes_Transaction_AttributeItem.cs" />
  	<Compile Include="$(WebDirectory)\type_SdtUHomeModulesSDT_UHomeModulesSDTItem.cs" />
  	<Compile Include="$(WebDirectory)\workwithplus\type_SdtWWPConfFormattingVariable.cs" />
  	<Compile Include="$(WebDirectory)\workwithplus\type_SdtWWP_Calendar_Events_Item.cs" />

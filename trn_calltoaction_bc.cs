@@ -109,9 +109,9 @@ namespace GeneXus.Programs {
                CheckExtendedTable1572( ) ;
                if ( AnyError == 0 )
                {
-                  ZM1572( 14) ;
-                  ZM1572( 15) ;
                   ZM1572( 16) ;
+                  ZM1572( 17) ;
+                  ZM1572( 18) ;
                }
                CloseExtendedTableCursors1572( ) ;
             }
@@ -135,7 +135,7 @@ namespace GeneXus.Programs {
 
       protected void ZM1572( short GX_JID )
       {
-         if ( ( GX_JID == 13 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 15 ) || ( GX_JID == 0 ) )
          {
             Z367CallToActionUrl = A367CallToActionUrl;
             Z368CallToActionName = A368CallToActionName;
@@ -150,17 +150,17 @@ namespace GeneXus.Programs {
             Z366LocationDynamicFormId = A366LocationDynamicFormId;
             Z219WWPFormLatestVersionNumber = A219WWPFormLatestVersionNumber;
          }
-         if ( ( GX_JID == 14 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 16 ) || ( GX_JID == 0 ) )
          {
             Z219WWPFormLatestVersionNumber = A219WWPFormLatestVersionNumber;
          }
-         if ( ( GX_JID == 15 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 17 ) || ( GX_JID == 0 ) )
          {
             Z206WWPFormId = A206WWPFormId;
             Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
             Z219WWPFormLatestVersionNumber = A219WWPFormLatestVersionNumber;
          }
-         if ( ( GX_JID == 16 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 18 ) || ( GX_JID == 0 ) )
          {
             Z208WWPFormReferenceName = A208WWPFormReferenceName;
             Z209WWPFormTitle = A209WWPFormTitle;
@@ -173,7 +173,7 @@ namespace GeneXus.Programs {
             Z242WWPFormIsForDynamicValidations = A242WWPFormIsForDynamicValidations;
             Z219WWPFormLatestVersionNumber = A219WWPFormLatestVersionNumber;
          }
-         if ( GX_JID == -13 )
+         if ( GX_JID == -15 )
          {
             Z339CallToActionId = A339CallToActionId;
             Z367CallToActionUrl = A367CallToActionUrl;
@@ -250,7 +250,7 @@ namespace GeneXus.Programs {
             n366LocationDynamicFormId = BC00157_n366LocationDynamicFormId[0];
             A206WWPFormId = BC00157_A206WWPFormId[0];
             A207WWPFormVersionNumber = BC00157_A207WWPFormVersionNumber[0];
-            ZM1572( -13) ;
+            ZM1572( -15) ;
          }
          pr_default.close(5);
          OnLoadActions1572( ) ;
@@ -378,7 +378,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A339CallToActionId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM1572( 13) ;
+            ZM1572( 15) ;
             RcdFound72 = 1;
             A339CallToActionId = BC00153_A339CallToActionId[0];
             A367CallToActionUrl = BC00153_A367CallToActionUrl[0];
@@ -678,6 +678,7 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* After transaction rules */
+            new prc_addtodynamictransalation(context ).execute(  AV27SDT_TrnAttributes) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -803,6 +804,9 @@ namespace GeneXus.Programs {
       protected void BeforeComplete1572( )
       {
          /* Before Complete Rules */
+         GXt_SdtSDT_TrnAttributes3 = AV27SDT_TrnAttributes;
+         new prc_addcalltoactionattributestosdt(context ).execute(  A339CallToActionId, out  GXt_SdtSDT_TrnAttributes3) ;
+         AV27SDT_TrnAttributes = GXt_SdtSDT_TrnAttributes3;
       }
 
       protected void BeforeValidate1572( )
@@ -831,6 +835,7 @@ namespace GeneXus.Programs {
       protected void InitializeNonKey1572( )
       {
          A367CallToActionUrl = "";
+         AV27SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          A219WWPFormLatestVersionNumber = 0;
          A58ProductServiceId = Guid.Empty;
          A11OrganisationId = Guid.Empty;
@@ -1041,7 +1046,7 @@ namespace GeneXus.Programs {
             Gx_mode = "UPD";
             Z339CallToActionId = A339CallToActionId;
          }
-         ZM1572( -13) ;
+         ZM1572( -15) ;
          OnLoadActions1572( ) ;
          AddRow1572( ) ;
          ScanKeyEnd1572( ) ;
@@ -1070,7 +1075,7 @@ namespace GeneXus.Programs {
             Gx_mode = "UPD";
             Z339CallToActionId = A339CallToActionId;
          }
-         ZM1572( -13) ;
+         ZM1572( -15) ;
          OnLoadActions1572( ) ;
          AddRow1572( ) ;
          ScanKeyEnd1572( ) ;
@@ -1572,6 +1577,7 @@ namespace GeneXus.Programs {
          BC001513_A240WWPFormType = new short[1] ;
          BC001513_A241WWPFormSectionRefElements = new string[] {""} ;
          BC001513_A242WWPFormIsForDynamicValidations = new bool[] {false} ;
+         AV27SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          BC001514_A339CallToActionId = new Guid[] {Guid.Empty} ;
          BC001514_A367CallToActionUrl = new string[] {""} ;
          BC001514_A368CallToActionName = new string[] {""} ;
@@ -1598,6 +1604,7 @@ namespace GeneXus.Programs {
          BC001514_n366LocationDynamicFormId = new bool[] {false} ;
          BC001514_A206WWPFormId = new short[1] ;
          BC001514_A207WWPFormVersionNumber = new short[1] ;
+         GXt_SdtSDT_TrnAttributes3 = new SdtSDT_TrnAttributes(context);
          BackMsgLst = new msglist();
          LclMsgLst = new msglist();
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.trn_calltoaction_bc__datastore1(),
@@ -1814,6 +1821,7 @@ namespace GeneXus.Programs {
       private short[] BC001513_A240WWPFormType ;
       private string[] BC001513_A241WWPFormSectionRefElements ;
       private bool[] BC001513_A242WWPFormIsForDynamicValidations ;
+      private SdtSDT_TrnAttributes AV27SDT_TrnAttributes ;
       private Guid[] BC001514_A339CallToActionId ;
       private string[] BC001514_A367CallToActionUrl ;
       private string[] BC001514_A368CallToActionName ;
@@ -1840,6 +1848,7 @@ namespace GeneXus.Programs {
       private bool[] BC001514_n366LocationDynamicFormId ;
       private short[] BC001514_A206WWPFormId ;
       private short[] BC001514_A207WWPFormVersionNumber ;
+      private SdtSDT_TrnAttributes GXt_SdtSDT_TrnAttributes3 ;
       private SdtTrn_CallToAction bcTrn_CallToAction ;
       private msglist BackMsgLst ;
       private msglist LclMsgLst ;

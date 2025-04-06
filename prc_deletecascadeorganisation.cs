@@ -100,7 +100,6 @@ namespace GeneXus.Programs {
             new prc_deletecascademanager(context ).execute(  Guid.Empty,  A11OrganisationId) ;
             new prc_deletecascadeorganisationsetting(context ).execute(  Guid.Empty,  A11OrganisationId) ;
             new prc_deletecascadesuppliergen(context ).execute(  Guid.Empty,  A11OrganisationId) ;
-            new prc_deletecascadetheme(context ).execute(  Guid.Empty,  A11OrganisationId, ref  AV9isSuccessful, ref  AV12Message) ;
             AV14Trn_Organisation.Load(A11OrganisationId);
             AV14Trn_Organisation.Delete();
             if ( AV14Trn_Organisation.Success() )

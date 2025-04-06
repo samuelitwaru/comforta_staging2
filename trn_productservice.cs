@@ -77,7 +77,21 @@ namespace GeneXus.Programs {
             GXDSAPRODUCTSERVICEGROUP0868( ) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_49") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxAggSel35"+"_"+"vSDT_TRNATTRIBUTES") == 0 )
+         {
+            A58ProductServiceId = StringUtil.StrToGuid( GetPar( "ProductServiceId"));
+            n58ProductServiceId = false;
+            AssignAttri("", false, "A58ProductServiceId", A58ProductServiceId.ToString());
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1;
+               return  ;
+            }
+            GX35ASASDT_TRNATTRIBUTES0868( A58ProductServiceId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_53") == 0 )
          {
             A29LocationId = StringUtil.StrToGuid( GetPar( "LocationId"));
             AssignAttri("", false, "A29LocationId", A29LocationId.ToString());
@@ -89,10 +103,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_49( A29LocationId, A11OrganisationId) ;
+            gxLoad_53( A29LocationId, A11OrganisationId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_50") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_54") == 0 )
          {
             A42SupplierGenId = StringUtil.StrToGuid( GetPar( "SupplierGenId"));
             n42SupplierGenId = false;
@@ -103,10 +117,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_50( A42SupplierGenId) ;
+            gxLoad_54( A42SupplierGenId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_51") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_55") == 0 )
          {
             A49SupplierAgbId = StringUtil.StrToGuid( GetPar( "SupplierAgbId"));
             n49SupplierAgbId = false;
@@ -117,7 +131,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_51( A49SupplierAgbId) ;
+            gxLoad_55( A49SupplierAgbId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -846,7 +860,7 @@ namespace GeneXus.Programs {
          /* Div Control */
          GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
          /* Div Control */
-         GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "col-xs-12 DataContentCell CKEditor", "start", "top", "", "", "div");
+         GxWebStd.gx_div_start( context, divProductservicedescription_cell_Internalname, 1, 0, "px", 0, "px", divProductservicedescription_cell_Class, "start", "top", "", "", "div");
          /* Div Control */
          GxWebStd.gx_div_start( context, "", -1, 0, "px", 0, "px", "form-group gx-form-group", "start", "top", ""+" data-gx-for=\""+Productservicedescription_Internalname+"\"", "", "div");
          /* Attribute/Variable Label */
@@ -1042,11 +1056,12 @@ namespace GeneXus.Programs {
                AV10Insert_SupplierGenId = StringUtil.StrToGuid( cgiGet( "vINSERT_SUPPLIERGENID"));
                AV9Insert_SupplierAgbId = StringUtil.StrToGuid( cgiGet( "vINSERT_SUPPLIERAGBID"));
                AV57isManager = StringUtil.StrToBool( cgiGet( "vISMANAGER"));
+               ajax_req_read_hidden_sdt(cgiGet( "vSDT_TRNATTRIBUTES"), AV66SDT_TrnAttributes);
                A60ProductServiceDescription = cgiGet( "PRODUCTSERVICEDESCRIPTION");
                A40000ProductServiceImage_GXI = cgiGet( "PRODUCTSERVICEIMAGE_GXI");
                A44SupplierGenCompanyName = cgiGet( "SUPPLIERGENCOMPANYNAME");
                A51SupplierAgbName = cgiGet( "SUPPLIERAGBNAME");
-               AV67Pgmname = cgiGet( "vPGMNAME");
+               AV68Pgmname = cgiGet( "vPGMNAME");
                Combo_suppliergenid_Objectcall = cgiGet( "COMBO_SUPPLIERGENID_Objectcall");
                Combo_suppliergenid_Class = cgiGet( "COMBO_SUPPLIERGENID_Class");
                Combo_suppliergenid_Icontype = cgiGet( "COMBO_SUPPLIERGENID_Icontype");
@@ -1721,13 +1736,13 @@ namespace GeneXus.Programs {
             if (true) return;
          }
          AV16TrnContext.FromXml(AV18WebSession.Get("TrnContext"), null, "", "");
-         if ( ( StringUtil.StrCmp(AV16TrnContext.gxTpr_Transactionname, AV67Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
+         if ( ( StringUtil.StrCmp(AV16TrnContext.gxTpr_Transactionname, AV68Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
          {
-            AV68GXV1 = 1;
-            AssignAttri("", false, "AV68GXV1", StringUtil.LTrimStr( (decimal)(AV68GXV1), 8, 0));
-            while ( AV68GXV1 <= AV16TrnContext.gxTpr_Attributes.Count )
+            AV69GXV1 = 1;
+            AssignAttri("", false, "AV69GXV1", StringUtil.LTrimStr( (decimal)(AV69GXV1), 8, 0));
+            while ( AV69GXV1 <= AV16TrnContext.gxTpr_Attributes.Count )
             {
-               AV17TrnContextAtt = ((GeneXus.Programs.wwpbaseobjects.SdtWWPTransactionContext_Attribute)AV16TrnContext.gxTpr_Attributes.Item(AV68GXV1));
+               AV17TrnContextAtt = ((GeneXus.Programs.wwpbaseobjects.SdtWWPTransactionContext_Attribute)AV16TrnContext.gxTpr_Attributes.Item(AV69GXV1));
                if ( StringUtil.StrCmp(AV17TrnContextAtt.gxTpr_Attributename, "SupplierGenId") == 0 )
                {
                   AV10Insert_SupplierGenId = StringUtil.StrToGuid( AV17TrnContextAtt.gxTpr_Attributevalue);
@@ -1756,8 +1771,8 @@ namespace GeneXus.Programs {
                      ucCombo_supplieragbid.SendProperty(context, "", false, Combo_supplieragbid_Internalname, "Enabled", StringUtil.BoolToStr( Combo_supplieragbid_Enabled));
                   }
                }
-               AV68GXV1 = (int)(AV68GXV1+1);
-               AssignAttri("", false, "AV68GXV1", StringUtil.LTrimStr( (decimal)(AV68GXV1), 8, 0));
+               AV69GXV1 = (int)(AV69GXV1+1);
+               AssignAttri("", false, "AV69GXV1", StringUtil.LTrimStr( (decimal)(AV69GXV1), 8, 0));
             }
          }
          edtProductServiceId_Visible = 0;
@@ -1908,6 +1923,10 @@ namespace GeneXus.Programs {
          AssignProp("", false, edtavSupplierlocation_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(edtavSupplierlocation_Visible), 5, 0), true);
          divSupplierlocation_cell_Class = "Invisible";
          AssignProp("", false, divSupplierlocation_cell_Internalname, "Class", divSupplierlocation_cell_Class, true);
+         Productservicedescription_Visible = false;
+         AssignProp("", false, Productservicedescription_Internalname, "Visible", StringUtil.BoolToStr( Productservicedescription_Visible), true);
+         divProductservicedescription_cell_Class = "Invisible";
+         AssignProp("", false, divProductservicedescription_cell_Internalname, "Class", divProductservicedescription_cell_Class, true);
          chkavListagbpre.Visible = 0;
          AssignProp("", false, chkavListagbpre_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(chkavListagbpre.Visible), 5, 0), true);
          cellListagbpre_cell_Class = "Invisible";
@@ -2067,7 +2086,7 @@ namespace GeneXus.Programs {
 
       protected void ZM0868( short GX_JID )
       {
-         if ( ( GX_JID == 48 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 52 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -2088,7 +2107,7 @@ namespace GeneXus.Programs {
                Z49SupplierAgbId = A49SupplierAgbId;
             }
          }
-         if ( GX_JID == -48 )
+         if ( GX_JID == -52 )
          {
             Z58ProductServiceId = A58ProductServiceId;
             Z59ProductServiceName = A59ProductServiceName;
@@ -2110,6 +2129,21 @@ namespace GeneXus.Programs {
       protected void standaloneNotModal( )
       {
          GXAPRODUCTSERVICEGROUP_html0868( ) ;
+         Productservicedescription_Visible = (bool)((StringUtil.StrCmp(Gx_mode, "INS")==0)||(StringUtil.StrCmp(Gx_mode, "UPD")==0));
+         AssignProp("", false, Productservicedescription_Internalname, "Visible", StringUtil.BoolToStr( Productservicedescription_Visible), true);
+         if ( ! ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) || ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 ) ) )
+         {
+            divProductservicedescription_cell_Class = context.GetMessage( "Invisible", "");
+            AssignProp("", false, divProductservicedescription_cell_Internalname, "Class", divProductservicedescription_cell_Class, true);
+         }
+         else
+         {
+            if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) || ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 ) )
+            {
+               divProductservicedescription_cell_Class = context.GetMessage( "col-xs-12 DataContentCell CKEditor", "");
+               AssignProp("", false, divProductservicedescription_cell_Internalname, "Class", divProductservicedescription_cell_Class, true);
+            }
+         }
          edtavSupplierlocation_Visible = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? 1 : 0);
          AssignProp("", false, edtavSupplierlocation_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(edtavSupplierlocation_Visible), 5, 0), true);
          if ( ! ( ( StringUtil.StrCmp(Gx_mode, "DSP") == 0 ) ) )
@@ -2187,8 +2221,8 @@ namespace GeneXus.Programs {
          }
          divProductsevicetable_Visible = (((StringUtil.StrCmp(Gx_mode, "DSP")==0)) ? 1 : 0);
          AssignProp("", false, divProductsevicetable_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(divProductsevicetable_Visible), 5, 0), true);
-         AV67Pgmname = "Trn_ProductService";
-         AssignAttri("", false, "AV67Pgmname", AV67Pgmname);
+         AV68Pgmname = "Trn_ProductService";
+         AssignAttri("", false, "AV68Pgmname", AV68Pgmname);
          Gx_BScreen = 0;
          AssignAttri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          bttBtntrn_delete_Enabled = 0;
@@ -2418,7 +2452,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A61ProductServiceImage", A61ProductServiceImage);
             AssignProp("", false, imgProductServiceImage_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( A61ProductServiceImage)) ? A40000ProductServiceImage_GXI : context.convertURL( context.PathToRelativeUrl( A61ProductServiceImage))), true);
             AssignProp("", false, imgProductServiceImage_Internalname, "SrcSet", context.GetImageSrcSet( A61ProductServiceImage), true);
-            ZM0868( -48) ;
+            ZM0868( -52) ;
          }
          pr_default.close(5);
          OnLoadActions0868( ) ;
@@ -2450,7 +2484,7 @@ namespace GeneXus.Programs {
          pr_default.execute(2, new Object[] {A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(2) == 101) )
          {
-            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
             AnyError = 1;
             GX_FocusControl = dynLocationId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
@@ -2524,14 +2558,14 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void gxLoad_49( Guid A29LocationId ,
+      protected void gxLoad_53( Guid A29LocationId ,
                                 Guid A11OrganisationId )
       {
          /* Using cursor T00088 */
          pr_default.execute(6, new Object[] {A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(6) == 101) )
          {
-            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
             AnyError = 1;
             GX_FocusControl = dynLocationId_Internalname;
             AssignAttri("", false, "GX_FocusControl", GX_FocusControl);
@@ -2548,7 +2582,7 @@ namespace GeneXus.Programs {
          pr_default.close(6);
       }
 
-      protected void gxLoad_50( Guid A42SupplierGenId )
+      protected void gxLoad_54( Guid A42SupplierGenId )
       {
          /* Using cursor T00089 */
          pr_default.execute(7, new Object[] {n42SupplierGenId, A42SupplierGenId});
@@ -2576,7 +2610,7 @@ namespace GeneXus.Programs {
          pr_default.close(7);
       }
 
-      protected void gxLoad_51( Guid A49SupplierAgbId )
+      protected void gxLoad_55( Guid A49SupplierAgbId )
       {
          /* Using cursor T000810 */
          pr_default.execute(8, new Object[] {n49SupplierAgbId, A49SupplierAgbId});
@@ -2625,7 +2659,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {n58ProductServiceId, A58ProductServiceId, A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM0868( 48) ;
+            ZM0868( 52) ;
             RcdFound68 = 1;
             A58ProductServiceId = T00083_A58ProductServiceId[0];
             n58ProductServiceId = T00083_n58ProductServiceId[0];
@@ -3197,6 +3231,7 @@ namespace GeneXus.Programs {
                ConfirmValues080( ) ;
             }
             /* After transaction rules */
+            new prc_addtodynamictransalation(context ).execute(  AV66SDT_TrnAttributes) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -3278,6 +3313,9 @@ namespace GeneXus.Programs {
       protected void BeforeComplete0868( )
       {
          /* Before Complete Rules */
+         GXt_SdtSDT_TrnAttributes6 = AV66SDT_TrnAttributes;
+         new prc_addproductserviceattributestosdt(context ).execute(  A58ProductServiceId, out  GXt_SdtSDT_TrnAttributes6) ;
+         AV66SDT_TrnAttributes = GXt_SdtSDT_TrnAttributes6;
       }
 
       protected void BeforeValidate0868( )
@@ -3528,11 +3566,19 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "vINSERT_SUPPLIERGENID", AV10Insert_SupplierGenId.ToString());
          GxWebStd.gx_hidden_field( context, "vINSERT_SUPPLIERAGBID", AV9Insert_SupplierAgbId.ToString());
          GxWebStd.gx_boolean_hidden_field( context, "vISMANAGER", AV57isManager);
+         if ( context.isAjaxRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_sdt_attri("", false, "vSDT_TRNATTRIBUTES", AV66SDT_TrnAttributes);
+         }
+         else
+         {
+            context.httpAjaxContext.ajax_rsp_assign_hidden_sdt("vSDT_TRNATTRIBUTES", AV66SDT_TrnAttributes);
+         }
          GxWebStd.gx_hidden_field( context, "PRODUCTSERVICEDESCRIPTION", A60ProductServiceDescription);
          GxWebStd.gx_hidden_field( context, "PRODUCTSERVICEIMAGE_GXI", A40000ProductServiceImage_GXI);
          GxWebStd.gx_hidden_field( context, "SUPPLIERGENCOMPANYNAME", A44SupplierGenCompanyName);
          GxWebStd.gx_hidden_field( context, "SUPPLIERAGBNAME", A51SupplierAgbName);
-         GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV67Pgmname));
+         GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV68Pgmname));
          GXCCtlgxBlob = "PRODUCTSERVICEIMAGE" + "_gxBlob";
          GxWebStd.gx_hidden_field( context, GXCCtlgxBlob, A61ProductServiceImage);
          GxWebStd.gx_hidden_field( context, "COMBO_SUPPLIERGENID_Objectcall", StringUtil.RTrim( Combo_suppliergenid_Objectcall));
@@ -3567,6 +3613,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "PRODUCTSERVICEDESCRIPTION_Captionclass", StringUtil.RTrim( Productservicedescription_Captionclass));
          GxWebStd.gx_hidden_field( context, "PRODUCTSERVICEDESCRIPTION_Captionstyle", StringUtil.RTrim( Productservicedescription_Captionstyle));
          GxWebStd.gx_hidden_field( context, "PRODUCTSERVICEDESCRIPTION_Captionposition", StringUtil.RTrim( Productservicedescription_Captionposition));
+         GxWebStd.gx_hidden_field( context, "PRODUCTSERVICEDESCRIPTION_Visible", StringUtil.BoolToStr( Productservicedescription_Visible));
       }
 
       public override void RenderHtmlCloseForm( )
@@ -3665,6 +3712,7 @@ namespace GeneXus.Programs {
          AssignAttri("", false, "AV51ListGenPre", AV51ListGenPre);
          AV43ListGen = false;
          AssignAttri("", false, "AV43ListGen", AV43ListGen);
+         AV66SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          A59ProductServiceName = "";
          AssignAttri("", false, "A59ProductServiceName", A59ProductServiceName);
          A266ProductServiceTileName = "";
@@ -3723,7 +3771,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025411145241", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025458184740", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -3739,7 +3787,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("trn_productservice.js", "?2025411145245", false, true);
+         context.AddJavascriptSource("trn_productservice.js", "?2025458184746", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js", "", false, true);
@@ -3803,6 +3851,7 @@ namespace GeneXus.Programs {
          divTableagb_Internalname = "TABLEAGB";
          divUnnamedtable4_Internalname = "UNNAMEDTABLE4";
          Productservicedescription_Internalname = "PRODUCTSERVICEDESCRIPTION";
+         divProductservicedescription_cell_Internalname = "PRODUCTSERVICEDESCRIPTION_CELL";
          lblTextblockdescriptionlabel_Internalname = "TEXTBLOCKDESCRIPTIONLABEL";
          lblDescriptiontext_Internalname = "DESCRIPTIONTEXT";
          divUnnamedtable5_Internalname = "UNNAMEDTABLE5";
@@ -3841,6 +3890,7 @@ namespace GeneXus.Programs {
          Form.Textcolor = 0;
          Form.Backcolor = (int)(0xFFFFFF);
          Form.Caption = context.GetMessage( "Services", "");
+         Productservicedescription_Visible = Convert.ToBoolean( -1);
          edtOrganisationId_Jsonclick = "";
          edtOrganisationId_Enabled = 1;
          edtOrganisationId_Visible = 1;
@@ -3876,6 +3926,7 @@ namespace GeneXus.Programs {
          Productservicedescription_Height = "250";
          Productservicedescription_Width = "100%";
          Productservicedescription_Enabled = Convert.ToBoolean( 1);
+         divProductservicedescription_cell_Class = "col-xs-12";
          chkavListagbpre.Enabled = 1;
          chkavListagbpre.Visible = 1;
          cellListagbpre_cell_Class = "";
@@ -4064,6 +4115,23 @@ namespace GeneXus.Programs {
          }
       }
 
+      protected void GX35ASASDT_TRNATTRIBUTES0868( Guid A58ProductServiceId )
+      {
+         GXt_SdtSDT_TrnAttributes6 = AV66SDT_TrnAttributes;
+         new prc_addproductserviceattributestosdt(context ).execute(  A58ProductServiceId, out  GXt_SdtSDT_TrnAttributes6) ;
+         AV66SDT_TrnAttributes = GXt_SdtSDT_TrnAttributes6;
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( StringUtil.EncodeString( AV66SDT_TrnAttributes.ToXml(false, true, "", "")))+"\"") ;
+         AddString( "]") ;
+         if ( true )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+      }
+
       protected void init_web_controls( )
       {
          dynLocationId.Name = "LOCATIONID";
@@ -4140,7 +4208,7 @@ namespace GeneXus.Programs {
          pr_default.execute(22, new Object[] {A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(22) == 101) )
          {
-            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
             AnyError = 1;
             GX_FocusControl = dynLocationId_Internalname;
          }
@@ -4355,6 +4423,7 @@ namespace GeneXus.Programs {
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
          A11OrganisationId = Guid.Empty;
+         A58ProductServiceId = Guid.Empty;
          A29LocationId = Guid.Empty;
          A42SupplierGenId = Guid.Empty;
          A49SupplierAgbId = Guid.Empty;
@@ -4401,13 +4470,13 @@ namespace GeneXus.Programs {
          AV47SupplierGen_Id = Guid.Empty;
          AV30ComboSupplierAgbId = Guid.Empty;
          AV46SupplierAgb_Id = Guid.Empty;
-         A58ProductServiceId = Guid.Empty;
          AV10Insert_SupplierGenId = Guid.Empty;
          AV9Insert_SupplierAgbId = Guid.Empty;
+         AV66SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          A60ProductServiceDescription = "";
          A44SupplierGenCompanyName = "";
          A51SupplierAgbName = "";
-         AV67Pgmname = "";
+         AV68Pgmname = "";
          Combo_suppliergenid_Objectcall = "";
          Combo_suppliergenid_Class = "";
          Combo_suppliergenid_Icontype = "";
@@ -4639,6 +4708,7 @@ namespace GeneXus.Programs {
          T000823_A11OrganisationId = new Guid[] {Guid.Empty} ;
          T000823_A29LocationId = new Guid[] {Guid.Empty} ;
          T000823_A31LocationName = new string[] {""} ;
+         GXt_SdtSDT_TrnAttributes6 = new SdtSDT_TrnAttributes(context);
          T000824_A29LocationId = new Guid[] {Guid.Empty} ;
          T000825_A44SupplierGenCompanyName = new string[] {""} ;
          T000826_A51SupplierAgbName = new string[] {""} ;
@@ -4732,7 +4802,7 @@ namespace GeneXus.Programs {
          n58ProductServiceId = false;
          A58ProductServiceId = Guid.NewGuid( );
          n58ProductServiceId = false;
-         AV67Pgmname = "Trn_ProductService";
+         AV68Pgmname = "Trn_ProductService";
          Z338ProductServiceGroup = "Location";
          A338ProductServiceGroup = "Location";
          i338ProductServiceGroup = "Location";
@@ -4791,7 +4861,7 @@ namespace GeneXus.Programs {
       private int Combo_supplieragb_id_Gxcontroltype ;
       private int Productservicedescription_Color ;
       private int Productservicedescription_Coltitlecolor ;
-      private int AV68GXV1 ;
+      private int AV69GXV1 ;
       private int idxLst ;
       private int gxdynajaxindex ;
       private string sPrefix ;
@@ -4891,6 +4961,8 @@ namespace GeneXus.Programs {
       private string cellListagbpre_cell_Internalname ;
       private string cellListagbpre_cell_Class ;
       private string chkavListagbpre_Internalname ;
+      private string divProductservicedescription_cell_Internalname ;
+      private string divProductservicedescription_cell_Class ;
       private string Productservicedescription_Internalname ;
       private string Productservicedescription_Width ;
       private string Productservicedescription_Height ;
@@ -4928,7 +5000,7 @@ namespace GeneXus.Programs {
       private string edtProductServiceId_Jsonclick ;
       private string edtOrganisationId_Internalname ;
       private string edtOrganisationId_Jsonclick ;
-      private string AV67Pgmname ;
+      private string AV68Pgmname ;
       private string Combo_suppliergenid_Objectcall ;
       private string Combo_suppliergenid_Class ;
       private string Combo_suppliergenid_Icontype ;
@@ -5061,6 +5133,7 @@ namespace GeneXus.Programs {
       private string gxwrpcisep ;
       private bool entryPointCalled ;
       private bool toggleJsOutput ;
+      private bool n58ProductServiceId ;
       private bool n42SupplierGenId ;
       private bool n49SupplierAgbId ;
       private bool wbErr ;
@@ -5112,7 +5185,6 @@ namespace GeneXus.Programs {
       private bool Productservicedescription_Isabstractlayoutcontrol ;
       private bool Productservicedescription_Usercontroliscolumn ;
       private bool Productservicedescription_Visible ;
-      private bool n58ProductServiceId ;
       private bool returnInSub ;
       private bool AV53IsWeb ;
       private bool Gx_longc ;
@@ -5151,6 +5223,7 @@ namespace GeneXus.Programs {
       private Guid N42SupplierGenId ;
       private Guid N49SupplierAgbId ;
       private Guid A11OrganisationId ;
+      private Guid A58ProductServiceId ;
       private Guid A29LocationId ;
       private Guid A42SupplierGenId ;
       private Guid A49SupplierAgbId ;
@@ -5161,7 +5234,6 @@ namespace GeneXus.Programs {
       private Guid AV47SupplierGen_Id ;
       private Guid AV30ComboSupplierAgbId ;
       private Guid AV46SupplierAgb_Id ;
-      private Guid A58ProductServiceId ;
       private Guid AV10Insert_SupplierGenId ;
       private Guid AV9Insert_SupplierAgbId ;
       private IGxSession AV18WebSession ;
@@ -5189,6 +5261,7 @@ namespace GeneXus.Programs {
       private GXBaseCollection<GeneXus.Programs.wwpbaseobjects.SdtDVB_SDTComboData_Item> AV49SupplierGen_Id_Data ;
       private GXBaseCollection<GeneXus.Programs.wwpbaseobjects.SdtDVB_SDTComboData_Item> AV29SupplierAgbId_Data ;
       private GXBaseCollection<GeneXus.Programs.wwpbaseobjects.SdtDVB_SDTComboData_Item> AV48SupplierAgb_Id_Data ;
+      private SdtSDT_TrnAttributes AV66SDT_TrnAttributes ;
       private GxSimpleCollection<Guid> AV40PreferredAgbSuppliers ;
       private GxSimpleCollection<Guid> AV41PreferredGenSuppliers ;
       private GxSimpleCollection<Guid> GXt_objcol_guid1 ;
@@ -5277,6 +5350,7 @@ namespace GeneXus.Programs {
       private Guid[] T000823_A11OrganisationId ;
       private Guid[] T000823_A29LocationId ;
       private string[] T000823_A31LocationName ;
+      private SdtSDT_TrnAttributes GXt_SdtSDT_TrnAttributes6 ;
       private Guid[] T000824_A29LocationId ;
       private string[] T000825_A44SupplierGenCompanyName ;
       private string[] T000826_A51SupplierAgbName ;

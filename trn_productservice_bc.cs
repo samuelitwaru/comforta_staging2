@@ -110,9 +110,9 @@ namespace GeneXus.Programs {
                CheckExtendedTable0868( ) ;
                if ( AnyError == 0 )
                {
-                  ZM0868( 14) ;
-                  ZM0868( 15) ;
                   ZM0868( 16) ;
+                  ZM0868( 17) ;
+                  ZM0868( 18) ;
                }
                CloseExtendedTableCursors0868( ) ;
             }
@@ -141,12 +141,12 @@ namespace GeneXus.Programs {
             if (true) return;
          }
          AV16TrnContext.FromXml(AV18WebSession.Get("TrnContext"), null, "", "");
-         if ( ( StringUtil.StrCmp(AV16TrnContext.gxTpr_Transactionname, AV67Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
+         if ( ( StringUtil.StrCmp(AV16TrnContext.gxTpr_Transactionname, AV68Pgmname) == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) )
          {
-            AV68GXV1 = 1;
-            while ( AV68GXV1 <= AV16TrnContext.gxTpr_Attributes.Count )
+            AV69GXV1 = 1;
+            while ( AV69GXV1 <= AV16TrnContext.gxTpr_Attributes.Count )
             {
-               AV17TrnContextAtt = ((GeneXus.Programs.wwpbaseobjects.SdtWWPTransactionContext_Attribute)AV16TrnContext.gxTpr_Attributes.Item(AV68GXV1));
+               AV17TrnContextAtt = ((GeneXus.Programs.wwpbaseobjects.SdtWWPTransactionContext_Attribute)AV16TrnContext.gxTpr_Attributes.Item(AV69GXV1));
                if ( StringUtil.StrCmp(AV17TrnContextAtt.gxTpr_Attributename, "SupplierGenId") == 0 )
                {
                   AV10Insert_SupplierGenId = StringUtil.StrToGuid( AV17TrnContextAtt.gxTpr_Attributevalue);
@@ -155,7 +155,7 @@ namespace GeneXus.Programs {
                {
                   AV9Insert_SupplierAgbId = StringUtil.StrToGuid( AV17TrnContextAtt.gxTpr_Attributevalue);
                }
-               AV68GXV1 = (int)(AV68GXV1+1);
+               AV69GXV1 = (int)(AV69GXV1+1);
             }
          }
          /* Execute user subroutine: 'SETSTATEOFSUPPLIER' */
@@ -312,7 +312,7 @@ namespace GeneXus.Programs {
 
       protected void ZM0868( short GX_JID )
       {
-         if ( ( GX_JID == 13 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 15 ) || ( GX_JID == 0 ) )
          {
             Z59ProductServiceName = A59ProductServiceName;
             Z266ProductServiceTileName = A266ProductServiceTileName;
@@ -321,18 +321,18 @@ namespace GeneXus.Programs {
             Z42SupplierGenId = A42SupplierGenId;
             Z49SupplierAgbId = A49SupplierAgbId;
          }
-         if ( ( GX_JID == 14 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 16 ) || ( GX_JID == 0 ) )
          {
          }
-         if ( ( GX_JID == 15 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 17 ) || ( GX_JID == 0 ) )
          {
             Z44SupplierGenCompanyName = A44SupplierGenCompanyName;
          }
-         if ( ( GX_JID == 16 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 18 ) || ( GX_JID == 0 ) )
          {
             Z51SupplierAgbName = A51SupplierAgbName;
          }
-         if ( GX_JID == -13 )
+         if ( GX_JID == -15 )
          {
             Z58ProductServiceId = A58ProductServiceId;
             Z59ProductServiceName = A59ProductServiceName;
@@ -353,7 +353,7 @@ namespace GeneXus.Programs {
 
       protected void standaloneNotModal( )
       {
-         AV67Pgmname = "Trn_ProductService_BC";
+         AV68Pgmname = "Trn_ProductService_BC";
          Gx_BScreen = 0;
       }
 
@@ -393,7 +393,7 @@ namespace GeneXus.Programs {
             A49SupplierAgbId = BC00087_A49SupplierAgbId[0];
             n49SupplierAgbId = BC00087_n49SupplierAgbId[0];
             A61ProductServiceImage = BC00087_A61ProductServiceImage[0];
-            ZM0868( -13) ;
+            ZM0868( -15) ;
          }
          pr_default.close(5);
          OnLoadActions0868( ) ;
@@ -410,7 +410,7 @@ namespace GeneXus.Programs {
          pr_default.execute(2, new Object[] {A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(2) == 101) )
          {
-            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
             AnyError = 1;
          }
          pr_default.close(2);
@@ -482,7 +482,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {n58ProductServiceId, A58ProductServiceId, A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM0868( 13) ;
+            ZM0868( 15) ;
             RcdFound68 = 1;
             A58ProductServiceId = BC00083_A58ProductServiceId[0];
             n58ProductServiceId = BC00083_n58ProductServiceId[0];
@@ -794,6 +794,7 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* After transaction rules */
+            new prc_addtodynamictransalation(context ).execute(  AV66SDT_TrnAttributes) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -901,6 +902,9 @@ namespace GeneXus.Programs {
       protected void BeforeComplete0868( )
       {
          /* Before Complete Rules */
+         GXt_SdtSDT_TrnAttributes4 = AV66SDT_TrnAttributes;
+         new prc_addproductserviceattributestosdt(context ).execute(  A58ProductServiceId, out  GXt_SdtSDT_TrnAttributes4) ;
+         AV66SDT_TrnAttributes = GXt_SdtSDT_TrnAttributes4;
       }
 
       protected void BeforeValidate0868( )
@@ -933,6 +937,7 @@ namespace GeneXus.Programs {
 
       protected void InitializeNonKey0868( )
       {
+         AV66SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          A59ProductServiceName = "";
          A266ProductServiceTileName = "";
          A60ProductServiceDescription = "";
@@ -1091,7 +1096,7 @@ namespace GeneXus.Programs {
             pr_default.execute(16, new Object[] {A29LocationId, A11OrganisationId});
             if ( (pr_default.getStatus(16) == 101) )
             {
-               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
                AnyError = 1;
             }
             pr_default.close(16);
@@ -1103,7 +1108,7 @@ namespace GeneXus.Programs {
             Z29LocationId = A29LocationId;
             Z11OrganisationId = A11OrganisationId;
          }
-         ZM0868( -13) ;
+         ZM0868( -15) ;
          OnLoadActions0868( ) ;
          AddRow0868( ) ;
          ScanKeyEnd0868( ) ;
@@ -1130,7 +1135,7 @@ namespace GeneXus.Programs {
             pr_default.execute(16, new Object[] {A29LocationId, A11OrganisationId});
             if ( (pr_default.getStatus(16) == 101) )
             {
-               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
                AnyError = 1;
             }
             pr_default.close(16);
@@ -1142,7 +1147,7 @@ namespace GeneXus.Programs {
             Z29LocationId = A29LocationId;
             Z11OrganisationId = A11OrganisationId;
          }
-         ZM0868( -13) ;
+         ZM0868( -15) ;
          OnLoadActions0868( ) ;
          AddRow0868( ) ;
          ScanKeyEnd0868( ) ;
@@ -1545,7 +1550,7 @@ namespace GeneXus.Programs {
          AV19WWPContext = new GeneXus.Programs.wwpbaseobjects.SdtWWPContext(context);
          AV16TrnContext = new GeneXus.Programs.wwpbaseobjects.SdtWWPTransactionContext(context);
          AV18WebSession = context.GetSession();
-         AV67Pgmname = "";
+         AV68Pgmname = "";
          AV17TrnContextAtt = new GeneXus.Programs.wwpbaseobjects.SdtWWPTransactionContext_Attribute(context);
          AV10Insert_SupplierGenId = Guid.Empty;
          AV9Insert_SupplierAgbId = Guid.Empty;
@@ -1642,6 +1647,7 @@ namespace GeneXus.Programs {
          BC000815_A392Trn_PageId = new Guid[] {Guid.Empty} ;
          BC000815_A29LocationId = new Guid[] {Guid.Empty} ;
          BC000816_A339CallToActionId = new Guid[] {Guid.Empty} ;
+         AV66SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          BC000817_A58ProductServiceId = new Guid[] {Guid.Empty} ;
          BC000817_n58ProductServiceId = new bool[] {false} ;
          BC000817_A59ProductServiceName = new string[] {""} ;
@@ -1659,6 +1665,7 @@ namespace GeneXus.Programs {
          BC000817_A49SupplierAgbId = new Guid[] {Guid.Empty} ;
          BC000817_n49SupplierAgbId = new bool[] {false} ;
          BC000817_A61ProductServiceImage = new string[] {""} ;
+         GXt_SdtSDT_TrnAttributes4 = new SdtSDT_TrnAttributes(context);
          i338ProductServiceGroup = "";
          BackMsgLst = new msglist();
          LclMsgLst = new msglist();
@@ -1730,7 +1737,7 @@ namespace GeneXus.Programs {
          n58ProductServiceId = false;
          A58ProductServiceId = Guid.NewGuid( );
          n58ProductServiceId = false;
-         AV67Pgmname = "Trn_ProductService_BC";
+         AV68Pgmname = "Trn_ProductService_BC";
          A338ProductServiceGroup = "Location";
          Z338ProductServiceGroup = "Location";
          i338ProductServiceGroup = "Location";
@@ -1745,11 +1752,11 @@ namespace GeneXus.Programs {
       private short Gx_BScreen ;
       private short RcdFound68 ;
       private int trnEnded ;
-      private int AV68GXV1 ;
+      private int AV69GXV1 ;
       private string Gx_mode ;
       private string endTrnMsgTxt ;
       private string endTrnMsgCod ;
-      private string AV67Pgmname ;
+      private string AV68Pgmname ;
       private string GXKey ;
       private string GXEncryptionTmp ;
       private string GXt_char3 ;
@@ -1872,6 +1879,7 @@ namespace GeneXus.Programs {
       private Guid[] BC000815_A392Trn_PageId ;
       private Guid[] BC000815_A29LocationId ;
       private Guid[] BC000816_A339CallToActionId ;
+      private SdtSDT_TrnAttributes AV66SDT_TrnAttributes ;
       private Guid[] BC000817_A58ProductServiceId ;
       private bool[] BC000817_n58ProductServiceId ;
       private string[] BC000817_A59ProductServiceName ;
@@ -1889,6 +1897,7 @@ namespace GeneXus.Programs {
       private Guid[] BC000817_A49SupplierAgbId ;
       private bool[] BC000817_n49SupplierAgbId ;
       private string[] BC000817_A61ProductServiceImage ;
+      private SdtSDT_TrnAttributes GXt_SdtSDT_TrnAttributes4 ;
       private SdtTrn_ProductService bcTrn_ProductService ;
       private msglist BackMsgLst ;
       private msglist LclMsgLst ;

@@ -100,10 +100,6 @@ namespace GeneXus.Programs {
             cleanup();
             if (true) return;
          }
-         new prc_logtofile(context ).execute(  context.GetMessage( "&AppVersionId: ", "")+AV9AppVersionId.ToString()) ;
-         new prc_logtofile(context ).execute(  context.GetMessage( "&PageName: ", "")+AV15PageName) ;
-         new prc_logtofile(context ).execute(  context.GetMessage( "&PageStructure: ", "")+AV16PageStructure) ;
-         new prc_logtofile(context ).execute(  context.GetMessage( "&PageType: ", "")+AV17PageType) ;
          /* Using cursor P00BG2 */
          pr_default.execute(0, new Object[] {AV9AppVersionId});
          while ( (pr_default.getStatus(0) != 101) )

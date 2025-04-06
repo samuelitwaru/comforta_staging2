@@ -120,32 +120,6 @@ namespace GeneXus.Programs {
             pr_default.readNext(1);
          }
          pr_default.close(1);
-         /* Using cursor P00C35 */
-         pr_default.execute(3, new Object[] {AV16OrganisationId});
-         while ( (pr_default.getStatus(3) != 101) )
-         {
-            A11OrganisationId = P00C35_A11OrganisationId[0];
-            A273Trn_ThemeId = P00C35_A273Trn_ThemeId[0];
-            n273Trn_ThemeId = P00C35_n273Trn_ThemeId[0];
-            A100OrganisationSettingid = P00C35_A100OrganisationSettingid[0];
-            AV27OrganisationThemeId = A273Trn_ThemeId;
-            /* Using cursor P00C36 */
-            pr_default.execute(4, new Object[] {AV27OrganisationThemeId});
-            while ( (pr_default.getStatus(4) != 101) )
-            {
-               A273Trn_ThemeId = P00C36_A273Trn_ThemeId[0];
-               n273Trn_ThemeId = P00C36_n273Trn_ThemeId[0];
-               AV22BC_Trn_Theme = new SdtTrn_Theme(context);
-               AV22BC_Trn_Theme.Load(AV27OrganisationThemeId);
-               AV22BC_Trn_Theme.gxTpr_Color.Sort("ColorName");
-               AV23BC_Trn_ThemeCollection.Add(AV22BC_Trn_Theme, 0);
-               /* Exiting from a For First loop. */
-               if (true) break;
-            }
-            pr_default.close(4);
-            pr_default.readNext(3);
-         }
-         pr_default.close(3);
          AV23BC_Trn_ThemeCollection.Sort("Trn_ThemeName");
          cleanup();
       }
@@ -181,14 +155,6 @@ namespace GeneXus.Programs {
          A11OrganisationId = Guid.Empty;
          P00C34_A273Trn_ThemeId = new Guid[] {Guid.Empty} ;
          P00C34_n273Trn_ThemeId = new bool[] {false} ;
-         P00C35_A11OrganisationId = new Guid[] {Guid.Empty} ;
-         P00C35_A273Trn_ThemeId = new Guid[] {Guid.Empty} ;
-         P00C35_n273Trn_ThemeId = new bool[] {false} ;
-         P00C35_A100OrganisationSettingid = new Guid[] {Guid.Empty} ;
-         A100OrganisationSettingid = Guid.Empty;
-         AV27OrganisationThemeId = Guid.Empty;
-         P00C36_A273Trn_ThemeId = new Guid[] {Guid.Empty} ;
-         P00C36_n273Trn_ThemeId = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_getorganisationtheme__default(),
             new Object[][] {
                 new Object[] {
@@ -199,12 +165,6 @@ namespace GeneXus.Programs {
                }
                , new Object[] {
                P00C34_A273Trn_ThemeId
-               }
-               , new Object[] {
-               P00C35_A11OrganisationId, P00C35_A273Trn_ThemeId, P00C35_n273Trn_ThemeId, P00C35_A100OrganisationSettingid
-               }
-               , new Object[] {
-               P00C36_A273Trn_ThemeId
                }
             }
          );
@@ -221,8 +181,6 @@ namespace GeneXus.Programs {
       private Guid A576LocationThemeId ;
       private Guid A29LocationId ;
       private Guid A11OrganisationId ;
-      private Guid A100OrganisationSettingid ;
-      private Guid AV27OrganisationThemeId ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
@@ -241,12 +199,6 @@ namespace GeneXus.Programs {
       private Guid[] P00C33_A11OrganisationId ;
       private Guid[] P00C34_A273Trn_ThemeId ;
       private bool[] P00C34_n273Trn_ThemeId ;
-      private Guid[] P00C35_A11OrganisationId ;
-      private Guid[] P00C35_A273Trn_ThemeId ;
-      private bool[] P00C35_n273Trn_ThemeId ;
-      private Guid[] P00C35_A100OrganisationSettingid ;
-      private Guid[] P00C36_A273Trn_ThemeId ;
-      private bool[] P00C36_n273Trn_ThemeId ;
       private GXBCCollection<SdtTrn_Theme> aP2_BC_Trn_ThemeCollection ;
    }
 
@@ -259,8 +211,6 @@ namespace GeneXus.Programs {
           new ForEachCursor(def[0])
          ,new ForEachCursor(def[1])
          ,new ForEachCursor(def[2])
-         ,new ForEachCursor(def[3])
-         ,new ForEachCursor(def[4])
        };
     }
 
@@ -280,20 +230,10 @@ namespace GeneXus.Programs {
           prmP00C34 = new Object[] {
           new ParDef("LocationThemeId",GXType.UniqueIdentifier,36,0){Nullable=true}
           };
-          Object[] prmP00C35;
-          prmP00C35 = new Object[] {
-          new ParDef("AV16OrganisationId",GXType.UniqueIdentifier,36,0)
-          };
-          Object[] prmP00C36;
-          prmP00C36 = new Object[] {
-          new ParDef("AV27OrganisationThemeId",GXType.UniqueIdentifier,36,0)
-          };
           def= new CursorDef[] {
               new CursorDef("P00C32", "SELECT ThemeIsPredefined, Trn_ThemeName, Trn_ThemeId FROM Trn_Theme WHERE (Not (char_length(trim(trailing ' ' from RTRIM(LTRIM(Trn_ThemeName))))=0)) AND (ThemeIsPredefined = TRUE) ORDER BY Trn_ThemeName ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C32,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00C33", "SELECT Trn_ThemeId, LocationThemeId, LocationId, OrganisationId FROM Trn_Location WHERE LocationId = :AV26LocationId ORDER BY LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C33,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00C34", "SELECT Trn_ThemeId FROM Trn_Theme WHERE Trn_ThemeId = :LocationThemeId ORDER BY Trn_ThemeId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C34,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("P00C35", "SELECT OrganisationId, Trn_ThemeId, OrganisationSettingid FROM Trn_OrganisationSetting WHERE OrganisationId = :AV16OrganisationId ORDER BY OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C35,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00C36", "SELECT Trn_ThemeId FROM Trn_Theme WHERE Trn_ThemeId = :AV27OrganisationThemeId ORDER BY Trn_ThemeId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C36,1, GxCacheFrequency.OFF ,true,true )
           };
        }
     }
@@ -318,15 +258,6 @@ namespace GeneXus.Programs {
                 ((Guid[]) buf[5])[0] = rslt.getGuid(4);
                 return;
              case 2 :
-                ((Guid[]) buf[0])[0] = rslt.getGuid(1);
-                return;
-             case 3 :
-                ((Guid[]) buf[0])[0] = rslt.getGuid(1);
-                ((Guid[]) buf[1])[0] = rslt.getGuid(2);
-                ((bool[]) buf[2])[0] = rslt.wasNull(2);
-                ((Guid[]) buf[3])[0] = rslt.getGuid(3);
-                return;
-             case 4 :
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);
                 return;
        }

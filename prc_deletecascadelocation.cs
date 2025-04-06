@@ -118,9 +118,13 @@ namespace GeneXus.Programs {
             new prc_deletecascadeproductservice(context ).execute(  Guid.Empty,  Guid.Empty,  A29LocationId,  A11OrganisationId) ;
             new prc_deletecascadelocationdynamicform(context ).execute(  Guid.Empty,  0,  A29LocationId,  A11OrganisationId) ;
             new prc_deletecascadepage(context ).execute(  Guid.Empty,  Guid.Empty,  A29LocationId,  A11OrganisationId) ;
+            GXt_guid1 = Guid.Empty;
+            new prc_deletecascadememo(context ).execute(  Guid.Empty, ref  GXt_guid1,  A29LocationId,  A11OrganisationId) ;
             new prc_deletecascadeagendacalendar(context ).execute(  Guid.Empty,  A29LocationId,  A11OrganisationId) ;
             new prc_deletecascadereceptionist(context ).execute(  Guid.Empty,  A29LocationId,  A11OrganisationId) ;
-            new prc_deletecascaderesident(context ).execute(  Guid.Empty,  A29LocationId,  A11OrganisationId) ;
+            GXt_boolean2 = false;
+            GXt_char3 = "";
+            new prc_deletecascaderesident(context ).execute(  Guid.Empty,  A29LocationId,  A11OrganisationId,  false, ref  GXt_boolean2, ref  GXt_char3) ;
             if ( AV10isMain )
             {
                AV8Trn_Location.Load(A29LocationId, A11OrganisationId);
@@ -189,6 +193,8 @@ namespace GeneXus.Programs {
          P00BN2_n273Trn_ThemeId = new bool[] {false} ;
          P00BN2_A11OrganisationId = new Guid[] {Guid.Empty} ;
          P00BN2_A29LocationId = new Guid[] {Guid.Empty} ;
+         GXt_guid1 = Guid.Empty;
+         GXt_char3 = "";
          AV8Trn_Location = new SdtTrn_Location(context);
          AV17GXV1 = new GXBaseCollection<GeneXus.Utils.SdtMessages_Message>( context, "Message", "GeneXus");
          AV9ErrorMessage = new GeneXus.Utils.SdtMessages_Message(context);
@@ -215,15 +221,18 @@ namespace GeneXus.Programs {
       private short GXTBN2 ;
       private int AV18GXV2 ;
       private string AV13Message ;
+      private string GXt_char3 ;
       private bool AV10isMain ;
       private bool AV11isSuccessful ;
       private bool n273Trn_ThemeId ;
+      private bool GXt_boolean2 ;
       private Guid AV12LocationId ;
       private Guid AV15Trn_ThemeId ;
       private Guid AV14OrganisationId ;
       private Guid A29LocationId ;
       private Guid A11OrganisationId ;
       private Guid A273Trn_ThemeId ;
+      private Guid GXt_guid1 ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
@@ -317,8 +326,8 @@ public class prc_deletecascadelocation__default : DataStoreHelperBase, IDataStor
    {
       System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
       string scmdbuf;
-      short[] GXv_int1 = new short[3];
-      Object[] GXv_Object2 = new Object[2];
+      short[] GXv_int4 = new short[3];
+      Object[] GXv_Object5 = new Object[2];
       scmdbuf = "SELECT Trn_ThemeId, OrganisationId, LocationId FROM Trn_Location";
       if ( ! (Guid.Empty==AV12LocationId) )
       {
@@ -326,7 +335,7 @@ public class prc_deletecascadelocation__default : DataStoreHelperBase, IDataStor
       }
       else
       {
-         GXv_int1[0] = 1;
+         GXv_int4[0] = 1;
       }
       if ( ! (Guid.Empty==AV14OrganisationId) )
       {
@@ -334,7 +343,7 @@ public class prc_deletecascadelocation__default : DataStoreHelperBase, IDataStor
       }
       else
       {
-         GXv_int1[1] = 1;
+         GXv_int4[1] = 1;
       }
       if ( ! (Guid.Empty==AV15Trn_ThemeId) )
       {
@@ -342,14 +351,14 @@ public class prc_deletecascadelocation__default : DataStoreHelperBase, IDataStor
       }
       else
       {
-         GXv_int1[2] = 1;
+         GXv_int4[2] = 1;
       }
       scmdbuf += sWhereString;
       scmdbuf += " ORDER BY LocationId, OrganisationId";
       scmdbuf += " FOR UPDATE OF Trn_Location";
-      GXv_Object2[0] = scmdbuf;
-      GXv_Object2[1] = GXv_int1;
-      return GXv_Object2 ;
+      GXv_Object5[0] = scmdbuf;
+      GXv_Object5[1] = GXv_int4;
+      return GXv_Object5 ;
    }
 
    public override Object [] getDynamicStatement( int cursor ,

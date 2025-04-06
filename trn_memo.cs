@@ -651,10 +651,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_single_line_edit( context, edtResidentGivenName_Internalname, A64ResidentGivenName, StringUtil.RTrim( context.localUtil.Format( A64ResidentGivenName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,89);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtResidentGivenName_Jsonclick, 0, "Attribute", "", "", "", "", edtResidentGivenName_Visible, edtResidentGivenName_Enabled, 0, "text", "", 80, "chr", 1, "row", 100, 0, 0, 0, 0, -1, -1, true, "Name", "start", true, "", "HLP_Trn_Memo.htm");
          /* Single line edit */
          TempTags = "  onfocus=\"gx.evt.onfocus(this, 90,'',false,'',0)\"";
-         GxWebStd.gx_single_line_edit( context, edtResidentLastName_Internalname, A65ResidentLastName, StringUtil.RTrim( context.localUtil.Format( A65ResidentLastName, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,90);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtResidentLastName_Jsonclick, 0, "Attribute", "", "", "", "", edtResidentLastName_Visible, edtResidentLastName_Enabled, 0, "text", "", 80, "chr", 1, "row", 100, 0, 0, 0, 0, -1, -1, true, "Name", "start", true, "", "HLP_Trn_Memo.htm");
-         /* Single line edit */
-         TempTags = "  onfocus=\"gx.evt.onfocus(this, 91,'',false,'',0)\"";
-         GxWebStd.gx_single_line_edit( context, edtResidentGUID_Internalname, A71ResidentGUID, StringUtil.RTrim( context.localUtil.Format( A71ResidentGUID, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,91);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtResidentGUID_Jsonclick, 0, "Attribute", "", "", "", "", edtResidentGUID_Visible, edtResidentGUID_Enabled, 0, "text", "", 80, "chr", 1, "row", 100, 0, 0, 0, 0, 0, 0, true, "GeneXusSecurityCommon\\GAMUserIdentification", "start", true, "", "HLP_Trn_Memo.htm");
+         GxWebStd.gx_single_line_edit( context, edtResidentGUID_Internalname, A71ResidentGUID, StringUtil.RTrim( context.localUtil.Format( A71ResidentGUID, "")), TempTags+" onchange=\""+""+";gx.evt.onchange(this, event)\" "+" onblur=\""+""+";gx.evt.onblur(this,90);\"", "'"+""+"'"+",false,"+"'"+""+"'", "", "", "", "", edtResidentGUID_Jsonclick, 0, "Attribute", "", "", "", "", edtResidentGUID_Visible, edtResidentGUID_Enabled, 0, "text", "", 80, "chr", 1, "row", 100, 0, 0, 0, 0, 0, 0, true, "GeneXusSecurityCommon\\GAMUserIdentification", "start", true, "", "HLP_Trn_Memo.htm");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
          GxWebStd.gx_div_end( context, "start", "top", "div");
@@ -742,6 +739,7 @@ namespace GeneXus.Programs {
                A566MemoBgColorCode = cgiGet( "MEMOBGCOLORCODE");
                A567MemoForm = cgiGet( "MEMOFORM");
                A543MemoCategoryName = cgiGet( "MEMOCATEGORYNAME");
+               A65ResidentLastName = cgiGet( "RESIDENTLASTNAME");
                AV31Pgmname = cgiGet( "vPGMNAME");
                Combo_memocategoryid_Objectcall = cgiGet( "COMBO_MEMOCATEGORYID_Objectcall");
                Combo_memocategoryid_Class = cgiGet( "COMBO_MEMOCATEGORYID_Class");
@@ -936,8 +934,6 @@ namespace GeneXus.Programs {
                AssignAttri("", false, "A72ResidentSalutation", A72ResidentSalutation);
                A64ResidentGivenName = cgiGet( edtResidentGivenName_Internalname);
                AssignAttri("", false, "A64ResidentGivenName", A64ResidentGivenName);
-               A65ResidentLastName = cgiGet( edtResidentLastName_Internalname);
-               AssignAttri("", false, "A65ResidentLastName", A65ResidentLastName);
                A71ResidentGUID = cgiGet( edtResidentGUID_Internalname);
                AssignAttri("", false, "A71ResidentGUID", A71ResidentGUID);
                /* Read subfile selected row values. */
@@ -1279,8 +1275,6 @@ namespace GeneXus.Programs {
          AssignProp("", false, cmbResidentSalutation_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(cmbResidentSalutation.Visible), 5, 0), true);
          edtResidentGivenName_Visible = 0;
          AssignProp("", false, edtResidentGivenName_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(edtResidentGivenName_Visible), 5, 0), true);
-         edtResidentLastName_Visible = 0;
-         AssignProp("", false, edtResidentLastName_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(edtResidentLastName_Visible), 5, 0), true);
          edtResidentGUID_Visible = 0;
          AssignProp("", false, edtResidentGUID_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(edtResidentGUID_Visible), 5, 0), true);
       }
@@ -1504,7 +1498,6 @@ namespace GeneXus.Programs {
             A64ResidentGivenName = T001P5_A64ResidentGivenName[0];
             AssignAttri("", false, "A64ResidentGivenName", A64ResidentGivenName);
             A65ResidentLastName = T001P5_A65ResidentLastName[0];
-            AssignAttri("", false, "A65ResidentLastName", A65ResidentLastName);
             A71ResidentGUID = T001P5_A71ResidentGUID[0];
             AssignAttri("", false, "A71ResidentGUID", A71ResidentGUID);
             pr_default.close(3);
@@ -1551,7 +1544,6 @@ namespace GeneXus.Programs {
             A64ResidentGivenName = T001P6_A64ResidentGivenName[0];
             AssignAttri("", false, "A64ResidentGivenName", A64ResidentGivenName);
             A65ResidentLastName = T001P6_A65ResidentLastName[0];
-            AssignAttri("", false, "A65ResidentLastName", A65ResidentLastName);
             A71ResidentGUID = T001P6_A71ResidentGUID[0];
             AssignAttri("", false, "A71ResidentGUID", A71ResidentGUID);
             A566MemoBgColorCode = T001P6_A566MemoBgColorCode[0];
@@ -1602,7 +1594,6 @@ namespace GeneXus.Programs {
          A64ResidentGivenName = T001P5_A64ResidentGivenName[0];
          AssignAttri("", false, "A64ResidentGivenName", A64ResidentGivenName);
          A65ResidentLastName = T001P5_A65ResidentLastName[0];
-         AssignAttri("", false, "A65ResidentLastName", A65ResidentLastName);
          A71ResidentGUID = T001P5_A71ResidentGUID[0];
          AssignAttri("", false, "A71ResidentGUID", A71ResidentGUID);
          pr_default.close(3);
@@ -1661,7 +1652,6 @@ namespace GeneXus.Programs {
          A64ResidentGivenName = T001P8_A64ResidentGivenName[0];
          AssignAttri("", false, "A64ResidentGivenName", A64ResidentGivenName);
          A65ResidentLastName = T001P8_A65ResidentLastName[0];
-         AssignAttri("", false, "A65ResidentLastName", A65ResidentLastName);
          A71ResidentGUID = T001P8_A71ResidentGUID[0];
          AssignAttri("", false, "A71ResidentGUID", A71ResidentGUID);
          GxWebStd.set_html_headers( context, 0, "", "");
@@ -2248,7 +2238,6 @@ namespace GeneXus.Programs {
             A64ResidentGivenName = T001P16_A64ResidentGivenName[0];
             AssignAttri("", false, "A64ResidentGivenName", A64ResidentGivenName);
             A65ResidentLastName = T001P16_A65ResidentLastName[0];
-            AssignAttri("", false, "A65ResidentLastName", A65ResidentLastName);
             A71ResidentGUID = T001P16_A71ResidentGUID[0];
             AssignAttri("", false, "A71ResidentGUID", A71ResidentGUID);
             pr_default.close(14);
@@ -2381,8 +2370,6 @@ namespace GeneXus.Programs {
          AssignProp("", false, cmbResidentSalutation_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(cmbResidentSalutation.Enabled), 5, 0), true);
          edtResidentGivenName_Enabled = 0;
          AssignProp("", false, edtResidentGivenName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtResidentGivenName_Enabled), 5, 0), true);
-         edtResidentLastName_Enabled = 0;
-         AssignProp("", false, edtResidentLastName_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtResidentLastName_Enabled), 5, 0), true);
          edtResidentGUID_Enabled = 0;
          AssignProp("", false, edtResidentGUID_Internalname, "Enabled", StringUtil.LTrimStr( (decimal)(edtResidentGUID_Enabled), 5, 0), true);
       }
@@ -2556,6 +2543,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "MEMOBGCOLORCODE", A566MemoBgColorCode);
          GxWebStd.gx_hidden_field( context, "MEMOFORM", StringUtil.RTrim( A567MemoForm));
          GxWebStd.gx_hidden_field( context, "MEMOCATEGORYNAME", A543MemoCategoryName);
+         GxWebStd.gx_hidden_field( context, "RESIDENTLASTNAME", A65ResidentLastName);
          GxWebStd.gx_hidden_field( context, "vPGMNAME", StringUtil.RTrim( AV31Pgmname));
          GxWebStd.gx_hidden_field( context, "COMBO_MEMOCATEGORYID_Objectcall", StringUtil.RTrim( Combo_memocategoryid_Objectcall));
          GxWebStd.gx_hidden_field( context, "COMBO_MEMOCATEGORYID_Cls", StringUtil.RTrim( Combo_memocategoryid_Cls));
@@ -2742,7 +2730,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111523883", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025458211438", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2758,7 +2746,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("trn_memo.js", "?20254111523886", false, true);
+         context.AddJavascriptSource("trn_memo.js", "?2025458211443", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js", "", false, true);
@@ -2792,7 +2780,6 @@ namespace GeneXus.Programs {
          edtMemoId_Internalname = "MEMOID";
          cmbResidentSalutation_Internalname = "RESIDENTSALUTATION";
          edtResidentGivenName_Internalname = "RESIDENTGIVENNAME";
-         edtResidentLastName_Internalname = "RESIDENTLASTNAME";
          edtResidentGUID_Internalname = "RESIDENTGUID";
          divHtml_bottomauxiliarcontrols_Internalname = "HTML_BOTTOMAUXILIARCONTROLS";
          divLayoutmaintable_Internalname = "LAYOUTMAINTABLE";
@@ -2815,9 +2802,6 @@ namespace GeneXus.Programs {
          edtResidentGUID_Jsonclick = "";
          edtResidentGUID_Enabled = 0;
          edtResidentGUID_Visible = 1;
-         edtResidentLastName_Jsonclick = "";
-         edtResidentLastName_Enabled = 0;
-         edtResidentLastName_Visible = 1;
          edtResidentGivenName_Jsonclick = "";
          edtResidentGivenName_Enabled = 0;
          edtResidentGivenName_Visible = 1;
@@ -3018,7 +3002,6 @@ namespace GeneXus.Programs {
          AV25ComboMemoCategoryId = Guid.Empty;
          A549MemoId = Guid.Empty;
          A64ResidentGivenName = "";
-         A65ResidentLastName = "";
          A71ResidentGUID = "";
          A566MemoBgColorCode = "";
          A567MemoForm = "";
@@ -3027,6 +3010,7 @@ namespace GeneXus.Programs {
          AV29Insert_SG_OrganisationId = Guid.Empty;
          AV30Insert_SG_LocationId = Guid.Empty;
          A543MemoCategoryName = "";
+         A65ResidentLastName = "";
          AV31Pgmname = "";
          Combo_memocategoryid_Objectcall = "";
          Combo_memocategoryid_Class = "";
@@ -3275,8 +3259,6 @@ namespace GeneXus.Programs {
       private int edtMemoId_Enabled ;
       private int edtResidentGivenName_Visible ;
       private int edtResidentGivenName_Enabled ;
-      private int edtResidentLastName_Visible ;
-      private int edtResidentLastName_Enabled ;
       private int edtResidentGUID_Visible ;
       private int edtResidentGUID_Enabled ;
       private int Combo_memocategoryid_Datalistupdateminimumcharacters ;
@@ -3346,8 +3328,6 @@ namespace GeneXus.Programs {
       private string cmbResidentSalutation_Jsonclick ;
       private string edtResidentGivenName_Internalname ;
       private string edtResidentGivenName_Jsonclick ;
-      private string edtResidentLastName_Internalname ;
-      private string edtResidentLastName_Jsonclick ;
       private string edtResidentGUID_Internalname ;
       private string edtResidentGUID_Jsonclick ;
       private string A567MemoForm ;
@@ -3427,10 +3407,10 @@ namespace GeneXus.Programs {
       private string A552MemoImage ;
       private string A553MemoDocument ;
       private string A64ResidentGivenName ;
-      private string A65ResidentLastName ;
       private string A71ResidentGUID ;
       private string A566MemoBgColorCode ;
       private string A543MemoCategoryName ;
+      private string A65ResidentLastName ;
       private string AV18ComboSelectedValue ;
       private string AV19ComboSelectedText ;
       private string Z543MemoCategoryName ;

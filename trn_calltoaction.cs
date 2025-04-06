@@ -82,7 +82,20 @@ namespace GeneXus.Programs {
             GX9ASACALLTOACTIONURL1572( A340CallToActionType, A208WWPFormReferenceName) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_13") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxAggSel10"+"_"+"vSDT_TRNATTRIBUTES") == 0 )
+         {
+            A339CallToActionId = StringUtil.StrToGuid( GetPar( "CallToActionId"));
+            AssignAttri("", false, "A339CallToActionId", A339CallToActionId.ToString());
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1;
+               return  ;
+            }
+            GX10ASASDT_TRNATTRIBUTES1572( A339CallToActionId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_15") == 0 )
          {
             A58ProductServiceId = StringUtil.StrToGuid( GetPar( "ProductServiceId"));
             AssignAttri("", false, "A58ProductServiceId", A58ProductServiceId.ToString());
@@ -96,10 +109,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_13( A58ProductServiceId, A29LocationId, A11OrganisationId) ;
+            gxLoad_15( A58ProductServiceId, A29LocationId, A11OrganisationId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_14") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_16") == 0 )
          {
             A366LocationDynamicFormId = StringUtil.StrToGuid( GetPar( "LocationDynamicFormId"));
             n366LocationDynamicFormId = false;
@@ -114,10 +127,10 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_14( A366LocationDynamicFormId, A11OrganisationId, A29LocationId) ;
+            gxLoad_16( A366LocationDynamicFormId, A11OrganisationId, A29LocationId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_15") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_17") == 0 )
          {
             A206WWPFormId = (short)(Math.Round(NumberUtil.Val( GetPar( "WWPFormId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A206WWPFormId", StringUtil.LTrimStr( (decimal)(A206WWPFormId), 4, 0));
@@ -129,7 +142,7 @@ namespace GeneXus.Programs {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_15( A206WWPFormId, A207WWPFormVersionNumber) ;
+            gxLoad_17( A206WWPFormId, A207WWPFormVersionNumber) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -925,6 +938,7 @@ namespace GeneXus.Programs {
                IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                Gx_mode = cgiGet( "Mode");
+               ajax_req_read_hidden_sdt(cgiGet( "vSDT_TRNATTRIBUTES"), AV27SDT_TrnAttributes);
                Gx_BScreen = (short)(Math.Round(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                A500CallToActionPhoneNumber = cgiGet( "CALLTOACTIONPHONENUMBER");
                A499CallToActionPhoneCode = cgiGet( "CALLTOACTIONPHONECODE");
@@ -1261,7 +1275,7 @@ namespace GeneXus.Programs {
 
       protected void ZM1572( short GX_JID )
       {
-         if ( ( GX_JID == 12 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 14 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -1292,7 +1306,7 @@ namespace GeneXus.Programs {
                Z366LocationDynamicFormId = A366LocationDynamicFormId;
             }
          }
-         if ( GX_JID == -12 )
+         if ( GX_JID == -14 )
          {
             Z339CallToActionId = A339CallToActionId;
             Z367CallToActionUrl = A367CallToActionUrl;
@@ -1413,7 +1427,7 @@ namespace GeneXus.Programs {
             AssignAttri("", false, "A206WWPFormId", StringUtil.LTrimStr( (decimal)(A206WWPFormId), 4, 0));
             A207WWPFormVersionNumber = T00157_A207WWPFormVersionNumber[0];
             AssignAttri("", false, "A207WWPFormVersionNumber", StringUtil.LTrimStr( (decimal)(A207WWPFormVersionNumber), 4, 0));
-            ZM1572( -12) ;
+            ZM1572( -14) ;
          }
          pr_default.close(5);
          OnLoadActions1572( ) ;
@@ -1548,7 +1562,7 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void gxLoad_13( Guid A58ProductServiceId ,
+      protected void gxLoad_15( Guid A58ProductServiceId ,
                                 Guid A29LocationId ,
                                 Guid A11OrganisationId )
       {
@@ -1573,7 +1587,7 @@ namespace GeneXus.Programs {
          pr_default.close(6);
       }
 
-      protected void gxLoad_14( Guid A366LocationDynamicFormId ,
+      protected void gxLoad_16( Guid A366LocationDynamicFormId ,
                                 Guid A11OrganisationId ,
                                 Guid A29LocationId )
       {
@@ -1606,7 +1620,7 @@ namespace GeneXus.Programs {
          pr_default.close(7);
       }
 
-      protected void gxLoad_15( short A206WWPFormId ,
+      protected void gxLoad_17( short A206WWPFormId ,
                                 short A207WWPFormVersionNumber )
       {
          /* Using cursor T001510 */
@@ -1675,7 +1689,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A339CallToActionId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM1572( 12) ;
+            ZM1572( 14) ;
             RcdFound72 = 1;
             A339CallToActionId = T00153_A339CallToActionId[0];
             AssignAttri("", false, "A339CallToActionId", A339CallToActionId.ToString());
@@ -2378,6 +2392,7 @@ namespace GeneXus.Programs {
                ConfirmValues150( ) ;
             }
             /* After transaction rules */
+            new prc_addtodynamictransalation(context ).execute(  AV27SDT_TrnAttributes) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -2449,6 +2464,9 @@ namespace GeneXus.Programs {
       protected void BeforeComplete1572( )
       {
          /* Before Complete Rules */
+         GXt_SdtSDT_TrnAttributes3 = AV27SDT_TrnAttributes;
+         new prc_addcalltoactionattributestosdt(context ).execute(  A339CallToActionId, out  GXt_SdtSDT_TrnAttributes3) ;
+         AV27SDT_TrnAttributes = GXt_SdtSDT_TrnAttributes3;
       }
 
       protected void BeforeValidate1572( )
@@ -2623,6 +2641,14 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
+         if ( context.isAjaxRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_sdt_attri("", false, "vSDT_TRNATTRIBUTES", AV27SDT_TrnAttributes);
+         }
+         else
+         {
+            context.httpAjaxContext.ajax_rsp_assign_hidden_sdt("vSDT_TRNATTRIBUTES", AV27SDT_TrnAttributes);
+         }
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, "CALLTOACTIONPHONENUMBER", A500CallToActionPhoneNumber);
          GxWebStd.gx_hidden_field( context, "CALLTOACTIONPHONECODE", A499CallToActionPhoneCode);
@@ -2712,6 +2738,7 @@ namespace GeneXus.Programs {
       {
          A367CallToActionUrl = "";
          AssignAttri("", false, "A367CallToActionUrl", A367CallToActionUrl);
+         AV27SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          A219WWPFormLatestVersionNumber = 0;
          AssignAttri("", false, "A219WWPFormLatestVersionNumber", StringUtil.LTrimStr( (decimal)(A219WWPFormLatestVersionNumber), 4, 0));
          A58ProductServiceId = Guid.Empty;
@@ -2798,7 +2825,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025411151256", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202545817233", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2814,7 +2841,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("trn_calltoaction.js", "?2025411151258", false, true);
+         context.AddJavascriptSource("trn_calltoaction.js", "?202545817237", false, true);
          /* End function include_jscripts */
       }
 
@@ -2957,6 +2984,23 @@ namespace GeneXus.Programs {
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
          AddString( "\""+GXUtil.EncodeJSConstant( A367CallToActionUrl)+"\"") ;
+         AddString( "]") ;
+         if ( true )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+      }
+
+      protected void GX10ASASDT_TRNATTRIBUTES1572( Guid A339CallToActionId )
+      {
+         GXt_SdtSDT_TrnAttributes3 = AV27SDT_TrnAttributes;
+         new prc_addcalltoactionattributestosdt(context ).execute(  A339CallToActionId, out  GXt_SdtSDT_TrnAttributes3) ;
+         AV27SDT_TrnAttributes = GXt_SdtSDT_TrnAttributes3;
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( StringUtil.EncodeString( AV27SDT_TrnAttributes.ToXml(false, true, "", "")))+"\"") ;
          AddString( "]") ;
          if ( true )
          {
@@ -3353,6 +3397,7 @@ namespace GeneXus.Programs {
          gxfirstwebparm_bkp = "";
          A340CallToActionType = "";
          A208WWPFormReferenceName = "";
+         A339CallToActionId = Guid.Empty;
          A58ProductServiceId = Guid.Empty;
          A29LocationId = Guid.Empty;
          A11OrganisationId = Guid.Empty;
@@ -3365,7 +3410,6 @@ namespace GeneXus.Programs {
          ClassString = "";
          StyleString = "";
          TempTags = "";
-         A339CallToActionId = Guid.Empty;
          A368CallToActionName = "";
          gxphoneLink = "";
          A342CallToActionPhone = "";
@@ -3382,6 +3426,7 @@ namespace GeneXus.Programs {
          A499CallToActionPhoneCode = "";
          A500CallToActionPhoneNumber = "";
          Gx_mode = "";
+         AV27SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          forbiddenHiddens = new GXProperties();
          hsh = "";
          sEvt = "";
@@ -3497,6 +3542,7 @@ namespace GeneXus.Programs {
          sDynURL = "";
          FormProcess = "";
          bodyStyle = "";
+         GXt_SdtSDT_TrnAttributes3 = new SdtSDT_TrnAttributes(context);
          ZZ339CallToActionId = Guid.Empty;
          ZZ58ProductServiceId = Guid.Empty;
          ZZ11OrganisationId = Guid.Empty;
@@ -3776,11 +3822,11 @@ namespace GeneXus.Programs {
       private Guid Z29LocationId ;
       private Guid Z11OrganisationId ;
       private Guid Z366LocationDynamicFormId ;
+      private Guid A339CallToActionId ;
       private Guid A58ProductServiceId ;
       private Guid A29LocationId ;
       private Guid A11OrganisationId ;
       private Guid A366LocationDynamicFormId ;
-      private Guid A339CallToActionId ;
       private Guid ZZ339CallToActionId ;
       private Guid ZZ58ProductServiceId ;
       private Guid ZZ11OrganisationId ;
@@ -3797,6 +3843,7 @@ namespace GeneXus.Programs {
       private GXCheckbox chkWWPFormInstantiated ;
       private GXCombobox cmbWWPFormType ;
       private GXCheckbox chkWWPFormIsForDynamicValidations ;
+      private SdtSDT_TrnAttributes AV27SDT_TrnAttributes ;
       private IDataStoreProvider pr_default ;
       private Guid[] T00157_A339CallToActionId ;
       private string[] T00157_A367CallToActionUrl ;
@@ -3895,6 +3942,7 @@ namespace GeneXus.Programs {
       private string[] T001518_A241WWPFormSectionRefElements ;
       private bool[] T001518_A242WWPFormIsForDynamicValidations ;
       private Guid[] T001519_A339CallToActionId ;
+      private SdtSDT_TrnAttributes GXt_SdtSDT_TrnAttributes3 ;
       private Guid[] T001520_A58ProductServiceId ;
       private IDataStoreProvider pr_datastore1 ;
       private IDataStoreProvider pr_gam ;

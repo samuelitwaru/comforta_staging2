@@ -80,16 +80,19 @@ namespace GeneXus.Programs {
          /* Output device settings */
          AV11Filtered_SDT_MobilePage.FromJSonString(AV9SDT_MobilePage.ToJSonString(false, true), null);
          AV10ModuleCollection.FromJSonString(context.GetMessage( "[\"my care\",\"my living\",\"my services\"]", ""), null);
+         GXt_guid1 = AV20ResidentId;
+         new prc_getresidentidfromguid(context ).execute(  AV8UserId, out  GXt_guid1) ;
+         AV20ResidentId = GXt_guid1;
          new prc_logtoserver(context ).execute(  context.GetMessage( "User: ", "")+AV8UserId) ;
          /* Using cursor P00C52 */
-         pr_default.execute(0);
+         pr_default.execute(0, new Object[] {AV20ResidentId});
          while ( (pr_default.getStatus(0) != 101) )
          {
             A527ResidentPackageId = P00C52_A527ResidentPackageId[0];
             n527ResidentPackageId = P00C52_n527ResidentPackageId[0];
             A532ResidentPackageModules = P00C52_A532ResidentPackageModules[0];
-            A71ResidentGUID = P00C52_A71ResidentGUID[0];
             A62ResidentId = P00C52_A62ResidentId[0];
+            A71ResidentGUID = P00C52_A71ResidentGUID[0];
             A29LocationId = P00C52_A29LocationId[0];
             A11OrganisationId = P00C52_A11OrganisationId[0];
             A532ResidentPackageModules = P00C52_A532ResidentPackageModules[0];
@@ -110,21 +113,22 @@ namespace GeneXus.Programs {
          pr_default.close(0);
          new prc_logtoserver(context ).execute(  context.GetMessage( "User Modules: ", "")+AV15UserModuleCollection.ToJSonString(false)) ;
          AV11Filtered_SDT_MobilePage.gxTpr_Row.Clear();
-         AV21GXV1 = 1;
-         while ( AV21GXV1 <= AV9SDT_MobilePage.gxTpr_Row.Count )
+         AV23GXV1 = 1;
+         while ( AV23GXV1 <= AV9SDT_MobilePage.gxTpr_Row.Count )
          {
-            AV12RowItem = ((SdtSDT_Row)AV9SDT_MobilePage.gxTpr_Row.Item(AV21GXV1));
+            AV12RowItem = ((SdtSDT_Row)AV9SDT_MobilePage.gxTpr_Row.Item(AV23GXV1));
             AV17Index = 1;
             AV18FilteredRow = new SdtSDT_Row(context);
             if ( AV12RowItem.gxTpr_Col.Count > 0 )
             {
-               AV22GXV2 = 1;
-               while ( AV22GXV2 <= AV12RowItem.gxTpr_Col.Count )
+               AV24GXV2 = 1;
+               while ( AV24GXV2 <= AV12RowItem.gxTpr_Col.Count )
                {
-                  AV13ColItem = ((SdtSDT_Col)AV12RowItem.gxTpr_Col.Item(AV22GXV2));
+                  AV13ColItem = ((SdtSDT_Col)AV12RowItem.gxTpr_Col.Item(AV24GXV2));
                   AV16TileName = StringUtil.Lower( AV13ColItem.gxTpr_Tile.gxTpr_Tilename);
                   if ( (AV10ModuleCollection.IndexOf(StringUtil.RTrim( AV16TileName))>0) )
                   {
+                     new prc_logtoserver(context ).execute(  context.GetMessage( "        In Module Collection: ", "")+AV16TileName) ;
                      if ( (AV15UserModuleCollection.IndexOf(StringUtil.RTrim( AV16TileName))>0) )
                      {
                         AV18FilteredRow.gxTpr_Col.Add(AV13ColItem, 0);
@@ -135,11 +139,11 @@ namespace GeneXus.Programs {
                      AV18FilteredRow.gxTpr_Col.Add(AV13ColItem, 0);
                   }
                   AV17Index = (short)(AV17Index+1);
-                  AV22GXV2 = (int)(AV22GXV2+1);
+                  AV24GXV2 = (int)(AV24GXV2+1);
                }
             }
             AV11Filtered_SDT_MobilePage.gxTpr_Row.Add(AV18FilteredRow, 0);
-            AV21GXV1 = (int)(AV21GXV1+1);
+            AV23GXV1 = (int)(AV23GXV1+1);
          }
          cleanup();
       }
@@ -158,17 +162,19 @@ namespace GeneXus.Programs {
       {
          AV11Filtered_SDT_MobilePage = new SdtSDT_MobilePage(context);
          AV10ModuleCollection = new GxSimpleCollection<string>();
+         AV20ResidentId = Guid.Empty;
+         GXt_guid1 = Guid.Empty;
          P00C52_A527ResidentPackageId = new Guid[] {Guid.Empty} ;
          P00C52_n527ResidentPackageId = new bool[] {false} ;
          P00C52_A532ResidentPackageModules = new string[] {""} ;
-         P00C52_A71ResidentGUID = new string[] {""} ;
          P00C52_A62ResidentId = new Guid[] {Guid.Empty} ;
+         P00C52_A71ResidentGUID = new string[] {""} ;
          P00C52_A29LocationId = new Guid[] {Guid.Empty} ;
          P00C52_A11OrganisationId = new Guid[] {Guid.Empty} ;
          A527ResidentPackageId = Guid.Empty;
          A532ResidentPackageModules = "";
-         A71ResidentGUID = "";
          A62ResidentId = Guid.Empty;
+         A71ResidentGUID = "";
          A29LocationId = Guid.Empty;
          A11OrganisationId = Guid.Empty;
          P00C53_A527ResidentPackageId = new Guid[] {Guid.Empty} ;
@@ -181,7 +187,7 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_filterpagetiles__default(),
             new Object[][] {
                 new Object[] {
-               P00C52_A527ResidentPackageId, P00C52_n527ResidentPackageId, P00C52_A532ResidentPackageModules, P00C52_A71ResidentGUID, P00C52_A62ResidentId, P00C52_A29LocationId, P00C52_A11OrganisationId
+               P00C52_A527ResidentPackageId, P00C52_n527ResidentPackageId, P00C52_A532ResidentPackageModules, P00C52_A62ResidentId, P00C52_A71ResidentGUID, P00C52_A29LocationId, P00C52_A11OrganisationId
                }
                , new Object[] {
                P00C53_A527ResidentPackageId
@@ -192,13 +198,15 @@ namespace GeneXus.Programs {
       }
 
       private short AV17Index ;
-      private int AV21GXV1 ;
-      private int AV22GXV2 ;
+      private int AV23GXV1 ;
+      private int AV24GXV2 ;
       private bool n527ResidentPackageId ;
       private string A532ResidentPackageModules ;
       private string AV8UserId ;
       private string A71ResidentGUID ;
       private string AV16TileName ;
+      private Guid AV20ResidentId ;
+      private Guid GXt_guid1 ;
       private Guid A527ResidentPackageId ;
       private Guid A62ResidentId ;
       private Guid A29LocationId ;
@@ -213,8 +221,8 @@ namespace GeneXus.Programs {
       private Guid[] P00C52_A527ResidentPackageId ;
       private bool[] P00C52_n527ResidentPackageId ;
       private string[] P00C52_A532ResidentPackageModules ;
-      private string[] P00C52_A71ResidentGUID ;
       private Guid[] P00C52_A62ResidentId ;
+      private string[] P00C52_A71ResidentGUID ;
       private Guid[] P00C52_A29LocationId ;
       private Guid[] P00C52_A11OrganisationId ;
       private Guid[] P00C53_A527ResidentPackageId ;
@@ -244,13 +252,14 @@ namespace GeneXus.Programs {
        {
           Object[] prmP00C52;
           prmP00C52 = new Object[] {
+          new ParDef("AV20ResidentId",GXType.UniqueIdentifier,36,0)
           };
           Object[] prmP00C53;
           prmP00C53 = new Object[] {
           new ParDef("ResidentPackageId",GXType.UniqueIdentifier,36,0){Nullable=true}
           };
           def= new CursorDef[] {
-              new CursorDef("P00C52", "SELECT T1.ResidentPackageId, T2.ResidentPackageModules, T1.ResidentGUID, T1.ResidentId, T1.LocationId, T1.OrganisationId FROM (Trn_Resident T1 LEFT JOIN Trn_ResidentPackage T2 ON T2.ResidentPackageId = T1.ResidentPackageId) ORDER BY T1.ResidentId, T1.LocationId, T1.OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C52,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00C52", "SELECT T1.ResidentPackageId, T2.ResidentPackageModules, T1.ResidentId, T1.ResidentGUID, T1.LocationId, T1.OrganisationId FROM (Trn_Resident T1 LEFT JOIN Trn_ResidentPackage T2 ON T2.ResidentPackageId = T1.ResidentPackageId) WHERE T1.ResidentId = :AV20ResidentId ORDER BY T1.ResidentId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C52,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00C53", "SELECT ResidentPackageId FROM Trn_ResidentPackage WHERE ResidentPackageId = :ResidentPackageId ORDER BY ResidentPackageId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C53,1, GxCacheFrequency.OFF ,false,true )
           };
        }
@@ -266,8 +275,8 @@ namespace GeneXus.Programs {
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);
                 ((bool[]) buf[1])[0] = rslt.wasNull(1);
                 ((string[]) buf[2])[0] = rslt.getLongVarchar(2);
-                ((string[]) buf[3])[0] = rslt.getVarchar(3);
-                ((Guid[]) buf[4])[0] = rslt.getGuid(4);
+                ((Guid[]) buf[3])[0] = rslt.getGuid(3);
+                ((string[]) buf[4])[0] = rslt.getVarchar(4);
                 ((Guid[]) buf[5])[0] = rslt.getGuid(5);
                 ((Guid[]) buf[6])[0] = rslt.getGuid(6);
                 return;

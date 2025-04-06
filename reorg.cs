@@ -60,28 +60,68 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeTrn_Theme( )
+      public void CreateTrn_DynamicTranslation( )
       {
          string cmdBuffer = "";
-         /* Indices for table Trn_Theme */
-         cmdBuffer=" DROP INDEX UTRN_THEME "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
+         /* Indices for table Trn_DynamicTranslation */
+         try
+         {
+            cmdBuffer=" CREATE TABLE Trn_DynamicTranslation (DynamicTranslationId CHAR(36) NOT NULL , DynamicTranslationTrnName VARCHAR(100) NOT NULL , DynamicTranslationPrimaryKey CHAR(36) NOT NULL , DynamicTranslationAttributeNam VARCHAR(100) NOT NULL , DynamicTranslationEnglish TEXT NOT NULL , DynamicTranslationDutch TEXT NOT NULL , PRIMARY KEY(DynamicTranslationId))  "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+         }
+         catch
+         {
+            try
+            {
+               cmdBuffer=" DROP TABLE Trn_DynamicTranslation CASCADE "
+               ;
+               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+               RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+               RGZ.ExecuteStmt() ;
+               RGZ.Drop();
+            }
+            catch
+            {
+               try
+               {
+                  cmdBuffer=" DROP VIEW Trn_DynamicTranslation CASCADE "
+                  ;
+                  RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                  RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+                  RGZ.ExecuteStmt() ;
+                  RGZ.Drop();
+               }
+               catch
+               {
+                  try
+                  {
+                     cmdBuffer=" DROP FUNCTION Trn_DynamicTranslation CASCADE "
+                     ;
+                     RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                     RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
+                     RGZ.ExecuteStmt() ;
+                     RGZ.Drop();
+                  }
+                  catch
+                  {
+                  }
+               }
+            }
+            cmdBuffer=" CREATE TABLE Trn_DynamicTranslation (DynamicTranslationId CHAR(36) NOT NULL , DynamicTranslationTrnName VARCHAR(100) NOT NULL , DynamicTranslationPrimaryKey CHAR(36) NOT NULL , DynamicTranslationAttributeNam VARCHAR(100) NOT NULL , DynamicTranslationEnglish TEXT NOT NULL , DynamicTranslationDutch TEXT NOT NULL , PRIMARY KEY(DynamicTranslationId))  "
+            ;
+            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+            RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+            RGZ.ExecuteStmt() ;
+            RGZ.Drop();
+         }
       }
 
       private void TablesCount( )
       {
-         if ( ! IsResumeMode( ) )
-         {
-            /* Using cursor P00012 */
-            pr_default.execute(0);
-            Trn_ThemeCount = P00012_ATrn_ThemeCount[0];
-            pr_default.close(0);
-            PrintRecordCount ( "Trn_Theme" ,  Trn_ThemeCount );
-         }
       }
 
       private bool PreviousCheck( )
@@ -91,12 +131,49 @@ namespace GeneXus.Programs {
             return true ;
          }
          sSchemaVar = GXUtil.UserId( "Server", context, pr_default);
+         if ( tableexist("Trn_DynamicTranslation",sSchemaVar) )
+         {
+            SetCheckError ( GXResourceManager.GetMessage("GXM_table_exist", new   object[]  {"Trn_DynamicTranslation"}) ) ;
+            return false ;
+         }
          return true ;
+      }
+
+      private bool tableexist( string sTableName ,
+                               string sMySchemaName )
+      {
+         bool result;
+         result = false;
+         /* Using cursor P00012 */
+         pr_default.execute(0, new Object[] {sTableName, sMySchemaName});
+         while ( (pr_default.getStatus(0) != 101) )
+         {
+            tablename = P00012_Atablename[0];
+            ntablename = P00012_ntablename[0];
+            schemaname = P00012_Aschemaname[0];
+            nschemaname = P00012_nschemaname[0];
+            result = true;
+            pr_default.readNext(0);
+         }
+         pr_default.close(0);
+         /* Using cursor P00023 */
+         pr_default.execute(1, new Object[] {sTableName, sMySchemaName});
+         while ( (pr_default.getStatus(1) != 101) )
+         {
+            tablename = P00023_Atablename[0];
+            ntablename = P00023_ntablename[0];
+            schemaname = P00023_Aschemaname[0];
+            nschemaname = P00023_nschemaname[0];
+            result = true;
+            pr_default.readNext(1);
+         }
+         pr_default.close(1);
+         return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeTrn_Theme" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "CreateTrn_DynamicTranslation" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
@@ -118,7 +195,7 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Trn_Theme", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_filecrea", new   object[]  {"Trn_DynamicTranslation", ""}) );
       }
 
       private void SetPrecedenceris( )
@@ -151,12 +228,28 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
-         P00012_ATrn_ThemeCount = new int[1] ;
          sSchemaVar = "";
+         sTableName = "";
+         sMySchemaName = "";
+         tablename = "";
+         ntablename = false;
+         schemaname = "";
+         nschemaname = false;
+         P00012_Atablename = new string[] {""} ;
+         P00012_ntablename = new bool[] {false} ;
+         P00012_Aschemaname = new string[] {""} ;
+         P00012_nschemaname = new bool[] {false} ;
+         P00023_Atablename = new string[] {""} ;
+         P00023_ntablename = new bool[] {false} ;
+         P00023_Aschemaname = new string[] {""} ;
+         P00023_nschemaname = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_ATrn_ThemeCount
+               P00012_Atablename, P00012_Aschemaname
+               }
+               , new Object[] {
+               P00023_Atablename, P00023_Aschemaname
                }
             }
          );
@@ -164,14 +257,26 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int Trn_ThemeCount ;
       protected string sSchemaVar ;
+      protected string sTableName ;
+      protected string sMySchemaName ;
+      protected bool ntablename ;
+      protected bool nschemaname ;
+      protected string tablename ;
+      protected string schemaname ;
       protected IGxDataStore dsDataStore1 ;
       protected IGxDataStore dsGAM ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_ATrn_ThemeCount ;
+      protected string[] P00012_Atablename ;
+      protected bool[] P00012_ntablename ;
+      protected string[] P00012_Aschemaname ;
+      protected bool[] P00012_nschemaname ;
+      protected string[] P00023_Atablename ;
+      protected bool[] P00023_ntablename ;
+      protected string[] P00023_Aschemaname ;
+      protected bool[] P00023_nschemaname ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -181,6 +286,7 @@ namespace GeneXus.Programs {
          cursorDefinitions();
          return new Cursor[] {
           new ForEachCursor(def[0])
+         ,new ForEachCursor(def[1])
        };
     }
 
@@ -191,9 +297,17 @@ namespace GeneXus.Programs {
        {
           Object[] prmP00012;
           prmP00012 = new Object[] {
+          new ParDef("sTableName",GXType.Char,255,0) ,
+          new ParDef("sMySchemaName",GXType.Char,255,0)
+          };
+          Object[] prmP00023;
+          prmP00023 = new Object[] {
+          new ParDef("sTableName",GXType.Char,255,0) ,
+          new ParDef("sMySchemaName",GXType.Char,255,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM Trn_Theme ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT TABLENAME, TABLEOWNER FROM PG_TABLES WHERE (UPPER(TABLENAME) = ( UPPER(:sTableName))) AND (UPPER(TABLEOWNER) = ( UPPER(:sMySchemaName))) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00023", "SELECT VIEWNAME, VIEWOWNER FROM PG_VIEWS WHERE (UPPER(VIEWNAME) = ( UPPER(:sTableName))) AND (UPPER(VIEWOWNER) = ( UPPER(:sMySchemaName))) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -205,7 +319,12 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((int[]) buf[0])[0] = rslt.getInt(1);
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                return;
+             case 1 :
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 return;
        }
     }

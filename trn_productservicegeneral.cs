@@ -401,6 +401,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, sPrefix+"PRODUCTSERVICEDESCRIPTION_Captionclass", StringUtil.RTrim( Productservicedescription_Captionclass));
          GxWebStd.gx_hidden_field( context, sPrefix+"PRODUCTSERVICEDESCRIPTION_Captionstyle", StringUtil.RTrim( Productservicedescription_Captionstyle));
          GxWebStd.gx_hidden_field( context, sPrefix+"PRODUCTSERVICEDESCRIPTION_Captionposition", StringUtil.RTrim( Productservicedescription_Captionposition));
+         GxWebStd.gx_hidden_field( context, sPrefix+"PRODUCTSERVICEDESCRIPTION_Visible", StringUtil.BoolToStr( Productservicedescription_Visible));
       }
 
       protected void RenderHtmlCloseForm4P2( )
@@ -840,7 +841,7 @@ namespace GeneXus.Programs {
             /* Div Control */
             GxWebStd.gx_div_start( context, "", 1, 0, "px", 0, "px", "row", "start", "top", "", "", "div");
             /* Div Control */
-            GxWebStd.gx_div_start( context, divDecriptioneditortext_Internalname, divDecriptioneditortext_Visible, 0, "px", 0, "px", "col-xs-12 DataContentCell CKEditor", "start", "top", "", "", "div");
+            GxWebStd.gx_div_start( context, divProductservicedescription_cell_Internalname, 1, 0, "px", 0, "px", divProductservicedescription_cell_Class, "start", "top", "", "", "div");
             /* Div Control */
             GxWebStd.gx_div_start( context, "", -1, 0, "px", 0, "px", "form-group gx-form-group", "start", "top", ""+" data-gx-for=\""+Productservicedescription_Internalname+"\"", "", "div");
             /* Attribute/Variable Label */
@@ -1479,6 +1480,7 @@ namespace GeneXus.Programs {
             Productservicedescription_Captionclass = cgiGet( sPrefix+"PRODUCTSERVICEDESCRIPTION_Captionclass");
             Productservicedescription_Captionstyle = cgiGet( sPrefix+"PRODUCTSERVICEDESCRIPTION_Captionstyle");
             Productservicedescription_Captionposition = cgiGet( sPrefix+"PRODUCTSERVICEDESCRIPTION_Captionposition");
+            Productservicedescription_Visible = StringUtil.StrToBool( cgiGet( sPrefix+"PRODUCTSERVICEDESCRIPTION_Visible"));
             /* Read variables values. */
             A59ProductServiceName = cgiGet( edtProductServiceName_Internalname);
             AssignAttri(sPrefix, false, "A59ProductServiceName", A59ProductServiceName);
@@ -1610,8 +1612,6 @@ namespace GeneXus.Programs {
          AssignAttri(sPrefix, false, "Gx_mode", Gx_mode);
          lblTransactiondetail_descriptiontext_Caption = A60ProductServiceDescription;
          AssignProp(sPrefix, false, lblTransactiondetail_descriptiontext_Internalname, "Caption", lblTransactiondetail_descriptiontext_Caption, true);
-         divDecriptioneditortext_Visible = 0;
-         AssignProp(sPrefix, false, divDecriptioneditortext_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(divDecriptioneditortext_Visible), 5, 0), true);
          GXt_char1 = AV29SupplierLocation;
          new prc_getsupplierlocationname(context ).execute(  A338ProductServiceGroup, out  GXt_char1) ;
          AV29SupplierLocation = GXt_char1;
@@ -1653,6 +1653,20 @@ namespace GeneXus.Programs {
             AssignProp(sPrefix, false, edtavSupplierlocation_Internalname, "Visible", StringUtil.LTrimStr( (decimal)(edtavSupplierlocation_Visible), 5, 0), true);
             divSupplierlocation_cell_Class = "col-xs-12 DataContentCell";
             AssignProp(sPrefix, false, divSupplierlocation_cell_Internalname, "Class", divSupplierlocation_cell_Class, true);
+         }
+         if ( ! ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) || ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 ) ) )
+         {
+            Productservicedescription_Visible = false;
+            AssignProp(sPrefix, false, Productservicedescription_Internalname, "Visible", StringUtil.BoolToStr( Productservicedescription_Visible), true);
+            divProductservicedescription_cell_Class = "Invisible";
+            AssignProp(sPrefix, false, divProductservicedescription_cell_Internalname, "Class", divProductservicedescription_cell_Class, true);
+         }
+         else
+         {
+            Productservicedescription_Visible = true;
+            AssignProp(sPrefix, false, Productservicedescription_Internalname, "Visible", StringUtil.BoolToStr( Productservicedescription_Visible), true);
+            divProductservicedescription_cell_Class = "col-xs-12 DataContentCell CKEditor";
+            AssignProp(sPrefix, false, divProductservicedescription_cell_Internalname, "Class", divProductservicedescription_cell_Class, true);
          }
          if ( ! ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 ) || ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 ) ) )
          {
@@ -2175,7 +2189,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111375571", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025458164896", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2191,7 +2205,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("trn_productservicegeneral.js", "?20254111375572", false, true);
+         context.AddJavascriptSource("trn_productservicegeneral.js", "?2025458164896", false, true);
          context.AddJavascriptSource("CKEditor/ckeditor/ckeditor.js", "", false, true);
          context.AddJavascriptSource("CKEditor/CKEditorRender.js", "", false, true);
          /* End function include_jscripts */
@@ -2277,7 +2291,7 @@ namespace GeneXus.Programs {
          divTransactiondetail_tableagb_Internalname = sPrefix+"TRANSACTIONDETAIL_TABLEAGB";
          divUnnamedtable3_Internalname = sPrefix+"UNNAMEDTABLE3";
          Productservicedescription_Internalname = sPrefix+"PRODUCTSERVICEDESCRIPTION";
-         divDecriptioneditortext_Internalname = sPrefix+"DECRIPTIONEDITORTEXT";
+         divProductservicedescription_cell_Internalname = sPrefix+"PRODUCTSERVICEDESCRIPTION_CELL";
          lblTransactiondetail_textblockdescriptionlabel_Internalname = sPrefix+"TRANSACTIONDETAIL_TEXTBLOCKDESCRIPTIONLABEL";
          lblTransactiondetail_descriptiontext_Internalname = sPrefix+"TRANSACTIONDETAIL_DESCRIPTIONTEXT";
          divUnnamedtable4_Internalname = sPrefix+"UNNAMEDTABLE4";
@@ -2347,7 +2361,7 @@ namespace GeneXus.Programs {
          lblTransactiondetail_descriptiontext_Caption = "";
          divTransactiondetail_productsevicetable_Visible = 1;
          Productservicedescription_Enabled = Convert.ToBoolean( 0);
-         divDecriptioneditortext_Visible = 1;
+         divProductservicedescription_cell_Class = "col-xs-12";
          divTransactiondetail_supplieragbpre_Visible = 1;
          divTransactiondetail_supplieragb_Visible = 1;
          divTransactiondetail_tableagb_Visible = 1;
@@ -2369,6 +2383,7 @@ namespace GeneXus.Programs {
          dynLocationId.Enabled = 0;
          dynLocationId.Visible = 1;
          divLocationid_cell_Class = "col-xs-12";
+         Productservicedescription_Visible = Convert.ToBoolean( -1);
          Productservicedescription_Captionposition = "Left";
          Productservicedescription_Captionstyle = "";
          Productservicedescription_Captionclass = "col-sm-4 AttributeLabel";
@@ -2563,7 +2578,6 @@ namespace GeneXus.Programs {
       private int divTransactiondetail_tableagb_Visible ;
       private int divTransactiondetail_supplieragb_Visible ;
       private int divTransactiondetail_supplieragbpre_Visible ;
-      private int divDecriptioneditortext_Visible ;
       private int divTransactiondetail_productsevicetable_Visible ;
       private int edtProductServiceId_Visible ;
       private int edtOrganisationId_Visible ;
@@ -2645,7 +2659,8 @@ namespace GeneXus.Programs {
       private string divTablesplittedsupplieragb_id_Internalname ;
       private string lblTextblocksupplieragb_id_Internalname ;
       private string lblTextblocksupplieragb_id_Jsonclick ;
-      private string divDecriptioneditortext_Internalname ;
+      private string divProductservicedescription_cell_Internalname ;
+      private string divProductservicedescription_cell_Class ;
       private string Productservicedescription_Internalname ;
       private string divTransactiondetail_productsevicetable_Internalname ;
       private string lblTransactiondetail_textblockdescriptionlabel_Internalname ;
@@ -2705,6 +2720,7 @@ namespace GeneXus.Programs {
       private bool AV23ListGen ;
       private bool Productservicedescription_Enabled ;
       private bool Productservicedescription_Toolbarcancollapse ;
+      private bool Productservicedescription_Visible ;
       private bool wbLoad ;
       private bool A61ProductServiceImage_IsBlob ;
       private bool Rfr0gs ;

@@ -352,6 +352,9 @@ namespace GeneXus.Programs {
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/ConfirmPanel/BootstrapConfirmPanelRender.js", "", false, true);
+         context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
+         context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
+         context.AddJavascriptSource("DVelop/Bootstrap/ConfirmPanel/BootstrapConfirmPanelRender.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/GridEmpowerer/GridEmpowererRender.js", "", false, true);
          context.WriteHtmlText( Form.Headerrawhtml) ;
@@ -573,6 +576,13 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Cancelbuttoncaption", StringUtil.RTrim( Dvelop_confirmpanel_useractionblock_Cancelbuttoncaption));
          GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Yesbuttonposition", StringUtil.RTrim( Dvelop_confirmpanel_useractionblock_Yesbuttonposition));
          GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Confirmtype", StringUtil.RTrim( Dvelop_confirmpanel_useractionblock_Confirmtype));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Title", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Title));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Confirmationtext", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Confirmationtext));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Yesbuttoncaption", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Yesbuttoncaption));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Nobuttoncaption", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Nobuttoncaption));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Cancelbuttoncaption", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Cancelbuttoncaption));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Yesbuttonposition", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Yesbuttonposition));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Confirmtype", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Confirmtype));
          GxWebStd.gx_hidden_field( context, "GRID_EMPOWERER_Gridinternalname", StringUtil.RTrim( Grid_empowerer_Gridinternalname));
          GxWebStd.gx_hidden_field( context, "GRID_EMPOWERER_Hastitlesettings", StringUtil.BoolToStr( Grid_empowerer_Hastitlesettings));
          GxWebStd.gx_hidden_field( context, "GRID_EMPOWERER_Hascolumnsselector", StringUtil.BoolToStr( Grid_empowerer_Hascolumnsselector));
@@ -587,6 +597,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "vHTTPREQUEST_Baseurl", StringUtil.RTrim( AV14HTTPRequest.BaseURL));
          GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_USERACTIONUNBLOCK_Result", StringUtil.RTrim( Dvelop_confirmpanel_useractionunblock_Result));
          GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Result", StringUtil.RTrim( Dvelop_confirmpanel_useractionblock_Result));
+         GxWebStd.gx_hidden_field( context, "DVELOP_CONFIRMPANEL_UDELETE_Result", StringUtil.RTrim( Dvelop_confirmpanel_udelete_Result));
          GxWebStd.gx_hidden_field( context, "GRID_Rows", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGrid_Rows), 6, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "GRIDPAGINATIONBAR_Selectedpage", StringUtil.RTrim( Gridpaginationbar_Selectedpage));
          GxWebStd.gx_hidden_field( context, "GRIDPAGINATIONBAR_Rowsperpageselectedvalue", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gridpaginationbar_Rowsperpageselectedvalue), 9, 0, ".", "")));
@@ -946,6 +957,19 @@ namespace GeneXus.Programs {
       }
 
       protected void wb_table3_84_5J2e( bool wbgen )
+      {
+         if ( wbgen )
+         {
+            wb_table4_89_5J2( true) ;
+         }
+         else
+         {
+            wb_table4_89_5J2( false) ;
+         }
+         return  ;
+      }
+
+      protected void wb_table4_89_5J2e( bool wbgen )
       {
          if ( wbgen )
          {
@@ -1751,6 +1775,13 @@ namespace GeneXus.Programs {
             Dvelop_confirmpanel_useractionblock_Cancelbuttoncaption = cgiGet( "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Cancelbuttoncaption");
             Dvelop_confirmpanel_useractionblock_Yesbuttonposition = cgiGet( "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Yesbuttonposition");
             Dvelop_confirmpanel_useractionblock_Confirmtype = cgiGet( "DVELOP_CONFIRMPANEL_USERACTIONBLOCK_Confirmtype");
+            Dvelop_confirmpanel_udelete_Title = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Title");
+            Dvelop_confirmpanel_udelete_Confirmationtext = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Confirmationtext");
+            Dvelop_confirmpanel_udelete_Yesbuttoncaption = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Yesbuttoncaption");
+            Dvelop_confirmpanel_udelete_Nobuttoncaption = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Nobuttoncaption");
+            Dvelop_confirmpanel_udelete_Cancelbuttoncaption = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Cancelbuttoncaption");
+            Dvelop_confirmpanel_udelete_Yesbuttonposition = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Yesbuttonposition");
+            Dvelop_confirmpanel_udelete_Confirmtype = cgiGet( "DVELOP_CONFIRMPANEL_UDELETE_Confirmtype");
             Grid_empowerer_Gridinternalname = cgiGet( "GRID_EMPOWERER_Gridinternalname");
             Grid_empowerer_Hastitlesettings = StringUtil.StrToBool( cgiGet( "GRID_EMPOWERER_Hastitlesettings"));
             Grid_empowerer_Hascolumnsselector = StringUtil.StrToBool( cgiGet( "GRID_EMPOWERER_Hascolumnsselector"));
@@ -2108,8 +2139,12 @@ namespace GeneXus.Programs {
             cmbavActiongroup.addItem("6", StringUtil.Format( "%1;%2", context.GetMessage( "Edit", ""), "fa fa-pen", "", "", "", "", "", "", ""), 0);
             if ( AV33IsAuthorized_Delete )
             {
-               cmbavActiongroup.addItem("7", StringUtil.Format( "%1;%2", context.GetMessage( "GX_BtnDelete", ""), "fa fa-times", "", "", "", "", "", "", ""), 0);
+               if ( false )
+               {
+                  cmbavActiongroup.addItem("7", StringUtil.Format( "%1;%2", context.GetMessage( "GX_BtnDelete", ""), "fa fa-times", "", "", "", "", "", "", ""), 0);
+               }
             }
+            cmbavActiongroup.addItem("8", StringUtil.Format( "%1;%2", context.GetMessage( "Delete", ""), "fas fa-x", "", "", "", "", "", "", ""), 0);
             if ( AV41IsAuthorized_SDT_Residents )
             {
                GXKey = Crypto.GetSiteKey( );
@@ -2312,6 +2347,12 @@ namespace GeneXus.Programs {
             S272 ();
             if (returnInSub) return;
          }
+         else if ( AV35ActionGroup == 8 )
+         {
+            /* Execute user subroutine: 'DO UDELETE' */
+            S282 ();
+            if (returnInSub) return;
+         }
          AV35ActionGroup = 0;
          AssignAttri("", false, cmbavActiongroup_Internalname, StringUtil.LTrimStr( (decimal)(AV35ActionGroup), 4, 0));
          /*  Sending Event outputs  */
@@ -2331,7 +2372,7 @@ namespace GeneXus.Programs {
          if ( StringUtil.StrCmp(Dvelop_confirmpanel_resendinvite_Result, "Yes") == 0 )
          {
             /* Execute user subroutine: 'DO ACTION RESENDINVITE' */
-            S282 ();
+            S292 ();
             if (returnInSub) return;
          }
          /*  Sending Event outputs  */
@@ -2349,7 +2390,7 @@ namespace GeneXus.Programs {
          if ( StringUtil.StrCmp(Dvelop_confirmpanel_useractionunblock_Result, "Yes") == 0 )
          {
             /* Execute user subroutine: 'DO ACTION USERACTIONUNBLOCK' */
-            S292 ();
+            S302 ();
             if (returnInSub) return;
          }
          /*  Sending Event outputs  */
@@ -2377,7 +2418,7 @@ namespace GeneXus.Programs {
          if ( StringUtil.StrCmp(Dvelop_confirmpanel_useractionblock_Result, "Yes") == 0 )
          {
             /* Execute user subroutine: 'DO ACTION USERACTIONBLOCK' */
-            S302 ();
+            S312 ();
             if (returnInSub) return;
          }
          /*  Sending Event outputs  */
@@ -2557,7 +2598,7 @@ namespace GeneXus.Programs {
          this.executeUsercontrolMethod("", false, "DVELOP_CONFIRMPANEL_RESENDINVITEContainer", "Confirm", "", new Object[] {});
       }
 
-      protected void S282( )
+      protected void S292( )
       {
          /* 'DO ACTION RESENDINVITE' Routine */
          returnInSub = false;
@@ -2591,7 +2632,7 @@ namespace GeneXus.Programs {
          this.executeUsercontrolMethod("", false, "DVELOP_CONFIRMPANEL_USERACTIONUNBLOCKContainer", "Confirm", "", new Object[] {});
       }
 
-      protected void S292( )
+      protected void S302( )
       {
          /* 'DO ACTION USERACTIONUNBLOCK' Routine */
          returnInSub = false;
@@ -2621,7 +2662,7 @@ namespace GeneXus.Programs {
          this.executeUsercontrolMethod("", false, "DVELOP_CONFIRMPANEL_USERACTIONBLOCKContainer", "Confirm", "", new Object[] {});
       }
 
-      protected void S302( )
+      protected void S312( )
       {
          /* 'DO ACTION USERACTIONBLOCK' Routine */
          returnInSub = false;
@@ -2681,6 +2722,19 @@ namespace GeneXus.Programs {
          GXEncryptionTmp = "trn_resident.aspx"+UrlEncode(StringUtil.RTrim("DLT")) + "," + UrlEncode(((SdtSDT_Resident)(AV22SDT_Residents.CurrentItem)).gxTpr_Residentid.ToString()) + "," + UrlEncode(((SdtSDT_Resident)(AV22SDT_Residents.CurrentItem)).gxTpr_Locationid.ToString()) + "," + UrlEncode(((SdtSDT_Resident)(AV22SDT_Residents.CurrentItem)).gxTpr_Organisationid.ToString());
          CallWebObject(formatLink("trn_resident.aspx") + "?" + UriEncrypt64( GXEncryptionTmp+Crypto.CheckSum( GXEncryptionTmp, 6), GXKey));
          context.wjLocDisableFrm = 1;
+      }
+
+      protected void S282( )
+      {
+         /* 'DO UDELETE' Routine */
+         returnInSub = false;
+         this.executeUsercontrolMethod("", false, "DVELOP_CONFIRMPANEL_UDELETEContainer", "Confirm", "", new Object[] {});
+      }
+
+      protected void S322( )
+      {
+         /* 'DO ACTION UDELETE' Routine */
+         returnInSub = false;
       }
 
       protected void S122( )
@@ -2862,6 +2916,40 @@ namespace GeneXus.Programs {
          pr_default.close(2);
       }
 
+      protected void wb_table4_89_5J2( bool wbgen )
+      {
+         if ( wbgen )
+         {
+            /* Table start */
+            sStyleString = "";
+            GxWebStd.gx_table_start( context, tblTabledvelop_confirmpanel_udelete_Internalname, tblTabledvelop_confirmpanel_udelete_Internalname, "", "Table", 0, "", "", 1, 2, sStyleString, "", "", 0);
+            context.WriteHtmlText( "<tbody>") ;
+            context.WriteHtmlText( "<tr>") ;
+            context.WriteHtmlText( "<td data-align=\"center\"  style=\""+CSSHelper.Prettify( "text-align:-khtml-center;text-align:-moz-center;text-align:-webkit-center")+"\">") ;
+            /* User Defined Control */
+            ucDvelop_confirmpanel_udelete.SetProperty("Title", Dvelop_confirmpanel_udelete_Title);
+            ucDvelop_confirmpanel_udelete.SetProperty("ConfirmationText", Dvelop_confirmpanel_udelete_Confirmationtext);
+            ucDvelop_confirmpanel_udelete.SetProperty("YesButtonCaption", Dvelop_confirmpanel_udelete_Yesbuttoncaption);
+            ucDvelop_confirmpanel_udelete.SetProperty("NoButtonCaption", Dvelop_confirmpanel_udelete_Nobuttoncaption);
+            ucDvelop_confirmpanel_udelete.SetProperty("CancelButtonCaption", Dvelop_confirmpanel_udelete_Cancelbuttoncaption);
+            ucDvelop_confirmpanel_udelete.SetProperty("YesButtonPosition", Dvelop_confirmpanel_udelete_Yesbuttonposition);
+            ucDvelop_confirmpanel_udelete.SetProperty("ConfirmType", Dvelop_confirmpanel_udelete_Confirmtype);
+            ucDvelop_confirmpanel_udelete.Render(context, "dvelop.gxbootstrap.confirmpanel", Dvelop_confirmpanel_udelete_Internalname, "DVELOP_CONFIRMPANEL_UDELETEContainer");
+            context.WriteHtmlText( "<div class=\"gx_usercontrol_child\" id=\""+"DVELOP_CONFIRMPANEL_UDELETEContainer"+"Body"+"\" style=\"display:none;\">") ;
+            context.WriteHtmlText( "</div>") ;
+            context.WriteHtmlText( "</td>") ;
+            context.WriteHtmlText( "</tr>") ;
+            context.WriteHtmlText( "</tbody>") ;
+            /* End of table */
+            context.WriteHtmlText( "</table>") ;
+            wb_table4_89_5J2e( true) ;
+         }
+         else
+         {
+            wb_table4_89_5J2e( false) ;
+         }
+      }
+
       protected void wb_table3_84_5J2( bool wbgen )
       {
          if ( wbgen )
@@ -2998,6 +3086,7 @@ namespace GeneXus.Programs {
          AddStyleSheetFile("DVelop/Bootstrap/Shared/DVelopBootstrap.css", "");
          AddStyleSheetFile("DVelop/Bootstrap/Shared/DVelopBootstrap.css", "");
          AddStyleSheetFile("DVelop/Bootstrap/Shared/DVelopBootstrap.css", "");
+         AddStyleSheetFile("DVelop/Bootstrap/Shared/DVelopBootstrap.css", "");
          AddStyleSheetFile("calendar-system.css", "");
          AddThemeStyleSheetFile("", context.GetTheme( )+".css", "?"+GetCacheInvalidationToken( ));
          bool outputEnabled = isOutputEnabled( );
@@ -3008,7 +3097,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111592867", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025458225744", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -3024,7 +3113,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("wp_locationresidents.js", "?20254111592871", false, true);
+         context.AddJavascriptSource("wp_locationresidents.js", "?2025458225750", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js", "", false, true);
@@ -3037,6 +3126,9 @@ namespace GeneXus.Programs {
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js", "", false, true);
+         context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
+         context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
+         context.AddJavascriptSource("DVelop/Bootstrap/ConfirmPanel/BootstrapConfirmPanelRender.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/ConfirmPanel/BootstrapConfirmPanelRender.js", "", false, true);
@@ -3671,6 +3763,8 @@ namespace GeneXus.Programs {
          tblTabledvelop_confirmpanel_useractionunblock_Internalname = "TABLEDVELOP_CONFIRMPANEL_USERACTIONUNBLOCK";
          Dvelop_confirmpanel_useractionblock_Internalname = "DVELOP_CONFIRMPANEL_USERACTIONBLOCK";
          tblTabledvelop_confirmpanel_useractionblock_Internalname = "TABLEDVELOP_CONFIRMPANEL_USERACTIONBLOCK";
+         Dvelop_confirmpanel_udelete_Internalname = "DVELOP_CONFIRMPANEL_UDELETE";
+         tblTabledvelop_confirmpanel_udelete_Internalname = "TABLEDVELOP_CONFIRMPANEL_UDELETE";
          Grid_empowerer_Internalname = "GRID_EMPOWERER";
          divHtml_bottomauxiliarcontrols_Internalname = "HTML_BOTTOMAUXILIARCONTROLS";
          divLayoutmaintable_Internalname = "LAYOUTMAINTABLE";
@@ -3773,6 +3867,13 @@ namespace GeneXus.Programs {
          bttBtninsert_Visible = 1;
          Grid_empowerer_Hascolumnsselector = Convert.ToBoolean( -1);
          Grid_empowerer_Hastitlesettings = Convert.ToBoolean( -1);
+         Dvelop_confirmpanel_udelete_Confirmtype = "1";
+         Dvelop_confirmpanel_udelete_Yesbuttonposition = "left";
+         Dvelop_confirmpanel_udelete_Cancelbuttoncaption = "WWP_ConfirmTextCancel";
+         Dvelop_confirmpanel_udelete_Nobuttoncaption = "WWP_ConfirmTextNo";
+         Dvelop_confirmpanel_udelete_Yesbuttoncaption = "WWP_ConfirmTextYes";
+         Dvelop_confirmpanel_udelete_Confirmationtext = "The following data associated with the resident will be deleted: Memos";
+         Dvelop_confirmpanel_udelete_Title = context.GetMessage( "Confirm delete action", "");
          Dvelop_confirmpanel_useractionblock_Confirmtype = "1";
          Dvelop_confirmpanel_useractionblock_Yesbuttonposition = "left";
          Dvelop_confirmpanel_useractionblock_Cancelbuttoncaption = "WWP_ConfirmTextCancel";
@@ -3905,6 +4006,7 @@ namespace GeneXus.Programs {
          AV14HTTPRequest = new GxHttpRequest( context);
          Dvelop_confirmpanel_useractionunblock_Result = "";
          Dvelop_confirmpanel_useractionblock_Result = "";
+         Dvelop_confirmpanel_udelete_Result = "";
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
          AV29WWPContext = new GeneXus.Programs.wwpbaseobjects.SdtWWPContext(context);
@@ -4049,6 +4151,7 @@ namespace GeneXus.Programs {
          H005J4_n96ResidentTypeId = new bool[] {false} ;
          H005J4_A71ResidentGUID = new string[] {""} ;
          GXt_char5 = "";
+         ucDvelop_confirmpanel_udelete = new GXUserControl();
          ucDvelop_confirmpanel_useractionblock = new GXUserControl();
          ucDvelop_confirmpanel_useractionunblock = new GXUserControl();
          ucDvelop_confirmpanel_resendinvite = new GXUserControl();
@@ -4191,6 +4294,7 @@ namespace GeneXus.Programs {
       private string Dvelop_confirmpanel_resendinvite_Result ;
       private string Dvelop_confirmpanel_useractionunblock_Result ;
       private string Dvelop_confirmpanel_useractionblock_Result ;
+      private string Dvelop_confirmpanel_udelete_Result ;
       private string gxfirstwebparm ;
       private string gxfirstwebparm_bkp ;
       private string sGXsfl_45_idx="0001" ;
@@ -4252,6 +4356,13 @@ namespace GeneXus.Programs {
       private string Dvelop_confirmpanel_useractionblock_Cancelbuttoncaption ;
       private string Dvelop_confirmpanel_useractionblock_Yesbuttonposition ;
       private string Dvelop_confirmpanel_useractionblock_Confirmtype ;
+      private string Dvelop_confirmpanel_udelete_Title ;
+      private string Dvelop_confirmpanel_udelete_Confirmationtext ;
+      private string Dvelop_confirmpanel_udelete_Yesbuttoncaption ;
+      private string Dvelop_confirmpanel_udelete_Nobuttoncaption ;
+      private string Dvelop_confirmpanel_udelete_Cancelbuttoncaption ;
+      private string Dvelop_confirmpanel_udelete_Yesbuttonposition ;
+      private string Dvelop_confirmpanel_udelete_Confirmtype ;
       private string Grid_empowerer_Gridinternalname ;
       private string GX_FocusControl ;
       private string sPrefix ;
@@ -4305,6 +4416,8 @@ namespace GeneXus.Programs {
       private string edtavSdt_residents__residentlastname_Link ;
       private string edtavAccountstatus_Columnclass ;
       private string GXt_char5 ;
+      private string tblTabledvelop_confirmpanel_udelete_Internalname ;
+      private string Dvelop_confirmpanel_udelete_Internalname ;
       private string tblTabledvelop_confirmpanel_useractionblock_Internalname ;
       private string Dvelop_confirmpanel_useractionblock_Internalname ;
       private string tblTabledvelop_confirmpanel_useractionunblock_Internalname ;
@@ -4423,6 +4536,7 @@ namespace GeneXus.Programs {
       private GXUserControl ucDdo_grid ;
       private GXUserControl ucDdo_gridcolumnsselector ;
       private GXUserControl ucGrid_empowerer ;
+      private GXUserControl ucDvelop_confirmpanel_udelete ;
       private GXUserControl ucDvelop_confirmpanel_useractionblock ;
       private GXUserControl ucDvelop_confirmpanel_useractionunblock ;
       private GXUserControl ucDvelop_confirmpanel_resendinvite ;

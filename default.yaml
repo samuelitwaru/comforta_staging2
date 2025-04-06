@@ -1,10 +1,56 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250401115156"
+  version: "20250405052708"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
+  /Trn_AppVersionLoadDVCombo:
+    post:
+      tags:
+        - Trn_AppVersionLoadDVCombo
+      operationId: "Trn_AppVersionLoadDVCombo"
+      summary: "Trn_App Version Load DVCombo"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Trn_AppVersionLoadDVComboInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Trn_AppVersionLoadDVComboOutput"
+        404:
+          description: "Not found"
+  /Trn_AppVersionWWGetFilterData:
+    post:
+      tags:
+        - Trn_AppVersionWWGetFilterData
+      operationId: "Trn_AppVersionWWGetFilterData"
+      summary: "Trn_App Version WWGet Filter Data"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Trn_AppVersionWWGetFilterDataInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Trn_AppVersionWWGetFilterDataOutput"
+        404:
+          description: "Not found"
   /Trn_AuditLoadDVCombo:
     post:
       tags:
@@ -72,6 +118,29 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Trn_CallToActionLoadDVComboOutput"
+        404:
+          description: "Not found"
+  /Trn_DynamicTranslationWWGetFilterData:
+    post:
+      tags:
+        - Trn_DynamicTranslationWWGetFilterData
+      operationId: "Trn_DynamicTranslationWWGetFilterData"
+      summary: "Trn_Dynamic Translation WWGet Filter Data"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Trn_DynamicTranslationWWGetFilterDataInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Trn_DynamicTranslationWWGetFilterDataOutput"
         404:
           description: "Not found"
   /Trn_LocationWWGetFilterData:
@@ -967,6 +1036,75 @@ paths:
                 $ref: "#/components/schemas/WorkWithPlus.WWP_ParameterWWGetFilterDataOutput"
         404:
           description: "Not found"
+  /WP_DynamicFormElementUFormWCGetFilterData:
+    post:
+      tags:
+        - WP_DynamicFormElementUFormWCGetFilterData
+      operationId: "WP_DynamicFormElementUFormWCGetFilterData"
+      summary: "WP_Dynamic Form Element UForm WCGet Filter Data"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WP_DynamicFormElementUFormWCGetFilterDataInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WP_DynamicFormElementUFormWCGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /WP_DynamicFormTrn_LocationDynamicFormWCGetFilterData:
+    post:
+      tags:
+        - WP_DynamicFormTrn_LocationDynamicFormWCGetFilterData
+      operationId: "WP_DynamicFormTrn_LocationDynamicFormWCGetFilterData"
+      summary: "WP_Dynamic Form Trn_Location Dynamic Form WCGet Filter Data"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WP_DynamicFormTrn_LocationDynamicFormWCGetFilterDataInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WP_DynamicFormTrn_LocationDynamicFormWCGetFilterDataOutput"
+        404:
+          description: "Not found"
+  /WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterData:
+    post:
+      tags:
+        - WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterData
+      operationId: "WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterData"
+      summary: "WP_Dynamic Form Trn_Organisation Dynamic Form WCGet Filter Data"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterDataInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterDataOutput"
+        404:
+          description: "Not found"
   /WP_LocationDynamicFormGetFilterData:
     post:
       tags:
@@ -1236,6 +1374,22 @@ components:
           scopes: 
             fullcontrol: Full access
   schemas:
+    Trn_AppVersionLoadDVComboOutput:
+      properties:
+        SelectedValue:
+          type: "string"
+        SelectedText:
+          type: "string"
+        Combo_DataJson:
+          type: "string"
+    Trn_AppVersionWWGetFilterDataOutput:
+      properties:
+        OptionsJson:
+          type: "string"
+        OptionsDescJson:
+          type: "string"
+        OptionIndexesJson:
+          type: "string"
     Trn_AuditLoadDVComboOutput:
       properties:
         SelectedValue:
@@ -1259,6 +1413,14 @@ components:
         SelectedText:
           type: "string"
         Combo_DataJson:
+          type: "string"
+    Trn_DynamicTranslationWWGetFilterDataOutput:
+      properties:
+        OptionsJson:
+          type: "string"
+        OptionsDescJson:
+          type: "string"
+        OptionIndexesJson:
           type: "string"
     Trn_LocationWWGetFilterDataOutput:
       properties:
@@ -1568,6 +1730,30 @@ components:
           type: "string"
         OptionIndexesJson:
           type: "string"
+    WP_DynamicFormElementUFormWCGetFilterDataOutput:
+      properties:
+        OptionsJson:
+          type: "string"
+        OptionsDescJson:
+          type: "string"
+        OptionIndexesJson:
+          type: "string"
+    WP_DynamicFormTrn_LocationDynamicFormWCGetFilterDataOutput:
+      properties:
+        OptionsJson:
+          type: "string"
+        OptionsDescJson:
+          type: "string"
+        OptionIndexesJson:
+          type: "string"
+    WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterDataOutput:
+      properties:
+        OptionsJson:
+          type: "string"
+        OptionsDescJson:
+          type: "string"
+        OptionIndexesJson:
+          type: "string"
     WP_LocationDynamicFormGetFilterDataOutput:
       properties:
         OptionsJson:
@@ -1604,6 +1790,30 @@ components:
       properties:
         OptionsJson:
           type: "string"
+    Trn_AppVersionLoadDVComboInput:  
+      properties:
+        ComboName:
+          type: "string"
+        TrnMode:
+          type: "string"
+        IsDynamicCall:
+          type: "boolean"
+        AppVersionId:
+          type: "string"
+          format: "uuid"
+        Cond_OrganisationId:
+          type: "string"
+          format: "uuid"
+        SearchTxtParms:
+          type: "string"
+    Trn_AppVersionWWGetFilterDataInput:  
+      properties:
+        DDOName:
+          type: "string"
+        SearchTxtParms:
+          type: "string"
+        SearchTxtTo:
+          type: "string"
     Trn_AuditLoadDVComboInput:  
       properties:
         ComboName:
@@ -1637,6 +1847,14 @@ components:
           type: "string"
           format: "uuid"
         SearchTxtParms:
+          type: "string"
+    Trn_DynamicTranslationWWGetFilterDataInput:  
+      properties:
+        DDOName:
+          type: "string"
+        SearchTxtParms:
+          type: "string"
+        SearchTxtTo:
           type: "string"
     Trn_LocationWWGetFilterDataInput:  
       properties:
@@ -1999,6 +2217,30 @@ components:
         SearchTxtTo:
           type: "string"
     WorkWithPlus.WWP_ParameterWWGetFilterDataInput:  
+      properties:
+        DDOName:
+          type: "string"
+        SearchTxtParms:
+          type: "string"
+        SearchTxtTo:
+          type: "string"
+    WP_DynamicFormElementUFormWCGetFilterDataInput:  
+      properties:
+        DDOName:
+          type: "string"
+        SearchTxtParms:
+          type: "string"
+        SearchTxtTo:
+          type: "string"
+    WP_DynamicFormTrn_LocationDynamicFormWCGetFilterDataInput:  
+      properties:
+        DDOName:
+          type: "string"
+        SearchTxtParms:
+          type: "string"
+        SearchTxtTo:
+          type: "string"
+    WP_DynamicFormTrn_OrganisationDynamicFormWCGetFilterDataInput:  
       properties:
         DDOName:
           type: "string"

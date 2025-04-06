@@ -1,2 +1,2 @@
-DROP INDEX UTRN_THEME;
+CREATE TABLE Trn_DynamicTranslation (DynamicTranslationId CHAR(36) NOT NULL , DynamicTranslationTrnName VARCHAR(100) NOT NULL , DynamicTranslationPrimaryKey CHAR(36) NOT NULL , DynamicTranslationAttributeNam VARCHAR(100) NOT NULL , DynamicTranslationEnglish TEXT NOT NULL , DynamicTranslationDutch TEXT NOT NULL , PRIMARY KEY(DynamicTranslationId));
 

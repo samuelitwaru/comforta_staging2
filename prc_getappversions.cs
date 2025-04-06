@@ -174,7 +174,7 @@ namespace GeneXus.Programs {
           new ParDef("AV19Udparg1",GXType.UniqueIdentifier,36,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00BE2", "SELECT LocationId, AppVersionId, AppVersionName FROM Trn_AppVersion WHERE LocationId = :AV19Udparg1 ORDER BY AppVersionName, LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BE2,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00BE2", "SELECT LocationId, AppVersionId, AppVersionName FROM Trn_AppVersion WHERE LocationId = :AV19Udparg1 ORDER BY AppVersionName ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BE2,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }

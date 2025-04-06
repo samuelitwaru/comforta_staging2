@@ -130,7 +130,7 @@ namespace GeneXus.Programs {
                   A281Trn_ThemeFontFamily = P00C44_A281Trn_ThemeFontFamily[0];
                   A405Trn_ThemeFontSize = P00C44_A405Trn_ThemeFontSize[0];
                   AV33GXLvl22 = 1;
-                  A274Trn_ThemeName = "Organisation Style";
+                  A274Trn_ThemeName = "Brand Theme";
                   A281Trn_ThemeFontFamily = AV26Modern_Trn_Theme.gxTpr_Trn_themefontfamily;
                   A405Trn_ThemeFontSize = AV26Modern_Trn_Theme.gxTpr_Trn_themefontsize;
                   /* Optimized DELETE. */
@@ -300,7 +300,7 @@ namespace GeneXus.Programs {
             n273Trn_ThemeId = P00C414_n273Trn_ThemeId[0];
             A100OrganisationSettingid = P00C414_A100OrganisationSettingid[0];
             AV17BC_Trn_Theme.gxTpr_Trn_themeid = AV8OrganisationId;
-            AV17BC_Trn_Theme.gxTpr_Trn_themename = "Organisation Style";
+            AV17BC_Trn_Theme.gxTpr_Trn_themename = "Brand Theme";
             AV17BC_Trn_Theme.gxTpr_Trn_themefontfamily = AV26Modern_Trn_Theme.gxTpr_Trn_themefontfamily;
             AV17BC_Trn_Theme.gxTpr_Trn_themefontsize = AV26Modern_Trn_Theme.gxTpr_Trn_themefontsize;
             AV17BC_Trn_Theme.gxTpr_Color.Clear();

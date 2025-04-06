@@ -3251,7 +3251,6 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       {
          /* Start Routine */
          returnInSub = false;
-         GX_msglist.addItem(new GeneXus.Programs.wwpbaseobjects.dvmessagegetbasicnotificationmsg(context).executeUdp(  "",  context.GetMessage( "Line C4: Start - ", "")+new prc_getloggertime(context).executeUdp( ),  "info",  "",  "false",  ""));
          AV22IsFormSettings = (bool)(((StringUtil.StrCmp(AV54WWPDynamicFormMode, "UPD")==0)&&(0==AV60WWPFormElementId)));
          AssignAttri(sPrefix, false, "AV22IsFormSettings", AV22IsFormSettings);
          GxWebStd.gx_hidden_field( context, sPrefix+"gxhash_vISFORMSETTINGS", GetSecureSignedToken( sPrefix, AV22IsFormSettings, context));
@@ -3606,6 +3605,10 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          }
          divLayoutmaintable_Class = divLayoutmaintable_Class+" "+"EditForm";
          AssignProp(sPrefix, false, divLayoutmaintable_Internalname, "Class", divLayoutmaintable_Class, true);
+         lblVisibleconditionhelpicon_Caption = StringUtil.Format( "<i class='BootstrapTooltipLeft fas fa-circle-info' title='%1'></i>", context.GetMessage( "VisibleConditionHelpText", ""), "", "", "", "", "", "", "", "");
+         AssignProp(sPrefix, false, lblVisibleconditionhelpicon_Internalname, "Caption", lblVisibleconditionhelpicon_Caption, true);
+         lblReferencieidhelpicon_Caption = StringUtil.Format( "<i class='BootstrapTooltipLeft fas fa-circle-info' title='%1'></i>", context.GetMessage( "The \"Reference id\" is used to reference this field in the visible conditions or validation of other fields of the form. If this field will not be referenced, it is recommended to leave it blank.", ""), "", "", "", "", "", "", "", "");
+         AssignProp(sPrefix, false, lblReferencieidhelpicon_Internalname, "Caption", lblReferencieidhelpicon_Caption, true);
          this.executeExternalObjectMethod(sPrefix, false, "WWPActions", "Mask_Apply", new Object[] {(string)edtavWwpformelementreferenceid_Internalname,(string)"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",(bool)false,(bool)false}, false);
          /* Execute user subroutine: 'ATTRIBUTESSECURITYCODE' */
          S112 ();
@@ -5583,7 +5586,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "<td class='DynFormConditionHelpCell'>") ;
             /* Text block */
-            GxWebStd.gx_label_ctrl( context, lblReferencieidhelpicon_Internalname, context.GetMessage( "<i class='BootstrapTooltipLeft fas fa-circle-info' title='The \"Reference id\" is used to reference this field in the visible conditions or validation of other fields of the form. If this field will not be referenced, it is recommended to leave it blank.'></i>", ""), "", "", lblReferencieidhelpicon_Jsonclick, "'"+sPrefix+"'"+",false,"+"'"+""+"'", "", "TextBlock", 0, "", 1, 1, 0, 2, "HLP_WorkWithPlus/DynamicForms/WWP_DF_AddElement.htm");
+            GxWebStd.gx_label_ctrl( context, lblReferencieidhelpicon_Internalname, lblReferencieidhelpicon_Caption, "", "", lblReferencieidhelpicon_Jsonclick, "'"+sPrefix+"'"+",false,"+"'"+""+"'", "", "TextBlock", 0, "", 1, 1, 0, 2, "HLP_WorkWithPlus/DynamicForms/WWP_DF_AddElement.htm");
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             /* End of table */
@@ -5876,7 +5879,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111415310", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025458231212", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -5892,7 +5895,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("workwithplus/dynamicforms/wwp_df_addelement.js", "?20254111415374", false, true);
+         context.AddJavascriptSource("workwithplus/dynamicforms/wwp_df_addelement.js", "?2025458231220", false, true);
          context.AddJavascriptSource("shared/HistoryManager/HistoryManager.js", "", false, true);
          context.AddJavascriptSource("shared/HistoryManager/rsh/json2005.js", "", false, true);
          context.AddJavascriptSource("shared/HistoryManager/rsh/rsh.js", "", false, true);
@@ -6473,6 +6476,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          chkavWwp_df_datemetadata_isdefaultvaluetoday.Caption = context.GetMessage( "WWP_DF_SetTodayAsDefaultValue", "");
          edtavWwpformelementreferenceid_Visible = 1;
          Btnaddvalidation_Visible = Convert.ToBoolean( -1);
+         lblReferencieidhelpicon_Caption = context.GetMessage( "<i class='BootstrapTooltipLeft fas fa-circle-info' title='The \"Reference id\" is used to reference this field in the visible conditions or validation of other fields of the form. If this field will not be referenced, it is recommended to leave it blank.'></i>", "");
          lblVisibleconditionhelpicon_Caption = context.GetMessage( "<i class='BootstrapTooltipLeft fas fa-circle-info' title='VisibleConditionHelpText'></i>", "");
          Ucmentionsvisibility_Datalistprocextrapartameters = "";
          edtavColumns_Jsonclick = "";
@@ -7187,6 +7191,8 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       private string Ucmentionsvisibility_Datalistprocextrapartameters ;
       private string lblVisibleconditionhelpicon_Caption ;
       private string lblVisibleconditionhelpicon_Internalname ;
+      private string lblReferencieidhelpicon_Caption ;
+      private string lblReferencieidhelpicon_Internalname ;
       private string Gridvalidations_empowerer_Gridinternalname ;
       private string cellWwpformelementreferenceid_cell_Class ;
       private string cellWwpformelementreferenceid_cell_Internalname ;
@@ -7207,7 +7213,6 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       private string lblVisibleconditionhelpicon_Jsonclick ;
       private string tblTablemergedwwpformelementreferenceid_Internalname ;
       private string edtavWwpformelementreferenceid_Jsonclick ;
-      private string lblReferencieidhelpicon_Internalname ;
       private string lblReferencieidhelpicon_Jsonclick ;
       private string sCtrlAV54WWPDynamicFormMode ;
       private string sCtrlAV61WWPFormElementParentId ;

@@ -147,8 +147,8 @@ namespace GeneXus.Programs {
          if ( GX_JID == -6 )
          {
             Z366LocationDynamicFormId = A366LocationDynamicFormId;
-            Z29LocationId = A29LocationId;
             Z11OrganisationId = A11OrganisationId;
+            Z29LocationId = A29LocationId;
             Z206WWPFormId = A206WWPFormId;
             Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
             Z208WWPFormReferenceName = A208WWPFormReferenceName;
@@ -221,7 +221,7 @@ namespace GeneXus.Programs {
          pr_default.execute(2, new Object[] {A29LocationId, A11OrganisationId});
          if ( (pr_default.getStatus(2) == 101) )
          {
-            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+            GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
             AnyError = 1;
          }
          pr_default.close(2);
@@ -284,8 +284,8 @@ namespace GeneXus.Programs {
             RcdFound70 = 1;
             A366LocationDynamicFormId = BC00143_A366LocationDynamicFormId[0];
             n366LocationDynamicFormId = BC00143_n366LocationDynamicFormId[0];
-            A29LocationId = BC00143_A29LocationId[0];
             A11OrganisationId = BC00143_A11OrganisationId[0];
+            A29LocationId = BC00143_A29LocationId[0];
             A206WWPFormId = BC00143_A206WWPFormId[0];
             A207WWPFormVersionNumber = BC00143_A207WWPFormVersionNumber[0];
             Z366LocationDynamicFormId = A366LocationDynamicFormId;
@@ -384,7 +384,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor BC00148 */
-                     pr_default.execute(6, new Object[] {n366LocationDynamicFormId, A366LocationDynamicFormId, A29LocationId, A11OrganisationId, A206WWPFormId, A207WWPFormVersionNumber});
+                     pr_default.execute(6, new Object[] {n366LocationDynamicFormId, A366LocationDynamicFormId, A11OrganisationId, A29LocationId, A206WWPFormId, A207WWPFormVersionNumber});
                      pr_default.close(6);
                      pr_default.SmartCacheProvider.SetUpdated("Trn_LocationDynamicForm");
                      if ( (pr_default.getStatus(6) == 1) )
@@ -606,8 +606,8 @@ namespace GeneXus.Programs {
             A240WWPFormType = BC001413_A240WWPFormType[0];
             A241WWPFormSectionRefElements = BC001413_A241WWPFormSectionRefElements[0];
             A242WWPFormIsForDynamicValidations = BC001413_A242WWPFormIsForDynamicValidations[0];
-            A29LocationId = BC001413_A29LocationId[0];
             A11OrganisationId = BC001413_A11OrganisationId[0];
+            A29LocationId = BC001413_A29LocationId[0];
             A206WWPFormId = BC001413_A206WWPFormId[0];
             A207WWPFormVersionNumber = BC001413_A207WWPFormVersionNumber[0];
          }
@@ -642,8 +642,8 @@ namespace GeneXus.Programs {
             A240WWPFormType = BC001413_A240WWPFormType[0];
             A241WWPFormSectionRefElements = BC001413_A241WWPFormSectionRefElements[0];
             A242WWPFormIsForDynamicValidations = BC001413_A242WWPFormIsForDynamicValidations[0];
-            A29LocationId = BC001413_A29LocationId[0];
             A11OrganisationId = BC001413_A11OrganisationId[0];
+            A29LocationId = BC001413_A29LocationId[0];
             A206WWPFormId = BC001413_A206WWPFormId[0];
             A207WWPFormVersionNumber = BC001413_A207WWPFormVersionNumber[0];
          }
@@ -865,7 +865,7 @@ namespace GeneXus.Programs {
             pr_default.execute(12, new Object[] {A29LocationId, A11OrganisationId});
             if ( (pr_default.getStatus(12) == 101) )
             {
-               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
                AnyError = 1;
             }
             pr_default.close(12);
@@ -904,7 +904,7 @@ namespace GeneXus.Programs {
             pr_default.execute(12, new Object[] {A29LocationId, A11OrganisationId});
             if ( (pr_default.getStatus(12) == 101) )
             {
-               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Locations", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
+               GX_msglist.addItem(StringUtil.Format( context.GetMessage( "GXSPC_ForeignKeyNotFound", ""), context.GetMessage( "Location", ""), "", "", "", "", "", "", "", ""), "ForeignKeyNotFound", 1, "ORGANISATIONID");
                AnyError = 1;
             }
             pr_default.close(12);
@@ -1337,8 +1337,8 @@ namespace GeneXus.Programs {
          BC00146_A240WWPFormType = new short[1] ;
          BC00146_A241WWPFormSectionRefElements = new string[] {""} ;
          BC00146_A242WWPFormIsForDynamicValidations = new bool[] {false} ;
-         BC00146_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00146_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         BC00146_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00146_A206WWPFormId = new short[1] ;
          BC00146_A207WWPFormVersionNumber = new short[1] ;
          BC00144_A29LocationId = new Guid[] {Guid.Empty} ;
@@ -1359,15 +1359,15 @@ namespace GeneXus.Programs {
          BC00147_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00143_A366LocationDynamicFormId = new Guid[] {Guid.Empty} ;
          BC00143_n366LocationDynamicFormId = new bool[] {false} ;
-         BC00143_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00143_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         BC00143_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00143_A206WWPFormId = new short[1] ;
          BC00143_A207WWPFormVersionNumber = new short[1] ;
          sMode70 = "";
          BC00142_A366LocationDynamicFormId = new Guid[] {Guid.Empty} ;
          BC00142_n366LocationDynamicFormId = new bool[] {false} ;
-         BC00142_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00142_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         BC00142_A29LocationId = new Guid[] {Guid.Empty} ;
          BC00142_A206WWPFormId = new short[1] ;
          BC00142_A207WWPFormVersionNumber = new short[1] ;
          BC001411_A208WWPFormReferenceName = new string[] {""} ;
@@ -1395,8 +1395,8 @@ namespace GeneXus.Programs {
          BC001413_A240WWPFormType = new short[1] ;
          BC001413_A241WWPFormSectionRefElements = new string[] {""} ;
          BC001413_A242WWPFormIsForDynamicValidations = new bool[] {false} ;
-         BC001413_A29LocationId = new Guid[] {Guid.Empty} ;
          BC001413_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         BC001413_A29LocationId = new Guid[] {Guid.Empty} ;
          BC001413_A206WWPFormId = new short[1] ;
          BC001413_A207WWPFormVersionNumber = new short[1] ;
          BackMsgLst = new msglist();
@@ -1413,10 +1413,10 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.trn_locationdynamicform_bc__default(),
             new Object[][] {
                 new Object[] {
-               BC00142_A366LocationDynamicFormId, BC00142_A29LocationId, BC00142_A11OrganisationId, BC00142_A206WWPFormId, BC00142_A207WWPFormVersionNumber
+               BC00142_A366LocationDynamicFormId, BC00142_A11OrganisationId, BC00142_A29LocationId, BC00142_A206WWPFormId, BC00142_A207WWPFormVersionNumber
                }
                , new Object[] {
-               BC00143_A366LocationDynamicFormId, BC00143_A29LocationId, BC00143_A11OrganisationId, BC00143_A206WWPFormId, BC00143_A207WWPFormVersionNumber
+               BC00143_A366LocationDynamicFormId, BC00143_A11OrganisationId, BC00143_A29LocationId, BC00143_A206WWPFormId, BC00143_A207WWPFormVersionNumber
                }
                , new Object[] {
                BC00144_A29LocationId
@@ -1427,7 +1427,7 @@ namespace GeneXus.Programs {
                }
                , new Object[] {
                BC00146_A366LocationDynamicFormId, BC00146_A208WWPFormReferenceName, BC00146_A209WWPFormTitle, BC00146_A231WWPFormDate, BC00146_A232WWPFormIsWizard, BC00146_A216WWPFormResume, BC00146_A235WWPFormResumeMessage, BC00146_A233WWPFormValidations, BC00146_A234WWPFormInstantiated, BC00146_A240WWPFormType,
-               BC00146_A241WWPFormSectionRefElements, BC00146_A242WWPFormIsForDynamicValidations, BC00146_A29LocationId, BC00146_A11OrganisationId, BC00146_A206WWPFormId, BC00146_A207WWPFormVersionNumber
+               BC00146_A241WWPFormSectionRefElements, BC00146_A242WWPFormIsForDynamicValidations, BC00146_A11OrganisationId, BC00146_A29LocationId, BC00146_A206WWPFormId, BC00146_A207WWPFormVersionNumber
                }
                , new Object[] {
                BC00147_A366LocationDynamicFormId, BC00147_A11OrganisationId, BC00147_A29LocationId
@@ -1447,7 +1447,7 @@ namespace GeneXus.Programs {
                }
                , new Object[] {
                BC001413_A366LocationDynamicFormId, BC001413_A208WWPFormReferenceName, BC001413_A209WWPFormTitle, BC001413_A231WWPFormDate, BC001413_A232WWPFormIsWizard, BC001413_A216WWPFormResume, BC001413_A235WWPFormResumeMessage, BC001413_A233WWPFormValidations, BC001413_A234WWPFormInstantiated, BC001413_A240WWPFormType,
-               BC001413_A241WWPFormSectionRefElements, BC001413_A242WWPFormIsForDynamicValidations, BC001413_A29LocationId, BC001413_A11OrganisationId, BC001413_A206WWPFormId, BC001413_A207WWPFormVersionNumber
+               BC001413_A241WWPFormSectionRefElements, BC001413_A242WWPFormIsForDynamicValidations, BC001413_A11OrganisationId, BC001413_A29LocationId, BC001413_A206WWPFormId, BC001413_A207WWPFormVersionNumber
                }
                , new Object[] {
                BC001414_A29LocationId
@@ -1524,8 +1524,8 @@ namespace GeneXus.Programs {
       private short[] BC00146_A240WWPFormType ;
       private string[] BC00146_A241WWPFormSectionRefElements ;
       private bool[] BC00146_A242WWPFormIsForDynamicValidations ;
-      private Guid[] BC00146_A29LocationId ;
       private Guid[] BC00146_A11OrganisationId ;
+      private Guid[] BC00146_A29LocationId ;
       private short[] BC00146_A206WWPFormId ;
       private short[] BC00146_A207WWPFormVersionNumber ;
       private Guid[] BC00144_A29LocationId ;
@@ -1546,14 +1546,14 @@ namespace GeneXus.Programs {
       private Guid[] BC00147_A29LocationId ;
       private Guid[] BC00143_A366LocationDynamicFormId ;
       private bool[] BC00143_n366LocationDynamicFormId ;
-      private Guid[] BC00143_A29LocationId ;
       private Guid[] BC00143_A11OrganisationId ;
+      private Guid[] BC00143_A29LocationId ;
       private short[] BC00143_A206WWPFormId ;
       private short[] BC00143_A207WWPFormVersionNumber ;
       private Guid[] BC00142_A366LocationDynamicFormId ;
       private bool[] BC00142_n366LocationDynamicFormId ;
-      private Guid[] BC00142_A29LocationId ;
       private Guid[] BC00142_A11OrganisationId ;
+      private Guid[] BC00142_A29LocationId ;
       private short[] BC00142_A206WWPFormId ;
       private short[] BC00142_A207WWPFormVersionNumber ;
       private string[] BC001411_A208WWPFormReferenceName ;
@@ -1581,8 +1581,8 @@ namespace GeneXus.Programs {
       private short[] BC001413_A240WWPFormType ;
       private string[] BC001413_A241WWPFormSectionRefElements ;
       private bool[] BC001413_A242WWPFormIsForDynamicValidations ;
-      private Guid[] BC001413_A29LocationId ;
       private Guid[] BC001413_A11OrganisationId ;
+      private Guid[] BC001413_A29LocationId ;
       private short[] BC001413_A206WWPFormId ;
       private short[] BC001413_A207WWPFormVersionNumber ;
       private SdtTrn_LocationDynamicForm bcTrn_LocationDynamicForm ;
@@ -1721,8 +1721,8 @@ public class trn_locationdynamicform_bc__default : DataStoreHelperBase, IDataSto
        Object[] prmBC00148;
        prmBC00148 = new Object[] {
        new ParDef("LocationDynamicFormId",GXType.UniqueIdentifier,36,0){Nullable=true} ,
-       new ParDef("LocationId",GXType.UniqueIdentifier,36,0) ,
        new ParDef("OrganisationId",GXType.UniqueIdentifier,36,0) ,
+       new ParDef("LocationId",GXType.UniqueIdentifier,36,0) ,
        new ParDef("WWPFormId",GXType.Int16,4,0) ,
        new ParDef("WWPFormVersionNumber",GXType.Int16,4,0)
        };
@@ -1763,18 +1763,18 @@ public class trn_locationdynamicform_bc__default : DataStoreHelperBase, IDataSto
        new ParDef("OrganisationId",GXType.UniqueIdentifier,36,0)
        };
        def= new CursorDef[] {
-           new CursorDef("BC00142", "SELECT LocationDynamicFormId, LocationId, OrganisationId, WWPFormId, WWPFormVersionNumber FROM Trn_LocationDynamicForm WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId  FOR UPDATE OF Trn_LocationDynamicForm",true, GxErrorMask.GX_NOMASK, false, this,prmBC00142,1, GxCacheFrequency.OFF ,true,false )
-          ,new CursorDef("BC00143", "SELECT LocationDynamicFormId, LocationId, OrganisationId, WWPFormId, WWPFormVersionNumber FROM Trn_LocationDynamicForm WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00143,1, GxCacheFrequency.OFF ,true,false )
+           new CursorDef("BC00142", "SELECT LocationDynamicFormId, OrganisationId, LocationId, WWPFormId, WWPFormVersionNumber FROM Trn_LocationDynamicForm WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId  FOR UPDATE OF Trn_LocationDynamicForm",true, GxErrorMask.GX_NOMASK, false, this,prmBC00142,1, GxCacheFrequency.OFF ,true,false )
+          ,new CursorDef("BC00143", "SELECT LocationDynamicFormId, OrganisationId, LocationId, WWPFormId, WWPFormVersionNumber FROM Trn_LocationDynamicForm WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00143,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("BC00144", "SELECT LocationId FROM Trn_Location WHERE LocationId = :LocationId AND OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00144,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("BC00145", "SELECT WWPFormReferenceName, WWPFormTitle, WWPFormDate, WWPFormIsWizard, WWPFormResume, WWPFormResumeMessage, WWPFormValidations, WWPFormInstantiated, WWPFormType, WWPFormSectionRefElements, WWPFormIsForDynamicValidations FROM WWP_Form WHERE WWPFormId = :WWPFormId AND WWPFormVersionNumber = :WWPFormVersionNumber ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00145,1, GxCacheFrequency.OFF ,true,false )
-          ,new CursorDef("BC00146", "SELECT TM1.LocationDynamicFormId, T2.WWPFormReferenceName, T2.WWPFormTitle, T2.WWPFormDate, T2.WWPFormIsWizard, T2.WWPFormResume, T2.WWPFormResumeMessage, T2.WWPFormValidations, T2.WWPFormInstantiated, T2.WWPFormType, T2.WWPFormSectionRefElements, T2.WWPFormIsForDynamicValidations, TM1.LocationId, TM1.OrganisationId, TM1.WWPFormId, TM1.WWPFormVersionNumber FROM (Trn_LocationDynamicForm TM1 INNER JOIN WWP_Form T2 ON T2.WWPFormId = TM1.WWPFormId AND T2.WWPFormVersionNumber = TM1.WWPFormVersionNumber) WHERE TM1.LocationDynamicFormId = :LocationDynamicFormId and TM1.OrganisationId = :OrganisationId and TM1.LocationId = :LocationId ORDER BY TM1.LocationDynamicFormId, TM1.OrganisationId, TM1.LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00146,100, GxCacheFrequency.OFF ,true,false )
+          ,new CursorDef("BC00146", "SELECT TM1.LocationDynamicFormId, T2.WWPFormReferenceName, T2.WWPFormTitle, T2.WWPFormDate, T2.WWPFormIsWizard, T2.WWPFormResume, T2.WWPFormResumeMessage, T2.WWPFormValidations, T2.WWPFormInstantiated, T2.WWPFormType, T2.WWPFormSectionRefElements, T2.WWPFormIsForDynamicValidations, TM1.OrganisationId, TM1.LocationId, TM1.WWPFormId, TM1.WWPFormVersionNumber FROM (Trn_LocationDynamicForm TM1 INNER JOIN WWP_Form T2 ON T2.WWPFormId = TM1.WWPFormId AND T2.WWPFormVersionNumber = TM1.WWPFormVersionNumber) WHERE TM1.LocationDynamicFormId = :LocationDynamicFormId and TM1.OrganisationId = :OrganisationId and TM1.LocationId = :LocationId ORDER BY TM1.LocationDynamicFormId, TM1.OrganisationId, TM1.LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00146,100, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("BC00147", "SELECT LocationDynamicFormId, OrganisationId, LocationId FROM Trn_LocationDynamicForm WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC00147,1, GxCacheFrequency.OFF ,true,false )
-          ,new CursorDef("BC00148", "SAVEPOINT gxupdate;INSERT INTO Trn_LocationDynamicForm(LocationDynamicFormId, LocationId, OrganisationId, WWPFormId, WWPFormVersionNumber) VALUES(:LocationDynamicFormId, :LocationId, :OrganisationId, :WWPFormId, :WWPFormVersionNumber);RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK,prmBC00148)
+          ,new CursorDef("BC00148", "SAVEPOINT gxupdate;INSERT INTO Trn_LocationDynamicForm(LocationDynamicFormId, OrganisationId, LocationId, WWPFormId, WWPFormVersionNumber) VALUES(:LocationDynamicFormId, :OrganisationId, :LocationId, :WWPFormId, :WWPFormVersionNumber);RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK,prmBC00148)
           ,new CursorDef("BC00149", "SAVEPOINT gxupdate;UPDATE Trn_LocationDynamicForm SET WWPFormId=:WWPFormId, WWPFormVersionNumber=:WWPFormVersionNumber  WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK,prmBC00149)
           ,new CursorDef("BC001410", "SAVEPOINT gxupdate;DELETE FROM Trn_LocationDynamicForm  WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK,prmBC001410)
           ,new CursorDef("BC001411", "SELECT WWPFormReferenceName, WWPFormTitle, WWPFormDate, WWPFormIsWizard, WWPFormResume, WWPFormResumeMessage, WWPFormValidations, WWPFormInstantiated, WWPFormType, WWPFormSectionRefElements, WWPFormIsForDynamicValidations FROM WWP_Form WHERE WWPFormId = :WWPFormId AND WWPFormVersionNumber = :WWPFormVersionNumber ",true, GxErrorMask.GX_NOMASK, false, this,prmBC001411,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("BC001412", "SELECT CallToActionId FROM Trn_CallToAction WHERE LocationDynamicFormId = :LocationDynamicFormId AND OrganisationId = :OrganisationId AND LocationId = :LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC001412,1, GxCacheFrequency.OFF ,true,true )
-          ,new CursorDef("BC001413", "SELECT TM1.LocationDynamicFormId, T2.WWPFormReferenceName, T2.WWPFormTitle, T2.WWPFormDate, T2.WWPFormIsWizard, T2.WWPFormResume, T2.WWPFormResumeMessage, T2.WWPFormValidations, T2.WWPFormInstantiated, T2.WWPFormType, T2.WWPFormSectionRefElements, T2.WWPFormIsForDynamicValidations, TM1.LocationId, TM1.OrganisationId, TM1.WWPFormId, TM1.WWPFormVersionNumber FROM (Trn_LocationDynamicForm TM1 INNER JOIN WWP_Form T2 ON T2.WWPFormId = TM1.WWPFormId AND T2.WWPFormVersionNumber = TM1.WWPFormVersionNumber) WHERE TM1.LocationDynamicFormId = :LocationDynamicFormId and TM1.OrganisationId = :OrganisationId and TM1.LocationId = :LocationId ORDER BY TM1.LocationDynamicFormId, TM1.OrganisationId, TM1.LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC001413,100, GxCacheFrequency.OFF ,true,false )
+          ,new CursorDef("BC001413", "SELECT TM1.LocationDynamicFormId, T2.WWPFormReferenceName, T2.WWPFormTitle, T2.WWPFormDate, T2.WWPFormIsWizard, T2.WWPFormResume, T2.WWPFormResumeMessage, T2.WWPFormValidations, T2.WWPFormInstantiated, T2.WWPFormType, T2.WWPFormSectionRefElements, T2.WWPFormIsForDynamicValidations, TM1.OrganisationId, TM1.LocationId, TM1.WWPFormId, TM1.WWPFormVersionNumber FROM (Trn_LocationDynamicForm TM1 INNER JOIN WWP_Form T2 ON T2.WWPFormId = TM1.WWPFormId AND T2.WWPFormVersionNumber = TM1.WWPFormVersionNumber) WHERE TM1.LocationDynamicFormId = :LocationDynamicFormId and TM1.OrganisationId = :OrganisationId and TM1.LocationId = :LocationId ORDER BY TM1.LocationDynamicFormId, TM1.OrganisationId, TM1.LocationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC001413,100, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("BC001414", "SELECT LocationId FROM Trn_Location WHERE LocationId = :LocationId AND OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmBC001414,1, GxCacheFrequency.OFF ,true,false )
        };
     }

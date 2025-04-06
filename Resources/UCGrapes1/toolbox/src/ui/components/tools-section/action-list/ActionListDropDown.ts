@@ -20,6 +20,7 @@ export class ActionListDropDown {
   }
 
   async init() {
+    alert()
     this.container.className = "tb-dropdown-menu";
     this.container.id = "dropdownMenu";
     const categoryData: Category[] = await this.getCategoryData();

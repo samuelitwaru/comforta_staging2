@@ -2463,7 +2463,7 @@ namespace GeneXus.Programs {
             pr_default.execute(15, new Object[] {n11OrganisationId, A11OrganisationId});
             if ( (pr_default.getStatus(15) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Trn_OrganisationSetting", "")}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Location", "")}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
             pr_default.close(15);
@@ -2471,7 +2471,7 @@ namespace GeneXus.Programs {
             pr_default.execute(16, new Object[] {n11OrganisationId, A11OrganisationId});
             if ( (pr_default.getStatus(16) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Trn_OrganisationDynamicForm", "")}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Trn_OrganisationSetting", "")}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
             pr_default.close(16);
@@ -2479,7 +2479,7 @@ namespace GeneXus.Programs {
             pr_default.execute(17, new Object[] {n11OrganisationId, A11OrganisationId});
             if ( (pr_default.getStatus(17) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Locations", "")}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Trn_OrganisationDynamicForm", "")}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
             pr_default.close(17);
@@ -2993,7 +2993,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254111425223", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025449303747", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -3009,7 +3009,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("trn_organisation.js", "?20254111425226", false, true);
+         context.AddJavascriptSource("trn_organisation.js", "?2025449303749", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/DropDownOptions/BootstrapDropDownOptionsRender.js", "", false, true);
@@ -3523,13 +3523,13 @@ namespace GeneXus.Programs {
          T000114_A20OrganisationTypeName = new string[] {""} ;
          T000115_A371AuditId = new Guid[] {Guid.Empty} ;
          T000116_A42SupplierGenId = new Guid[] {Guid.Empty} ;
-         T000117_A100OrganisationSettingid = new Guid[] {Guid.Empty} ;
+         T000117_A29LocationId = new Guid[] {Guid.Empty} ;
          T000117_A11OrganisationId = new Guid[] {Guid.Empty} ;
          T000117_n11OrganisationId = new bool[] {false} ;
-         T000118_A509OrganisationDynamicFormId = new Guid[] {Guid.Empty} ;
+         T000118_A100OrganisationSettingid = new Guid[] {Guid.Empty} ;
          T000118_A11OrganisationId = new Guid[] {Guid.Empty} ;
          T000118_n11OrganisationId = new bool[] {false} ;
-         T000119_A29LocationId = new Guid[] {Guid.Empty} ;
+         T000119_A509OrganisationDynamicFormId = new Guid[] {Guid.Empty} ;
          T000119_A11OrganisationId = new Guid[] {Guid.Empty} ;
          T000119_n11OrganisationId = new bool[] {false} ;
          T000120_A21ManagerId = new Guid[] {Guid.Empty} ;
@@ -3598,13 +3598,13 @@ namespace GeneXus.Programs {
                T000116_A42SupplierGenId
                }
                , new Object[] {
-               T000117_A100OrganisationSettingid, T000117_A11OrganisationId
+               T000117_A29LocationId, T000117_A11OrganisationId
                }
                , new Object[] {
-               T000118_A509OrganisationDynamicFormId, T000118_A11OrganisationId
+               T000118_A100OrganisationSettingid, T000118_A11OrganisationId
                }
                , new Object[] {
-               T000119_A29LocationId, T000119_A11OrganisationId
+               T000119_A509OrganisationDynamicFormId, T000119_A11OrganisationId
                }
                , new Object[] {
                T000120_A21ManagerId, T000120_A11OrganisationId
@@ -4022,13 +4022,13 @@ namespace GeneXus.Programs {
       private string[] T000114_A20OrganisationTypeName ;
       private Guid[] T000115_A371AuditId ;
       private Guid[] T000116_A42SupplierGenId ;
-      private Guid[] T000117_A100OrganisationSettingid ;
+      private Guid[] T000117_A29LocationId ;
       private Guid[] T000117_A11OrganisationId ;
       private bool[] T000117_n11OrganisationId ;
-      private Guid[] T000118_A509OrganisationDynamicFormId ;
+      private Guid[] T000118_A100OrganisationSettingid ;
       private Guid[] T000118_A11OrganisationId ;
       private bool[] T000118_n11OrganisationId ;
-      private Guid[] T000119_A29LocationId ;
+      private Guid[] T000119_A509OrganisationDynamicFormId ;
       private Guid[] T000119_A11OrganisationId ;
       private bool[] T000119_n11OrganisationId ;
       private Guid[] T000120_A21ManagerId ;
@@ -4263,9 +4263,9 @@ public class trn_organisation__default : DataStoreHelperBase, IDataStoreHelper
           ,new CursorDef("T000114", "SELECT OrganisationTypeName FROM Trn_OrganisationType WHERE OrganisationTypeId = :OrganisationTypeId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000114,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("T000115", "SELECT AuditId FROM Trn_Audit WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000115,1, GxCacheFrequency.OFF ,true,true )
           ,new CursorDef("T000116", "SELECT SupplierGenId FROM Trn_SupplierGen WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000116,1, GxCacheFrequency.OFF ,true,true )
-          ,new CursorDef("T000117", "SELECT OrganisationSettingid, OrganisationId FROM Trn_OrganisationSetting WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000117,1, GxCacheFrequency.OFF ,true,true )
-          ,new CursorDef("T000118", "SELECT OrganisationDynamicFormId, OrganisationId FROM Trn_OrganisationDynamicForm WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000118,1, GxCacheFrequency.OFF ,true,true )
-          ,new CursorDef("T000119", "SELECT LocationId, OrganisationId FROM Trn_Location WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000119,1, GxCacheFrequency.OFF ,true,true )
+          ,new CursorDef("T000117", "SELECT LocationId, OrganisationId FROM Trn_Location WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000117,1, GxCacheFrequency.OFF ,true,true )
+          ,new CursorDef("T000118", "SELECT OrganisationSettingid, OrganisationId FROM Trn_OrganisationSetting WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000118,1, GxCacheFrequency.OFF ,true,true )
+          ,new CursorDef("T000119", "SELECT OrganisationDynamicFormId, OrganisationId FROM Trn_OrganisationDynamicForm WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000119,1, GxCacheFrequency.OFF ,true,true )
           ,new CursorDef("T000120", "SELECT ManagerId, OrganisationId FROM Trn_Manager WHERE OrganisationId = :OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000120,1, GxCacheFrequency.OFF ,true,true )
           ,new CursorDef("T000121", "SELECT OrganisationId FROM Trn_Organisation ORDER BY OrganisationId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000121,100, GxCacheFrequency.OFF ,true,false )
        };
