@@ -96,26 +96,33 @@ namespace GeneXus.Programs {
          AV10LocationId = AV24Trn_AppVersion.gxTpr_Locationid;
          AV13OrganisationId = AV24Trn_AppVersion.gxTpr_Organisationid;
          AV11BC_Trn_AppVersion.gxTpr_Appversionid = Guid.NewGuid( );
-         AV11BC_Trn_AppVersion.gxTpr_Appversionname = StringUtil.Format( AV24Trn_AppVersion.gxTpr_Appversionname, context.GetMessage( "Copy", ""), "", "", "", "", "", "", "", "");
+         AV11BC_Trn_AppVersion.gxTpr_Appversionname = AV22AppVersionName;
          AV11BC_Trn_AppVersion.gxTpr_Locationid = AV10LocationId;
          AV11BC_Trn_AppVersion.gxTpr_Organisationid = AV13OrganisationId;
          AV11BC_Trn_AppVersion.gxTpr_Isactive = false;
-         AV11BC_Trn_AppVersion.gxTpr_Page = AV24Trn_AppVersion.gxTpr_Page;
+         AV26GXV1 = 1;
+         while ( AV26GXV1 <= AV24Trn_AppVersion.gxTpr_Page.Count )
+         {
+            AV25TrnAppVersionPage = ((SdtTrn_AppVersion_Page)AV24Trn_AppVersion.gxTpr_Page.Item(AV26GXV1));
+            AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV25TrnAppVersionPage, 0);
+            AV26GXV1 = (int)(AV26GXV1+1);
+         }
          AV11BC_Trn_AppVersion.Save();
          if ( AV11BC_Trn_AppVersion.Success() )
          {
             context.CommitDataStores("prc_copyappversion",pr_default);
-            new prc_loadappversionsdt(context ).execute(  AV11BC_Trn_AppVersion, out  AV8SDT_AppVersion) ;
+            GXt_SdtSDT_Error1 = new SdtSDT_Error();
+            new prc_activateappversion(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV8SDT_AppVersion, out  GXt_SdtSDT_Error1) ;
          }
          else
          {
-            AV26GXV2 = 1;
-            AV25GXV1 = AV11BC_Trn_AppVersion.GetMessages();
-            while ( AV26GXV2 <= AV25GXV1.Count )
+            AV28GXV3 = 1;
+            AV27GXV2 = AV11BC_Trn_AppVersion.GetMessages();
+            while ( AV28GXV3 <= AV27GXV2.Count )
             {
-               AV21Message = ((GeneXus.Utils.SdtMessages_Message)AV25GXV1.Item(AV26GXV2));
-               GX_msglist.addItem(AV21Message.gxTpr_Description);
-               AV26GXV2 = (int)(AV26GXV2+1);
+               AV21Message = ((GeneXus.Utils.SdtMessages_Message)AV27GXV2.Item(AV28GXV3));
+               new prc_logtofile(context ).execute(  context.GetMessage( "&Message.Description", "")+AV21Message.gxTpr_Description) ;
+               AV28GXV3 = (int)(AV28GXV3+1);
             }
          }
          cleanup();
@@ -139,7 +146,9 @@ namespace GeneXus.Programs {
          AV10LocationId = Guid.Empty;
          AV13OrganisationId = Guid.Empty;
          AV11BC_Trn_AppVersion = new SdtTrn_AppVersion(context);
-         AV25GXV1 = new GXBaseCollection<GeneXus.Utils.SdtMessages_Message>( context, "Message", "GeneXus");
+         AV25TrnAppVersionPage = new SdtTrn_AppVersion_Page(context);
+         GXt_SdtSDT_Error1 = new SdtSDT_Error(context);
+         AV27GXV2 = new GXBaseCollection<GeneXus.Utils.SdtMessages_Message>( context, "Message", "GeneXus");
          AV21Message = new GeneXus.Utils.SdtMessages_Message(context);
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_copyappversion__datastore1(),
             new Object[][] {
@@ -156,7 +165,8 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private int AV26GXV2 ;
+      private int AV26GXV1 ;
+      private int AV28GXV3 ;
       private string AV22AppVersionName ;
       private Guid AV23AppVersionId ;
       private Guid AV10LocationId ;
@@ -168,8 +178,10 @@ namespace GeneXus.Programs {
       private SdtSDT_Error AV9SDT_Error ;
       private SdtTrn_AppVersion AV24Trn_AppVersion ;
       private SdtTrn_AppVersion AV11BC_Trn_AppVersion ;
+      private SdtTrn_AppVersion_Page AV25TrnAppVersionPage ;
       private IDataStoreProvider pr_default ;
-      private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV25GXV1 ;
+      private SdtSDT_Error GXt_SdtSDT_Error1 ;
+      private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV27GXV2 ;
       private GeneXus.Utils.SdtMessages_Message AV21Message ;
       private SdtSDT_AppVersion aP2_SDT_AppVersion ;
       private SdtSDT_Error aP3_SDT_Error ;

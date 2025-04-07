@@ -148,7 +148,8 @@ namespace GeneXus.Programs {
          if ( AV11BC_Trn_AppVersion.Success() )
          {
             context.CommitDataStores("prc_createappversion",pr_default);
-            new prc_loadappversionsdt(context ).execute(  AV11BC_Trn_AppVersion, out  AV8SDT_AppVersion) ;
+            GXt_SdtSDT_Error3 = new SdtSDT_Error();
+            new prc_activateappversion(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV8SDT_AppVersion, out  GXt_SdtSDT_Error3) ;
          }
          else
          {
@@ -194,6 +195,7 @@ namespace GeneXus.Programs {
          AV26BC_MapsPage = new SdtTrn_AppVersion_Page(context);
          AV18BC_HomePage = new SdtTrn_AppVersion_Page(context);
          GXt_SdtTrn_AppVersion_Page2 = new SdtTrn_AppVersion_Page(context);
+         GXt_SdtSDT_Error3 = new SdtSDT_Error(context);
          AV27GXV1 = new GXBaseCollection<GeneXus.Utils.SdtMessages_Message>( context, "Message", "GeneXus");
          AV21Message = new GeneXus.Utils.SdtMessages_Message(context);
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_createappversion__datastore1(),
@@ -236,6 +238,7 @@ namespace GeneXus.Programs {
       private SdtTrn_AppVersion_Page AV18BC_HomePage ;
       private SdtTrn_AppVersion_Page GXt_SdtTrn_AppVersion_Page2 ;
       private IDataStoreProvider pr_default ;
+      private SdtSDT_Error GXt_SdtSDT_Error3 ;
       private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV27GXV1 ;
       private GeneXus.Utils.SdtMessages_Message AV21Message ;
       private SdtSDT_AppVersion aP2_SDT_AppVersion ;
