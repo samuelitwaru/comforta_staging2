@@ -165,9 +165,6 @@ namespace GeneXus.Programs {
          obj = new SdtTrn_OrganisationDynamicForm(context);
          trn = obj.getTransaction();
          result = trn.Reindex();
-         obj = new SdtTrn_AppVersion(context);
-         trn = obj.getTransaction();
-         result = trn.Reindex();
          obj = new SdtTrn_MemoCategory(context);
          trn = obj.getTransaction();
          result = trn.Reindex();
@@ -178,6 +175,9 @@ namespace GeneXus.Programs {
          trn = obj.getTransaction();
          result = trn.Reindex();
          obj = new SdtTrn_Memo(context);
+         trn = obj.getTransaction();
+         result = trn.Reindex();
+         obj = new SdtTrn_AppVersion(context);
          trn = obj.getTransaction();
          result = trn.Reindex();
          return 1 ;
