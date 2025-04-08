@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250407063311"
+  version: "20250408154448"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
@@ -2592,6 +2592,59 @@ components:
           description: "Is Image Button"
           type: "boolean"
       x-gx-level: "SDT_ContentPageV1"
+    SDT_DebugResult:
+      properties:
+        Summary:
+          $ref: "#/components/schemas/SDT_DebugResult.Summary"
+        Pages:
+          type: array
+          items:
+            description: PagesItem
+            $ref: "#/components/schemas/SDT_DebugResult.Pages_PagesItem"
+    SDT_DebugResult.Summary:
+      properties:
+        TotalUrls:
+          description: "Total Urls"
+          type: "number"
+          format: "double"
+        SuccessCount:
+          description: "Success Count"
+          type: "number"
+          format: "double"
+        FailureCount:
+          description: "Failure Count"
+          type: "number"
+          format: "double"
+      x-gx-level: "SDT_DebugResult"
+    SDT_DebugResult.Pages_PagesItem:
+      properties:
+        Page:
+          description: "Page"
+          type: "string"
+        UrlList:
+          type: array
+          items:
+            description: UrlListItem
+            $ref: "#/components/schemas/SDT_DebugResult.Pages.UrlList_UrlListItem"
+      x-gx-level: "SDT_DebugResult"
+    SDT_DebugResult.Pages.UrlList_UrlListItem:
+      properties:
+        Url:
+          description: "Url"
+          type: "string"
+        StatusCode:
+          description: "Status Code"
+          type: "string"
+        StatusMessage:
+          description: "Status Message"
+          type: "string"
+        AffectedType:
+          description: "Affected Type"
+          type: "string"
+        AffectedName:
+          description: "Affected Name"
+          type: "string"
+      x-gx-level: "SDT_DebugResult.Pages"
     SDT_DebugResults:
       properties:
         Summary:
@@ -3510,6 +3563,10 @@ components:
         ReceptionDescription:
           description: "Reception Description"
           type: "string"
+        ActiveAppVersionId:
+          description: "Active App Version Id"
+          type: "string"
+          format: "uuid"
         Trn_ThemeId:
           description: "Trn_Theme Id"
           type: "string"

@@ -110,18 +110,22 @@ namespace GeneXus.Programs {
          if ( AV15BC_Trn_AppVersion.Success() )
          {
             context.CommitDataStores("prc_createmenupage",pr_default);
+            GXt_objcol_SdtSDT_TrnAttributes1 = AV19SDT_TrnAttributesCollection;
+            new prc_addappversionpagesattributestosdt(context ).execute(  AV10AppVersionId,  AV9BC_Page.gxTpr_Pageid, out  GXt_objcol_SdtSDT_TrnAttributes1) ;
+            AV19SDT_TrnAttributesCollection = GXt_objcol_SdtSDT_TrnAttributes1;
+            new prc_addappversionpagetodynamictransalation(context).executeSubmit(  AV19SDT_TrnAttributesCollection) ;
             AV17PageItem.FromJSonString(AV9BC_Page.ToJSonString(true, true), null);
             AV17PageItem.gxTpr_Pagemenustructure = AV12SDT_MenuPage;
          }
          else
          {
-            AV19GXV2 = 1;
-            AV18GXV1 = AV15BC_Trn_AppVersion.GetMessages();
-            while ( AV19GXV2 <= AV18GXV1.Count )
+            AV21GXV2 = 1;
+            AV20GXV1 = AV15BC_Trn_AppVersion.GetMessages();
+            while ( AV21GXV2 <= AV20GXV1.Count )
             {
-               AV16Message = ((GeneXus.Utils.SdtMessages_Message)AV18GXV1.Item(AV19GXV2));
+               AV16Message = ((GeneXus.Utils.SdtMessages_Message)AV20GXV1.Item(AV21GXV2));
                AV8SDT_Error.gxTpr_Message = AV16Message.gxTpr_Description;
-               AV19GXV2 = (int)(AV19GXV2+1);
+               AV21GXV2 = (int)(AV21GXV2+1);
             }
          }
          cleanup();
@@ -131,9 +135,9 @@ namespace GeneXus.Programs {
       {
          /* 'DEFAULTMENUPAGETILE' Routine */
          returnInSub = false;
-         GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = AV13TilesItem;
-         new prc_createpagetile(context ).execute(  "Title",  "#000000",  "center",  "",  0,  "",  "",  "",  "",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem1) ;
-         AV13TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem1;
+         GXt_SdtSDT_MenuPage_RowsItem_TilesItem2 = AV13TilesItem;
+         new prc_createpagetile(context ).execute(  "Title",  "#000000",  "center",  "",  0,  "",  "",  "",  "",  "", out  GXt_SdtSDT_MenuPage_RowsItem_TilesItem2) ;
+         AV13TilesItem = GXt_SdtSDT_MenuPage_RowsItem_TilesItem2;
          AV14RowsItem = new SdtSDT_MenuPage_RowsItem(context);
          AV14RowsItem.gxTpr_Id = Guid.NewGuid( ).ToString();
          AV14RowsItem.gxTpr_Tiles.Add(AV13TilesItem, 0);
@@ -157,10 +161,12 @@ namespace GeneXus.Programs {
          AV15BC_Trn_AppVersion = new SdtTrn_AppVersion(context);
          AV9BC_Page = new SdtTrn_AppVersion_Page(context);
          AV12SDT_MenuPage = new SdtSDT_MenuPage(context);
-         AV18GXV1 = new GXBaseCollection<GeneXus.Utils.SdtMessages_Message>( context, "Message", "GeneXus");
+         AV19SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
+         GXt_objcol_SdtSDT_TrnAttributes1 = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
+         AV20GXV1 = new GXBaseCollection<GeneXus.Utils.SdtMessages_Message>( context, "Message", "GeneXus");
          AV16Message = new GeneXus.Utils.SdtMessages_Message(context);
          AV13TilesItem = new SdtSDT_MenuPage_RowsItem_TilesItem(context);
-         GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 = new SdtSDT_MenuPage_RowsItem_TilesItem(context);
+         GXt_SdtSDT_MenuPage_RowsItem_TilesItem2 = new SdtSDT_MenuPage_RowsItem_TilesItem(context);
          AV14RowsItem = new SdtSDT_MenuPage_RowsItem(context);
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_createmenupage__datastore1(),
             new Object[][] {
@@ -177,7 +183,7 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private int AV19GXV2 ;
+      private int AV21GXV2 ;
       private bool returnInSub ;
       private string AV11PageName ;
       private Guid AV10AppVersionId ;
@@ -190,10 +196,12 @@ namespace GeneXus.Programs {
       private SdtTrn_AppVersion_Page AV9BC_Page ;
       private SdtSDT_MenuPage AV12SDT_MenuPage ;
       private IDataStoreProvider pr_default ;
-      private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV18GXV1 ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> AV19SDT_TrnAttributesCollection ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> GXt_objcol_SdtSDT_TrnAttributes1 ;
+      private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV20GXV1 ;
       private GeneXus.Utils.SdtMessages_Message AV16Message ;
       private SdtSDT_MenuPage_RowsItem_TilesItem AV13TilesItem ;
-      private SdtSDT_MenuPage_RowsItem_TilesItem GXt_SdtSDT_MenuPage_RowsItem_TilesItem1 ;
+      private SdtSDT_MenuPage_RowsItem_TilesItem GXt_SdtSDT_MenuPage_RowsItem_TilesItem2 ;
       private SdtSDT_MenuPage_RowsItem AV14RowsItem ;
       private SdtSDT_AppVersion_PagesItem aP2_PageItem ;
       private SdtSDT_Error aP3_SDT_Error ;

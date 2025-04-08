@@ -105,7 +105,6 @@ namespace GeneXus.Programs {
             }
             AV14GXV1 = (int)(AV14GXV1+1);
          }
-         new prc_logtoserver(context ).execute(  AV8SDT_MenuPage.ToJSonString(false, true)) ;
          cleanup();
       }
 
@@ -118,22 +117,18 @@ namespace GeneXus.Programs {
          while ( (pr_default.getStatus(0) != 101) )
          {
             A523AppVersionId = P00DH2_A523AppVersionId[0];
-            new prc_logtoserver(context ).execute(  context.GetMessage( "AppVersion: ", "")+AV13AppVersionId.ToString()) ;
-            AV17GXLvl18 = 0;
+            AV17GXLvl16 = 0;
             /* Using cursor P00DH3 */
             pr_default.execute(1, new Object[] {A523AppVersionId, AV11TileItem.gxTpr_Action.gxTpr_Objectid});
             while ( (pr_default.getStatus(1) != 101) )
             {
                A516PageId = P00DH3_A516PageId[0];
-               A517PageName = P00DH3_A517PageName[0];
-               AV17GXLvl18 = 1;
-               new prc_logtoserver(context ).execute(  "    "+A517PageName+context.GetMessage( " Found!", "")) ;
+               AV17GXLvl16 = 1;
                pr_default.readNext(1);
             }
             pr_default.close(1);
-            if ( AV17GXLvl18 == 0 )
+            if ( AV17GXLvl16 == 0 )
             {
-               new prc_logtoserver(context ).execute(  "    "+AV11TileItem.gxTpr_Action.gxTpr_Objectid+context.GetMessage( " Not Found!", "")) ;
                AV11TileItem.gxTpr_Action.gxTpr_Objectid = "";
                AV11TileItem.gxTpr_Action.gxTpr_Objecttype = "";
                AV11TileItem.gxTpr_Action.gxTpr_Objecturl = "";
@@ -162,27 +157,24 @@ namespace GeneXus.Programs {
          A523AppVersionId = Guid.Empty;
          P00DH3_A523AppVersionId = new Guid[] {Guid.Empty} ;
          P00DH3_A516PageId = new Guid[] {Guid.Empty} ;
-         P00DH3_A517PageName = new string[] {""} ;
          A516PageId = Guid.Empty;
-         A517PageName = "";
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_validatemenupage__default(),
             new Object[][] {
                 new Object[] {
                P00DH2_A523AppVersionId
                }
                , new Object[] {
-               P00DH3_A523AppVersionId, P00DH3_A516PageId, P00DH3_A517PageName
+               P00DH3_A523AppVersionId, P00DH3_A516PageId
                }
             }
          );
          /* GeneXus formulas. */
       }
 
-      private short AV17GXLvl18 ;
+      private short AV17GXLvl16 ;
       private int AV14GXV1 ;
       private int AV15GXV2 ;
       private bool returnInSub ;
-      private string A517PageName ;
       private Guid AV13AppVersionId ;
       private Guid A523AppVersionId ;
       private Guid A516PageId ;
@@ -197,7 +189,6 @@ namespace GeneXus.Programs {
       private Guid[] P00DH2_A523AppVersionId ;
       private Guid[] P00DH3_A523AppVersionId ;
       private Guid[] P00DH3_A516PageId ;
-      private string[] P00DH3_A517PageName ;
    }
 
    public class prc_validatemenupage__default : DataStoreHelperBase, IDataStoreHelper
@@ -227,7 +218,7 @@ namespace GeneXus.Programs {
           };
           def= new CursorDef[] {
               new CursorDef("P00DH2", "SELECT AppVersionId FROM Trn_AppVersion WHERE AppVersionId = :AV13AppVersionId ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DH2,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("P00DH3", "SELECT AppVersionId, PageId, PageName FROM Trn_AppVersionPage WHERE (AppVersionId = :AppVersionId) AND (PageId = CASE WHEN (:AV11Tile_1Action_1Objectid ~ ('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')) THEN RTRIM(:AV11Tile_1Action_1Objectid) ELSE '00000000-0000-0000-0000-000000000000' END) ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DH3,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00DH3", "SELECT AppVersionId, PageId FROM Trn_AppVersionPage WHERE (AppVersionId = :AppVersionId) AND (PageId = CASE WHEN (:AV11Tile_1Action_1Objectid ~ ('[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}')) THEN RTRIM(:AV11Tile_1Action_1Objectid) ELSE '00000000-0000-0000-0000-000000000000' END) ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DH3,100, GxCacheFrequency.OFF ,false,false )
           };
        }
     }
@@ -244,7 +235,6 @@ namespace GeneXus.Programs {
              case 1 :
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);
                 ((Guid[]) buf[1])[0] = rslt.getGuid(2);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
                 return;
        }
     }

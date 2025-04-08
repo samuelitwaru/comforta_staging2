@@ -90,6 +90,13 @@ namespace GeneXus.Programs {
          GXt_guid1 = AV11LocationId;
          new prc_getuserlocationid(context ).execute( out  GXt_guid1) ;
          AV11LocationId = GXt_guid1;
+         /* Execute user subroutine: 'UPDATELOCATIONACTIVEAPPVERSIONID' */
+         S111 ();
+         if ( returnInSub )
+         {
+            cleanup();
+            if (true) return;
+         }
          /* Using cursor P00C92 */
          pr_default.execute(0);
          while ( (pr_default.getStatus(0) != 101) )
@@ -122,6 +129,36 @@ namespace GeneXus.Programs {
          cleanup();
       }
 
+      protected void S111( )
+      {
+         /* 'UPDATELOCATIONACTIVEAPPVERSIONID' Routine */
+         returnInSub = false;
+         /* Using cursor P00C94 */
+         pr_default.execute(2, new Object[] {AV11LocationId});
+         while ( (pr_default.getStatus(2) != 101) )
+         {
+            GXTC93 = 0;
+            A29LocationId = P00C94_A29LocationId[0];
+            n29LocationId = P00C94_n29LocationId[0];
+            A584ActiveAppVersionId = P00C94_A584ActiveAppVersionId[0];
+            n584ActiveAppVersionId = P00C94_n584ActiveAppVersionId[0];
+            A11OrganisationId = P00C94_A11OrganisationId[0];
+            A584ActiveAppVersionId = AV10AppVersionId;
+            n584ActiveAppVersionId = false;
+            GXTC93 = 1;
+            /* Using cursor P00C95 */
+            pr_default.execute(3, new Object[] {n584ActiveAppVersionId, A584ActiveAppVersionId, n29LocationId, A29LocationId, A11OrganisationId});
+            pr_default.close(3);
+            pr_default.SmartCacheProvider.SetUpdated("Trn_Location");
+            if ( GXTC93 == 1 )
+            {
+               context.CommitDataStores("prc_activateappversion",pr_default);
+            }
+            pr_default.readNext(2);
+         }
+         pr_default.close(2);
+      }
+
       public override void cleanup( )
       {
          context.CommitDataStores("prc_activateappversion",pr_default);
@@ -146,6 +183,13 @@ namespace GeneXus.Programs {
          A29LocationId = Guid.Empty;
          A523AppVersionId = Guid.Empty;
          AV12BC_Trn_AppVersion = new SdtTrn_AppVersion(context);
+         P00C94_A29LocationId = new Guid[] {Guid.Empty} ;
+         P00C94_n29LocationId = new bool[] {false} ;
+         P00C94_A584ActiveAppVersionId = new Guid[] {Guid.Empty} ;
+         P00C94_n584ActiveAppVersionId = new bool[] {false} ;
+         P00C94_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         A584ActiveAppVersionId = Guid.Empty;
+         A11OrganisationId = Guid.Empty;
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_activateappversion__datastore1(),
             new Object[][] {
             }
@@ -161,19 +205,29 @@ namespace GeneXus.Programs {
                }
                , new Object[] {
                }
+               , new Object[] {
+               P00C94_A29LocationId, P00C94_A584ActiveAppVersionId, P00C94_n584ActiveAppVersionId, P00C94_A11OrganisationId
+               }
+               , new Object[] {
+               }
             }
          );
          /* GeneXus formulas. */
       }
 
       private short GXTC92 ;
+      private short GXTC93 ;
+      private bool returnInSub ;
       private bool A535IsActive ;
       private bool n29LocationId ;
+      private bool n584ActiveAppVersionId ;
       private Guid AV10AppVersionId ;
       private Guid AV11LocationId ;
       private Guid GXt_guid1 ;
       private Guid A29LocationId ;
       private Guid A523AppVersionId ;
+      private Guid A584ActiveAppVersionId ;
+      private Guid A11OrganisationId ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
@@ -185,6 +239,11 @@ namespace GeneXus.Programs {
       private bool[] P00C92_n29LocationId ;
       private Guid[] P00C92_A523AppVersionId ;
       private SdtTrn_AppVersion AV12BC_Trn_AppVersion ;
+      private Guid[] P00C94_A29LocationId ;
+      private bool[] P00C94_n29LocationId ;
+      private Guid[] P00C94_A584ActiveAppVersionId ;
+      private bool[] P00C94_n584ActiveAppVersionId ;
+      private Guid[] P00C94_A11OrganisationId ;
       private SdtSDT_AppVersion aP1_SDT_AppVersion ;
       private SdtSDT_Error aP2_SDT_Error ;
       private IDataStoreProvider pr_datastore1 ;
@@ -263,6 +322,8 @@ public class prc_activateappversion__default : DataStoreHelperBase, IDataStoreHe
       return new Cursor[] {
        new ForEachCursor(def[0])
       ,new UpdateCursor(def[1])
+      ,new ForEachCursor(def[2])
+      ,new UpdateCursor(def[3])
     };
  }
 
@@ -279,9 +340,21 @@ public class prc_activateappversion__default : DataStoreHelperBase, IDataStoreHe
        new ParDef("IsActive",GXType.Boolean,4,0) ,
        new ParDef("AppVersionId",GXType.UniqueIdentifier,36,0)
        };
+       Object[] prmP00C94;
+       prmP00C94 = new Object[] {
+       new ParDef("AV11LocationId",GXType.UniqueIdentifier,36,0)
+       };
+       Object[] prmP00C95;
+       prmP00C95 = new Object[] {
+       new ParDef("ActiveAppVersionId",GXType.UniqueIdentifier,36,0){Nullable=true} ,
+       new ParDef("LocationId",GXType.UniqueIdentifier,36,0){Nullable=true} ,
+       new ParDef("OrganisationId",GXType.UniqueIdentifier,36,0)
+       };
        def= new CursorDef[] {
            new CursorDef("P00C92", "SELECT IsActive, LocationId, AppVersionId FROM Trn_AppVersion ORDER BY AppVersionId  FOR UPDATE OF Trn_AppVersion",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C92,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("P00C93", "SAVEPOINT gxupdate;UPDATE Trn_AppVersion SET IsActive=:IsActive  WHERE AppVersionId = :AppVersionId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00C93)
+          ,new CursorDef("P00C94", "SELECT LocationId, ActiveAppVersionId, OrganisationId FROM Trn_Location WHERE LocationId = :AV11LocationId ORDER BY LocationId  FOR UPDATE OF Trn_Location",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00C94,1, GxCacheFrequency.OFF ,true,false )
+          ,new CursorDef("P00C95", "SAVEPOINT gxupdate;UPDATE Trn_Location SET ActiveAppVersionId=:ActiveAppVersionId  WHERE LocationId = :LocationId AND OrganisationId = :OrganisationId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00C95)
        };
     }
  }
@@ -294,6 +367,12 @@ public class prc_activateappversion__default : DataStoreHelperBase, IDataStoreHe
     {
           case 0 :
              ((bool[]) buf[0])[0] = rslt.getBool(1);
+             ((Guid[]) buf[1])[0] = rslt.getGuid(2);
+             ((bool[]) buf[2])[0] = rslt.wasNull(2);
+             ((Guid[]) buf[3])[0] = rslt.getGuid(3);
+             return;
+          case 2 :
+             ((Guid[]) buf[0])[0] = rslt.getGuid(1);
              ((Guid[]) buf[1])[0] = rslt.getGuid(2);
              ((bool[]) buf[2])[0] = rslt.wasNull(2);
              ((Guid[]) buf[3])[0] = rslt.getGuid(3);

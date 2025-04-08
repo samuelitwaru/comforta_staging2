@@ -103,53 +103,68 @@ namespace GeneXus.Programs {
          AV11BC_Trn_AppVersion.gxTpr_Locationid = AV10LocationId;
          AV11BC_Trn_AppVersion.gxTpr_Organisationid = AV13OrganisationId;
          AV11BC_Trn_AppVersion.gxTpr_Isactive = AV23IsActive;
+         /* Execute user subroutine: 'SAVEAPPVERSION' */
+         S111 ();
+         if ( returnInSub )
+         {
+            cleanup();
+            if (true) return;
+         }
          GXt_SdtTrn_AppVersion_Page2 = AV12BC_ReceptionPage;
-         new prc_initreceptionpage(context ).execute( ref  AV10LocationId, ref  AV13OrganisationId, out  GXt_SdtTrn_AppVersion_Page2) ;
+         GXt_guid1 = AV11BC_Trn_AppVersion.gxTpr_Appversionid;
+         new prc_initreceptionpage(context ).execute( ref  AV10LocationId, ref  AV13OrganisationId, ref  GXt_guid1, out  GXt_SdtTrn_AppVersion_Page2) ;
+         AV11BC_Trn_AppVersion.gxTpr_Appversionid = GXt_guid1;
          AV12BC_ReceptionPage = GXt_SdtTrn_AppVersion_Page2;
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV12BC_ReceptionPage, 0);
          GXt_SdtTrn_AppVersion_Page2 = AV14BC_LocationPage;
-         new prc_initlocationpage(context ).execute( ref  AV10LocationId, ref  AV13OrganisationId, out  GXt_SdtTrn_AppVersion_Page2) ;
+         GXt_guid1 = AV11BC_Trn_AppVersion.gxTpr_Appversionid;
+         new prc_initlocationpage(context ).execute( ref  AV10LocationId, ref  AV13OrganisationId, ref  GXt_guid1, out  GXt_SdtTrn_AppVersion_Page2) ;
+         AV11BC_Trn_AppVersion.gxTpr_Appversionid = GXt_guid1;
          AV14BC_LocationPage = GXt_SdtTrn_AppVersion_Page2;
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV14BC_LocationPage, 0);
-         new prc_initservicepages(context ).execute( out  AV15BC_CarePage, out  AV16BC_LivingPage, out  AV17BC_ServicesPage) ;
+         new prc_initservicepages(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV15BC_CarePage, out  AV16BC_LivingPage, out  AV17BC_ServicesPage) ;
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV15BC_CarePage, 0);
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV16BC_LivingPage, 0);
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV17BC_ServicesPage, 0);
-         AV19BC_WebLinkPage.gxTpr_Pageid = Guid.NewGuid( );
-         AV19BC_WebLinkPage.gxTpr_Pagename = context.GetMessage( "Web Link", "");
-         AV19BC_WebLinkPage.gxTpr_Ispredefined = true;
-         AV19BC_WebLinkPage.gxTpr_Pagetype = "WebLink";
+         new prc_initwebandformpages(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV19BC_WebLinkPage, out  AV20BC_DynamicFormPage) ;
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV19BC_WebLinkPage, 0);
-         AV20BC_DynamicFormPage.gxTpr_Pageid = Guid.NewGuid( );
-         AV20BC_DynamicFormPage.gxTpr_Pagename = context.GetMessage( "Dynamic Form", "");
-         AV20BC_DynamicFormPage.gxTpr_Ispredefined = true;
-         AV20BC_DynamicFormPage.gxTpr_Pagetype = "DynamicForm";
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV20BC_DynamicFormPage, 0);
-         AV25BC_MyActivityPage.gxTpr_Pageid = Guid.NewGuid( );
-         AV25BC_MyActivityPage.gxTpr_Pagename = context.GetMessage( "My Activity", "");
-         AV25BC_MyActivityPage.gxTpr_Ispredefined = true;
-         AV25BC_MyActivityPage.gxTpr_Pagetype = "MyActivity";
+         new prc_initmodulepages(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV25BC_MyActivityPage, out  AV24BC_CalendarPage, out  AV26BC_MapsPage) ;
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV25BC_MyActivityPage, 0);
-         AV24BC_CalendarPage.gxTpr_Pageid = Guid.NewGuid( );
-         AV24BC_CalendarPage.gxTpr_Pagename = context.GetMessage( "Calendar", "");
-         AV24BC_CalendarPage.gxTpr_Ispredefined = true;
-         AV24BC_CalendarPage.gxTpr_Pagetype = "Calendar";
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV24BC_CalendarPage, 0);
-         AV26BC_MapsPage.gxTpr_Pageid = Guid.NewGuid( );
-         AV26BC_MapsPage.gxTpr_Pagename = context.GetMessage( "Maps", "");
-         AV26BC_MapsPage.gxTpr_Ispredefined = true;
-         AV26BC_MapsPage.gxTpr_Pagetype = "Maps";
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV26BC_MapsPage, 0);
+         /* Execute user subroutine: 'SAVEAPPVERSION' */
+         S111 ();
+         if ( returnInSub )
+         {
+            cleanup();
+            if (true) return;
+         }
+         AV11BC_Trn_AppVersion.Save();
          GXt_SdtTrn_AppVersion_Page2 = AV18BC_HomePage;
-         new prc_inithomepage(context ).execute(  AV10LocationId,  AV13OrganisationId,  AV12BC_ReceptionPage.gxTpr_Pageid,  AV14BC_LocationPage.gxTpr_Pageid,  AV15BC_CarePage.gxTpr_Pageid,  AV16BC_LivingPage.gxTpr_Pageid,  AV17BC_ServicesPage.gxTpr_Pageid,  AV25BC_MyActivityPage.gxTpr_Pageid,  AV24BC_CalendarPage.gxTpr_Pageid,  AV26BC_MapsPage.gxTpr_Pageid, out  GXt_SdtTrn_AppVersion_Page2) ;
+         new prc_inithomepage(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  GXt_SdtTrn_AppVersion_Page2) ;
          AV18BC_HomePage = GXt_SdtTrn_AppVersion_Page2;
          AV11BC_Trn_AppVersion.gxTpr_Page.Add(AV18BC_HomePage, 0);
+         /* Execute user subroutine: 'SAVEAPPVERSION' */
+         S111 ();
+         if ( returnInSub )
+         {
+            cleanup();
+            if (true) return;
+         }
+         GXt_SdtSDT_Error3 = new SdtSDT_Error();
+         new prc_activateappversion(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV8SDT_AppVersion, out  GXt_SdtSDT_Error3) ;
+         cleanup();
+      }
+
+      protected void S111( )
+      {
+         /* 'SAVEAPPVERSION' Routine */
+         returnInSub = false;
          AV11BC_Trn_AppVersion.Save();
          if ( AV11BC_Trn_AppVersion.Success() )
          {
             context.CommitDataStores("prc_createappversion",pr_default);
-            GXt_SdtSDT_Error3 = new SdtSDT_Error();
-            new prc_activateappversion(context ).execute(  AV11BC_Trn_AppVersion.gxTpr_Appversionid, out  AV8SDT_AppVersion, out  GXt_SdtSDT_Error3) ;
          }
          else
          {
@@ -159,10 +174,13 @@ namespace GeneXus.Programs {
             {
                AV21Message = ((GeneXus.Utils.SdtMessages_Message)AV27GXV1.Item(AV28GXV2));
                GX_msglist.addItem(AV21Message.gxTpr_Description);
+               returnInSub = true;
+               if (true) return;
                AV28GXV2 = (int)(AV28GXV2+1);
             }
+            AV11BC_Trn_AppVersion.Delete();
+            context.CommitDataStores("prc_createappversion",pr_default);
          }
-         cleanup();
       }
 
       public override void cleanup( )
@@ -181,10 +199,10 @@ namespace GeneXus.Programs {
          AV9SDT_Error = new SdtSDT_Error(context);
          AV10LocationId = Guid.Empty;
          AV13OrganisationId = Guid.Empty;
-         GXt_guid1 = Guid.Empty;
          AV11BC_Trn_AppVersion = new SdtTrn_AppVersion(context);
          AV12BC_ReceptionPage = new SdtTrn_AppVersion_Page(context);
          AV14BC_LocationPage = new SdtTrn_AppVersion_Page(context);
+         GXt_guid1 = Guid.Empty;
          AV15BC_CarePage = new SdtTrn_AppVersion_Page(context);
          AV16BC_LivingPage = new SdtTrn_AppVersion_Page(context);
          AV17BC_ServicesPage = new SdtTrn_AppVersion_Page(context);
@@ -215,6 +233,7 @@ namespace GeneXus.Programs {
 
       private int AV28GXV2 ;
       private bool AV23IsActive ;
+      private bool returnInSub ;
       private string AV22AppVersionName ;
       private Guid AV10LocationId ;
       private Guid AV13OrganisationId ;
@@ -237,8 +256,8 @@ namespace GeneXus.Programs {
       private SdtTrn_AppVersion_Page AV26BC_MapsPage ;
       private SdtTrn_AppVersion_Page AV18BC_HomePage ;
       private SdtTrn_AppVersion_Page GXt_SdtTrn_AppVersion_Page2 ;
-      private IDataStoreProvider pr_default ;
       private SdtSDT_Error GXt_SdtSDT_Error3 ;
+      private IDataStoreProvider pr_default ;
       private GXBaseCollection<GeneXus.Utils.SdtMessages_Message> AV27GXV1 ;
       private GeneXus.Utils.SdtMessages_Message AV21Message ;
       private SdtSDT_AppVersion aP2_SDT_AppVersion ;

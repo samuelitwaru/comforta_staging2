@@ -121,6 +121,7 @@ namespace GeneXus.Programs {
                if (true) break;
             }
             pr_default.close(0);
+            new prc_translatepagepublishedstructure(context).executeSubmit(  AV15AppVersionId) ;
             if ( AV18Notify )
             {
                AV19Title = context.GetMessage( "New Updates Available", "");

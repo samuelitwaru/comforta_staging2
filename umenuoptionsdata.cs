@@ -264,7 +264,7 @@ namespace GeneXus.Programs {
          Gxm3dvelop_menu_subitems.gxTpr_Tooltip = "";
          Gxm3dvelop_menu_subitems.gxTpr_Link = formatLink("trn_residentpackageww.aspx") ;
          Gxm3dvelop_menu_subitems.gxTpr_Linktarget = "";
-         Gxm3dvelop_menu_subitems.gxTpr_Iconclass = "menu-icon fa fa-lock";
+         Gxm3dvelop_menu_subitems.gxTpr_Iconclass = "";
          Gxm3dvelop_menu_subitems.gxTpr_Caption = context.GetMessage( "Resident Access", "");
          Gxm3dvelop_menu_subitems = new GeneXus.Programs.wwpbaseobjects.SdtDVelop_Menu_Item(context);
          Gxm1dvelop_menu.gxTpr_Subitems.Add(Gxm3dvelop_menu_subitems, 0);

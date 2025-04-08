@@ -58,7 +58,7 @@ namespace GeneXus.Programs {
          metadata.Set("BT", "Trn_Location");
          metadata.Set("PK", "[ \"LocationId\",\"OrganisationId\" ]");
          metadata.Set("PKAssigned", "[ \"LocationId\" ]");
-         metadata.Set("FKList", "[ { \"FK\":[ \"OrganisationId\" ],\"FKMap\":[  ] },{ \"FK\":[ \"Trn_ThemeId\" ],\"FKMap\":[  ] },{ \"FK\":[ \"Trn_ThemeId\" ],\"FKMap\":[ \"LocationThemeId-Trn_ThemeId\" ] } ]");
+         metadata.Set("FKList", "[ { \"FK\":[ \"AppVersionId\" ],\"FKMap\":[ \"ActiveAppVersionId-AppVersionId\" ] },{ \"FK\":[ \"LocationId\",\"OrganisationId\" ],\"FKMap\":[  ] },{ \"FK\":[ \"OrganisationId\" ],\"FKMap\":[  ] },{ \"FK\":[ \"Trn_ThemeId\" ],\"FKMap\":[  ] },{ \"FK\":[ \"Trn_ThemeId\" ],\"FKMap\":[ \"LocationThemeId-Trn_ThemeId\" ] } ]");
          metadata.Set("AllowInsert", "True");
          metadata.Set("AllowUpdate", "True");
          metadata.Set("AllowDelete", "True");
@@ -91,6 +91,7 @@ namespace GeneXus.Programs {
          state.Add("gxTpr_Toolboxdefaultprofileimage_Z");
          state.Add("gxTpr_Toolboxdefaultlogo_Z");
          state.Add("gxTpr_Receptiondescription_Z");
+         state.Add("gxTpr_Activeappversionid_Z");
          state.Add("gxTpr_Trn_themeid_Z");
          state.Add("gxTpr_Locationthemeid_Z");
          state.Add("gxTpr_Locationimage_gxi_Z");
@@ -103,6 +104,7 @@ namespace GeneXus.Programs {
          state.Add("gxTpr_Toolboxdefaultlogo_N");
          state.Add("gxTpr_Receptionimage_N");
          state.Add("gxTpr_Receptiondescription_N");
+         state.Add("gxTpr_Activeappversionid_N");
          state.Add("gxTpr_Trn_themeid_N");
          state.Add("gxTpr_Locationthemeid_N");
          state.Add("gxTpr_Receptionimage_gxi_N");
@@ -139,6 +141,7 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_Location_Receptionimage = sdt.gxTv_SdtTrn_Location_Receptionimage ;
          gxTv_SdtTrn_Location_Receptionimage_gxi = sdt.gxTv_SdtTrn_Location_Receptionimage_gxi ;
          gxTv_SdtTrn_Location_Receptiondescription = sdt.gxTv_SdtTrn_Location_Receptiondescription ;
+         gxTv_SdtTrn_Location_Activeappversionid = sdt.gxTv_SdtTrn_Location_Activeappversionid ;
          gxTv_SdtTrn_Location_Trn_themeid = sdt.gxTv_SdtTrn_Location_Trn_themeid ;
          gxTv_SdtTrn_Location_Locationthemeid = sdt.gxTv_SdtTrn_Location_Locationthemeid ;
          gxTv_SdtTrn_Location_Mode = sdt.gxTv_SdtTrn_Location_Mode ;
@@ -162,6 +165,7 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_Location_Toolboxdefaultprofileimage_Z = sdt.gxTv_SdtTrn_Location_Toolboxdefaultprofileimage_Z ;
          gxTv_SdtTrn_Location_Toolboxdefaultlogo_Z = sdt.gxTv_SdtTrn_Location_Toolboxdefaultlogo_Z ;
          gxTv_SdtTrn_Location_Receptiondescription_Z = sdt.gxTv_SdtTrn_Location_Receptiondescription_Z ;
+         gxTv_SdtTrn_Location_Activeappversionid_Z = sdt.gxTv_SdtTrn_Location_Activeappversionid_Z ;
          gxTv_SdtTrn_Location_Trn_themeid_Z = sdt.gxTv_SdtTrn_Location_Trn_themeid_Z ;
          gxTv_SdtTrn_Location_Locationthemeid_Z = sdt.gxTv_SdtTrn_Location_Locationthemeid_Z ;
          gxTv_SdtTrn_Location_Locationimage_gxi_Z = sdt.gxTv_SdtTrn_Location_Locationimage_gxi_Z ;
@@ -174,6 +178,7 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_Location_Toolboxdefaultlogo_N = sdt.gxTv_SdtTrn_Location_Toolboxdefaultlogo_N ;
          gxTv_SdtTrn_Location_Receptionimage_N = sdt.gxTv_SdtTrn_Location_Receptionimage_N ;
          gxTv_SdtTrn_Location_Receptiondescription_N = sdt.gxTv_SdtTrn_Location_Receptiondescription_N ;
+         gxTv_SdtTrn_Location_Activeappversionid_N = sdt.gxTv_SdtTrn_Location_Activeappversionid_N ;
          gxTv_SdtTrn_Location_Trn_themeid_N = sdt.gxTv_SdtTrn_Location_Trn_themeid_N ;
          gxTv_SdtTrn_Location_Locationthemeid_N = sdt.gxTv_SdtTrn_Location_Locationthemeid_N ;
          gxTv_SdtTrn_Location_Receptionimage_gxi_N = sdt.gxTv_SdtTrn_Location_Receptionimage_gxi_N ;
@@ -227,6 +232,8 @@ namespace GeneXus.Programs {
          AddObjectProperty("ReceptionImage_N", gxTv_SdtTrn_Location_Receptionimage_N, false, includeNonInitialized);
          AddObjectProperty("ReceptionDescription", gxTv_SdtTrn_Location_Receptiondescription, false, includeNonInitialized);
          AddObjectProperty("ReceptionDescription_N", gxTv_SdtTrn_Location_Receptiondescription_N, false, includeNonInitialized);
+         AddObjectProperty("ActiveAppVersionId", gxTv_SdtTrn_Location_Activeappversionid, false, includeNonInitialized);
+         AddObjectProperty("ActiveAppVersionId_N", gxTv_SdtTrn_Location_Activeappversionid_N, false, includeNonInitialized);
          AddObjectProperty("Trn_ThemeId", gxTv_SdtTrn_Location_Trn_themeid, false, includeNonInitialized);
          AddObjectProperty("Trn_ThemeId_N", gxTv_SdtTrn_Location_Trn_themeid_N, false, includeNonInitialized);
          AddObjectProperty("LocationThemeId", gxTv_SdtTrn_Location_Locationthemeid, false, includeNonInitialized);
@@ -256,6 +263,7 @@ namespace GeneXus.Programs {
             AddObjectProperty("ToolBoxDefaultProfileImage_Z", gxTv_SdtTrn_Location_Toolboxdefaultprofileimage_Z, false, includeNonInitialized);
             AddObjectProperty("ToolBoxDefaultLogo_Z", gxTv_SdtTrn_Location_Toolboxdefaultlogo_Z, false, includeNonInitialized);
             AddObjectProperty("ReceptionDescription_Z", gxTv_SdtTrn_Location_Receptiondescription_Z, false, includeNonInitialized);
+            AddObjectProperty("ActiveAppVersionId_Z", gxTv_SdtTrn_Location_Activeappversionid_Z, false, includeNonInitialized);
             AddObjectProperty("Trn_ThemeId_Z", gxTv_SdtTrn_Location_Trn_themeid_Z, false, includeNonInitialized);
             AddObjectProperty("LocationThemeId_Z", gxTv_SdtTrn_Location_Locationthemeid_Z, false, includeNonInitialized);
             AddObjectProperty("LocationImage_GXI_Z", gxTv_SdtTrn_Location_Locationimage_gxi_Z, false, includeNonInitialized);
@@ -268,6 +276,7 @@ namespace GeneXus.Programs {
             AddObjectProperty("ToolBoxDefaultLogo_N", gxTv_SdtTrn_Location_Toolboxdefaultlogo_N, false, includeNonInitialized);
             AddObjectProperty("ReceptionImage_N", gxTv_SdtTrn_Location_Receptionimage_N, false, includeNonInitialized);
             AddObjectProperty("ReceptionDescription_N", gxTv_SdtTrn_Location_Receptiondescription_N, false, includeNonInitialized);
+            AddObjectProperty("ActiveAppVersionId_N", gxTv_SdtTrn_Location_Activeappversionid_N, false, includeNonInitialized);
             AddObjectProperty("Trn_ThemeId_N", gxTv_SdtTrn_Location_Trn_themeid_N, false, includeNonInitialized);
             AddObjectProperty("LocationThemeId_N", gxTv_SdtTrn_Location_Locationthemeid_N, false, includeNonInitialized);
             AddObjectProperty("ReceptionImage_GXI_N", gxTv_SdtTrn_Location_Receptionimage_gxi_N, false, includeNonInitialized);
@@ -414,6 +423,12 @@ namespace GeneXus.Programs {
             sdtIsNull = 0;
             gxTv_SdtTrn_Location_Receptiondescription = sdt.gxTv_SdtTrn_Location_Receptiondescription ;
          }
+         if ( sdt.IsDirty("ActiveAppVersionId") )
+         {
+            gxTv_SdtTrn_Location_Activeappversionid_N = (short)(sdt.gxTv_SdtTrn_Location_Activeappversionid_N);
+            sdtIsNull = 0;
+            gxTv_SdtTrn_Location_Activeappversionid = sdt.gxTv_SdtTrn_Location_Activeappversionid ;
+         }
          if ( sdt.IsDirty("Trn_ThemeId") )
          {
             gxTv_SdtTrn_Location_Trn_themeid_N = (short)(sdt.gxTv_SdtTrn_Location_Trn_themeid_N);
@@ -461,6 +476,7 @@ namespace GeneXus.Programs {
                this.gxTv_SdtTrn_Location_Toolboxdefaultprofileimage_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Toolboxdefaultlogo_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Receptiondescription_Z_SetNull( );
+               this.gxTv_SdtTrn_Location_Activeappversionid_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Trn_themeid_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Locationthemeid_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Locationimage_gxi_Z_SetNull( );
@@ -504,6 +520,7 @@ namespace GeneXus.Programs {
                this.gxTv_SdtTrn_Location_Toolboxdefaultprofileimage_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Toolboxdefaultlogo_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Receptiondescription_Z_SetNull( );
+               this.gxTv_SdtTrn_Location_Activeappversionid_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Trn_themeid_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Locationthemeid_Z_SetNull( );
                this.gxTv_SdtTrn_Location_Locationimage_gxi_Z_SetNull( );
@@ -997,6 +1014,36 @@ namespace GeneXus.Programs {
       public bool gxTv_SdtTrn_Location_Receptiondescription_IsNull( )
       {
          return (gxTv_SdtTrn_Location_Receptiondescription_N==1) ;
+      }
+
+      [  SoapElement( ElementName = "ActiveAppVersionId" )]
+      [  XmlElement( ElementName = "ActiveAppVersionId"   )]
+      public Guid gxTpr_Activeappversionid
+      {
+         get {
+            return gxTv_SdtTrn_Location_Activeappversionid ;
+         }
+
+         set {
+            gxTv_SdtTrn_Location_Activeappversionid_N = 0;
+            sdtIsNull = 0;
+            gxTv_SdtTrn_Location_Activeappversionid = value;
+            SetDirty("Activeappversionid");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_Location_Activeappversionid_SetNull( )
+      {
+         gxTv_SdtTrn_Location_Activeappversionid_N = 1;
+         gxTv_SdtTrn_Location_Activeappversionid = Guid.Empty;
+         SetDirty("Activeappversionid");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_Location_Activeappversionid_IsNull( )
+      {
+         return (gxTv_SdtTrn_Location_Activeappversionid_N==1) ;
       }
 
       [  SoapElement( ElementName = "Trn_ThemeId" )]
@@ -1647,6 +1694,34 @@ namespace GeneXus.Programs {
          return false ;
       }
 
+      [  SoapElement( ElementName = "ActiveAppVersionId_Z" )]
+      [  XmlElement( ElementName = "ActiveAppVersionId_Z"   )]
+      public Guid gxTpr_Activeappversionid_Z
+      {
+         get {
+            return gxTv_SdtTrn_Location_Activeappversionid_Z ;
+         }
+
+         set {
+            sdtIsNull = 0;
+            gxTv_SdtTrn_Location_Activeappversionid_Z = value;
+            SetDirty("Activeappversionid_Z");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_Location_Activeappversionid_Z_SetNull( )
+      {
+         gxTv_SdtTrn_Location_Activeappversionid_Z = Guid.Empty;
+         SetDirty("Activeappversionid_Z");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_Location_Activeappversionid_Z_IsNull( )
+      {
+         return false ;
+      }
+
       [  SoapElement( ElementName = "Trn_ThemeId_Z" )]
       [  XmlElement( ElementName = "Trn_ThemeId_Z"   )]
       public Guid gxTpr_Trn_themeid_Z
@@ -1983,6 +2058,34 @@ namespace GeneXus.Programs {
          return false ;
       }
 
+      [  SoapElement( ElementName = "ActiveAppVersionId_N" )]
+      [  XmlElement( ElementName = "ActiveAppVersionId_N"   )]
+      public short gxTpr_Activeappversionid_N
+      {
+         get {
+            return gxTv_SdtTrn_Location_Activeappversionid_N ;
+         }
+
+         set {
+            sdtIsNull = 0;
+            gxTv_SdtTrn_Location_Activeappversionid_N = value;
+            SetDirty("Activeappversionid_N");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_Location_Activeappversionid_N_SetNull( )
+      {
+         gxTv_SdtTrn_Location_Activeappversionid_N = 0;
+         SetDirty("Activeappversionid_N");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_Location_Activeappversionid_N_IsNull( )
+      {
+         return false ;
+      }
+
       [  SoapElement( ElementName = "Trn_ThemeId_N" )]
       [  XmlElement( ElementName = "Trn_ThemeId_N"   )]
       public short gxTpr_Trn_themeid_N
@@ -2110,6 +2213,7 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_Location_Receptionimage = "";
          gxTv_SdtTrn_Location_Receptionimage_gxi = "";
          gxTv_SdtTrn_Location_Receptiondescription = "";
+         gxTv_SdtTrn_Location_Activeappversionid = Guid.Empty;
          gxTv_SdtTrn_Location_Trn_themeid = Guid.Empty;
          gxTv_SdtTrn_Location_Locationthemeid = Guid.Empty;
          gxTv_SdtTrn_Location_Mode = "";
@@ -2128,6 +2232,7 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_Location_Toolboxdefaultprofileimage_Z = "";
          gxTv_SdtTrn_Location_Toolboxdefaultlogo_Z = "";
          gxTv_SdtTrn_Location_Receptiondescription_Z = "";
+         gxTv_SdtTrn_Location_Activeappversionid_Z = Guid.Empty;
          gxTv_SdtTrn_Location_Trn_themeid_Z = Guid.Empty;
          gxTv_SdtTrn_Location_Locationthemeid_Z = Guid.Empty;
          gxTv_SdtTrn_Location_Locationimage_gxi_Z = "";
@@ -2156,6 +2261,7 @@ namespace GeneXus.Programs {
       private short gxTv_SdtTrn_Location_Toolboxdefaultlogo_N ;
       private short gxTv_SdtTrn_Location_Receptionimage_N ;
       private short gxTv_SdtTrn_Location_Receptiondescription_N ;
+      private short gxTv_SdtTrn_Location_Activeappversionid_N ;
       private short gxTv_SdtTrn_Location_Trn_themeid_N ;
       private short gxTv_SdtTrn_Location_Locationthemeid_N ;
       private short gxTv_SdtTrn_Location_Receptionimage_gxi_N ;
@@ -2205,10 +2311,12 @@ namespace GeneXus.Programs {
       private string gxTv_SdtTrn_Location_Receptionimage ;
       private Guid gxTv_SdtTrn_Location_Locationid ;
       private Guid gxTv_SdtTrn_Location_Organisationid ;
+      private Guid gxTv_SdtTrn_Location_Activeappversionid ;
       private Guid gxTv_SdtTrn_Location_Trn_themeid ;
       private Guid gxTv_SdtTrn_Location_Locationthemeid ;
       private Guid gxTv_SdtTrn_Location_Locationid_Z ;
       private Guid gxTv_SdtTrn_Location_Organisationid_Z ;
+      private Guid gxTv_SdtTrn_Location_Activeappversionid_Z ;
       private Guid gxTv_SdtTrn_Location_Trn_themeid_Z ;
       private Guid gxTv_SdtTrn_Location_Locationthemeid_Z ;
    }
@@ -2558,7 +2666,21 @@ namespace GeneXus.Programs {
 
       }
 
-      [DataMember( Name = "Trn_ThemeId" , Order = 24 )]
+      [DataMember( Name = "ActiveAppVersionId" , Order = 24 )]
+      [GxSeudo()]
+      public Guid gxTpr_Activeappversionid
+      {
+         get {
+            return sdt.gxTpr_Activeappversionid ;
+         }
+
+         set {
+            sdt.gxTpr_Activeappversionid = value;
+         }
+
+      }
+
+      [DataMember( Name = "Trn_ThemeId" , Order = 25 )]
       [GxSeudo()]
       public Guid gxTpr_Trn_themeid
       {
@@ -2572,7 +2694,7 @@ namespace GeneXus.Programs {
 
       }
 
-      [DataMember( Name = "LocationThemeId" , Order = 25 )]
+      [DataMember( Name = "LocationThemeId" , Order = 26 )]
       [GxSeudo()]
       public Guid gxTpr_Locationthemeid
       {
@@ -2607,7 +2729,7 @@ namespace GeneXus.Programs {
          }
       }
 
-      [DataMember( Name = "gx_md5_hash", Order = 26 )]
+      [DataMember( Name = "gx_md5_hash", Order = 27 )]
       public string Hash
       {
          get {

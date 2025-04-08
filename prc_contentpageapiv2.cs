@@ -191,21 +191,35 @@ namespace GeneXus.Programs {
                      AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Receptiondescription;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                   }
-                  AV11SDT_ContentPage.gxTpr_Cta.Clear();
-                  AV16CtaItem = new SdtSDT_ContentPage_CtaItem(context);
-                  AV16CtaItem.gxTpr_Ctaid = Guid.NewGuid( ).ToString();
-                  AV16CtaItem.gxTpr_Ctalabel = "CALL US";
-                  AV16CtaItem.gxTpr_Ctabgcolor = "#5068a8";
-                  AV16CtaItem.gxTpr_Ctatype = "Phone";
-                  AV16CtaItem.gxTpr_Ctaaction = AV14BC_Trn_Location.gxTpr_Locationphone;
-                  AV11SDT_ContentPage.gxTpr_Cta.Add(AV16CtaItem, 0);
-                  AV16CtaItem = new SdtSDT_ContentPage_CtaItem(context);
-                  AV16CtaItem.gxTpr_Ctaid = Guid.NewGuid( ).ToString();
-                  AV16CtaItem.gxTpr_Ctalabel = "EMAIL US";
-                  AV16CtaItem.gxTpr_Ctabgcolor = "#5068a8";
-                  AV16CtaItem.gxTpr_Ctatype = "Email";
-                  AV16CtaItem.gxTpr_Ctaaction = AV14BC_Trn_Location.gxTpr_Locationphone;
-                  AV11SDT_ContentPage.gxTpr_Cta.Add(AV16CtaItem, 0);
+                  AV28GXV3 = 1;
+                  while ( AV28GXV3 <= AV11SDT_ContentPage.gxTpr_Cta.Count )
+                  {
+                     AV16CtaItem = ((SdtSDT_ContentPage_CtaItem)AV11SDT_ContentPage.gxTpr_Cta.Item(AV28GXV3));
+                     AV13BC_Trn_CallToAction.Load(StringUtil.StrToGuid( AV16CtaItem.gxTpr_Ctaid));
+                     /* Execute user subroutine: 'GETTHEMEID' */
+                     S111 ();
+                     if ( returnInSub )
+                     {
+                        pr_default.close(1);
+                        cleanup();
+                        if (true) return;
+                     }
+                     GXt_char1 = "";
+                     new prc_getthemecolorbyname(context ).execute(  AV23ThemeId,  AV16CtaItem.gxTpr_Ctabgcolor, out  GXt_char1) ;
+                     AV16CtaItem.gxTpr_Ctabgcolor = GXt_char1;
+                     if ( StringUtil.StrCmp(AV13BC_Trn_CallToAction.gxTpr_Calltoactiontype, "Phone") == 0 )
+                     {
+                        AV16CtaItem.gxTpr_Ctaaction = AV14BC_Trn_Location.gxTpr_Locationphone;
+                     }
+                     else if ( StringUtil.StrCmp(AV13BC_Trn_CallToAction.gxTpr_Calltoactiontype, "Email") == 0 )
+                     {
+                        AV16CtaItem.gxTpr_Ctaaction = AV14BC_Trn_Location.gxTpr_Locationemail;
+                     }
+                     else
+                     {
+                     }
+                     AV28GXV3 = (int)(AV28GXV3+1);
+                  }
                }
                new prc_logtoserver(context ).execute(  context.GetMessage( "Content:3 ", "")+AV11SDT_ContentPage.ToJSonString(false, true)) ;
                GXt_SdtSDT_ContentPageV12 = AV20SDT_ContentPageV1;
@@ -281,9 +295,9 @@ namespace GeneXus.Programs {
          AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
          AV16CtaItem = new SdtSDT_ContentPage_CtaItem(context);
          AV13BC_Trn_CallToAction = new SdtTrn_CallToAction(context);
-         GXt_char1 = "";
          AV23ThemeId = Guid.Empty;
          AV14BC_Trn_Location = new SdtTrn_Location(context);
+         GXt_char1 = "";
          GXt_SdtSDT_ContentPageV12 = new SdtSDT_ContentPageV1(context);
          P00DM4_A29LocationId = new Guid[] {Guid.Empty} ;
          P00DM4_n29LocationId = new bool[] {false} ;
@@ -310,6 +324,7 @@ namespace GeneXus.Programs {
 
       private int AV26GXV1 ;
       private int AV27GXV2 ;
+      private int AV28GXV3 ;
       private string GXt_char1 ;
       private bool A535IsActive ;
       private bool n11OrganisationId ;

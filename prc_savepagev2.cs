@@ -114,6 +114,8 @@ namespace GeneXus.Programs {
                A517PageName = P00BG3_A517PageName[0];
                A525PageType = P00BG3_A525PageType[0];
                A518PageStructure = P00BG3_A518PageStructure[0];
+               O518PageStructure = A518PageStructure;
+               O518PageStructure = A518PageStructure;
                A517PageName = AV15PageName;
                if ( ( ( StringUtil.StrCmp(A525PageType, "Menu") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "MyLiving") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "MyService") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "MyCare") == 0 ) ) )
                {
@@ -126,7 +128,17 @@ namespace GeneXus.Programs {
                   AV10CleanedPageStructure = AV18SDT_ContentPage.ToJSonString(false, true);
                }
                A518PageStructure = AV10CleanedPageStructure;
-               GXTBG3 = 1;
+               new prc_logtoserver(context ).execute(  context.GetMessage( "Old:", "")+O518PageStructure) ;
+               new prc_logtoserver(context ).execute(  context.GetMessage( "New:", "")+AV10CleanedPageStructure) ;
+               if ( ! ( ( StringUtil.StrCmp(O518PageStructure, AV10CleanedPageStructure) == 0 ) ) )
+               {
+                  new prc_logtoserver(context ).execute(  context.GetMessage( "Commiting ...", "")) ;
+                  GXTBG3 = 1;
+                  GXt_objcol_SdtSDT_TrnAttributes1 = AV21SDT_TrnAttributesCollection;
+                  new prc_addappversionpagesattributestosdt(context ).execute(  A523AppVersionId,  AV14PageId, out  GXt_objcol_SdtSDT_TrnAttributes1) ;
+                  AV21SDT_TrnAttributesCollection = GXt_objcol_SdtSDT_TrnAttributes1;
+                  new prc_addappversionpagetodynamictransalation(context).executeSubmit(  AV21SDT_TrnAttributesCollection) ;
+               }
                /* Using cursor P00BG4 */
                pr_default.execute(2, new Object[] {A517PageName, A518PageStructure, A523AppVersionId, A516PageId});
                pr_default.close(2);
@@ -171,9 +183,12 @@ namespace GeneXus.Programs {
          A517PageName = "";
          A525PageType = "";
          A518PageStructure = "";
+         O518PageStructure = "";
          AV19SDT_MenuPage = new SdtSDT_MenuPage(context);
          AV10CleanedPageStructure = "";
          AV18SDT_ContentPage = new SdtSDT_ContentPage(context);
+         AV21SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
+         GXt_objcol_SdtSDT_TrnAttributes1 = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_savepagev2__datastore1(),
             new Object[][] {
             }
@@ -200,6 +215,7 @@ namespace GeneXus.Programs {
       private short GXTBG3 ;
       private string AV16PageStructure ;
       private string A518PageStructure ;
+      private string O518PageStructure ;
       private string AV10CleanedPageStructure ;
       private string AV15PageName ;
       private string AV17PageType ;
@@ -222,6 +238,8 @@ namespace GeneXus.Programs {
       private string[] P00BG3_A518PageStructure ;
       private SdtSDT_MenuPage AV19SDT_MenuPage ;
       private SdtSDT_ContentPage AV18SDT_ContentPage ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> AV21SDT_TrnAttributesCollection ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> GXt_objcol_SdtSDT_TrnAttributes1 ;
       private SdtSDT_Error aP5_SDT_Error ;
       private IDataStoreProvider pr_datastore1 ;
       private IDataStoreProvider pr_gam ;

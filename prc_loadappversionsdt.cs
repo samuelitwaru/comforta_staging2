@@ -76,6 +76,7 @@ namespace GeneXus.Programs {
          AV9SDT_AppVersion = new SdtSDT_AppVersion(context);
          AV9SDT_AppVersion.FromJSonString(AV8BC_Trn_AppVersion.ToJSonString(true, true), null);
          AV9SDT_AppVersion.gxTpr_Pages.Clear();
+         AV15HomePageExists = false;
          /* Using cursor P00CA2 */
          pr_default.execute(0, new Object[] {AV8BC_Trn_AppVersion.gxTpr_Appversionid});
          while ( (pr_default.getStatus(0) != 101) )
@@ -114,6 +115,10 @@ namespace GeneXus.Programs {
                }
                AV10PageItem.gxTpr_Pagestructure = AV11PageStructure;
                AV9SDT_AppVersion.gxTpr_Pages.Add(AV10PageItem, 0);
+               if ( StringUtil.StrCmp(A517PageName, context.GetMessage( "Home", "")) == 0 )
+               {
+                  AV15HomePageExists = true;
+               }
                pr_default.readNext(1);
             }
             pr_default.close(1);
@@ -167,6 +172,7 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
+      private bool AV15HomePageExists ;
       private string A518PageStructure ;
       private string AV11PageStructure ;
       private string A517PageName ;

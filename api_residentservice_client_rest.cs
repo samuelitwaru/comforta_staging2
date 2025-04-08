@@ -1373,6 +1373,34 @@ namespace GeneXus.Programs {
          /* GetAppVersions Constructor */
       }
 
+      public void gxep_getappversion( out SdtSDT_AppVersion aP0_AppVersion ,
+                                      out SdtSDT_Error aP1_error )
+      {
+         restCliGetAppVersion = new GXRestAPIClient();
+         if ( restLocation == null )
+         {
+            InitLocation();
+         }
+         restLocation.ResourceName = "/toolbox/v2/appversion";
+         restCliGetAppVersion.Location = restLocation;
+         restCliGetAppVersion.HttpMethod = "GET";
+         restCliGetAppVersion.RestExecute();
+         if ( restCliGetAppVersion.ErrorCode != 0 )
+         {
+            gxProperties.ErrorCode = restCliGetAppVersion.ErrorCode;
+            gxProperties.ErrorMessage = restCliGetAppVersion.ErrorMessage;
+            gxProperties.StatusCode = restCliGetAppVersion.StatusCode;
+            aP0_AppVersion = new SdtSDT_AppVersion();
+            aP1_error = new SdtSDT_Error();
+         }
+         else
+         {
+            aP0_AppVersion = restCliGetAppVersion.GetBodySdt<SdtSDT_AppVersion>("AppVersion");
+            aP1_error = restCliGetAppVersion.GetBodySdt<SdtSDT_Error>("error");
+         }
+         /* GetAppVersion Constructor */
+      }
+
       public void gxep_createappversion( string aP0_AppVersionName ,
                                          bool aP1_IsActive ,
                                          out SdtSDT_AppVersion aP2_AppVersion ,
@@ -2196,6 +2224,8 @@ namespace GeneXus.Programs {
          aP0_SDT_ThemeCollection = new GXBaseCollection<SdtSDT_Theme>();
          restCliGetAppVersions = new GXRestAPIClient();
          aP0_AppVersions = new GXBaseCollection<SdtSDT_AppVersion>();
+         restCliGetAppVersion = new GXRestAPIClient();
+         aP0_AppVersion = new SdtSDT_AppVersion();
          restCliCreateAppVersion = new GXRestAPIClient();
          aP2_AppVersion = new SdtSDT_AppVersion();
          restCliCopyAppVersion = new GXRestAPIClient();
@@ -2278,6 +2308,7 @@ namespace GeneXus.Programs {
       protected GXRestAPIClient restCliToolboxGetLocationTheme ;
       protected GXRestAPIClient restCliGetThemes ;
       protected GXRestAPIClient restCliGetAppVersions ;
+      protected GXRestAPIClient restCliGetAppVersion ;
       protected GXRestAPIClient restCliCreateAppVersion ;
       protected GXRestAPIClient restCliCopyAppVersion ;
       protected GXRestAPIClient restCliUpdateAppVersion ;
@@ -2344,6 +2375,7 @@ namespace GeneXus.Programs {
       protected SdtSDT_LocationTheme aP0_SDT_LocationTheme ;
       protected GXBaseCollection<SdtSDT_Theme> aP0_SDT_ThemeCollection ;
       protected GXBaseCollection<SdtSDT_AppVersion> aP0_AppVersions ;
+      protected SdtSDT_AppVersion aP0_AppVersion ;
       protected SdtSDT_AppVersion aP2_AppVersion ;
       protected SdtSDT_AppVersion aP1_AppVersion ;
       protected SdtSDT_AppVersion_PagesItem aP2_MenuPage ;

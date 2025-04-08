@@ -813,7 +813,7 @@ namespace GeneXus.Programs {
             pr_default.execute(13, new Object[] {n273Trn_ThemeId, A273Trn_ThemeId});
             if ( (pr_default.getStatus(13) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Location", "")+" ("+context.GetMessage( "SG_Location Theme", "")+")"}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Locations", "")+" ("+context.GetMessage( "SG_Location Theme", "")+")"}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
             pr_default.close(13);
@@ -821,7 +821,7 @@ namespace GeneXus.Programs {
             pr_default.execute(14, new Object[] {n273Trn_ThemeId, A273Trn_ThemeId});
             if ( (pr_default.getStatus(14) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Location", "")}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {context.GetMessage( "Locations", "")}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1;
             }
             pr_default.close(14);
