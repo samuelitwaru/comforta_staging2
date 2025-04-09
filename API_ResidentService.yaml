@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250409050552"
+  version: "20250409061753"
 servers:
   - url: https://staging.comforta.yukon.software/api
 paths:
@@ -2907,12 +2907,6 @@ components:
         PageName:
           description: "Page Name"
           type: "string"
-        PageIsPublished:
-          description: "Page Is Published"
-          type: "boolean"
-        PageIsContentPage:
-          description: "Page Is Content Page"
-          type: "boolean"
         Row:
           description: "SDT_Row"
           type: array

@@ -91,9 +91,6 @@ namespace GeneXus.Programs {
          AV9SDT_MobilePage = new SdtSDT_MobilePage(context);
          AV9SDT_MobilePage.gxTpr_Pageid = AV17PageId;
          AV9SDT_MobilePage.gxTpr_Pagename = AV18PageName;
-         AV9SDT_MobilePage.gxTpr_Pageiscontentpage = false;
-         AV9SDT_MobilePage.gxTpr_Pageispublished = true;
-         AV21ObjectTypeDictionary.fromjson( context.GetMessage( "{\"Content\":\"Product\", \"\"}", ""));
          /* Using cursor P00DJ2 */
          pr_default.execute(0, new Object[] {AV19LocationId});
          while ( (pr_default.getStatus(0) != 101) )
@@ -128,15 +125,9 @@ namespace GeneXus.Programs {
                AV12SDT_Tile.gxTpr_Tilebgcolor = GXt_char1;
                AV12SDT_Tile.gxTpr_Tilebgimageurl = AV15TilesItem.gxTpr_Bgimageurl;
                AV12SDT_Tile.gxTpr_Tilebgimageopacity = AV15TilesItem.gxTpr_Opacity;
+               AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = AV15TilesItem.gxTpr_Action.gxTpr_Objecttype;
                AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objectid = AV15TilesItem.gxTpr_Action.gxTpr_Objectid;
                AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecturl = AV15TilesItem.gxTpr_Action.gxTpr_Objecturl;
-               /* Execute user subroutine: 'MAPACTIONOBJECTTYPE' */
-               S111 ();
-               if ( returnInSub )
-               {
-                  cleanup();
-                  if (true) return;
-               }
                AV16SDT_Col.gxTpr_Tile = AV12SDT_Tile;
                AV10SDT_Row.gxTpr_Col.Add(AV16SDT_Col, 0);
                AV24GXV2 = (int)(AV24GXV2+1);
@@ -198,7 +189,6 @@ namespace GeneXus.Programs {
       public override void initialize( )
       {
          AV9SDT_MobilePage = new SdtSDT_MobilePage(context);
-         AV21ObjectTypeDictionary = new GeneXus.Core.genexus.common.SdtDictionary<string, string>();
          P00DJ2_A29LocationId = new Guid[] {Guid.Empty} ;
          P00DJ2_A273Trn_ThemeId = new Guid[] {Guid.Empty} ;
          P00DJ2_n273Trn_ThemeId = new bool[] {false} ;
@@ -240,7 +230,6 @@ namespace GeneXus.Programs {
       private IGxDataStore dsDefault ;
       private SdtSDT_MenuPage AV8SDT_MenuPage ;
       private SdtSDT_MobilePage AV9SDT_MobilePage ;
-      private GeneXus.Core.genexus.common.SdtDictionary<string, string> AV21ObjectTypeDictionary ;
       private IDataStoreProvider pr_default ;
       private Guid[] P00DJ2_A29LocationId ;
       private Guid[] P00DJ2_A273Trn_ThemeId ;

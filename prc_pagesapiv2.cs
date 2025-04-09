@@ -103,7 +103,6 @@ namespace GeneXus.Programs {
                A516PageId = P00DL3_A516PageId[0];
                A517PageName = P00DL3_A517PageName[0];
                AV15SDT_MenuPage.FromJSonString(A536PagePublishedStructure, null);
-               AV18SDT_MenuPageCollection.Add(AV15SDT_MenuPage, 0);
                GXt_SdtSDT_MobilePage1 = AV16SDT_MobilePage;
                new prc_convertnewtooldmenustructure(context ).execute(  AV15SDT_MenuPage,  A516PageId,  A517PageName,  AV8LocationId, out  GXt_SdtSDT_MobilePage1) ;
                AV16SDT_MobilePage = GXt_SdtSDT_MobilePage1;
@@ -167,7 +166,6 @@ namespace GeneXus.Programs {
          A516PageId = Guid.Empty;
          A517PageName = "";
          AV15SDT_MenuPage = new SdtSDT_MenuPage(context);
-         AV18SDT_MenuPageCollection = new GXBaseCollection<SdtSDT_MenuPage>( context, "SDT_MenuPage", "Comforta_version20");
          AV16SDT_MobilePage = new SdtSDT_MobilePage(context);
          AV13Filtered_SDT_MobilePage = new SdtSDT_MobilePage(context);
          GXt_SdtSDT_MobilePage1 = new SdtSDT_MobilePage(context);
@@ -215,7 +213,6 @@ namespace GeneXus.Programs {
       private Guid[] P00DL3_A516PageId ;
       private string[] P00DL3_A517PageName ;
       private SdtSDT_MenuPage AV15SDT_MenuPage ;
-      private GXBaseCollection<SdtSDT_MenuPage> AV18SDT_MenuPageCollection ;
       private SdtSDT_MobilePage AV16SDT_MobilePage ;
       private SdtSDT_MobilePage AV13Filtered_SDT_MobilePage ;
       private SdtSDT_MobilePage GXt_SdtSDT_MobilePage1 ;

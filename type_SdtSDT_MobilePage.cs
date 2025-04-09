@@ -64,12 +64,6 @@ namespace GeneXus.Programs
 
 			AddObjectProperty("PageName", gxTpr_Pagename, false);
 
-
-			AddObjectProperty("PageIsPublished", gxTpr_Pageispublished, false);
-
-
-			AddObjectProperty("PageIsContentPage", gxTpr_Pageiscontentpage, false);
-
 			if (gxTv_SdtSDT_MobilePage_Row != null)
 			{
 				AddObjectProperty("Row", gxTv_SdtSDT_MobilePage_Row, false);
@@ -106,38 +100,6 @@ namespace GeneXus.Programs
 			set {
 				gxTv_SdtSDT_MobilePage_Pagename = value;
 				SetDirty("Pagename");
-			}
-		}
-
-
-
-
-		[SoapElement(ElementName="PageIsPublished")]
-		[XmlElement(ElementName="PageIsPublished")]
-		public bool gxTpr_Pageispublished
-		{
-			get {
-				return gxTv_SdtSDT_MobilePage_Pageispublished; 
-			}
-			set {
-				gxTv_SdtSDT_MobilePage_Pageispublished = value;
-				SetDirty("Pageispublished");
-			}
-		}
-
-
-
-
-		[SoapElement(ElementName="PageIsContentPage")]
-		[XmlElement(ElementName="PageIsContentPage")]
-		public bool gxTpr_Pageiscontentpage
-		{
-			get {
-				return gxTv_SdtSDT_MobilePage_Pageiscontentpage; 
-			}
-			set {
-				gxTv_SdtSDT_MobilePage_Pageiscontentpage = value;
-				SetDirty("Pageiscontentpage");
 			}
 		}
 
@@ -218,8 +180,6 @@ namespace GeneXus.Programs
 		public void initialize( )
 		{
 			gxTv_SdtSDT_MobilePage_Pagename = "";
-			gxTv_SdtSDT_MobilePage_Pageispublished = false;
-			gxTv_SdtSDT_MobilePage_Pageiscontentpage = false;
 
 			gxTv_SdtSDT_MobilePage_Row_N = true;
 
@@ -236,12 +196,6 @@ namespace GeneXus.Programs
 		 
 
 		protected string gxTv_SdtSDT_MobilePage_Pagename;
-		 
-
-		protected bool gxTv_SdtSDT_MobilePage_Pageispublished;
-		 
-
-		protected bool gxTv_SdtSDT_MobilePage_Pageiscontentpage;
 		 
 		protected bool gxTv_SdtSDT_MobilePage_Row_N;
 		protected GXBaseCollection<GeneXus.Programs.SdtSDT_Row> gxTv_SdtSDT_MobilePage_Row = null;  
@@ -287,31 +241,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="PageIsPublished", Order=2)]
-		public bool gxTpr_Pageispublished
-		{
-			get { 
-				return sdt.gxTpr_Pageispublished;
-
-			}
-			set { 
-				sdt.gxTpr_Pageispublished = value;
-			}
-		}
-
-		[DataMember(Name="PageIsContentPage", Order=3)]
-		public bool gxTpr_Pageiscontentpage
-		{
-			get { 
-				return sdt.gxTpr_Pageiscontentpage;
-
-			}
-			set { 
-				sdt.gxTpr_Pageiscontentpage = value;
-			}
-		}
-
-		[DataMember(Name="Row", Order=4, EmitDefaultValue=false)]
+		[DataMember(Name="Row", Order=2, EmitDefaultValue=false)]
 		public  GxGenericCollection<GeneXus.Programs.SdtSDT_Row_RESTInterface> gxTpr_Row
 		{
 			get { 

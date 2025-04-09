@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250409050552"
+  version: "20250409061753"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
@@ -2966,12 +2966,6 @@ components:
         PageName:
           description: "Page Name"
           type: "string"
-        PageIsPublished:
-          description: "Page Is Published"
-          type: "boolean"
-        PageIsContentPage:
-          description: "Page Is Content Page"
-          type: "boolean"
         Row:
           description: "SDT_Row"
           type: array
