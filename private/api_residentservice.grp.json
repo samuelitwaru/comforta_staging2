@@ -231,7 +231,7 @@
 "Bodystyle":"Wrapped",
 "VariableAlias": [],
 "ServiceMethod":"gxep_pagesapi",
-"Implementation":"Prc_PagesAPI",
+"Implementation":"Prc_PagesAPIV2",
 "Verb":"GET"
 },
 {
@@ -241,7 +241,7 @@
 "Bodystyle":"Wrapped",
 "VariableAlias": [],
 "ServiceMethod":"gxep_pageapi",
-"Implementation":"Prc_PageAPI",
+"Implementation":"Prc_PageAPIV2",
 "Verb":"GET"
 },
 {
@@ -251,7 +251,7 @@
 "Bodystyle":"Wrapped",
 "VariableAlias": [],
 "ServiceMethod":"gxep_contentpagesapi",
-"Implementation":"Prc_ContentPagesAPI",
+"Implementation":"Prc_ContentPagesAPIV2",
 "Verb":"GET"
 },
 {
@@ -261,7 +261,7 @@
 "Bodystyle":"Wrapped",
 "VariableAlias": [],
 "ServiceMethod":"gxep_contentpageapi",
-"Implementation":"Prc_ContentPageAPI",
+"Implementation":"Prc_ContentPageAPIV2",
 "Verb":"GET"
 },
 {
