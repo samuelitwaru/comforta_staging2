@@ -1140,7 +1140,7 @@ namespace GeneXus.Programs {
          AV69error = new SdtSDT_Error(context);
          initialize();
          /* GetAppVersion Constructor */
-         new prc_getappversion(context ).execute( ) ;
+         new prc_getappversion(context ).execute( out  AV98AppVersion, out  AV69error) ;
          aP0_AppVersion=this.AV98AppVersion;
          aP1_error=this.AV69error;
       }

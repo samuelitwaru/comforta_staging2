@@ -121,12 +121,12 @@ namespace GeneXus.Programs {
          AV8BC_Page.gxTpr_Pagetype = "Location";
          AV11ContentItem = new SdtSDT_ContentPage_ContentItem(context);
          AV11ContentItem.gxTpr_Contentid = new SdtRandomStringGenerator(context).generate(12);
-         AV11ContentItem.gxTpr_Contenttype = context.GetMessage( "Image", "");
+         AV11ContentItem.gxTpr_Contenttype = "Image";
          AV11ContentItem.gxTpr_Contentvalue = AV9BC_Trn_Location.gxTpr_Locationimage_gxi;
          AV10SDT_ContentPage.gxTpr_Content.Add(AV11ContentItem, 0);
          AV11ContentItem = new SdtSDT_ContentPage_ContentItem(context);
          AV11ContentItem.gxTpr_Contentid = new SdtRandomStringGenerator(context).generate(12);
-         AV11ContentItem.gxTpr_Contenttype = context.GetMessage( "Description", "");
+         AV11ContentItem.gxTpr_Contenttype = "Description";
          AV11ContentItem.gxTpr_Contentvalue = AV9BC_Trn_Location.gxTpr_Locationdescription;
          AV10SDT_ContentPage.gxTpr_Content.Add(AV11ContentItem, 0);
          AV12CtaItem = new SdtSDT_ContentPage_CtaItem(context);

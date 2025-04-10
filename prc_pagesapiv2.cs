@@ -85,23 +85,84 @@ namespace GeneXus.Programs {
          /* Output device settings */
          AV11SDT_PageCollection.Clear();
          /* Using cursor P00DL2 */
-         pr_default.execute(0, new Object[] {AV8LocationId, AV9OrganisationId});
+         pr_default.execute(0, new Object[] {AV8LocationId});
          while ( (pr_default.getStatus(0) != 101) )
          {
-            A523AppVersionId = P00DL2_A523AppVersionId[0];
-            A535IsActive = P00DL2_A535IsActive[0];
-            A11OrganisationId = P00DL2_A11OrganisationId[0];
-            n11OrganisationId = P00DL2_n11OrganisationId[0];
             A29LocationId = P00DL2_A29LocationId[0];
             n29LocationId = P00DL2_n29LocationId[0];
+            A584ActiveAppVersionId = P00DL2_A584ActiveAppVersionId[0];
+            n584ActiveAppVersionId = P00DL2_n584ActiveAppVersionId[0];
+            A11OrganisationId = P00DL2_A11OrganisationId[0];
+            n11OrganisationId = P00DL2_n11OrganisationId[0];
+            AV20AppVersionId = A584ActiveAppVersionId;
+            pr_default.readNext(0);
+         }
+         pr_default.close(0);
+         if ( (Guid.Empty==AV20AppVersionId) )
+         {
             /* Using cursor P00DL3 */
-            pr_default.execute(1, new Object[] {A523AppVersionId});
+            pr_default.execute(1);
             while ( (pr_default.getStatus(1) != 101) )
             {
-               A525PageType = P00DL3_A525PageType[0];
-               A536PagePublishedStructure = P00DL3_A536PagePublishedStructure[0];
-               A516PageId = P00DL3_A516PageId[0];
-               A517PageName = P00DL3_A517PageName[0];
+               A29LocationId = P00DL3_A29LocationId[0];
+               n29LocationId = P00DL3_n29LocationId[0];
+               A11OrganisationId = P00DL3_A11OrganisationId[0];
+               n11OrganisationId = P00DL3_n11OrganisationId[0];
+               A584ActiveAppVersionId = P00DL3_A584ActiveAppVersionId[0];
+               n584ActiveAppVersionId = P00DL3_n584ActiveAppVersionId[0];
+               A523AppVersionId = P00DL3_A523AppVersionId[0];
+               A584ActiveAppVersionId = P00DL3_A584ActiveAppVersionId[0];
+               n584ActiveAppVersionId = P00DL3_n584ActiveAppVersionId[0];
+               AV20AppVersionId = A584ActiveAppVersionId;
+               /* Execute user subroutine: 'GETAPPVERSION' */
+               S111 ();
+               if ( returnInSub )
+               {
+                  pr_default.close(1);
+                  cleanup();
+                  if (true) return;
+               }
+               /* Exit For each command. Update data (if necessary), close cursors & exit. */
+               if (true) break;
+               pr_default.readNext(1);
+            }
+            pr_default.close(1);
+         }
+         else
+         {
+            /* Execute user subroutine: 'GETAPPVERSION' */
+            S111 ();
+            if ( returnInSub )
+            {
+               cleanup();
+               if (true) return;
+            }
+         }
+         new prc_logtoserver(context ).execute(  AV17SDT_MobilePageCollection.ToJSonString(false)) ;
+         cleanup();
+      }
+
+      protected void S111( )
+      {
+         /* 'GETAPPVERSION' Routine */
+         returnInSub = false;
+         /* Using cursor P00DL4 */
+         pr_default.execute(2, new Object[] {AV8LocationId, AV9OrganisationId, AV20AppVersionId});
+         while ( (pr_default.getStatus(2) != 101) )
+         {
+            A523AppVersionId = P00DL4_A523AppVersionId[0];
+            A11OrganisationId = P00DL4_A11OrganisationId[0];
+            n11OrganisationId = P00DL4_n11OrganisationId[0];
+            A29LocationId = P00DL4_A29LocationId[0];
+            n29LocationId = P00DL4_n29LocationId[0];
+            /* Using cursor P00DL5 */
+            pr_default.execute(3, new Object[] {A523AppVersionId});
+            while ( (pr_default.getStatus(3) != 101) )
+            {
+               A525PageType = P00DL5_A525PageType[0];
+               A536PagePublishedStructure = P00DL5_A536PagePublishedStructure[0];
+               A516PageId = P00DL5_A516PageId[0];
+               A517PageName = P00DL5_A517PageName[0];
                AV15SDT_MenuPage.FromJSonString(A536PagePublishedStructure, null);
                GXt_SdtSDT_MobilePage1 = AV16SDT_MobilePage;
                new prc_convertnewtooldmenustructure(context ).execute(  AV15SDT_MenuPage,  A516PageId,  A517PageName,  AV8LocationId, out  GXt_SdtSDT_MobilePage1) ;
@@ -123,14 +184,12 @@ namespace GeneXus.Programs {
                      AV17SDT_MobilePageCollection.Add(AV16SDT_MobilePage, 0);
                   }
                }
-               pr_default.readNext(1);
+               pr_default.readNext(3);
             }
-            pr_default.close(1);
-            pr_default.readNext(0);
+            pr_default.close(3);
+            pr_default.readNext(2);
          }
-         pr_default.close(0);
-         new prc_logtoserver(context ).execute(  AV17SDT_MobilePageCollection.ToJSonString(false)) ;
-         cleanup();
+         pr_default.close(2);
       }
 
       public override void cleanup( )
@@ -147,20 +206,34 @@ namespace GeneXus.Programs {
       {
          AV17SDT_MobilePageCollection = new GXBaseCollection<SdtSDT_MobilePage>( context, "SDT_MobilePage", "Comforta_version20");
          AV11SDT_PageCollection = new GXBaseCollection<SdtSDT_Page>( context, "SDT_Page", "Comforta_version20");
-         P00DL2_A523AppVersionId = new Guid[] {Guid.Empty} ;
-         P00DL2_A535IsActive = new bool[] {false} ;
-         P00DL2_A11OrganisationId = new Guid[] {Guid.Empty} ;
-         P00DL2_n11OrganisationId = new bool[] {false} ;
          P00DL2_A29LocationId = new Guid[] {Guid.Empty} ;
          P00DL2_n29LocationId = new bool[] {false} ;
-         A523AppVersionId = Guid.Empty;
-         A11OrganisationId = Guid.Empty;
+         P00DL2_A584ActiveAppVersionId = new Guid[] {Guid.Empty} ;
+         P00DL2_n584ActiveAppVersionId = new bool[] {false} ;
+         P00DL2_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         P00DL2_n11OrganisationId = new bool[] {false} ;
          A29LocationId = Guid.Empty;
+         A584ActiveAppVersionId = Guid.Empty;
+         A11OrganisationId = Guid.Empty;
+         AV20AppVersionId = Guid.Empty;
+         P00DL3_A29LocationId = new Guid[] {Guid.Empty} ;
+         P00DL3_n29LocationId = new bool[] {false} ;
+         P00DL3_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         P00DL3_n11OrganisationId = new bool[] {false} ;
+         P00DL3_A584ActiveAppVersionId = new Guid[] {Guid.Empty} ;
+         P00DL3_n584ActiveAppVersionId = new bool[] {false} ;
          P00DL3_A523AppVersionId = new Guid[] {Guid.Empty} ;
-         P00DL3_A525PageType = new string[] {""} ;
-         P00DL3_A536PagePublishedStructure = new string[] {""} ;
-         P00DL3_A516PageId = new Guid[] {Guid.Empty} ;
-         P00DL3_A517PageName = new string[] {""} ;
+         A523AppVersionId = Guid.Empty;
+         P00DL4_A523AppVersionId = new Guid[] {Guid.Empty} ;
+         P00DL4_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         P00DL4_n11OrganisationId = new bool[] {false} ;
+         P00DL4_A29LocationId = new Guid[] {Guid.Empty} ;
+         P00DL4_n29LocationId = new bool[] {false} ;
+         P00DL5_A523AppVersionId = new Guid[] {Guid.Empty} ;
+         P00DL5_A525PageType = new string[] {""} ;
+         P00DL5_A536PagePublishedStructure = new string[] {""} ;
+         P00DL5_A516PageId = new Guid[] {Guid.Empty} ;
+         P00DL5_A517PageName = new string[] {""} ;
          A525PageType = "";
          A536PagePublishedStructure = "";
          A516PageId = Guid.Empty;
@@ -172,28 +245,37 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_pagesapiv2__default(),
             new Object[][] {
                 new Object[] {
-               P00DL2_A523AppVersionId, P00DL2_A535IsActive, P00DL2_A11OrganisationId, P00DL2_n11OrganisationId, P00DL2_A29LocationId, P00DL2_n29LocationId
+               P00DL2_A29LocationId, P00DL2_A584ActiveAppVersionId, P00DL2_n584ActiveAppVersionId, P00DL2_A11OrganisationId
                }
                , new Object[] {
-               P00DL3_A523AppVersionId, P00DL3_A525PageType, P00DL3_A536PagePublishedStructure, P00DL3_A516PageId, P00DL3_A517PageName
+               P00DL3_A29LocationId, P00DL3_n29LocationId, P00DL3_A11OrganisationId, P00DL3_n11OrganisationId, P00DL3_A584ActiveAppVersionId, P00DL3_n584ActiveAppVersionId, P00DL3_A523AppVersionId
+               }
+               , new Object[] {
+               P00DL4_A523AppVersionId, P00DL4_A11OrganisationId, P00DL4_n11OrganisationId, P00DL4_A29LocationId, P00DL4_n29LocationId
+               }
+               , new Object[] {
+               P00DL5_A523AppVersionId, P00DL5_A525PageType, P00DL5_A536PagePublishedStructure, P00DL5_A516PageId, P00DL5_A517PageName
                }
             }
          );
          /* GeneXus formulas. */
       }
 
-      private bool A535IsActive ;
-      private bool n11OrganisationId ;
       private bool n29LocationId ;
+      private bool n584ActiveAppVersionId ;
+      private bool n11OrganisationId ;
+      private bool returnInSub ;
       private string A536PagePublishedStructure ;
       private string AV10UserId ;
       private string A525PageType ;
       private string A517PageName ;
       private Guid AV8LocationId ;
       private Guid AV9OrganisationId ;
-      private Guid A523AppVersionId ;
-      private Guid A11OrganisationId ;
       private Guid A29LocationId ;
+      private Guid A584ActiveAppVersionId ;
+      private Guid A11OrganisationId ;
+      private Guid AV20AppVersionId ;
+      private Guid A523AppVersionId ;
       private Guid A516PageId ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
@@ -201,17 +283,29 @@ namespace GeneXus.Programs {
       private GXBaseCollection<SdtSDT_MobilePage> AV17SDT_MobilePageCollection ;
       private GXBaseCollection<SdtSDT_Page> AV11SDT_PageCollection ;
       private IDataStoreProvider pr_default ;
-      private Guid[] P00DL2_A523AppVersionId ;
-      private bool[] P00DL2_A535IsActive ;
-      private Guid[] P00DL2_A11OrganisationId ;
-      private bool[] P00DL2_n11OrganisationId ;
       private Guid[] P00DL2_A29LocationId ;
       private bool[] P00DL2_n29LocationId ;
+      private Guid[] P00DL2_A584ActiveAppVersionId ;
+      private bool[] P00DL2_n584ActiveAppVersionId ;
+      private Guid[] P00DL2_A11OrganisationId ;
+      private bool[] P00DL2_n11OrganisationId ;
+      private Guid[] P00DL3_A29LocationId ;
+      private bool[] P00DL3_n29LocationId ;
+      private Guid[] P00DL3_A11OrganisationId ;
+      private bool[] P00DL3_n11OrganisationId ;
+      private Guid[] P00DL3_A584ActiveAppVersionId ;
+      private bool[] P00DL3_n584ActiveAppVersionId ;
       private Guid[] P00DL3_A523AppVersionId ;
-      private string[] P00DL3_A525PageType ;
-      private string[] P00DL3_A536PagePublishedStructure ;
-      private Guid[] P00DL3_A516PageId ;
-      private string[] P00DL3_A517PageName ;
+      private Guid[] P00DL4_A523AppVersionId ;
+      private Guid[] P00DL4_A11OrganisationId ;
+      private bool[] P00DL4_n11OrganisationId ;
+      private Guid[] P00DL4_A29LocationId ;
+      private bool[] P00DL4_n29LocationId ;
+      private Guid[] P00DL5_A523AppVersionId ;
+      private string[] P00DL5_A525PageType ;
+      private string[] P00DL5_A536PagePublishedStructure ;
+      private Guid[] P00DL5_A516PageId ;
+      private string[] P00DL5_A517PageName ;
       private SdtSDT_MenuPage AV15SDT_MenuPage ;
       private SdtSDT_MobilePage AV16SDT_MobilePage ;
       private SdtSDT_MobilePage AV13Filtered_SDT_MobilePage ;
@@ -227,6 +321,8 @@ namespace GeneXus.Programs {
          return new Cursor[] {
           new ForEachCursor(def[0])
          ,new ForEachCursor(def[1])
+         ,new ForEachCursor(def[2])
+         ,new ForEachCursor(def[3])
        };
     }
 
@@ -237,16 +333,26 @@ namespace GeneXus.Programs {
        {
           Object[] prmP00DL2;
           prmP00DL2 = new Object[] {
-          new ParDef("AV8LocationId",GXType.UniqueIdentifier,36,0) ,
-          new ParDef("AV9OrganisationId",GXType.UniqueIdentifier,36,0)
+          new ParDef("AV8LocationId",GXType.UniqueIdentifier,36,0)
           };
           Object[] prmP00DL3;
           prmP00DL3 = new Object[] {
+          };
+          Object[] prmP00DL4;
+          prmP00DL4 = new Object[] {
+          new ParDef("AV8LocationId",GXType.UniqueIdentifier,36,0) ,
+          new ParDef("AV9OrganisationId",GXType.UniqueIdentifier,36,0) ,
+          new ParDef("AV20AppVersionId",GXType.UniqueIdentifier,36,0)
+          };
+          Object[] prmP00DL5;
+          prmP00DL5 = new Object[] {
           new ParDef("AppVersionId",GXType.UniqueIdentifier,36,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00DL2", "SELECT AppVersionId, IsActive, OrganisationId, LocationId FROM Trn_AppVersion WHERE (LocationId = :AV8LocationId and OrganisationId = :AV9OrganisationId) AND (IsActive = TRUE) ORDER BY LocationId, OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL2,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00DL3", "SELECT AppVersionId, PageType, PagePublishedStructure, PageId, PageName FROM Trn_AppVersionPage WHERE (AppVersionId = :AppVersionId) AND (( PageType = ( 'Menu')) or ( PageType = ( 'MyCare')) or ( PageType = ( 'MyLiving')) or ( PageType = ( 'MyService'))) ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL3,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00DL2", "SELECT LocationId, ActiveAppVersionId, OrganisationId FROM Trn_Location WHERE LocationId = :AV8LocationId ORDER BY LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL2,100, GxCacheFrequency.OFF ,false,false )
+             ,new CursorDef("P00DL3", "SELECT T1.LocationId, T1.OrganisationId, T2.ActiveAppVersionId, T1.AppVersionId FROM (Trn_AppVersion T1 LEFT JOIN Trn_Location T2 ON T2.LocationId = T1.LocationId AND T2.OrganisationId = T1.OrganisationId) ORDER BY T1.AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL3,1, GxCacheFrequency.OFF ,true,true )
+             ,new CursorDef("P00DL4", "SELECT AppVersionId, OrganisationId, LocationId FROM Trn_AppVersion WHERE (LocationId = :AV8LocationId and OrganisationId = :AV9OrganisationId) AND (AppVersionId = :AV20AppVersionId) ORDER BY LocationId, OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL4,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00DL5", "SELECT AppVersionId, PageType, PagePublishedStructure, PageId, PageName FROM Trn_AppVersionPage WHERE (AppVersionId = :AppVersionId) AND (( PageType = ( 'Menu')) or ( PageType = ( 'MyCare')) or ( PageType = ( 'MyLiving')) or ( PageType = ( 'MyService'))) ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL5,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -259,13 +365,27 @@ namespace GeneXus.Programs {
        {
              case 0 :
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);
-                ((bool[]) buf[1])[0] = rslt.getBool(2);
-                ((Guid[]) buf[2])[0] = rslt.getGuid(3);
-                ((bool[]) buf[3])[0] = rslt.wasNull(3);
-                ((Guid[]) buf[4])[0] = rslt.getGuid(4);
-                ((bool[]) buf[5])[0] = rslt.wasNull(4);
+                ((Guid[]) buf[1])[0] = rslt.getGuid(2);
+                ((bool[]) buf[2])[0] = rslt.wasNull(2);
+                ((Guid[]) buf[3])[0] = rslt.getGuid(3);
                 return;
              case 1 :
+                ((Guid[]) buf[0])[0] = rslt.getGuid(1);
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
+                ((Guid[]) buf[2])[0] = rslt.getGuid(2);
+                ((bool[]) buf[3])[0] = rslt.wasNull(2);
+                ((Guid[]) buf[4])[0] = rslt.getGuid(3);
+                ((bool[]) buf[5])[0] = rslt.wasNull(3);
+                ((Guid[]) buf[6])[0] = rslt.getGuid(4);
+                return;
+             case 2 :
+                ((Guid[]) buf[0])[0] = rslt.getGuid(1);
+                ((Guid[]) buf[1])[0] = rslt.getGuid(2);
+                ((bool[]) buf[2])[0] = rslt.wasNull(2);
+                ((Guid[]) buf[3])[0] = rslt.getGuid(3);
+                ((bool[]) buf[4])[0] = rslt.wasNull(3);
+                return;
+             case 3 :
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);
                 ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 ((string[]) buf[2])[0] = rslt.getLongVarchar(3);

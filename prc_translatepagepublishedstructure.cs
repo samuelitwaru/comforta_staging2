@@ -95,7 +95,7 @@ namespace GeneXus.Programs {
             AV14DynamicTranslationAttributeName = A581DynamicTranslationAttributeNam;
             AV15DynamicTranslationDutch = A583DynamicTranslationDutch;
             AV16DynamicTranslationEnglish = A582DynamicTranslationEnglish;
-            AV19GXLvl14 = 0;
+            AV19GXLvl15 = 0;
             while ( (pr_default.getStatus(1) != 101) && ( P00EA3_A578DynamicTranslationId[0] == A578DynamicTranslationId ) )
             {
                BRKEA3 = false;
@@ -112,7 +112,7 @@ namespace GeneXus.Programs {
                      {
                         if ( (AV11VersionPage.IndexOf(A580DynamicTranslationPrimaryKey)>0) )
                         {
-                           AV19GXLvl14 = 1;
+                           AV19GXLvl15 = 1;
                            A579DynamicTranslationTrnName = AV13DynamicTranslationTrnName;
                            A583DynamicTranslationDutch = AV15DynamicTranslationDutch;
                            A582DynamicTranslationEnglish = AV16DynamicTranslationEnglish;
@@ -127,7 +127,7 @@ namespace GeneXus.Programs {
                BRKEA3 = true;
                pr_default.readNext(1);
             }
-            if ( AV19GXLvl14 == 0 )
+            if ( AV19GXLvl15 == 0 )
             {
                /*
                   INSERT RECORD ON TABLE Trn_DynamicTranslation
@@ -168,6 +168,7 @@ namespace GeneXus.Programs {
             }
          }
          pr_default.close(1);
+         context.CommitDataStores("prc_translatepagepublishedstructure",pr_default);
          cleanup();
       }
 
@@ -211,6 +212,14 @@ namespace GeneXus.Programs {
          W583DynamicTranslationDutch = "";
          W582DynamicTranslationEnglish = "";
          Gx_emsg = "";
+         pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_translatepagepublishedstructure__datastore1(),
+            new Object[][] {
+            }
+         );
+         pr_gam = new DataStoreProvider(context, new GeneXus.Programs.prc_translatepagepublishedstructure__gam(),
+            new Object[][] {
+            }
+         );
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_translatepagepublishedstructure__default(),
             new Object[][] {
                 new Object[] {
@@ -228,7 +237,7 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private short AV19GXLvl14 ;
+      private short AV19GXLvl15 ;
       private int GX_INS104 ;
       private string Gx_emsg ;
       private bool BRKEA3 ;
@@ -263,49 +272,16 @@ namespace GeneXus.Programs {
       private string[] P00EA3_A579DynamicTranslationTrnName ;
       private string[] P00EA3_A583DynamicTranslationDutch ;
       private string[] P00EA3_A582DynamicTranslationEnglish ;
+      private IDataStoreProvider pr_datastore1 ;
+      private IDataStoreProvider pr_gam ;
    }
 
-   public class prc_translatepagepublishedstructure__default : DataStoreHelperBase, IDataStoreHelper
+   public class prc_translatepagepublishedstructure__datastore1 : DataStoreHelperBase, IDataStoreHelper
    {
-      protected Object[] conditional_P00EA3( IGxContext context ,
-                                             Guid A580DynamicTranslationPrimaryKey ,
-                                             GxSimpleCollection<Guid> AV11VersionPage ,
-                                             string A579DynamicTranslationTrnName ,
-                                             string A581DynamicTranslationAttributeNam )
-      {
-         System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
-         string scmdbuf;
-         Object[] GXv_Object1 = new Object[2];
-         scmdbuf = "SELECT DynamicTranslationId, DynamicTranslationPrimaryKey, DynamicTranslationAttributeNam, DynamicTranslationTrnName, DynamicTranslationDutch, DynamicTranslationEnglish FROM Trn_DynamicTranslation";
-         AddWhere(sWhereString, "("+new GxDbmsUtils( new GxPostgreSql()).ValueList(AV11VersionPage, "DynamicTranslationPrimaryKey IN (", ")")+")");
-         AddWhere(sWhereString, "(DynamicTranslationTrnName = ( 'Trn_AppVersion.Page'))");
-         AddWhere(sWhereString, "(DynamicTranslationAttributeNam = ( 'PageStructure'))");
-         scmdbuf += sWhereString;
-         scmdbuf += " ORDER BY DynamicTranslationId";
-         GXv_Object1[0] = scmdbuf;
-         return GXv_Object1 ;
-      }
-
-      public override Object [] getDynamicStatement( int cursor ,
-                                                     IGxContext context ,
-                                                     Object [] dynConstraints )
-      {
-         switch ( cursor )
-         {
-               case 1 :
-                     return conditional_P00EA3(context, (Guid)dynConstraints[0] , (GxSimpleCollection<Guid>)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] );
-         }
-         return base.getDynamicStatement(cursor, context, dynConstraints);
-      }
-
       public ICursor[] getCursors( )
       {
          cursorDefinitions();
          return new Cursor[] {
-          new ForEachCursor(def[0])
-         ,new ForEachCursor(def[1])
-         ,new UpdateCursor(def[2])
-         ,new UpdateCursor(def[3])
        };
     }
 
@@ -314,34 +290,7 @@ namespace GeneXus.Programs {
     {
        if ( def == null )
        {
-          Object[] prmP00EA2;
-          prmP00EA2 = new Object[] {
-          new ParDef("AV8AppVersionId",GXType.UniqueIdentifier,36,0)
-          };
-          Object[] prmP00EA4;
-          prmP00EA4 = new Object[] {
-          new ParDef("DynamicTranslationTrnName",GXType.VarChar,100,0) ,
-          new ParDef("DynamicTranslationDutch",GXType.LongVarChar,2097152,0) ,
-          new ParDef("DynamicTranslationEnglish",GXType.LongVarChar,2097152,0) ,
-          new ParDef("DynamicTranslationId",GXType.UniqueIdentifier,36,0)
-          };
-          Object[] prmP00EA5;
-          prmP00EA5 = new Object[] {
-          new ParDef("DynamicTranslationId",GXType.UniqueIdentifier,36,0) ,
-          new ParDef("DynamicTranslationTrnName",GXType.VarChar,100,0) ,
-          new ParDef("DynamicTranslationPrimaryKey",GXType.UniqueIdentifier,36,0) ,
-          new ParDef("DynamicTranslationAttributeNam",GXType.VarChar,100,0) ,
-          new ParDef("DynamicTranslationEnglish",GXType.LongVarChar,2097152,0) ,
-          new ParDef("DynamicTranslationDutch",GXType.LongVarChar,2097152,0)
-          };
-          Object[] prmP00EA3;
-          prmP00EA3 = new Object[] {
-          };
           def= new CursorDef[] {
-              new CursorDef("P00EA2", "SELECT AppVersionId, PageId FROM Trn_AppVersionPage WHERE AppVersionId = :AV8AppVersionId ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00EA2,100, GxCacheFrequency.OFF ,false,false )
-             ,new CursorDef("P00EA3", "scmdbuf",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00EA3,100, GxCacheFrequency.OFF ,true,false )
-             ,new CursorDef("P00EA4", "SAVEPOINT gxupdate;UPDATE Trn_DynamicTranslation SET DynamicTranslationTrnName=:DynamicTranslationTrnName, DynamicTranslationDutch=:DynamicTranslationDutch, DynamicTranslationEnglish=:DynamicTranslationEnglish  WHERE DynamicTranslationId = :DynamicTranslationId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00EA4)
-             ,new CursorDef("P00EA5", "SAVEPOINT gxupdate;INSERT INTO Trn_DynamicTranslation(DynamicTranslationId, DynamicTranslationTrnName, DynamicTranslationPrimaryKey, DynamicTranslationAttributeNam, DynamicTranslationEnglish, DynamicTranslationDutch) VALUES(:DynamicTranslationId, :DynamicTranslationTrnName, :DynamicTranslationPrimaryKey, :DynamicTranslationAttributeNam, :DynamicTranslationEnglish, :DynamicTranslationDutch);RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_MASKLOOPLOCK,prmP00EA5)
           };
        }
     }
@@ -350,23 +299,149 @@ namespace GeneXus.Programs {
                             IFieldGetter rslt ,
                             Object[] buf )
     {
-       switch ( cursor )
-       {
-             case 0 :
-                ((Guid[]) buf[0])[0] = rslt.getGuid(1);
-                ((Guid[]) buf[1])[0] = rslt.getGuid(2);
-                return;
-             case 1 :
-                ((Guid[]) buf[0])[0] = rslt.getGuid(1);
-                ((Guid[]) buf[1])[0] = rslt.getGuid(2);
-                ((string[]) buf[2])[0] = rslt.getVarchar(3);
-                ((string[]) buf[3])[0] = rslt.getVarchar(4);
-                ((string[]) buf[4])[0] = rslt.getLongVarchar(5);
-                ((string[]) buf[5])[0] = rslt.getLongVarchar(6);
-                return;
-       }
+    }
+
+    public override string getDataStoreName( )
+    {
+       return "DATASTORE1";
     }
 
  }
+
+ public class prc_translatepagepublishedstructure__gam : DataStoreHelperBase, IDataStoreHelper
+ {
+    public ICursor[] getCursors( )
+    {
+       cursorDefinitions();
+       return new Cursor[] {
+     };
+  }
+
+  private static CursorDef[] def;
+  private void cursorDefinitions( )
+  {
+     if ( def == null )
+     {
+        def= new CursorDef[] {
+        };
+     }
+  }
+
+  public void getResults( int cursor ,
+                          IFieldGetter rslt ,
+                          Object[] buf )
+  {
+  }
+
+  public override string getDataStoreName( )
+  {
+     return "GAM";
+  }
+
+}
+
+public class prc_translatepagepublishedstructure__default : DataStoreHelperBase, IDataStoreHelper
+{
+   protected Object[] conditional_P00EA3( IGxContext context ,
+                                          Guid A580DynamicTranslationPrimaryKey ,
+                                          GxSimpleCollection<Guid> AV11VersionPage ,
+                                          string A579DynamicTranslationTrnName ,
+                                          string A581DynamicTranslationAttributeNam )
+   {
+      System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
+      string scmdbuf;
+      Object[] GXv_Object1 = new Object[2];
+      scmdbuf = "SELECT DynamicTranslationId, DynamicTranslationPrimaryKey, DynamicTranslationAttributeNam, DynamicTranslationTrnName, DynamicTranslationDutch, DynamicTranslationEnglish FROM Trn_DynamicTranslation";
+      AddWhere(sWhereString, "("+new GxDbmsUtils( new GxPostgreSql()).ValueList(AV11VersionPage, "DynamicTranslationPrimaryKey IN (", ")")+")");
+      AddWhere(sWhereString, "(DynamicTranslationTrnName = ( 'Trn_AppVersion.Page'))");
+      AddWhere(sWhereString, "(DynamicTranslationAttributeNam = ( 'PageStructure'))");
+      scmdbuf += sWhereString;
+      scmdbuf += " ORDER BY DynamicTranslationId";
+      GXv_Object1[0] = scmdbuf;
+      return GXv_Object1 ;
+   }
+
+   public override Object [] getDynamicStatement( int cursor ,
+                                                  IGxContext context ,
+                                                  Object [] dynConstraints )
+   {
+      switch ( cursor )
+      {
+            case 1 :
+                  return conditional_P00EA3(context, (Guid)dynConstraints[0] , (GxSimpleCollection<Guid>)dynConstraints[1] , (string)dynConstraints[2] , (string)dynConstraints[3] );
+      }
+      return base.getDynamicStatement(cursor, context, dynConstraints);
+   }
+
+   public ICursor[] getCursors( )
+   {
+      cursorDefinitions();
+      return new Cursor[] {
+       new ForEachCursor(def[0])
+      ,new ForEachCursor(def[1])
+      ,new UpdateCursor(def[2])
+      ,new UpdateCursor(def[3])
+    };
+ }
+
+ private static CursorDef[] def;
+ private void cursorDefinitions( )
+ {
+    if ( def == null )
+    {
+       Object[] prmP00EA2;
+       prmP00EA2 = new Object[] {
+       new ParDef("AV8AppVersionId",GXType.UniqueIdentifier,36,0)
+       };
+       Object[] prmP00EA4;
+       prmP00EA4 = new Object[] {
+       new ParDef("DynamicTranslationTrnName",GXType.VarChar,100,0) ,
+       new ParDef("DynamicTranslationDutch",GXType.LongVarChar,2097152,0) ,
+       new ParDef("DynamicTranslationEnglish",GXType.LongVarChar,2097152,0) ,
+       new ParDef("DynamicTranslationId",GXType.UniqueIdentifier,36,0)
+       };
+       Object[] prmP00EA5;
+       prmP00EA5 = new Object[] {
+       new ParDef("DynamicTranslationId",GXType.UniqueIdentifier,36,0) ,
+       new ParDef("DynamicTranslationTrnName",GXType.VarChar,100,0) ,
+       new ParDef("DynamicTranslationPrimaryKey",GXType.UniqueIdentifier,36,0) ,
+       new ParDef("DynamicTranslationAttributeNam",GXType.VarChar,100,0) ,
+       new ParDef("DynamicTranslationEnglish",GXType.LongVarChar,2097152,0) ,
+       new ParDef("DynamicTranslationDutch",GXType.LongVarChar,2097152,0)
+       };
+       Object[] prmP00EA3;
+       prmP00EA3 = new Object[] {
+       };
+       def= new CursorDef[] {
+           new CursorDef("P00EA2", "SELECT AppVersionId, PageId FROM Trn_AppVersionPage WHERE AppVersionId = :AV8AppVersionId ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00EA2,100, GxCacheFrequency.OFF ,false,false )
+          ,new CursorDef("P00EA3", "scmdbuf",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00EA3,100, GxCacheFrequency.OFF ,true,false )
+          ,new CursorDef("P00EA4", "SAVEPOINT gxupdate;UPDATE Trn_DynamicTranslation SET DynamicTranslationTrnName=:DynamicTranslationTrnName, DynamicTranslationDutch=:DynamicTranslationDutch, DynamicTranslationEnglish=:DynamicTranslationEnglish  WHERE DynamicTranslationId = :DynamicTranslationId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00EA4)
+          ,new CursorDef("P00EA5", "SAVEPOINT gxupdate;INSERT INTO Trn_DynamicTranslation(DynamicTranslationId, DynamicTranslationTrnName, DynamicTranslationPrimaryKey, DynamicTranslationAttributeNam, DynamicTranslationEnglish, DynamicTranslationDutch) VALUES(:DynamicTranslationId, :DynamicTranslationTrnName, :DynamicTranslationPrimaryKey, :DynamicTranslationAttributeNam, :DynamicTranslationEnglish, :DynamicTranslationDutch);RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_MASKLOOPLOCK,prmP00EA5)
+       };
+    }
+ }
+
+ public void getResults( int cursor ,
+                         IFieldGetter rslt ,
+                         Object[] buf )
+ {
+    switch ( cursor )
+    {
+          case 0 :
+             ((Guid[]) buf[0])[0] = rslt.getGuid(1);
+             ((Guid[]) buf[1])[0] = rslt.getGuid(2);
+             return;
+          case 1 :
+             ((Guid[]) buf[0])[0] = rslt.getGuid(1);
+             ((Guid[]) buf[1])[0] = rslt.getGuid(2);
+             ((string[]) buf[2])[0] = rslt.getVarchar(3);
+             ((string[]) buf[3])[0] = rslt.getVarchar(4);
+             ((string[]) buf[4])[0] = rslt.getLongVarchar(5);
+             ((string[]) buf[5])[0] = rslt.getLongVarchar(6);
+             return;
+    }
+ }
+
+}
 
 }

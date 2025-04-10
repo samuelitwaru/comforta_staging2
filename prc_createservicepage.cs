@@ -87,8 +87,8 @@ namespace GeneXus.Programs {
          /* Output device settings */
          if ( ! new prc_isauthenticated(context).executeUdp( ) )
          {
-            AV8SDT_Error.gxTpr_Status = context.GetMessage( "Error", "");
-            AV8SDT_Error.gxTpr_Message = context.GetMessage( "Not Authenticated", "");
+            AV8SDT_Error.gxTpr_Status = "Error";
+            AV8SDT_Error.gxTpr_Message = "Not Authenticated";
             cleanup();
             if (true) return;
          }
@@ -151,11 +151,11 @@ namespace GeneXus.Programs {
          AV10BC_Page.gxTpr_Pagetype = "Content";
          AV19SDT_ContentPage = new SdtSDT_ContentPage(context);
          AV13ContentItem = new SdtSDT_ContentPage_ContentItem(context);
-         AV13ContentItem.gxTpr_Contenttype = context.GetMessage( "Image", "");
+         AV13ContentItem.gxTpr_Contenttype = "Image";
          AV13ContentItem.gxTpr_Contentvalue = AV12BC_Trn_ProductService.gxTpr_Productserviceimage_gxi;
          AV19SDT_ContentPage.gxTpr_Content.Add(AV13ContentItem, 0);
          AV13ContentItem = new SdtSDT_ContentPage_ContentItem(context);
-         AV13ContentItem.gxTpr_Contenttype = context.GetMessage( "Description", "");
+         AV13ContentItem.gxTpr_Contenttype = "Description";
          AV13ContentItem.gxTpr_Contentvalue = AV12BC_Trn_ProductService.gxTpr_Productservicedescription;
          AV19SDT_ContentPage.gxTpr_Content.Add(AV13ContentItem, 0);
          AV10BC_Page.gxTpr_Pagestructure = AV19SDT_ContentPage.ToJSonString(false, true);

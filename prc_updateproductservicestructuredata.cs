@@ -99,7 +99,9 @@ namespace GeneXus.Programs {
                }
                else if ( StringUtil.StrCmp(AV11ContentItem.gxTpr_Contenttype, context.GetMessage( "Description", "")) == 0 )
                {
-                  AV11ContentItem.gxTpr_Contentvalue = A60ProductServiceDescription;
+                  GXt_char1 = "";
+                  new prc_getdynamictransation(context ).execute(  context.GetMessage( "Trn_ProductService", ""),  AV8ProductServiceId,  context.GetMessage( "ProductServiceDescription", ""),  "",  A60ProductServiceDescription, out  GXt_char1) ;
+                  AV11ContentItem.gxTpr_Contentvalue = GXt_char1;
                }
                else
                {
@@ -137,6 +139,7 @@ namespace GeneXus.Programs {
          A29LocationId = Guid.Empty;
          A11OrganisationId = Guid.Empty;
          AV11ContentItem = new SdtSDT_ContentPage_ContentItem(context);
+         GXt_char1 = "";
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_updateproductservicestructuredata__default(),
             new Object[][] {
                 new Object[] {
@@ -148,6 +151,7 @@ namespace GeneXus.Programs {
       }
 
       private int AV14GXV1 ;
+      private string GXt_char1 ;
       private string A60ProductServiceDescription ;
       private string A40000ProductServiceImage_GXI ;
       private Guid AV8ProductServiceId ;
@@ -189,7 +193,7 @@ namespace GeneXus.Programs {
           new ParDef("AV8ProductServiceId",GXType.UniqueIdentifier,36,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00BF2", "SELECT ProductServiceId, ProductServiceImage_GXI, ProductServiceDescription, LocationId, OrganisationId FROM Trn_ProductService WHERE ProductServiceId = :AV8ProductServiceId ORDER BY ProductServiceId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BF2,100, GxCacheFrequency.OFF ,false,false )
+              new CursorDef("P00BF2", "SELECT ProductServiceId, ProductServiceImage_GXI, ProductServiceDescription, LocationId, OrganisationId FROM Trn_ProductService WHERE ProductServiceId = :AV8ProductServiceId ORDER BY ProductServiceId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BF2,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }

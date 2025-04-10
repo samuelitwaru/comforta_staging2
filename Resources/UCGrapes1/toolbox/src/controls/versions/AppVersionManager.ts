@@ -19,7 +19,10 @@ export class AppVersionManager {
     console.log('current', appVersion)
     const versions = await toolboxService.getVersions();
     
-    (globalThis as any).activeVersion = versions?.AppVersions?.find((version: any) => version.IsActive) || null
+    (globalThis as any).activeVersion = 
+    appVersion.AppVersion
+    // versions?.AppVersions?.find((version: any) => version.IsActive) || null
+
     return (globalThis as any).activeVersion;
   }
 

@@ -44,15 +44,31 @@ namespace GeneXus.Programs {
          dsDefault = context.GetDataStore("Default");
       }
 
-      public void execute( )
+      public void execute( out SdtSDT_AppVersion aP0_SDT_AppVersion ,
+                           out SdtSDT_Error aP1_SDT_Error )
       {
+         this.AV13SDT_AppVersion = new SdtSDT_AppVersion(context) ;
+         this.AV8SDT_Error = new SdtSDT_Error(context) ;
          initialize();
          ExecuteImpl();
+         aP0_SDT_AppVersion=this.AV13SDT_AppVersion;
+         aP1_SDT_Error=this.AV8SDT_Error;
       }
 
-      public void executeSubmit( )
+      public SdtSDT_Error executeUdp( out SdtSDT_AppVersion aP0_SDT_AppVersion )
       {
+         execute(out aP0_SDT_AppVersion, out aP1_SDT_Error);
+         return AV8SDT_Error ;
+      }
+
+      public void executeSubmit( out SdtSDT_AppVersion aP0_SDT_AppVersion ,
+                                 out SdtSDT_Error aP1_SDT_Error )
+      {
+         this.AV13SDT_AppVersion = new SdtSDT_AppVersion(context) ;
+         this.AV8SDT_Error = new SdtSDT_Error(context) ;
          SubmitImpl();
+         aP0_SDT_AppVersion=this.AV13SDT_AppVersion;
+         aP1_SDT_Error=this.AV8SDT_Error;
       }
 
       protected override void ExecutePrivate( )
@@ -127,6 +143,7 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
+         AV13SDT_AppVersion = new SdtSDT_AppVersion(context);
          AV8SDT_Error = new SdtSDT_Error(context);
          AV9LocationId = Guid.Empty;
          GXt_guid1 = Guid.Empty;
@@ -147,7 +164,6 @@ namespace GeneXus.Programs {
          A516PageId = Guid.Empty;
          AV14BC_HomePage = new SdtTrn_AppVersion_Page(context);
          GXt_SdtTrn_AppVersion_Page2 = new SdtTrn_AppVersion_Page(context);
-         AV13SDT_AppVersion = new SdtSDT_AppVersion(context);
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_getappversion__default(),
             new Object[][] {
                 new Object[] {
@@ -177,6 +193,7 @@ namespace GeneXus.Programs {
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
+      private SdtSDT_AppVersion AV13SDT_AppVersion ;
       private SdtSDT_Error AV8SDT_Error ;
       private IDataStoreProvider pr_default ;
       private Guid[] P00E72_A584ActiveAppVersionId ;
@@ -190,7 +207,8 @@ namespace GeneXus.Programs {
       private Guid[] P00E74_A516PageId ;
       private SdtTrn_AppVersion_Page AV14BC_HomePage ;
       private SdtTrn_AppVersion_Page GXt_SdtTrn_AppVersion_Page2 ;
-      private SdtSDT_AppVersion AV13SDT_AppVersion ;
+      private SdtSDT_AppVersion aP0_SDT_AppVersion ;
+      private SdtSDT_Error aP1_SDT_Error ;
    }
 
    public class prc_getappversion__default : DataStoreHelperBase, IDataStoreHelper

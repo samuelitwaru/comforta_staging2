@@ -1847,7 +1847,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202547917531", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254917232954", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1863,7 +1863,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("trn_appversionpagewc.js", "?202547917531", false, true);
+         context.AddJavascriptSource("trn_appversionpagewc.js", "?20254917232954", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/DVPaginationBar/DVPaginationBarRender.js", "", false, true);
@@ -2022,7 +2022,7 @@ namespace GeneXus.Programs {
                cmbPageType.addItem("DynamicForm", context.GetMessage( "Dynamic Form", ""), 0);
                cmbPageType.addItem("Calendar", context.GetMessage( "Calendar", ""), 0);
                cmbPageType.addItem("MyActivity", context.GetMessage( "My Activity", ""), 0);
-               cmbPageType.addItem("Maps", context.GetMessage( "Maps", ""), 0);
+               cmbPageType.addItem("Map", context.GetMessage( "Map", ""), 0);
                cmbPageType.addItem("Reception", context.GetMessage( "Reception", ""), 0);
                cmbPageType.addItem("Location", context.GetMessage( "Location", ""), 0);
                cmbPageType.addItem("MyCare", context.GetMessage( "My Care", ""), 0);
@@ -2063,7 +2063,7 @@ namespace GeneXus.Programs {
          cmbPageType.addItem("DynamicForm", context.GetMessage( "Dynamic Form", ""), 0);
          cmbPageType.addItem("Calendar", context.GetMessage( "Calendar", ""), 0);
          cmbPageType.addItem("MyActivity", context.GetMessage( "My Activity", ""), 0);
-         cmbPageType.addItem("Maps", context.GetMessage( "Maps", ""), 0);
+         cmbPageType.addItem("Map", context.GetMessage( "Map", ""), 0);
          cmbPageType.addItem("Reception", context.GetMessage( "Reception", ""), 0);
          cmbPageType.addItem("Location", context.GetMessage( "Location", ""), 0);
          cmbPageType.addItem("MyCare", context.GetMessage( "My Care", ""), 0);

@@ -142,9 +142,9 @@ namespace GeneXus.Programs {
       {
          /* 'MAPACTIONOBJECTTYPE' Routine */
          returnInSub = false;
-         if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "Maps") == 0 )
+         if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "Map") == 0 )
          {
-            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = "Maps";
+            AV12SDT_Tile.gxTpr_Tileaction.gxTpr_Objecttype = "Map";
          }
          else if ( StringUtil.StrCmp(AV15TilesItem.gxTpr_Action.gxTpr_Objecttype, "Menu") == 0 )
          {

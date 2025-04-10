@@ -106,7 +106,7 @@ namespace GeneXus.Programs {
                {
                   AV10BC_CalendarPage.gxTpr_Pageid = A516PageId;
                }
-               else if ( StringUtil.StrCmp(A525PageType, "Maps") == 0 )
+               else if ( StringUtil.StrCmp(A525PageType, "Map") == 0 )
                {
                   AV9BC_MapsPage.gxTpr_Pageid = A516PageId;
                }
@@ -120,15 +120,15 @@ namespace GeneXus.Programs {
             if (true) break;
          }
          pr_default.close(0);
-         AV11BC_MyActivityPage.gxTpr_Pagename = context.GetMessage( "My Activity", "");
+         AV11BC_MyActivityPage.gxTpr_Pagename = "My Activity";
          AV11BC_MyActivityPage.gxTpr_Ispredefined = true;
          AV11BC_MyActivityPage.gxTpr_Pagetype = "MyActivity";
-         AV10BC_CalendarPage.gxTpr_Pagename = context.GetMessage( "Calendar", "");
+         AV10BC_CalendarPage.gxTpr_Pagename = "Calendar";
          AV10BC_CalendarPage.gxTpr_Ispredefined = true;
          AV10BC_CalendarPage.gxTpr_Pagetype = "Calendar";
-         AV9BC_MapsPage.gxTpr_Pagename = context.GetMessage( "Maps", "");
+         AV9BC_MapsPage.gxTpr_Pagename = "Maps";
          AV9BC_MapsPage.gxTpr_Ispredefined = true;
-         AV9BC_MapsPage.gxTpr_Pagetype = "Maps";
+         AV9BC_MapsPage.gxTpr_Pagetype = "Map";
          cleanup();
       }
 

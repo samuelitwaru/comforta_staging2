@@ -121,13 +121,13 @@ namespace GeneXus.Programs {
          AV8BC_Page.gxTpr_Pagetype = "Reception";
          AV11ContentItem = new SdtSDT_ContentPage_ContentItem(context);
          AV11ContentItem.gxTpr_Contentid = new SdtRandomStringGenerator(context).generate(12);
-         AV11ContentItem.gxTpr_Contenttype = context.GetMessage( "Image", "");
+         AV11ContentItem.gxTpr_Contenttype = "Image";
          AV11ContentItem.gxTpr_Contentvalue = AV9BC_Trn_Location.gxTpr_Locationimage_gxi;
          AV10SDT_ContentPage.gxTpr_Content.Add(AV11ContentItem, 0);
          AV11ContentItem = new SdtSDT_ContentPage_ContentItem(context);
          AV11ContentItem.gxTpr_Contentid = new SdtRandomStringGenerator(context).generate(12);
-         AV11ContentItem.gxTpr_Contenttype = context.GetMessage( "Description", "");
-         AV11ContentItem.gxTpr_Contentvalue = context.GetMessage( "Welkom bij de receptie van onze app. Hier kunt u al uw vragen stellen en krijgt u direct hulp van ons team. Of het nu gaat om technische ondersteuning, informatie over diensten, of algemene vragen, wij zijn er om u te helpen.", "");
+         AV11ContentItem.gxTpr_Contenttype = "Description";
+         AV11ContentItem.gxTpr_Contentvalue = "Welkom bij de receptie van onze app. Hier kunt u al uw vragen stellen en krijgt u direct hulp van ons team. Of het nu gaat om technische ondersteuning, informatie over diensten, of algemene vragen, wij zijn er om u te helpen.";
          AV10SDT_ContentPage.gxTpr_Content.Add(AV11ContentItem, 0);
          AV12CtaItem = new SdtSDT_ContentPage_CtaItem(context);
          AV12CtaItem.gxTpr_Ctaid = new SdtRandomStringGenerator(context).generate(15);
@@ -135,6 +135,7 @@ namespace GeneXus.Programs {
          AV12CtaItem.gxTpr_Ctatype = "Phone";
          AV12CtaItem.gxTpr_Ctaaction = AV9BC_Trn_Location.gxTpr_Locationphone;
          AV12CtaItem.gxTpr_Ctabuttontype = "Round";
+         AV12CtaItem.gxTpr_Ctabgcolor = "CtaColorOne";
          AV10SDT_ContentPage.gxTpr_Cta.Add(AV12CtaItem, 0);
          AV12CtaItem = new SdtSDT_ContentPage_CtaItem(context);
          AV12CtaItem.gxTpr_Ctaid = new SdtRandomStringGenerator(context).generate(15);
@@ -142,6 +143,7 @@ namespace GeneXus.Programs {
          AV12CtaItem.gxTpr_Ctatype = "Email";
          AV12CtaItem.gxTpr_Ctaaction = AV9BC_Trn_Location.gxTpr_Locationphone;
          AV12CtaItem.gxTpr_Ctabuttontype = "Round";
+         AV12CtaItem.gxTpr_Ctabgcolor = "CtaColorTwo";
          AV10SDT_ContentPage.gxTpr_Cta.Add(AV12CtaItem, 0);
          AV8BC_Page.gxTpr_Pagestructure = AV10SDT_ContentPage.ToJSonString(false, true);
          cleanup();
