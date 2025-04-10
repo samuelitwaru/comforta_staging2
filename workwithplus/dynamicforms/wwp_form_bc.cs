@@ -159,7 +159,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                         CheckExtendedTable0T41( ) ;
                         if ( AnyError == 0 )
                         {
-                           ZM0T41( 12) ;
+                           ZM0T41( 14) ;
                         }
                         CloseExtendedTableCursors0T41( ) ;
                         if ( AnyError == 0 )
@@ -199,7 +199,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                               CheckExtendedTable0T41( ) ;
                               if ( AnyError == 0 )
                               {
-                                 ZM0T41( 12) ;
+                                 ZM0T41( 14) ;
                               }
                               CloseExtendedTableCursors0T41( ) ;
                               if ( AnyError == 0 )
@@ -241,7 +241,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void ZM0T40( short GX_JID )
       {
-         if ( ( GX_JID == 10 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 12 ) || ( GX_JID == 0 ) )
          {
             Z208WWPFormReferenceName = A208WWPFormReferenceName;
             Z209WWPFormTitle = A209WWPFormTitle;
@@ -254,7 +254,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             Z242WWPFormIsForDynamicValidations = A242WWPFormIsForDynamicValidations;
             Z219WWPFormLatestVersionNumber = A219WWPFormLatestVersionNumber;
          }
-         if ( GX_JID == -10 )
+         if ( GX_JID == -12 )
          {
             Z206WWPFormId = A206WWPFormId;
             Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
@@ -299,7 +299,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             A240WWPFormType = BC000T7_A240WWPFormType[0];
             A241WWPFormSectionRefElements = BC000T7_A241WWPFormSectionRefElements[0];
             A242WWPFormIsForDynamicValidations = BC000T7_A242WWPFormIsForDynamicValidations[0];
-            ZM0T40( -10) ;
+            ZM0T40( -12) ;
          }
          pr_default.close(5);
          OnLoadActions0T40( ) ;
@@ -364,7 +364,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          pr_default.execute(4, new Object[] {A206WWPFormId, A207WWPFormVersionNumber});
          if ( (pr_default.getStatus(4) != 101) )
          {
-            ZM0T40( 10) ;
+            ZM0T40( 12) ;
             RcdFound40 = 1;
             A206WWPFormId = BC000T6_A206WWPFormId[0];
             A207WWPFormVersionNumber = BC000T6_A207WWPFormVersionNumber[0];
@@ -791,6 +791,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          if ( AnyError == 0 )
          {
             /* After transaction rules */
+            new prc_adddynamicformtransalation(context ).execute(  AV14SDT_DynamicFormTranslationCollection) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -890,6 +891,9 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       protected void BeforeComplete0T40( )
       {
          /* Before Complete Rules */
+         GXt_objcol_SdtSDT_DynamicFormTranslation2 = AV14SDT_DynamicFormTranslationCollection;
+         new prc_adddynamicformtosdt(context ).execute(  A206WWPFormId, ref  A207WWPFormVersionNumber, out  GXt_objcol_SdtSDT_DynamicFormTranslation2) ;
+         AV14SDT_DynamicFormTranslationCollection = GXt_objcol_SdtSDT_DynamicFormTranslation2;
       }
 
       protected void BeforeValidate0T40( )
@@ -903,7 +907,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void ZM0T41( short GX_JID )
       {
-         if ( ( GX_JID == 11 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 13 ) || ( GX_JID == 0 ) )
          {
             Z237WWPFormElementCaption = A237WWPFormElementCaption;
             Z217WWPFormElementType = A217WWPFormElementType;
@@ -913,11 +917,11 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             Z238WWPFormElementExcludeFromExpor = A238WWPFormElementExcludeFromExpor;
             Z211WWPFormElementParentId = A211WWPFormElementParentId;
          }
-         if ( ( GX_JID == 12 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 14 ) || ( GX_JID == 0 ) )
          {
             Z230WWPFormElementParentType = A230WWPFormElementParentType;
          }
-         if ( GX_JID == -11 )
+         if ( GX_JID == -13 )
          {
             Z210WWPFormElementId = A210WWPFormElementId;
             Z237WWPFormElementCaption = A237WWPFormElementCaption;
@@ -970,7 +974,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             A238WWPFormElementExcludeFromExpor = BC000T17_A238WWPFormElementExcludeFromExpor[0];
             A211WWPFormElementParentId = BC000T17_A211WWPFormElementParentId[0];
             n211WWPFormElementParentId = BC000T17_n211WWPFormElementParentId[0];
-            ZM0T41( -11) ;
+            ZM0T41( -13) ;
          }
          pr_default.close(15);
          OnLoadActions0T41( ) ;
@@ -1045,7 +1049,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          pr_default.execute(1, new Object[] {A206WWPFormId, A207WWPFormVersionNumber, A210WWPFormElementId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM0T41( 11) ;
+            ZM0T41( 13) ;
             RcdFound41 = 1;
             InitializeNonKey0T41( ) ;
             A210WWPFormElementId = BC000T3_A210WWPFormElementId[0];
@@ -1436,6 +1440,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void InitializeNonKey0T40( )
       {
+         AV14SDT_DynamicFormTranslationCollection = new GXBaseCollection<SdtSDT_DynamicFormTranslation>( context, "SDT_DynamicFormTranslation", "Comforta_version20");
          A219WWPFormLatestVersionNumber = 0;
          A208WWPFormReferenceName = "";
          A209WWPFormTitle = "";
@@ -1684,7 +1689,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             Z206WWPFormId = A206WWPFormId;
             Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
          }
-         ZM0T40( -10) ;
+         ZM0T40( -12) ;
          OnLoadActions0T40( ) ;
          AddRow0T40( ) ;
          bcworkwithplus_dynamicforms_WWP_Form.gxTpr_Element.ClearCollection();
@@ -1697,7 +1702,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                Z206WWPFormId = A206WWPFormId;
                Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
                Z210WWPFormElementId = A210WWPFormElementId;
-               ZM0T41( -11) ;
+               ZM0T41( -13) ;
                OnLoadActions0T41( ) ;
                nRcdExists_41 = 1;
                nIsMod_41 = 0;
@@ -1734,7 +1739,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             Z206WWPFormId = A206WWPFormId;
             Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
          }
-         ZM0T40( -10) ;
+         ZM0T40( -12) ;
          OnLoadActions0T40( ) ;
          AddRow0T40( ) ;
          bcworkwithplus_dynamicforms_WWP_Form.gxTpr_Element.ClearCollection();
@@ -1747,7 +1752,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                Z206WWPFormId = A206WWPFormId;
                Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
                Z210WWPFormElementId = A210WWPFormElementId;
-               ZM0T41( -11) ;
+               ZM0T41( -13) ;
                OnLoadActions0T41( ) ;
                nRcdExists_41 = 1;
                nIsMod_41 = 0;
@@ -2183,6 +2188,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          BC000T15_A207WWPFormVersionNumber = new short[1] ;
          BC000T15_A211WWPFormElementParentId = new short[1] ;
          BC000T15_n211WWPFormElementParentId = new bool[] {false} ;
+         AV14SDT_DynamicFormTranslationCollection = new GXBaseCollection<SdtSDT_DynamicFormTranslation>( context, "SDT_DynamicFormTranslation", "Comforta_version20");
          BC000T16_A206WWPFormId = new short[1] ;
          BC000T16_A207WWPFormVersionNumber = new short[1] ;
          BC000T16_A208WWPFormReferenceName = new string[] {""} ;
@@ -2196,6 +2202,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          BC000T16_A240WWPFormType = new short[1] ;
          BC000T16_A241WWPFormSectionRefElements = new string[] {""} ;
          BC000T16_A242WWPFormIsForDynamicValidations = new bool[] {false} ;
+         GXt_objcol_SdtSDT_DynamicFormTranslation2 = new GXBaseCollection<SdtSDT_DynamicFormTranslation>( context, "SDT_DynamicFormTranslation", "Comforta_version20");
          Z213WWPFormElementReferenceId = "";
          A213WWPFormElementReferenceId = "";
          Z229WWPFormElementTitle = "";
@@ -2497,6 +2504,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       private short[] BC000T15_A207WWPFormVersionNumber ;
       private short[] BC000T15_A211WWPFormElementParentId ;
       private bool[] BC000T15_n211WWPFormElementParentId ;
+      private GXBaseCollection<SdtSDT_DynamicFormTranslation> AV14SDT_DynamicFormTranslationCollection ;
       private short[] BC000T16_A206WWPFormId ;
       private short[] BC000T16_A207WWPFormVersionNumber ;
       private string[] BC000T16_A208WWPFormReferenceName ;
@@ -2510,6 +2518,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       private short[] BC000T16_A240WWPFormType ;
       private string[] BC000T16_A241WWPFormSectionRefElements ;
       private bool[] BC000T16_A242WWPFormIsForDynamicValidations ;
+      private GXBaseCollection<SdtSDT_DynamicFormTranslation> GXt_objcol_SdtSDT_DynamicFormTranslation2 ;
       private short[] BC000T17_A210WWPFormElementId ;
       private short[] BC000T17_A237WWPFormElementCaption ;
       private string[] BC000T17_A229WWPFormElementTitle ;

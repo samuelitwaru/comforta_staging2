@@ -80,6 +80,18 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                context.httpAjaxContext.ajax_rspEndCmp();
                return  ;
             }
+            else if ( StringUtil.StrCmp(gxfirstwebparm, "gxJX_Action10") == 0 )
+            {
+               ajax_req_read_hidden_sdt(GetNextPar( ), AV14SDT_DynamicFormTranslationCollection);
+               setAjaxCallMode();
+               if ( ! IsValidAjaxCall( true) )
+               {
+                  GxWebError = 1;
+                  return  ;
+               }
+               XC_10_0T40( AV14SDT_DynamicFormTranslationCollection) ;
+               return  ;
+            }
             else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxAggSel1"+"_"+"WWPFORMLATESTVERSIONNUMBER") == 0 )
             {
                A206WWPFormId = (short)(Math.Round(NumberUtil.Val( GetPar( "WWPFormId"), "."), 18, MidpointRounding.ToEven));
@@ -93,7 +105,22 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                GX1ASAWWPFORMLATESTVERSIONNUMBER0T40( A206WWPFormId) ;
                return  ;
             }
-            else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_16") == 0 )
+            else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxAggSel6"+"_"+"vSDT_DYNAMICFORMTRANSLATIONCOLLECTION") == 0 )
+            {
+               A206WWPFormId = (short)(Math.Round(NumberUtil.Val( GetPar( "WWPFormId"), "."), 18, MidpointRounding.ToEven));
+               AssignAttri(sPrefix, false, "A206WWPFormId", StringUtil.LTrimStr( (decimal)(A206WWPFormId), 4, 0));
+               A207WWPFormVersionNumber = (short)(Math.Round(NumberUtil.Val( GetPar( "WWPFormVersionNumber"), "."), 18, MidpointRounding.ToEven));
+               AssignAttri(sPrefix, false, "A207WWPFormVersionNumber", StringUtil.LTrimStr( (decimal)(A207WWPFormVersionNumber), 4, 0));
+               setAjaxCallMode();
+               if ( ! IsValidAjaxCall( true) )
+               {
+                  GxWebError = 1;
+                  return  ;
+               }
+               GX6ASASDT_DYNAMICFORMTRANSLATIONCOLLECTION0T40( A206WWPFormId, A207WWPFormVersionNumber) ;
+               return  ;
+            }
+            else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_18") == 0 )
             {
                A206WWPFormId = (short)(Math.Round(NumberUtil.Val( GetPar( "WWPFormId"), "."), 18, MidpointRounding.ToEven));
                AssignAttri(sPrefix, false, "A206WWPFormId", StringUtil.LTrimStr( (decimal)(A206WWPFormId), 4, 0));
@@ -107,7 +134,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                   GxWebError = 1;
                   return  ;
                }
-               gxLoad_16( A206WWPFormId, A207WWPFormVersionNumber, A211WWPFormElementParentId) ;
+               gxLoad_18( A206WWPFormId, A207WWPFormVersionNumber, A211WWPFormElementParentId) ;
                return  ;
             }
             else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -822,6 +849,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                A219WWPFormLatestVersionNumber = (short)(Math.Round(context.localUtil.CToN( cgiGet( sPrefix+"WWPFORMLATESTVERSIONNUMBER"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                AV7WWPFormId = (short)(Math.Round(context.localUtil.CToN( cgiGet( sPrefix+"vWWPFORMID"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                AV8WWPFormVersionNumber = (short)(Math.Round(context.localUtil.CToN( cgiGet( sPrefix+"vWWPFORMVERSIONNUMBER"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
+               ajax_req_read_hidden_sdt(cgiGet( sPrefix+"vSDT_DYNAMICFORMTRANSLATIONCOLLECTION"), AV14SDT_DynamicFormTranslationCollection);
                A216WWPFormResume = (short)(Math.Round(context.localUtil.CToN( cgiGet( sPrefix+"WWPFORMRESUME"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
                A235WWPFormResumeMessage = cgiGet( sPrefix+"WWPFORMRESUMEMESSAGE");
                A233WWPFormValidations = cgiGet( sPrefix+"WWPFORMVALIDATIONS");
@@ -1317,7 +1345,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void ZM0T40( short GX_JID )
       {
-         if ( ( GX_JID == 14 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 16 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -1344,7 +1372,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                Z242WWPFormIsForDynamicValidations = A242WWPFormIsForDynamicValidations;
             }
          }
-         if ( GX_JID == -14 )
+         if ( GX_JID == -16 )
          {
             Z206WWPFormId = A206WWPFormId;
             Z207WWPFormVersionNumber = A207WWPFormVersionNumber;
@@ -1453,7 +1481,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             A240WWPFormType = T000T7_A240WWPFormType[0];
             A241WWPFormSectionRefElements = T000T7_A241WWPFormSectionRefElements[0];
             A242WWPFormIsForDynamicValidations = T000T7_A242WWPFormIsForDynamicValidations[0];
-            ZM0T40( -14) ;
+            ZM0T40( -16) ;
          }
          pr_default.close(5);
          OnLoadActions0T40( ) ;
@@ -1514,7 +1542,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          pr_default.execute(4, new Object[] {A206WWPFormId, A207WWPFormVersionNumber});
          if ( (pr_default.getStatus(4) != 101) )
          {
-            ZM0T40( 14) ;
+            ZM0T40( 16) ;
             RcdFound40 = 1;
             A206WWPFormId = T000T6_A206WWPFormId[0];
             AssignAttri(sPrefix, false, "A206WWPFormId", StringUtil.LTrimStr( (decimal)(A206WWPFormId), 4, 0));
@@ -2184,6 +2212,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                ConfirmValues0T0( ) ;
             }
             /* After transaction rules */
+            new prc_adddynamicformtransalation(context ).execute(  AV14SDT_DynamicFormTranslationCollection) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -2259,6 +2288,10 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       protected void BeforeComplete0T40( )
       {
          /* Before Complete Rules */
+         GXt_objcol_SdtSDT_DynamicFormTranslation2 = AV14SDT_DynamicFormTranslationCollection;
+         new prc_adddynamicformtosdt(context ).execute(  A206WWPFormId, ref  A207WWPFormVersionNumber, out  GXt_objcol_SdtSDT_DynamicFormTranslation2) ;
+         AssignAttri(sPrefix, false, "A207WWPFormVersionNumber", StringUtil.LTrimStr( (decimal)(A207WWPFormVersionNumber), 4, 0));
+         AV14SDT_DynamicFormTranslationCollection = GXt_objcol_SdtSDT_DynamicFormTranslation2;
       }
 
       protected void BeforeValidate0T40( )
@@ -2284,7 +2317,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void ZM0T41( short GX_JID )
       {
-         if ( ( GX_JID == 15 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 17 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -2307,7 +2340,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
                Z211WWPFormElementParentId = A211WWPFormElementParentId;
             }
          }
-         if ( GX_JID == -15 )
+         if ( GX_JID == -17 )
          {
             Z210WWPFormElementId = A210WWPFormElementId;
             Z237WWPFormElementCaption = A237WWPFormElementCaption;
@@ -2370,7 +2403,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
             A238WWPFormElementExcludeFromExpor = T000T19_A238WWPFormElementExcludeFromExpor[0];
             A211WWPFormElementParentId = T000T19_A211WWPFormElementParentId[0];
             n211WWPFormElementParentId = T000T19_n211WWPFormElementParentId[0];
-            ZM0T41( -15) ;
+            ZM0T41( -17) ;
          }
          pr_default.close(17);
          OnLoadActions0T41( ) ;
@@ -2437,7 +2470,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       {
       }
 
-      protected void gxLoad_16( short A206WWPFormId ,
+      protected void gxLoad_18( short A206WWPFormId ,
                                 short A207WWPFormVersionNumber ,
                                 short A211WWPFormElementParentId )
       {
@@ -2490,7 +2523,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          pr_default.execute(1, new Object[] {A206WWPFormId, A207WWPFormVersionNumber, A210WWPFormElementId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM0T41( 15) ;
+            ZM0T41( 17) ;
             RcdFound41 = 1;
             InitializeNonKey0T41( ) ;
             A210WWPFormElementId = T000T3_A210WWPFormElementId[0];
@@ -3431,6 +3464,14 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          GxWebStd.gx_hidden_field( context, sPrefix+"WWPFORMLATESTVERSIONNUMBER", StringUtil.LTrim( StringUtil.NToC( (decimal)(A219WWPFormLatestVersionNumber), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, sPrefix+"vWWPFORMID", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV7WWPFormId), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, sPrefix+"vWWPFORMVERSIONNUMBER", StringUtil.LTrim( StringUtil.NToC( (decimal)(AV8WWPFormVersionNumber), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
+         if ( context.isAjaxRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_sdt_attri(sPrefix, false, sPrefix+"vSDT_DYNAMICFORMTRANSLATIONCOLLECTION", AV14SDT_DynamicFormTranslationCollection);
+         }
+         else
+         {
+            context.httpAjaxContext.ajax_rsp_assign_hidden_sdt(sPrefix+"vSDT_DYNAMICFORMTRANSLATIONCOLLECTION", AV14SDT_DynamicFormTranslationCollection);
+         }
          GxWebStd.gx_hidden_field( context, sPrefix+"WWPFORMRESUME", StringUtil.LTrim( StringUtil.NToC( (decimal)(A216WWPFormResume), 1, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, sPrefix+"WWPFORMRESUMEMESSAGE", A235WWPFormResumeMessage);
          GxWebStd.gx_hidden_field( context, sPrefix+"WWPFORMVALIDATIONS", A233WWPFormValidations);
@@ -3501,6 +3542,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void InitializeNonKey0T40( )
       {
+         AV14SDT_DynamicFormTranslationCollection = new GXBaseCollection<SdtSDT_DynamicFormTranslation>( context, "SDT_DynamicFormTranslation", "Comforta_version20");
          A219WWPFormLatestVersionNumber = 0;
          AssignAttri(sPrefix, false, "A219WWPFormLatestVersionNumber", StringUtil.LTrimStr( (decimal)(A219WWPFormLatestVersionNumber), 4, 0));
          A208WWPFormReferenceName = "";
@@ -3809,7 +3851,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025491714260", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541016311361", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -3825,7 +3867,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("workwithplus/dynamicforms/wwp_form.js", "?2025491714260", false, true);
+         context.AddJavascriptSource("workwithplus/dynamicforms/wwp_form.js", "?202541016311362", false, true);
          /* End function include_jscripts */
       }
 
@@ -4012,6 +4054,39 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
          AddString( "\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A219WWPFormLatestVersionNumber), 4, 0, ".", "")))+"\"") ;
+         AddString( "]") ;
+         if ( true )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+      }
+
+      protected void GX6ASASDT_DYNAMICFORMTRANSLATIONCOLLECTION0T40( short A206WWPFormId ,
+                                                                     short A207WWPFormVersionNumber )
+      {
+         GXt_objcol_SdtSDT_DynamicFormTranslation2 = AV14SDT_DynamicFormTranslationCollection;
+         new prc_adddynamicformtosdt(context ).execute(  A206WWPFormId, ref  A207WWPFormVersionNumber, out  GXt_objcol_SdtSDT_DynamicFormTranslation2) ;
+         AssignAttri(sPrefix, false, "A207WWPFormVersionNumber", StringUtil.LTrimStr( (decimal)(A207WWPFormVersionNumber), 4, 0));
+         AV14SDT_DynamicFormTranslationCollection = GXt_objcol_SdtSDT_DynamicFormTranslation2;
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( StringUtil.EncodeString( AV14SDT_DynamicFormTranslationCollection.ToXml(false, true, "SDT_DynamicFormTranslationCollection", "")))+"\"") ;
+         AddString( "]") ;
+         if ( true )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+      }
+
+      protected void XC_10_0T40( GXBaseCollection<SdtSDT_DynamicFormTranslation> AV14SDT_DynamicFormTranslationCollection )
+      {
+         new prc_adddynamicformtransalation(context ).execute(  AV14SDT_DynamicFormTranslationCollection) ;
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
          AddString( "]") ;
          if ( true )
          {
@@ -4243,6 +4318,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          Z213WWPFormElementReferenceId = "";
          gxfirstwebparm = "";
          gxfirstwebparm_bkp = "";
+         AV14SDT_DynamicFormTranslationCollection = new GXBaseCollection<SdtSDT_DynamicFormTranslation>( context, "SDT_DynamicFormTranslation", "Comforta_version20");
          GXKey = "";
          GXDecQS = "";
          PreviousTooltip = "";
@@ -4414,6 +4490,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
          BackMsgLst = new msglist();
          LclMsgLst = new msglist();
          Gridlevel_elementColumn = new GXWebColumn();
+         GXt_objcol_SdtSDT_DynamicFormTranslation2 = new GXBaseCollection<SdtSDT_DynamicFormTranslation>( context, "SDT_DynamicFormTranslation", "Comforta_version20");
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.workwithplus.dynamicforms.wwp_form__datastore1(),
             new Object[][] {
             }
@@ -4719,6 +4796,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       private GXWebRow Gridlevel_elementRow ;
       private GXWebColumn Gridlevel_elementColumn ;
       private GXWebForm Form ;
+      private GXBaseCollection<SdtSDT_DynamicFormTranslation> AV14SDT_DynamicFormTranslationCollection ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
@@ -4846,6 +4924,7 @@ namespace GeneXus.Programs.workwithplus.dynamicforms {
       private short[] T000T27_A210WWPFormElementId ;
       private msglist BackMsgLst ;
       private msglist LclMsgLst ;
+      private GXBaseCollection<SdtSDT_DynamicFormTranslation> GXt_objcol_SdtSDT_DynamicFormTranslation2 ;
       private IDataStoreProvider pr_datastore1 ;
       private IDataStoreProvider pr_gam ;
    }

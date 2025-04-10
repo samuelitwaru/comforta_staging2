@@ -102,6 +102,9 @@ namespace GeneXus.Programs {
                   A536PagePublishedStructure = P00BL3_A536PagePublishedStructure[0];
                   A516PageId = P00BL3_A516PageId[0];
                   A536PagePublishedStructure = A518PageStructure;
+                  GXt_objcol_SdtSDT_TrnAttributes1 = AV24SDT_TrnAttributesCollection;
+                  new prc_addappversionpagesattributestosdt(context ).execute(  A523AppVersionId,  A516PageId, out  GXt_objcol_SdtSDT_TrnAttributes1) ;
+                  AV24SDT_TrnAttributesCollection = GXt_objcol_SdtSDT_TrnAttributes1;
                   GXTBL3 = 1;
                   /* Using cursor P00BL4 */
                   pr_default.execute(2, new Object[] {A536PagePublishedStructure, A523AppVersionId, A516PageId});
@@ -118,7 +121,7 @@ namespace GeneXus.Programs {
                if (true) break;
             }
             pr_default.close(0);
-            new prc_translatepagepublishedstructure(context).executeSubmit(  AV15AppVersionId) ;
+            new prc_addappversionpagetodynamictransalation(context).executeSubmit(  AV24SDT_TrnAttributesCollection) ;
             if ( AV18Notify )
             {
                AV19Title = context.GetMessage( "New Updates Available", "");
@@ -158,6 +161,8 @@ namespace GeneXus.Programs {
          A518PageStructure = "";
          A536PagePublishedStructure = "";
          A516PageId = Guid.Empty;
+         AV24SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
+         GXt_objcol_SdtSDT_TrnAttributes1 = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          AV19Title = "";
          AV20NotificationMessage = "";
          AV21Metadata = new SdtSDT_OneSignalCustomData(context);
@@ -205,6 +210,8 @@ namespace GeneXus.Programs {
       private string[] P00BL3_A518PageStructure ;
       private string[] P00BL3_A536PagePublishedStructure ;
       private Guid[] P00BL3_A516PageId ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> AV24SDT_TrnAttributesCollection ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> GXt_objcol_SdtSDT_TrnAttributes1 ;
       private SdtSDT_OneSignalCustomData AV21Metadata ;
       private GxSimpleCollection<Guid> AV22ResidentIdCollectionEmpty ;
       private SdtSDT_Error aP2_SDT_Error ;

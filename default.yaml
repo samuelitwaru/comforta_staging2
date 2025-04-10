@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250409143739"
+  version: "20250410141954"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
@@ -118,6 +118,29 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Trn_CallToActionLoadDVComboOutput"
+        404:
+          description: "Not found"
+  /Trn_DynamicFormTranslationWWGetFilterData:
+    post:
+      tags:
+        - Trn_DynamicFormTranslationWWGetFilterData
+      operationId: "Trn_DynamicFormTranslationWWGetFilterData"
+      summary: "Trn_Dynamic Form Translation WWGet Filter Data"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Trn_DynamicFormTranslationWWGetFilterDataInput"
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Trn_DynamicFormTranslationWWGetFilterDataOutput"
         404:
           description: "Not found"
   /Trn_DynamicTranslationWWGetFilterData:
@@ -1391,6 +1414,14 @@ components:
           type: "string"
         Combo_DataJson:
           type: "string"
+    Trn_DynamicFormTranslationWWGetFilterDataOutput:
+      properties:
+        OptionsJson:
+          type: "string"
+        OptionsDescJson:
+          type: "string"
+        OptionIndexesJson:
+          type: "string"
     Trn_DynamicTranslationWWGetFilterDataOutput:
       properties:
         OptionsJson:
@@ -1816,6 +1847,14 @@ components:
           type: "string"
           format: "uuid"
         SearchTxtParms:
+          type: "string"
+    Trn_DynamicFormTranslationWWGetFilterDataInput:  
+      properties:
+        DDOName:
+          type: "string"
+        SearchTxtParms:
+          type: "string"
+        SearchTxtTo:
           type: "string"
     Trn_DynamicTranslationWWGetFilterDataInput:  
       properties:

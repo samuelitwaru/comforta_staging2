@@ -1,6 +1,5 @@
-DROP INDEX ITRN_LOCATION5;
-DROP INDEX ITRN_LOCATION;
-CREATE INDEX ITRN_LOCATION1 ON Trn_Location (OrganisationId );
-CREATE INDEX ITRN_LOCATION4 ON Trn_Location (ActiveAppVersionId );
-CREATE INDEX UTRN_LOCATION ON Trn_Location (LocationName ,LocationEmail ,LocationPhone );
+CREATE TABLE Trn_DiscussionTranslation (Trn_DiscussionTranslationId CHAR(36) NOT NULL , DiscussionTranslationWWPDiscus bigint NOT NULL , DiscussionTranslationEnglish VARCHAR(1000) NOT NULL , DiscussionTranslationDutch VARCHAR(1000) NOT NULL , PRIMARY KEY(Trn_DiscussionTranslationId));
+CREATE INDEX UTRN_DISCUSSIONTRANSLATION ON Trn_DiscussionTranslation (DiscussionTranslationWWPDiscus );
+
+CREATE TABLE Trn_DynamicFormTranslation (DynamicFormTranslationId CHAR(36) NOT NULL , DynamicFormTranslationWWpFormI integer NOT NULL , DynamicFormTranslationWWPFormV integer NOT NULL , DynamicFormTranslationWWPFormE integer NOT NULL , DynamicFormTranslationTrnName VARCHAR(400) NOT NULL , DynamicFormTranslationAttribut VARCHAR(40) NOT NULL , DynamicFormTranslationEnglish TEXT NOT NULL , DynamicFormTranslationDutch TEXT NOT NULL , PRIMARY KEY(DynamicFormTranslationId));
 

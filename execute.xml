@@ -158,6 +158,12 @@
     <ObjLink>trn_organisationdynamicform.aspx</ObjLink>
   </Object>
   <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Trn_DiscussionTranslation</ObjName>
+    <ObjDesc>Trn_Discussion Translation</ObjDesc>
+    <ObjLink>trn_discussiontranslation.aspx</ObjLink>
+  </Object>
+  <Object>
     <ObjCls>13</ObjCls>
     <ObjName>GAMExampleLogin</ObjName>
     <ObjDesc>GAM_Login</ObjDesc>
@@ -510,6 +516,12 @@
     <ObjName>Trn_AppVersionWW</ObjName>
     <ObjDesc> Trn_App Version</ObjDesc>
     <ObjLink>trn_appversionww.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>Trn_DynamicFormTranslationWW</ObjName>
+    <ObjDesc> Trn_Dynamic Form Translation</ObjDesc>
+    <ObjLink>trn_dynamicformtranslationww.aspx</ObjLink>
   </Object>
   <Object>
     <ObjCls>1</ObjCls>

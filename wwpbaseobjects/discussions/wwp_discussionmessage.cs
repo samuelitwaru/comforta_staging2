@@ -66,7 +66,20 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
             GX2ASAWWPUSEREXTENDEDID0R38( Gx_mode) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_7") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxAggSel4"+"_"+"vSDT_DISCUSSIONTRANSLATIONVAR") == 0 )
+         {
+            A200WWPDiscussionMessageId = (long)(Math.Round(NumberUtil.Val( GetPar( "WWPDiscussionMessageId"), "."), 18, MidpointRounding.ToEven));
+            AssignAttri("", false, "A200WWPDiscussionMessageId", StringUtil.LTrimStr( (decimal)(A200WWPDiscussionMessageId), 10, 0));
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1;
+               return  ;
+            }
+            GX4ASASDT_DISCUSSIONTRANSLATIONVAR0R38( A200WWPDiscussionMessageId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
          {
             A199WWPDiscussionMessageThreadId = (long)(Math.Round(NumberUtil.Val( GetPar( "WWPDiscussionMessageThreadId"), "."), 18, MidpointRounding.ToEven));
             n199WWPDiscussionMessageThreadId = false;
@@ -77,10 +90,10 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_7( A199WWPDiscussionMessageThreadId) ;
+            gxLoad_9( A199WWPDiscussionMessageThreadId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_5") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_7") == 0 )
          {
             A112WWPUserExtendedId = GetPar( "WWPUserExtendedId");
             AssignAttri("", false, "A112WWPUserExtendedId", A112WWPUserExtendedId);
@@ -90,10 +103,10 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_5( A112WWPUserExtendedId) ;
+            gxLoad_7( A112WWPUserExtendedId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_6") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
          {
             A125WWPEntityId = (long)(Math.Round(NumberUtil.Val( GetPar( "WWPEntityId"), "."), 18, MidpointRounding.ToEven));
             AssignAttri("", false, "A125WWPEntityId", StringUtil.LTrimStr( (decimal)(A125WWPEntityId), 10, 0));
@@ -103,7 +116,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
                GxWebError = 1;
                return  ;
             }
-            gxLoad_6( A125WWPEntityId) ;
+            gxLoad_8( A125WWPEntityId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -647,6 +660,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
             IsConfirmed = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsConfirmed"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
             IsModified = (short)(Math.Round(context.localUtil.CToN( cgiGet( "IsModified"), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")), 18, MidpointRounding.ToEven));
             Gx_mode = cgiGet( "Mode");
+            ajax_req_read_hidden_sdt(cgiGet( "vSDT_DISCUSSIONTRANSLATIONVAR"), AV8SDT_DiscussionTranslationVar);
             A40000WWPUserExtendedPhoto_GXI = cgiGet( "WWPUSEREXTENDEDPHOTO_GXI");
             /* Read variables values. */
             if ( ( ( context.localUtil.CToN( cgiGet( edtWWPDiscussionMessageId_Internalname), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")) < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtWWPDiscussionMessageId_Internalname), context.GetLanguageProperty( "decimal_point"), context.GetLanguageProperty( "thousand_sep")) > Convert.ToDecimal( 9999999999L )) ) )
@@ -912,7 +926,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
 
       protected void ZM0R38( short GX_JID )
       {
-         if ( ( GX_JID == 4 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 6 ) || ( GX_JID == 0 ) )
          {
             if ( ! IsIns( ) )
             {
@@ -933,7 +947,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
                Z199WWPDiscussionMessageThreadId = A199WWPDiscussionMessageThreadId;
             }
          }
-         if ( GX_JID == -4 )
+         if ( GX_JID == -6 )
          {
             Z200WWPDiscussionMessageId = A200WWPDiscussionMessageId;
             Z203WWPDiscussionMessageDate = A203WWPDiscussionMessageDate;
@@ -1029,7 +1043,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
             AssignAttri("", false, "A115WWPUserExtendedPhoto", A115WWPUserExtendedPhoto);
             AssignProp("", false, imgWWPUserExtendedPhoto_Internalname, "Bitmap", (String.IsNullOrEmpty(StringUtil.RTrim( A115WWPUserExtendedPhoto)) ? A40000WWPUserExtendedPhoto_GXI : context.convertURL( context.PathToRelativeUrl( A115WWPUserExtendedPhoto))), true);
             AssignProp("", false, imgWWPUserExtendedPhoto_Internalname, "SrcSet", context.GetImageSrcSet( A115WWPUserExtendedPhoto), true);
-            ZM0R38( -4) ;
+            ZM0R38( -6) ;
          }
          pr_default.close(5);
          OnLoadActions0R38( ) ;
@@ -1100,7 +1114,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       {
       }
 
-      protected void gxLoad_7( long A199WWPDiscussionMessageThreadId )
+      protected void gxLoad_9( long A199WWPDiscussionMessageThreadId )
       {
          /* Using cursor T000R8 */
          pr_default.execute(6, new Object[] {n199WWPDiscussionMessageThreadId, A199WWPDiscussionMessageThreadId});
@@ -1126,7 +1140,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          pr_default.close(6);
       }
 
-      protected void gxLoad_5( string A112WWPUserExtendedId )
+      protected void gxLoad_7( string A112WWPUserExtendedId )
       {
          /* Using cursor T000R9 */
          pr_default.execute(7, new Object[] {A112WWPUserExtendedId});
@@ -1159,7 +1173,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          pr_default.close(7);
       }
 
-      protected void gxLoad_6( long A125WWPEntityId )
+      protected void gxLoad_8( long A125WWPEntityId )
       {
          /* Using cursor T000R10 */
          pr_default.execute(8, new Object[] {A125WWPEntityId});
@@ -1206,7 +1220,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          pr_default.execute(1, new Object[] {A200WWPDiscussionMessageId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM0R38( 4) ;
+            ZM0R38( 6) ;
             RcdFound38 = 1;
             A200WWPDiscussionMessageId = T000R3_A200WWPDiscussionMessageId[0];
             AssignAttri("", false, "A200WWPDiscussionMessageId", StringUtil.LTrimStr( (decimal)(A200WWPDiscussionMessageId), 10, 0));
@@ -1869,6 +1883,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
                ConfirmValues0R0( ) ;
             }
             /* After transaction rules */
+            new prc_addtodiscussiontransalation(context ).execute(  AV8SDT_DiscussionTranslationVar) ;
             /* Execute 'After Trn' event if defined. */
             trnEnded = 1;
          }
@@ -1947,6 +1962,9 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       protected void BeforeComplete0R38( )
       {
          /* Before Complete Rules */
+         GXt_SdtSDT_DiscussionTranslation2 = AV8SDT_DiscussionTranslationVar;
+         new prc_adddiscussiontranslationtosdt(context ).execute(  A200WWPDiscussionMessageId, out  GXt_SdtSDT_DiscussionTranslation2) ;
+         AV8SDT_DiscussionTranslationVar = GXt_SdtSDT_DiscussionTranslation2;
       }
 
       protected void BeforeValidate0R38( )
@@ -2083,6 +2101,14 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, context.GetLanguageProperty( "decimal_point"), "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
+         if ( context.isAjaxRequest( ) )
+         {
+            context.httpAjaxContext.ajax_rsp_assign_sdt_attri("", false, "vSDT_DISCUSSIONTRANSLATIONVAR", AV8SDT_DiscussionTranslationVar);
+         }
+         else
+         {
+            context.httpAjaxContext.ajax_rsp_assign_hidden_sdt("vSDT_DISCUSSIONTRANSLATIONVAR", AV8SDT_DiscussionTranslationVar);
+         }
          GxWebStd.gx_hidden_field( context, "WWPUSEREXTENDEDPHOTO_GXI", A40000WWPUserExtendedPhoto_GXI);
          GXCCtlgxBlob = "WWPUSEREXTENDEDPHOTO" + "_gxBlob";
          GxWebStd.gx_hidden_field( context, GXCCtlgxBlob, A115WWPUserExtendedPhoto);
@@ -2173,6 +2199,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          AssignAttri("", false, "A203WWPDiscussionMessageDate", context.localUtil.TToC( A203WWPDiscussionMessageDate, 8, 5, (short)(((StringUtil.StrCmp(context.GetLanguageProperty( "time_fmt"), "12")==0) ? 1 : 0)), (short)(DateTimeUtil.MapDateTimeFormat( context.GetLanguageProperty( "date_fmt"))), "/", ":", " "));
          A112WWPUserExtendedId = "";
          AssignAttri("", false, "A112WWPUserExtendedId", A112WWPUserExtendedId);
+         AV8SDT_DiscussionTranslationVar = new SdtSDT_DiscussionTranslation(context);
          A199WWPDiscussionMessageThreadId = 0;
          n199WWPDiscussionMessageThreadId = false;
          AssignAttri("", false, "A199WWPDiscussionMessageThreadId", StringUtil.LTrimStr( (decimal)(A199WWPDiscussionMessageThreadId), 10, 0));
@@ -2229,7 +2256,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025491721326", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254101631296", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -2245,7 +2272,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("wwpbaseobjects/discussions/wwp_discussionmessage.js", "?2025491721326", false, true);
+         context.AddJavascriptSource("wwpbaseobjects/discussions/wwp_discussionmessage.js", "?20254101631297", false, true);
          /* End function include_jscripts */
       }
 
@@ -2339,6 +2366,23 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          GxWebStd.set_html_headers( context, 0, "", "");
          AddString( "[[") ;
          AddString( "\""+GXUtil.EncodeJSConstant( StringUtil.RTrim( A112WWPUserExtendedId))+"\"") ;
+         AddString( "]") ;
+         if ( true )
+         {
+            AddString( ",") ;
+            AddString( "101") ;
+         }
+         AddString( "]") ;
+      }
+
+      protected void GX4ASASDT_DISCUSSIONTRANSLATIONVAR0R38( long A200WWPDiscussionMessageId )
+      {
+         GXt_SdtSDT_DiscussionTranslation2 = AV8SDT_DiscussionTranslationVar;
+         new prc_adddiscussiontranslationtosdt(context ).execute(  A200WWPDiscussionMessageId, out  GXt_SdtSDT_DiscussionTranslation2) ;
+         AV8SDT_DiscussionTranslationVar = GXt_SdtSDT_DiscussionTranslation2;
+         GxWebStd.set_html_headers( context, 0, "", "");
+         AddString( "[[") ;
+         AddString( "\""+GXUtil.EncodeJSConstant( StringUtil.EncodeString( AV8SDT_DiscussionTranslationVar.ToXml(false, true, "", "")))+"\"") ;
          AddString( "]") ;
          if ( true )
          {
@@ -2555,6 +2599,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          bttBtn_enter_Jsonclick = "";
          bttBtn_cancel_Jsonclick = "";
          bttBtn_delete_Jsonclick = "";
+         AV8SDT_DiscussionTranslationVar = new SdtSDT_DiscussionTranslation(context);
          sEvt = "";
          EvtGridId = "";
          EvtRowId = "";
@@ -2626,6 +2671,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
          i203WWPDiscussionMessageDate = (DateTime)(DateTime.MinValue);
          i112WWPUserExtendedId = "";
          GXt_char1 = "";
+         GXt_SdtSDT_DiscussionTranslation2 = new SdtSDT_DiscussionTranslation(context);
          ZZ203WWPDiscussionMessageDate = (DateTime)(DateTime.MinValue);
          ZZ112WWPUserExtendedId = "";
          ZZ204WWPDiscussionMessageMessage = "";
@@ -2747,9 +2793,9 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       private long Z200WWPDiscussionMessageId ;
       private long Z125WWPEntityId ;
       private long Z199WWPDiscussionMessageThreadId ;
+      private long A200WWPDiscussionMessageId ;
       private long A199WWPDiscussionMessageThreadId ;
       private long A125WWPEntityId ;
-      private long A200WWPDiscussionMessageId ;
       private long ZZ200WWPDiscussionMessageId ;
       private long ZZ199WWPDiscussionMessageThreadId ;
       private long ZZ125WWPEntityId ;
@@ -2853,6 +2899,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
+      private SdtSDT_DiscussionTranslation AV8SDT_DiscussionTranslationVar ;
       private IDataStoreProvider pr_default ;
       private string[] T000R4_A40000WWPUserExtendedPhoto_GXI ;
       private string[] T000R4_A113WWPUserExtendedFullName ;
@@ -2907,6 +2954,7 @@ namespace GeneXus.Programs.wwpbaseobjects.discussions {
       private long[] T000R21_A200WWPDiscussionMessageId ;
       private string[] T000R21_A201WWPDiscussionMentionUserId ;
       private long[] T000R22_A200WWPDiscussionMessageId ;
+      private SdtSDT_DiscussionTranslation GXt_SdtSDT_DiscussionTranslation2 ;
       private long[] T000R23_A199WWPDiscussionMessageThreadId ;
       private bool[] T000R23_n199WWPDiscussionMessageThreadId ;
       private IDataStoreProvider pr_datastore1 ;

@@ -60,25 +60,13 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeTrn_Location( )
+      public void CreateTrn_DiscussionTranslation( )
       {
          string cmdBuffer = "";
-         /* Indices for table Trn_Location */
-         cmdBuffer=" DROP INDEX ITRN_LOCATION5 "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-         cmdBuffer=" DROP INDEX ITRN_LOCATION "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
+         /* Indices for table Trn_DiscussionTranslation */
          try
          {
-            cmdBuffer=" CREATE INDEX ITRN_LOCATION1 ON Trn_Location (OrganisationId ) "
+            cmdBuffer=" CREATE TABLE Trn_DiscussionTranslation (Trn_DiscussionTranslationId CHAR(36) NOT NULL , DiscussionTranslationWWPDiscus bigint NOT NULL , DiscussionTranslationEnglish VARCHAR(1000) NOT NULL , DiscussionTranslationDutch VARCHAR(1000) NOT NULL , PRIMARY KEY(Trn_DiscussionTranslationId))  "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -87,13 +75,43 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX ITRN_LOCATION1 "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-            cmdBuffer=" CREATE INDEX ITRN_LOCATION1 ON Trn_Location (OrganisationId ) "
+            try
+            {
+               cmdBuffer=" DROP TABLE Trn_DiscussionTranslation CASCADE "
+               ;
+               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+               RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+               RGZ.ExecuteStmt() ;
+               RGZ.Drop();
+            }
+            catch
+            {
+               try
+               {
+                  cmdBuffer=" DROP VIEW Trn_DiscussionTranslation CASCADE "
+                  ;
+                  RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                  RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+                  RGZ.ExecuteStmt() ;
+                  RGZ.Drop();
+               }
+               catch
+               {
+                  try
+                  {
+                     cmdBuffer=" DROP FUNCTION Trn_DiscussionTranslation CASCADE "
+                     ;
+                     RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                     RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
+                     RGZ.ExecuteStmt() ;
+                     RGZ.Drop();
+                  }
+                  catch
+                  {
+                  }
+               }
+            }
+            cmdBuffer=" CREATE TABLE Trn_DiscussionTranslation (Trn_DiscussionTranslationId CHAR(36) NOT NULL , DiscussionTranslationWWPDiscus bigint NOT NULL , DiscussionTranslationEnglish VARCHAR(1000) NOT NULL , DiscussionTranslationDutch VARCHAR(1000) NOT NULL , PRIMARY KEY(Trn_DiscussionTranslationId))  "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -102,7 +120,7 @@ namespace GeneXus.Programs {
          }
          try
          {
-            cmdBuffer=" CREATE INDEX ITRN_LOCATION4 ON Trn_Location (ActiveAppVersionId ) "
+            cmdBuffer=" CREATE INDEX UTRN_DISCUSSIONTRANSLATION ON Trn_DiscussionTranslation (DiscussionTranslationWWPDiscus ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -111,22 +129,28 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX ITRN_LOCATION4 "
+            cmdBuffer=" DROP INDEX UTRN_DISCUSSIONTRANSLATION "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
-            cmdBuffer=" CREATE INDEX ITRN_LOCATION4 ON Trn_Location (ActiveAppVersionId ) "
+            cmdBuffer=" CREATE INDEX UTRN_DISCUSSIONTRANSLATION ON Trn_DiscussionTranslation (DiscussionTranslationWWPDiscus ) "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
             RGZ.ExecuteStmt() ;
             RGZ.Drop();
          }
+      }
+
+      public void CreateTrn_DynamicFormTranslation( )
+      {
+         string cmdBuffer = "";
+         /* Indices for table Trn_DynamicFormTranslation */
          try
          {
-            cmdBuffer=" CREATE INDEX UTRN_LOCATION ON Trn_Location (LocationName ,LocationEmail ,LocationPhone ) "
+            cmdBuffer=" CREATE TABLE Trn_DynamicFormTranslation (DynamicFormTranslationId CHAR(36) NOT NULL , DynamicFormTranslationWWpFormI integer NOT NULL , DynamicFormTranslationWWPFormV integer NOT NULL , DynamicFormTranslationWWPFormE integer NOT NULL , DynamicFormTranslationTrnName VARCHAR(400) NOT NULL , DynamicFormTranslationAttribut VARCHAR(40) NOT NULL , DynamicFormTranslationEnglish TEXT NOT NULL , DynamicFormTranslationDutch TEXT NOT NULL , PRIMARY KEY(DynamicFormTranslationId))  "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -135,13 +159,43 @@ namespace GeneXus.Programs {
          }
          catch
          {
-            cmdBuffer=" DROP INDEX UTRN_LOCATION "
-            ;
-            RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-            RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
-            RGZ.ExecuteStmt() ;
-            RGZ.Drop();
-            cmdBuffer=" CREATE INDEX UTRN_LOCATION ON Trn_Location (LocationName ,LocationEmail ,LocationPhone ) "
+            try
+            {
+               cmdBuffer=" DROP TABLE Trn_DynamicFormTranslation CASCADE "
+               ;
+               RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+               RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+               RGZ.ExecuteStmt() ;
+               RGZ.Drop();
+            }
+            catch
+            {
+               try
+               {
+                  cmdBuffer=" DROP VIEW Trn_DynamicFormTranslation CASCADE "
+                  ;
+                  RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                  RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+                  RGZ.ExecuteStmt() ;
+                  RGZ.Drop();
+               }
+               catch
+               {
+                  try
+                  {
+                     cmdBuffer=" DROP FUNCTION Trn_DynamicFormTranslation CASCADE "
+                     ;
+                     RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+                     RGZ.ErrorMask = GxErrorMask.GX_MASKNOTFOUND | GxErrorMask.GX_MASKLOOPLOCK;
+                     RGZ.ExecuteStmt() ;
+                     RGZ.Drop();
+                  }
+                  catch
+                  {
+                  }
+               }
+            }
+            cmdBuffer=" CREATE TABLE Trn_DynamicFormTranslation (DynamicFormTranslationId CHAR(36) NOT NULL , DynamicFormTranslationWWpFormI integer NOT NULL , DynamicFormTranslationWWPFormV integer NOT NULL , DynamicFormTranslationWWPFormE integer NOT NULL , DynamicFormTranslationTrnName VARCHAR(400) NOT NULL , DynamicFormTranslationAttribut VARCHAR(40) NOT NULL , DynamicFormTranslationEnglish TEXT NOT NULL , DynamicFormTranslationDutch TEXT NOT NULL , PRIMARY KEY(DynamicFormTranslationId))  "
             ;
             RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
             RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -152,14 +206,6 @@ namespace GeneXus.Programs {
 
       private void TablesCount( )
       {
-         if ( ! IsResumeMode( ) )
-         {
-            /* Using cursor P00012 */
-            pr_default.execute(0);
-            Trn_LocationCount = P00012_ATrn_LocationCount[0];
-            pr_default.close(0);
-            PrintRecordCount ( "Trn_Location" ,  Trn_LocationCount );
-         }
       }
 
       private bool PreviousCheck( )
@@ -169,12 +215,55 @@ namespace GeneXus.Programs {
             return true ;
          }
          sSchemaVar = GXUtil.UserId( "Server", context, pr_default);
+         if ( tableexist("Trn_DiscussionTranslation",sSchemaVar) )
+         {
+            SetCheckError ( GXResourceManager.GetMessage("GXM_table_exist", new   object[]  {"Trn_DiscussionTranslation"}) ) ;
+            return false ;
+         }
+         if ( tableexist("Trn_DynamicFormTranslation",sSchemaVar) )
+         {
+            SetCheckError ( GXResourceManager.GetMessage("GXM_table_exist", new   object[]  {"Trn_DynamicFormTranslation"}) ) ;
+            return false ;
+         }
          return true ;
+      }
+
+      private bool tableexist( string sTableName ,
+                               string sMySchemaName )
+      {
+         bool result;
+         result = false;
+         /* Using cursor P00012 */
+         pr_default.execute(0, new Object[] {sTableName, sMySchemaName});
+         while ( (pr_default.getStatus(0) != 101) )
+         {
+            tablename = P00012_Atablename[0];
+            ntablename = P00012_ntablename[0];
+            schemaname = P00012_Aschemaname[0];
+            nschemaname = P00012_nschemaname[0];
+            result = true;
+            pr_default.readNext(0);
+         }
+         pr_default.close(0);
+         /* Using cursor P00023 */
+         pr_default.execute(1, new Object[] {sTableName, sMySchemaName});
+         while ( (pr_default.getStatus(1) != 101) )
+         {
+            tablename = P00023_Atablename[0];
+            ntablename = P00023_ntablename[0];
+            schemaname = P00023_Aschemaname[0];
+            nschemaname = P00023_nschemaname[0];
+            result = true;
+            pr_default.readNext(1);
+         }
+         pr_default.close(1);
+         return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeTrn_Location" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "CreateTrn_DiscussionTranslation" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 2 ,  "CreateTrn_DynamicFormTranslation" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
@@ -196,7 +285,8 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Trn_Location", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_filecrea", new   object[]  {"Trn_DiscussionTranslation", ""}) );
+         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_filecrea", new   object[]  {"Trn_DynamicFormTranslation", ""}) );
       }
 
       private void SetPrecedenceris( )
@@ -229,12 +319,28 @@ namespace GeneXus.Programs {
 
       public override void initialize( )
       {
-         P00012_ATrn_LocationCount = new int[1] ;
          sSchemaVar = "";
+         sTableName = "";
+         sMySchemaName = "";
+         tablename = "";
+         ntablename = false;
+         schemaname = "";
+         nschemaname = false;
+         P00012_Atablename = new string[] {""} ;
+         P00012_ntablename = new bool[] {false} ;
+         P00012_Aschemaname = new string[] {""} ;
+         P00012_nschemaname = new bool[] {false} ;
+         P00023_Atablename = new string[] {""} ;
+         P00023_ntablename = new bool[] {false} ;
+         P00023_Aschemaname = new string[] {""} ;
+         P00023_nschemaname = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_ATrn_LocationCount
+               P00012_Atablename, P00012_Aschemaname
+               }
+               , new Object[] {
+               P00023_Atablename, P00023_Aschemaname
                }
             }
          );
@@ -242,14 +348,26 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int Trn_LocationCount ;
       protected string sSchemaVar ;
+      protected string sTableName ;
+      protected string sMySchemaName ;
+      protected bool ntablename ;
+      protected bool nschemaname ;
+      protected string tablename ;
+      protected string schemaname ;
       protected IGxDataStore dsDataStore1 ;
       protected IGxDataStore dsGAM ;
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_ATrn_LocationCount ;
+      protected string[] P00012_Atablename ;
+      protected bool[] P00012_ntablename ;
+      protected string[] P00012_Aschemaname ;
+      protected bool[] P00012_nschemaname ;
+      protected string[] P00023_Atablename ;
+      protected bool[] P00023_ntablename ;
+      protected string[] P00023_Aschemaname ;
+      protected bool[] P00023_nschemaname ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -259,6 +377,7 @@ namespace GeneXus.Programs {
          cursorDefinitions();
          return new Cursor[] {
           new ForEachCursor(def[0])
+         ,new ForEachCursor(def[1])
        };
     }
 
@@ -269,9 +388,17 @@ namespace GeneXus.Programs {
        {
           Object[] prmP00012;
           prmP00012 = new Object[] {
+          new ParDef("sTableName",GXType.Char,255,0) ,
+          new ParDef("sMySchemaName",GXType.Char,255,0)
+          };
+          Object[] prmP00023;
+          prmP00023 = new Object[] {
+          new ParDef("sTableName",GXType.Char,255,0) ,
+          new ParDef("sMySchemaName",GXType.Char,255,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM Trn_Location ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+              new CursorDef("P00012", "SELECT TABLENAME, TABLEOWNER FROM PG_TABLES WHERE (UPPER(TABLENAME) = ( UPPER(:sTableName))) AND (UPPER(TABLEOWNER) = ( UPPER(:sMySchemaName))) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100, GxCacheFrequency.OFF ,true,false )
+             ,new CursorDef("P00023", "SELECT VIEWNAME, VIEWOWNER FROM PG_VIEWS WHERE (UPPER(VIEWNAME) = ( UPPER(:sTableName))) AND (UPPER(VIEWOWNER) = ( UPPER(:sMySchemaName))) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100, GxCacheFrequency.OFF ,true,false )
           };
        }
     }
@@ -283,7 +410,12 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((int[]) buf[0])[0] = rslt.getInt(1);
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
+                return;
+             case 1 :
+                ((string[]) buf[0])[0] = rslt.getVarchar(1);
+                ((string[]) buf[1])[0] = rslt.getVarchar(2);
                 return;
        }
     }

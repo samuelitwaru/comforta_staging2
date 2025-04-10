@@ -1,3 +1,5 @@
+trn_discussiontranslation
+trn_dynamicformtranslation
 trn_dynamictranslation
 trn_memo
 trn_memocategory
@@ -52,6 +54,9 @@ trn_location
 trn_manager
 trn_organisationtype
 trn_organisation
+trn_dynamicformtranslationgeneral
+trn_dynamicformtranslationview
+trn_dynamicformtranslationww
 trn_appversionpagewc
 trn_appversiongeneral
 trn_appversionww
@@ -380,6 +385,7 @@ gx0050
 gx0040
 general\ui\masterprompt
 general\ui\masterunanimosidebar
+trn_dynamicformtranslationwwgetfilterdata
 trn_appversionwwgetfilterdata
 trn_appversionloaddvcombo
 wp_dynamicformelementuformwcgetfilterdata
