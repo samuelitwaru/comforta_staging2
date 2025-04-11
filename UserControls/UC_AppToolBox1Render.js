@@ -106,6 +106,7 @@ function UC_AppToolBox1($) {
 		this.Start = function() {
 
 			   try {
+				   
 					const themes = this.BC_Trn_ThemeCollection.map(theme => {
 						let res = {
 							ThemeId: theme.Trn_ThemeId,
@@ -120,7 +121,7 @@ function UC_AppToolBox1($) {
 						})
 						return res
 					})
-					
+
 					if (typeof App !== 'undefined') {
 						localStorage.clear();
 						this.app = new App(
