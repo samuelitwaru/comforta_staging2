@@ -218,7 +218,7 @@ namespace GeneXus.Programs {
             }
             AV19DynamicTranslationEnglish = AV16SDT_MenuPage.ToJSonString(false, true);
          }
-         new prc_logtoserver(context ).execute(  context.GetMessage( "		Translated ", "")+AV11Attribute.gxTpr_Attributename+"("+AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid.ToString()+context.GetMessage( ") to ", "")+AV9Language+" : "+AV20DynamicTranslationDutch) ;
+         new prc_logtoserver(context ).execute(  context.GetMessage( "		Translated ", "")+AV11Attribute.gxTpr_Attributename+"("+AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid.ToString()+context.GetMessage( ") from ", "")+AV9Language+" : "+AV20DynamicTranslationDutch) ;
       }
 
       public override void cleanup( )

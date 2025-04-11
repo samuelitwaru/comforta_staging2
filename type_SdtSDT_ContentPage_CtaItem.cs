@@ -38,6 +38,8 @@ namespace GeneXus.Programs
 
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctaaction = "";
 
+			gxTv_SdtSDT_ContentPage_CtaItem_Ctacolor = "";
+
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctabgcolor = "";
 
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctabuttontype = "";
@@ -81,6 +83,9 @@ namespace GeneXus.Programs
 
 
 			AddObjectProperty("CtaAction", gxTpr_Ctaaction, false);
+
+
+			AddObjectProperty("CtaColor", gxTpr_Ctacolor, false);
 
 
 			AddObjectProperty("CtaBGColor", gxTpr_Ctabgcolor, false);
@@ -161,6 +166,22 @@ namespace GeneXus.Programs
 
 
 
+		[SoapElement(ElementName="CtaColor")]
+		[XmlElement(ElementName="CtaColor")]
+		public string gxTpr_Ctacolor
+		{
+			get {
+				return gxTv_SdtSDT_ContentPage_CtaItem_Ctacolor; 
+			}
+			set {
+				gxTv_SdtSDT_ContentPage_CtaItem_Ctacolor = value;
+				SetDirty("Ctacolor");
+			}
+		}
+
+
+
+
 		[SoapElement(ElementName="CtaBGColor")]
 		[XmlElement(ElementName="CtaBGColor")]
 		public string gxTpr_Ctabgcolor
@@ -233,6 +254,7 @@ namespace GeneXus.Programs
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctatype = "";
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctalabel = "";
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctaaction = "";
+			gxTv_SdtSDT_ContentPage_CtaItem_Ctacolor = "";
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctabgcolor = "";
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctabuttontype = "";
 			gxTv_SdtSDT_ContentPage_CtaItem_Ctabuttonimgurl = "";
@@ -255,6 +277,9 @@ namespace GeneXus.Programs
 		 
 
 		protected string gxTv_SdtSDT_ContentPage_CtaItem_Ctaaction;
+		 
+
+		protected string gxTv_SdtSDT_ContentPage_CtaItem_Ctacolor;
 		 
 
 		protected string gxTv_SdtSDT_ContentPage_CtaItem_Ctabgcolor;
@@ -331,7 +356,19 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="CtaBGColor", Order=4)]
+		[DataMember(Name="CtaColor", Order=4)]
+		public  string gxTpr_Ctacolor
+		{
+			get { 
+				return sdt.gxTpr_Ctacolor;
+
+			}
+			set { 
+				 sdt.gxTpr_Ctacolor = value;
+			}
+		}
+
+		[DataMember(Name="CtaBGColor", Order=5)]
 		public  string gxTpr_Ctabgcolor
 		{
 			get { 
@@ -343,7 +380,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="CtaButtonType", Order=5)]
+		[DataMember(Name="CtaButtonType", Order=6)]
 		public  string gxTpr_Ctabuttontype
 		{
 			get { 
@@ -355,7 +392,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="CtaButtonImgUrl", Order=6)]
+		[DataMember(Name="CtaButtonImgUrl", Order=7)]
 		public  string gxTpr_Ctabuttonimgurl
 		{
 			get { 
