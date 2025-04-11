@@ -1016,7 +1016,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254917344326", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?2025411211410", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1032,7 +1032,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages."+StringUtil.Lower( context.GetLanguageProperty( "code"))+".js", "?"+GetCacheInvalidationToken( ), false, true);
-         context.AddJavascriptSource("wp_applicationdesignv1.js", "?20254917344327", false, true);
+         context.AddJavascriptSource("wp_applicationdesignv1.js", "?2025411211411", false, true);
          context.AddJavascriptSource("UserControls/UC_AppToolBoxRender.js", "", false, true);
          /* End function include_jscripts */
       }

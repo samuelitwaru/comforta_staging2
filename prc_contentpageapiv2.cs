@@ -83,6 +83,7 @@ namespace GeneXus.Programs {
       {
          /* GeneXus formulas */
          /* Output device settings */
+         new prc_logtoserver(context ).execute(  ">>>>") ;
          /* Using cursor P00DM2 */
          pr_default.execute(0, new Object[] {AV10LocationId, AV8OrganisationId});
          while ( (pr_default.getStatus(0) != 101) )

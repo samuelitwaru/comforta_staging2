@@ -146,13 +146,14 @@ export class ActionListController {
   
           const version = (globalThis as any).activeVersion; 
           const childPage = version?.Pages.find((page: any) => (page.PageName === "Dynamic Form" && page.PageType === "DynamicForm"));
-  
+
+          const formUrl = `${baseURL}/utoolboxdynamicform.aspx?WWPFormId=${form.PageId}&WWPDynamicFormMode=DSP&DefaultFormType=&WWPFormType=0`;
           const updates = [
               ["Text", form.PageName],
               ["Name", form.PageName],
-              ["Action.ObjectType", "WebLink"],
+              ["Action.ObjectType", "DynamicForm"],
               ["Action.ObjectId", childPage?.PageId],
-              ["Action.ObjectUrl", form.PageUrl],
+              ["Action.ObjectUrl", formUrl],
           ];
   
         //  this.updateActionListDropDown("Dynamic Form", form.PageName);

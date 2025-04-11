@@ -90,11 +90,17 @@ namespace GeneXus.Programs {
          {
             A29LocationId = P00DL2_A29LocationId[0];
             n29LocationId = P00DL2_n29LocationId[0];
+            A598PublishedActiveAppVersionId = P00DL2_A598PublishedActiveAppVersionId[0];
+            n598PublishedActiveAppVersionId = P00DL2_n598PublishedActiveAppVersionId[0];
             A584ActiveAppVersionId = P00DL2_A584ActiveAppVersionId[0];
             n584ActiveAppVersionId = P00DL2_n584ActiveAppVersionId[0];
             A11OrganisationId = P00DL2_A11OrganisationId[0];
             n11OrganisationId = P00DL2_n11OrganisationId[0];
-            AV20AppVersionId = A584ActiveAppVersionId;
+            AV20AppVersionId = A598PublishedActiveAppVersionId;
+            if ( (Guid.Empty==AV20AppVersionId) )
+            {
+               AV20AppVersionId = A584ActiveAppVersionId;
+            }
             pr_default.readNext(0);
          }
          pr_default.close(0);
@@ -195,11 +201,14 @@ namespace GeneXus.Programs {
          AV11SDT_PageCollection = new GXBaseCollection<SdtSDT_Page>( context, "SDT_Page", "Comforta_version20");
          P00DL2_A29LocationId = new Guid[] {Guid.Empty} ;
          P00DL2_n29LocationId = new bool[] {false} ;
+         P00DL2_A598PublishedActiveAppVersionId = new Guid[] {Guid.Empty} ;
+         P00DL2_n598PublishedActiveAppVersionId = new bool[] {false} ;
          P00DL2_A584ActiveAppVersionId = new Guid[] {Guid.Empty} ;
          P00DL2_n584ActiveAppVersionId = new bool[] {false} ;
          P00DL2_A11OrganisationId = new Guid[] {Guid.Empty} ;
          P00DL2_n11OrganisationId = new bool[] {false} ;
          A29LocationId = Guid.Empty;
+         A598PublishedActiveAppVersionId = Guid.Empty;
          A584ActiveAppVersionId = Guid.Empty;
          A11OrganisationId = Guid.Empty;
          AV20AppVersionId = Guid.Empty;
@@ -233,7 +242,7 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.prc_pagesapiv2__default(),
             new Object[][] {
                 new Object[] {
-               P00DL2_A29LocationId, P00DL2_A584ActiveAppVersionId, P00DL2_n584ActiveAppVersionId, P00DL2_A11OrganisationId
+               P00DL2_A29LocationId, P00DL2_A598PublishedActiveAppVersionId, P00DL2_n598PublishedActiveAppVersionId, P00DL2_A584ActiveAppVersionId, P00DL2_n584ActiveAppVersionId, P00DL2_A11OrganisationId
                }
                , new Object[] {
                P00DL3_A29LocationId, P00DL3_n29LocationId, P00DL3_A11OrganisationId, P00DL3_n11OrganisationId, P00DL3_A584ActiveAppVersionId, P00DL3_n584ActiveAppVersionId, P00DL3_A523AppVersionId
@@ -251,6 +260,7 @@ namespace GeneXus.Programs {
 
       private string GXt_char1 ;
       private bool n29LocationId ;
+      private bool n598PublishedActiveAppVersionId ;
       private bool n584ActiveAppVersionId ;
       private bool n11OrganisationId ;
       private bool returnInSub ;
@@ -262,6 +272,7 @@ namespace GeneXus.Programs {
       private Guid AV8LocationId ;
       private Guid AV9OrganisationId ;
       private Guid A29LocationId ;
+      private Guid A598PublishedActiveAppVersionId ;
       private Guid A584ActiveAppVersionId ;
       private Guid A11OrganisationId ;
       private Guid AV20AppVersionId ;
@@ -275,6 +286,8 @@ namespace GeneXus.Programs {
       private IDataStoreProvider pr_default ;
       private Guid[] P00DL2_A29LocationId ;
       private bool[] P00DL2_n29LocationId ;
+      private Guid[] P00DL2_A598PublishedActiveAppVersionId ;
+      private bool[] P00DL2_n598PublishedActiveAppVersionId ;
       private Guid[] P00DL2_A584ActiveAppVersionId ;
       private bool[] P00DL2_n584ActiveAppVersionId ;
       private Guid[] P00DL2_A11OrganisationId ;
@@ -338,7 +351,7 @@ namespace GeneXus.Programs {
           new ParDef("AppVersionId",GXType.UniqueIdentifier,36,0)
           };
           def= new CursorDef[] {
-              new CursorDef("P00DL2", "SELECT LocationId, ActiveAppVersionId, OrganisationId FROM Trn_Location WHERE LocationId = :AV8LocationId ORDER BY LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL2,100, GxCacheFrequency.OFF ,false,false )
+              new CursorDef("P00DL2", "SELECT LocationId, PublishedActiveAppVersionId, ActiveAppVersionId, OrganisationId FROM Trn_Location WHERE LocationId = :AV8LocationId ORDER BY LocationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL2,100, GxCacheFrequency.OFF ,false,false )
              ,new CursorDef("P00DL3", "SELECT T1.LocationId, T1.OrganisationId, T2.ActiveAppVersionId, T1.AppVersionId FROM (Trn_AppVersion T1 LEFT JOIN Trn_Location T2 ON T2.LocationId = T1.LocationId AND T2.OrganisationId = T1.OrganisationId) ORDER BY T1.AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL3,1, GxCacheFrequency.OFF ,true,true )
              ,new CursorDef("P00DL4", "SELECT AppVersionId, OrganisationId, LocationId FROM Trn_AppVersion WHERE (LocationId = :AV8LocationId and OrganisationId = :AV9OrganisationId) AND (AppVersionId = :AV20AppVersionId) ORDER BY LocationId, OrganisationId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL4,100, GxCacheFrequency.OFF ,true,false )
              ,new CursorDef("P00DL5", "SELECT AppVersionId, PageType, PageId, PagePublishedStructure, PageName FROM Trn_AppVersionPage WHERE (AppVersionId = :AppVersionId) AND (( PageType = ( 'Menu')) or ( PageType = ( 'MyCare')) or ( PageType = ( 'MyLiving')) or ( PageType = ( 'MyService'))) ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00DL5,100, GxCacheFrequency.OFF ,true,false )
@@ -357,6 +370,8 @@ namespace GeneXus.Programs {
                 ((Guid[]) buf[1])[0] = rslt.getGuid(2);
                 ((bool[]) buf[2])[0] = rslt.wasNull(2);
                 ((Guid[]) buf[3])[0] = rslt.getGuid(3);
+                ((bool[]) buf[4])[0] = rslt.wasNull(3);
+                ((Guid[]) buf[5])[0] = rslt.getGuid(4);
                 return;
              case 1 :
                 ((Guid[]) buf[0])[0] = rslt.getGuid(1);

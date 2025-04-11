@@ -123,6 +123,33 @@ namespace GeneXus.Programs {
                if (true) break;
             }
             pr_default.close(0);
+            AV30Udparg1 = new prc_getuserlocationid(context).executeUdp( );
+            AV31Udparg2 = new prc_getuserorganisationid(context).executeUdp( );
+            /* Using cursor P00BL5 */
+            pr_default.execute(3, new Object[] {AV30Udparg1, AV31Udparg2});
+            while ( (pr_default.getStatus(3) != 101) )
+            {
+               GXTBL4 = 0;
+               A11OrganisationId = P00BL5_A11OrganisationId[0];
+               A29LocationId = P00BL5_A29LocationId[0];
+               A598PublishedActiveAppVersionId = P00BL5_A598PublishedActiveAppVersionId[0];
+               n598PublishedActiveAppVersionId = P00BL5_n598PublishedActiveAppVersionId[0];
+               new prc_logtoserver(context ).execute(  context.GetMessage( "setting PublishedActiveAppVersionId: ", "")+AV15AppVersionId.ToString()) ;
+               A598PublishedActiveAppVersionId = AV15AppVersionId;
+               n598PublishedActiveAppVersionId = false;
+               GXTBL4 = 1;
+               /* Using cursor P00BL6 */
+               pr_default.execute(4, new Object[] {n598PublishedActiveAppVersionId, A598PublishedActiveAppVersionId, A29LocationId, A11OrganisationId});
+               pr_default.close(4);
+               pr_default.SmartCacheProvider.SetUpdated("Trn_Location");
+               if ( GXTBL4 == 1 )
+               {
+                  context.CommitDataStores("prc_publishappversion",pr_default);
+               }
+               /* Exiting from a For First loop. */
+               if (true) break;
+            }
+            pr_default.close(3);
             GXt_objcol_SdtSDT_TrnAttributes1 = AV24SDT_TrnAttributesCollection;
             new prc_addappversionpagesattributestosdt(context ).execute(  A523AppVersionId, out  GXt_objcol_SdtSDT_TrnAttributes1) ;
             AV24SDT_TrnAttributesCollection = GXt_objcol_SdtSDT_TrnAttributes1;
@@ -170,6 +197,15 @@ namespace GeneXus.Programs {
          A517PageName = "";
          AV25MetadataToolboxDetails = new SdtSDT_OneSignalCustomData_toolboxDetailsItem(context);
          AV21Metadata = new SdtSDT_OneSignalCustomData(context);
+         AV30Udparg1 = Guid.Empty;
+         AV31Udparg2 = Guid.Empty;
+         P00BL5_A11OrganisationId = new Guid[] {Guid.Empty} ;
+         P00BL5_A29LocationId = new Guid[] {Guid.Empty} ;
+         P00BL5_A598PublishedActiveAppVersionId = new Guid[] {Guid.Empty} ;
+         P00BL5_n598PublishedActiveAppVersionId = new bool[] {false} ;
+         A11OrganisationId = Guid.Empty;
+         A29LocationId = Guid.Empty;
+         A598PublishedActiveAppVersionId = Guid.Empty;
          AV24SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          GXt_objcol_SdtSDT_TrnAttributes1 = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          AV19Title = "";
@@ -193,13 +229,20 @@ namespace GeneXus.Programs {
                }
                , new Object[] {
                }
+               , new Object[] {
+               P00BL5_A11OrganisationId, P00BL5_A29LocationId, P00BL5_A598PublishedActiveAppVersionId, P00BL5_n598PublishedActiveAppVersionId
+               }
+               , new Object[] {
+               }
             }
          );
          /* GeneXus formulas. */
       }
 
       private short GXTBL3 ;
+      private short GXTBL4 ;
       private bool AV18Notify ;
+      private bool n598PublishedActiveAppVersionId ;
       private string A518PageStructure ;
       private string A536PagePublishedStructure ;
       private string A517PageName ;
@@ -208,6 +251,11 @@ namespace GeneXus.Programs {
       private Guid AV15AppVersionId ;
       private Guid A523AppVersionId ;
       private Guid A516PageId ;
+      private Guid AV30Udparg1 ;
+      private Guid AV31Udparg2 ;
+      private Guid A11OrganisationId ;
+      private Guid A29LocationId ;
+      private Guid A598PublishedActiveAppVersionId ;
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
@@ -222,6 +270,10 @@ namespace GeneXus.Programs {
       private string[] P00BL3_A517PageName ;
       private SdtSDT_OneSignalCustomData_toolboxDetailsItem AV25MetadataToolboxDetails ;
       private SdtSDT_OneSignalCustomData AV21Metadata ;
+      private Guid[] P00BL5_A11OrganisationId ;
+      private Guid[] P00BL5_A29LocationId ;
+      private Guid[] P00BL5_A598PublishedActiveAppVersionId ;
+      private bool[] P00BL5_n598PublishedActiveAppVersionId ;
       private GXBaseCollection<SdtSDT_TrnAttributes> AV24SDT_TrnAttributesCollection ;
       private GXBaseCollection<SdtSDT_TrnAttributes> GXt_objcol_SdtSDT_TrnAttributes1 ;
       private GxSimpleCollection<Guid> AV22ResidentIdCollectionEmpty ;
@@ -303,6 +355,8 @@ public class prc_publishappversion__default : DataStoreHelperBase, IDataStoreHel
        new ForEachCursor(def[0])
       ,new ForEachCursor(def[1])
       ,new UpdateCursor(def[2])
+      ,new ForEachCursor(def[3])
+      ,new UpdateCursor(def[4])
     };
  }
 
@@ -325,10 +379,23 @@ public class prc_publishappversion__default : DataStoreHelperBase, IDataStoreHel
        new ParDef("AppVersionId",GXType.UniqueIdentifier,36,0) ,
        new ParDef("PageId",GXType.UniqueIdentifier,36,0)
        };
+       Object[] prmP00BL5;
+       prmP00BL5 = new Object[] {
+       new ParDef("AV30Udparg1",GXType.UniqueIdentifier,36,0) ,
+       new ParDef("AV31Udparg2",GXType.UniqueIdentifier,36,0)
+       };
+       Object[] prmP00BL6;
+       prmP00BL6 = new Object[] {
+       new ParDef("PublishedActiveAppVersionId",GXType.UniqueIdentifier,36,0){Nullable=true} ,
+       new ParDef("LocationId",GXType.UniqueIdentifier,36,0) ,
+       new ParDef("OrganisationId",GXType.UniqueIdentifier,36,0)
+       };
        def= new CursorDef[] {
            new CursorDef("P00BL2", "SELECT AppVersionId FROM Trn_AppVersion WHERE AppVersionId = :AV15AppVersionId ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BL2,1, GxCacheFrequency.OFF ,true,true )
           ,new CursorDef("P00BL3", "SELECT AppVersionId, PageStructure, PagePublishedStructure, PageId, PageName FROM Trn_AppVersionPage WHERE AppVersionId = :AppVersionId ORDER BY AppVersionId  FOR UPDATE OF Trn_AppVersionPage",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BL3,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("P00BL4", "SAVEPOINT gxupdate;UPDATE Trn_AppVersionPage SET PagePublishedStructure=:PagePublishedStructure  WHERE AppVersionId = :AppVersionId AND PageId = :PageId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00BL4)
+          ,new CursorDef("P00BL5", "SELECT OrganisationId, LocationId, PublishedActiveAppVersionId FROM Trn_Location WHERE LocationId = :AV30Udparg1 and OrganisationId = :AV31Udparg2 ORDER BY LocationId, OrganisationId  FOR UPDATE OF Trn_Location",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BL5,1, GxCacheFrequency.OFF ,true,true )
+          ,new CursorDef("P00BL6", "SAVEPOINT gxupdate;UPDATE Trn_Location SET PublishedActiveAppVersionId=:PublishedActiveAppVersionId  WHERE LocationId = :LocationId AND OrganisationId = :OrganisationId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00BL6)
        };
     }
  }
@@ -348,6 +415,12 @@ public class prc_publishappversion__default : DataStoreHelperBase, IDataStoreHel
              ((string[]) buf[2])[0] = rslt.getLongVarchar(3);
              ((Guid[]) buf[3])[0] = rslt.getGuid(4);
              ((string[]) buf[4])[0] = rslt.getVarchar(5);
+             return;
+          case 3 :
+             ((Guid[]) buf[0])[0] = rslt.getGuid(1);
+             ((Guid[]) buf[1])[0] = rslt.getGuid(2);
+             ((Guid[]) buf[2])[0] = rslt.getGuid(3);
+             ((bool[]) buf[3])[0] = rslt.wasNull(3);
              return;
     }
  }
