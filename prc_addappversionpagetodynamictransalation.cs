@@ -70,99 +70,103 @@ namespace GeneXus.Programs {
          {
             AV12LanguageCode = "nl";
          }
+         new prc_logtoserver(context ).execute(  AV14SDT_TrnAttributesCollection.ToJSonString(false)) ;
          AV21GXV1 = 1;
          while ( AV21GXV1 <= AV14SDT_TrnAttributesCollection.Count )
          {
             AV8SDT_TrnAttributes = ((SdtSDT_TrnAttributes)AV14SDT_TrnAttributesCollection.Item(AV21GXV1));
-            AV22GXLvl11 = 0;
+            new prc_logtoserver(context ).execute(  context.GetMessage( "&SDT_TrnAttributes: ", "")+AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid.ToString()) ;
+            AV22GXLvl14 = 0;
             /* Using cursor P00E52 */
             pr_default.execute(0, new Object[] {AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid});
             while ( (pr_default.getStatus(0) != 101) )
             {
+               GXTE52 = 0;
                A580DynamicTranslationPrimaryKey = P00E52_A580DynamicTranslationPrimaryKey[0];
                A582DynamicTranslationEnglish = P00E52_A582DynamicTranslationEnglish[0];
                A583DynamicTranslationDutch = P00E52_A583DynamicTranslationDutch[0];
                A578DynamicTranslationId = P00E52_A578DynamicTranslationId[0];
-               AV22GXLvl11 = 1;
-               if ( StringUtil.StrCmp(AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Pagetypeapp, "Menu") == 0 )
+               AV22GXLvl14 = 1;
+               new prc_logtoserver(context ).execute(  context.GetMessage( "	Found: ", "")+A580DynamicTranslationPrimaryKey.ToString()) ;
+               AV23GXV2 = 1;
+               while ( AV23GXV2 <= AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Count )
                {
-                  AV23GXV2 = 1;
-                  while ( AV23GXV2 <= AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Count )
+                  AV11Attribute = ((SdtSDT_TrnAttributes_Transaction_AttributeItem)AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Item(AV23GXV2));
+                  if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV11Attribute.gxTpr_Attributevalue)) )
                   {
-                     AV11Attribute = ((SdtSDT_TrnAttributes_Transaction_AttributeItem)AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Item(AV23GXV2));
-                     if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV11Attribute.gxTpr_Attributevalue)) )
+                     /* Execute user subroutine: 'TRANSLATE' */
+                     S111 ();
+                     if ( returnInSub )
                      {
-                        /* Execute user subroutine: 'TRANSLATE' */
-                        S111 ();
-                        if ( returnInSub )
-                        {
-                           pr_default.close(0);
-                           cleanup();
-                           if (true) return;
-                        }
-                        A582DynamicTranslationEnglish = AV19DynamicTranslationEnglish;
-                        A583DynamicTranslationDutch = AV20DynamicTranslationDutch;
+                        pr_default.close(0);
+                        cleanup();
+                        if (true) return;
                      }
-                     AV23GXV2 = (int)(AV23GXV2+1);
+                     A582DynamicTranslationEnglish = AV19DynamicTranslationEnglish;
+                     A583DynamicTranslationDutch = AV20DynamicTranslationDutch;
+                     GXTE52 = 1;
                   }
+                  AV23GXV2 = (int)(AV23GXV2+1);
                }
                /* Using cursor P00E53 */
                pr_default.execute(1, new Object[] {A582DynamicTranslationEnglish, A583DynamicTranslationDutch, A578DynamicTranslationId});
                pr_default.close(1);
                pr_default.SmartCacheProvider.SetUpdated("Trn_DynamicTranslation");
+               if ( GXTE52 == 1 )
+               {
+                  context.CommitDataStores("prc_addappversionpagetodynamictransalation",pr_default);
+               }
                pr_default.readNext(0);
             }
             pr_default.close(0);
-            if ( AV22GXLvl11 == 0 )
+            if ( AV22GXLvl14 == 0 )
             {
-               if ( StringUtil.StrCmp(AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Pagetypeapp, "Menu") == 0 )
+               new prc_logtoserver(context ).execute(  context.GetMessage( "	Not Found: ", "")+AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid.ToString()+" : "+AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Pagetypeapp) ;
+               AV24GXV3 = 1;
+               while ( AV24GXV3 <= AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Count )
                {
-                  AV24GXV3 = 1;
-                  while ( AV24GXV3 <= AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Count )
+                  AV11Attribute = ((SdtSDT_TrnAttributes_Transaction_AttributeItem)AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Item(AV24GXV3));
+                  if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV11Attribute.gxTpr_Attributevalue)) )
                   {
-                     AV11Attribute = ((SdtSDT_TrnAttributes_Transaction_AttributeItem)AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Attribute.Item(AV24GXV3));
-                     if ( ! String.IsNullOrEmpty(StringUtil.RTrim( AV11Attribute.gxTpr_Attributevalue)) )
+                     /* Execute user subroutine: 'TRANSLATE' */
+                     S111 ();
+                     if ( returnInSub )
                      {
-                        /* Execute user subroutine: 'TRANSLATE' */
-                        S111 ();
-                        if ( returnInSub )
-                        {
-                           cleanup();
-                           if (true) return;
-                        }
-                        /*
-                           INSERT RECORD ON TABLE Trn_DynamicTranslation
-
-                        */
-                        A579DynamicTranslationTrnName = AV8SDT_TrnAttributes.gxTpr_Trnname;
-                        A580DynamicTranslationPrimaryKey = AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid;
-                        A581DynamicTranslationAttributeNam = AV11Attribute.gxTpr_Attributename;
-                        A582DynamicTranslationEnglish = AV19DynamicTranslationEnglish;
-                        A583DynamicTranslationDutch = AV20DynamicTranslationDutch;
-                        A578DynamicTranslationId = Guid.NewGuid( );
-                        /* Using cursor P00E54 */
-                        pr_default.execute(2, new Object[] {A578DynamicTranslationId, A579DynamicTranslationTrnName, A580DynamicTranslationPrimaryKey, A581DynamicTranslationAttributeNam, A582DynamicTranslationEnglish, A583DynamicTranslationDutch});
-                        pr_default.close(2);
-                        pr_default.SmartCacheProvider.SetUpdated("Trn_DynamicTranslation");
-                        if ( (pr_default.getStatus(2) == 1) )
-                        {
-                           context.Gx_err = 1;
-                           Gx_emsg = (string)(context.GetMessage( "GXM_noupdate", ""));
-                        }
-                        else
-                        {
-                           context.Gx_err = 0;
-                           Gx_emsg = "";
-                        }
-                        /* End Insert */
+                        cleanup();
+                        if (true) return;
                      }
-                     AV24GXV3 = (int)(AV24GXV3+1);
+                     /*
+                        INSERT RECORD ON TABLE Trn_DynamicTranslation
+
+                     */
+                     A579DynamicTranslationTrnName = AV8SDT_TrnAttributes.gxTpr_Trnname;
+                     A580DynamicTranslationPrimaryKey = AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid;
+                     A581DynamicTranslationAttributeNam = AV11Attribute.gxTpr_Attributename;
+                     A582DynamicTranslationEnglish = AV19DynamicTranslationEnglish;
+                     A583DynamicTranslationDutch = AV20DynamicTranslationDutch;
+                     A578DynamicTranslationId = Guid.NewGuid( );
+                     /* Using cursor P00E54 */
+                     pr_default.execute(2, new Object[] {A578DynamicTranslationId, A579DynamicTranslationTrnName, A580DynamicTranslationPrimaryKey, A581DynamicTranslationAttributeNam, A582DynamicTranslationEnglish, A583DynamicTranslationDutch});
+                     pr_default.close(2);
+                     pr_default.SmartCacheProvider.SetUpdated("Trn_DynamicTranslation");
+                     if ( (pr_default.getStatus(2) == 1) )
+                     {
+                        context.Gx_err = 1;
+                        Gx_emsg = (string)(context.GetMessage( "GXM_noupdate", ""));
+                     }
+                     else
+                     {
+                        context.Gx_err = 0;
+                        Gx_emsg = "";
+                     }
+                     /* End Insert */
+                     context.CommitDataStores("prc_addappversionpagetodynamictransalation",pr_default);
                   }
+                  AV24GXV3 = (int)(AV24GXV3+1);
                }
             }
             AV21GXV1 = (int)(AV21GXV1+1);
          }
-         context.CommitDataStores("prc_addappversionpagetodynamictransalation",pr_default);
          cleanup();
       }
 
@@ -207,12 +211,14 @@ namespace GeneXus.Programs {
                   GXt_char1 = "";
                   new prc_translatelanguage(context ).execute(  AV12LanguageCode,  context.GetMessage( "en", ""),  AV17Tile.gxTpr_Text, out  GXt_char1) ;
                   AV17Tile.gxTpr_Text = GXt_char1;
+                  AV17Tile.gxTpr_Name = AV17Tile.gxTpr_Text;
                   AV28GXV7 = (int)(AV28GXV7+1);
                }
                AV27GXV6 = (int)(AV27GXV6+1);
             }
             AV19DynamicTranslationEnglish = AV16SDT_MenuPage.ToJSonString(false, true);
          }
+         new prc_logtoserver(context ).execute(  context.GetMessage( "		Translated ", "")+AV11Attribute.gxTpr_Attributename+"("+AV8SDT_TrnAttributes.gxTpr_Transaction.gxTpr_Primarykeyid.ToString()+context.GetMessage( ") to ", "")+AV9Language+" : "+AV20DynamicTranslationDutch) ;
       }
 
       public override void cleanup( )
@@ -271,7 +277,8 @@ namespace GeneXus.Programs {
          /* GeneXus formulas. */
       }
 
-      private short AV22GXLvl11 ;
+      private short AV22GXLvl14 ;
+      private short GXTE52 ;
       private int AV21GXV1 ;
       private int AV23GXV2 ;
       private int AV24GXV3 ;

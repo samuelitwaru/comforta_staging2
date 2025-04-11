@@ -97,6 +97,7 @@ namespace GeneXus.Programs {
             new prc_logtofile(context ).execute(  AV20Translated.gxTpr_Err) ;
             new prc_logtofile(context ).execute(  StringUtil.Str( (decimal)(AV16HttpClient.StatusCode), 10, 2)) ;
          }
+         new prc_logtoserver(context ).execute(  context.GetMessage( "				Translated: ", "")+AV12from+context.GetMessage( " to ", "")+AV13to+" >> "+AV14LanguageFrom+" >> "+AV15LanguageTo) ;
          cleanup();
       }
 

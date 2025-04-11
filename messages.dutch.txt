@@ -1297,3 +1297,4 @@ Service Updated successfully=Service succesvol bijgewerkt
 New Updates Available=Nieuwe updates beschikbaar
 New Discussion Message=Nieuw discussiebericht
 GB=GB
+CV=CV

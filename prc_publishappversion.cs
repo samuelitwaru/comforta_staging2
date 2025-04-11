@@ -101,10 +101,12 @@ namespace GeneXus.Programs {
                   A518PageStructure = P00BL3_A518PageStructure[0];
                   A536PagePublishedStructure = P00BL3_A536PagePublishedStructure[0];
                   A516PageId = P00BL3_A516PageId[0];
+                  A517PageName = P00BL3_A517PageName[0];
                   A536PagePublishedStructure = A518PageStructure;
-                  GXt_objcol_SdtSDT_TrnAttributes1 = AV24SDT_TrnAttributesCollection;
-                  new prc_addappversionpagesattributestosdt(context ).execute(  A523AppVersionId,  A516PageId, out  GXt_objcol_SdtSDT_TrnAttributes1) ;
-                  AV24SDT_TrnAttributesCollection = GXt_objcol_SdtSDT_TrnAttributes1;
+                  AV25MetadataToolboxDetails = new SdtSDT_OneSignalCustomData_toolboxDetailsItem(context);
+                  AV25MetadataToolboxDetails.gxTpr_Pageid = A516PageId;
+                  AV25MetadataToolboxDetails.gxTpr_Pagename = A517PageName;
+                  AV21Metadata.gxTpr_Toolboxdetails.Add(AV25MetadataToolboxDetails, 0);
                   GXTBL3 = 1;
                   /* Using cursor P00BL4 */
                   pr_default.execute(2, new Object[] {A536PagePublishedStructure, A523AppVersionId, A516PageId});
@@ -121,7 +123,10 @@ namespace GeneXus.Programs {
                if (true) break;
             }
             pr_default.close(0);
-            new prc_addappversionpagetodynamictransalation(context).executeSubmit(  AV24SDT_TrnAttributesCollection) ;
+            GXt_objcol_SdtSDT_TrnAttributes1 = AV24SDT_TrnAttributesCollection;
+            new prc_addappversionpagesattributestosdt(context ).execute(  A523AppVersionId, out  GXt_objcol_SdtSDT_TrnAttributes1) ;
+            AV24SDT_TrnAttributesCollection = GXt_objcol_SdtSDT_TrnAttributes1;
+            new prc_addappversionpagetodynamictransalation(context ).execute(  AV24SDT_TrnAttributesCollection) ;
             if ( AV18Notify )
             {
                AV19Title = context.GetMessage( "New Updates Available", "");
@@ -158,14 +163,17 @@ namespace GeneXus.Programs {
          P00BL3_A518PageStructure = new string[] {""} ;
          P00BL3_A536PagePublishedStructure = new string[] {""} ;
          P00BL3_A516PageId = new Guid[] {Guid.Empty} ;
+         P00BL3_A517PageName = new string[] {""} ;
          A518PageStructure = "";
          A536PagePublishedStructure = "";
          A516PageId = Guid.Empty;
+         A517PageName = "";
+         AV25MetadataToolboxDetails = new SdtSDT_OneSignalCustomData_toolboxDetailsItem(context);
+         AV21Metadata = new SdtSDT_OneSignalCustomData(context);
          AV24SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          GXt_objcol_SdtSDT_TrnAttributes1 = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          AV19Title = "";
          AV20NotificationMessage = "";
-         AV21Metadata = new SdtSDT_OneSignalCustomData(context);
          AV22ResidentIdCollectionEmpty = new GxSimpleCollection<Guid>();
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_publishappversion__datastore1(),
             new Object[][] {
@@ -181,7 +189,7 @@ namespace GeneXus.Programs {
                P00BL2_A523AppVersionId
                }
                , new Object[] {
-               P00BL3_A523AppVersionId, P00BL3_A518PageStructure, P00BL3_A536PagePublishedStructure, P00BL3_A516PageId
+               P00BL3_A523AppVersionId, P00BL3_A518PageStructure, P00BL3_A536PagePublishedStructure, P00BL3_A516PageId, P00BL3_A517PageName
                }
                , new Object[] {
                }
@@ -194,6 +202,7 @@ namespace GeneXus.Programs {
       private bool AV18Notify ;
       private string A518PageStructure ;
       private string A536PagePublishedStructure ;
+      private string A517PageName ;
       private string AV19Title ;
       private string AV20NotificationMessage ;
       private Guid AV15AppVersionId ;
@@ -210,9 +219,11 @@ namespace GeneXus.Programs {
       private string[] P00BL3_A518PageStructure ;
       private string[] P00BL3_A536PagePublishedStructure ;
       private Guid[] P00BL3_A516PageId ;
+      private string[] P00BL3_A517PageName ;
+      private SdtSDT_OneSignalCustomData_toolboxDetailsItem AV25MetadataToolboxDetails ;
+      private SdtSDT_OneSignalCustomData AV21Metadata ;
       private GXBaseCollection<SdtSDT_TrnAttributes> AV24SDT_TrnAttributesCollection ;
       private GXBaseCollection<SdtSDT_TrnAttributes> GXt_objcol_SdtSDT_TrnAttributes1 ;
-      private SdtSDT_OneSignalCustomData AV21Metadata ;
       private GxSimpleCollection<Guid> AV22ResidentIdCollectionEmpty ;
       private SdtSDT_Error aP2_SDT_Error ;
       private IDataStoreProvider pr_datastore1 ;
@@ -316,7 +327,7 @@ public class prc_publishappversion__default : DataStoreHelperBase, IDataStoreHel
        };
        def= new CursorDef[] {
            new CursorDef("P00BL2", "SELECT AppVersionId FROM Trn_AppVersion WHERE AppVersionId = :AV15AppVersionId ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BL2,1, GxCacheFrequency.OFF ,true,true )
-          ,new CursorDef("P00BL3", "SELECT AppVersionId, PageStructure, PagePublishedStructure, PageId FROM Trn_AppVersionPage WHERE AppVersionId = :AppVersionId ORDER BY AppVersionId  FOR UPDATE OF Trn_AppVersionPage",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BL3,1, GxCacheFrequency.OFF ,true,false )
+          ,new CursorDef("P00BL3", "SELECT AppVersionId, PageStructure, PagePublishedStructure, PageId, PageName FROM Trn_AppVersionPage WHERE AppVersionId = :AppVersionId ORDER BY AppVersionId  FOR UPDATE OF Trn_AppVersionPage",true, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00BL3,1, GxCacheFrequency.OFF ,true,false )
           ,new CursorDef("P00BL4", "SAVEPOINT gxupdate;UPDATE Trn_AppVersionPage SET PagePublishedStructure=:PagePublishedStructure  WHERE AppVersionId = :AppVersionId AND PageId = :PageId;RELEASE SAVEPOINT gxupdate", GxErrorMask.GX_ROLLBACKSAVEPOINT | GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK,prmP00BL4)
        };
     }
@@ -336,6 +347,7 @@ public class prc_publishappversion__default : DataStoreHelperBase, IDataStoreHel
              ((string[]) buf[1])[0] = rslt.getLongVarchar(2);
              ((string[]) buf[2])[0] = rslt.getLongVarchar(3);
              ((Guid[]) buf[3])[0] = rslt.getGuid(4);
+             ((string[]) buf[4])[0] = rslt.getVarchar(5);
              return;
     }
  }
