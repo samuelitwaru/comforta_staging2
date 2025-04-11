@@ -186,6 +186,7 @@ namespace GeneXus.Programs {
                   GXt_char1 = "";
                   new prc_translatelanguage(context ).execute(  AV12LanguageCode,  context.GetMessage( "nl", ""),  AV17Tile.gxTpr_Text, out  GXt_char1) ;
                   AV17Tile.gxTpr_Text = GXt_char1;
+                  AV17Tile.gxTpr_Name = AV17Tile.gxTpr_Text;
                   AV26GXV5 = (int)(AV26GXV5+1);
                }
                AV25GXV4 = (int)(AV25GXV4+1);
