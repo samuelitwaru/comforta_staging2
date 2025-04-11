@@ -223,6 +223,10 @@ namespace GeneXus.Programs {
          {
             return GAMSecurityLevel.SecurityNone ;
          }
+         else if ( StringUtil.StrCmp(permissionMethod, "gxep_deleteappversion") == 0 )
+         {
+            return GAMSecurityLevel.SecurityNone ;
+         }
          else if ( StringUtil.StrCmp(permissionMethod, "gxep_savepagev2") == 0 )
          {
             return GAMSecurityLevel.SecurityNone ;
@@ -1204,6 +1208,19 @@ namespace GeneXus.Programs {
          /* ActivateAppVersion Constructor */
          new prc_activateappversion(context ).execute(  AV92AppVersionId, out  AV98AppVersion, out  AV69error) ;
          aP1_AppVersion=this.AV98AppVersion;
+         aP2_error=this.AV69error;
+      }
+
+      public void gxep_deleteappversion( Guid aP0_AppVersionId ,
+                                         out string aP1_result ,
+                                         out SdtSDT_Error aP2_error )
+      {
+         this.AV92AppVersionId = aP0_AppVersionId;
+         AV69error = new SdtSDT_Error(context);
+         initialize();
+         /* DeleteAppVersion Constructor */
+         new prc_deleteappversion(context ).execute(  AV92AppVersionId, out  AV17result, out  AV69error) ;
+         aP1_result=this.AV17result;
          aP2_error=this.AV69error;
       }
 

@@ -47,7 +47,7 @@ export class ActionListController {
     // Always add Forms and Modules
     secondCategory.push({
       id: "list-form",
-      name: "Forms",
+      name: "DynamicForm",
       label: "Forms",
       expandable: true,
       action: () => this.getSubMenuItems(categoryData, "Forms"),
@@ -93,7 +93,7 @@ export class ActionListController {
   async getSubMenuItems(categoryData: any, type: string): Promise<MenuItem[]> {
     const category = categoryData.find((cat: any) => cat.name === type);
     const itemsList = category?.options || [];
-
+    console.log(type, itemsList)
     return itemsList.map((item: any) => {
       return({
         id: item.PageId,
@@ -126,7 +126,7 @@ export class ActionListController {
 
   private handleSubMenuItemSelection(item: any, type: string): void {
     this.pageAttacher.removeOtherEditors();
-    if (type === "Forms") {
+    if (type === "DynamicForm") {
         this.handleDynamicForms(item);
     } else if (type === "Modules") {
         this.pageAttacher.attachToTile(item, item.PageType, item.PageName);
@@ -152,7 +152,7 @@ export class ActionListController {
               ["Text", form.PageName],
               ["Name", form.PageName],
               ["Action.ObjectType", "DynamicForm"],
-              ["Action.ObjectId", childPage?.PageId],
+              ["Action.ObjectId", form.PageId],
               ["Action.ObjectUrl", formUrl],
           ];
   

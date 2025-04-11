@@ -1527,6 +1527,36 @@ namespace GeneXus.Programs {
          /* ActivateAppVersion Constructor */
       }
 
+      public void gxep_deleteappversion( Guid aP0_AppVersionId ,
+                                         out string aP1_result ,
+                                         out SdtSDT_Error aP2_error )
+      {
+         restCliDeleteAppVersion = new GXRestAPIClient();
+         if ( restLocation == null )
+         {
+            InitLocation();
+         }
+         restLocation.ResourceName = "/toolbox/v2/delete-version";
+         restCliDeleteAppVersion.Location = restLocation;
+         restCliDeleteAppVersion.HttpMethod = "POST";
+         restCliDeleteAppVersion.AddBodyVar("AppVersionId", (Guid)(aP0_AppVersionId));
+         restCliDeleteAppVersion.RestExecute();
+         if ( restCliDeleteAppVersion.ErrorCode != 0 )
+         {
+            gxProperties.ErrorCode = restCliDeleteAppVersion.ErrorCode;
+            gxProperties.ErrorMessage = restCliDeleteAppVersion.ErrorMessage;
+            gxProperties.StatusCode = restCliDeleteAppVersion.StatusCode;
+            aP1_result = "";
+            aP2_error = new SdtSDT_Error();
+         }
+         else
+         {
+            aP1_result = restCliDeleteAppVersion.GetBodyString("result");
+            aP2_error = restCliDeleteAppVersion.GetBodySdt<SdtSDT_Error>("error");
+         }
+         /* DeleteAppVersion Constructor */
+      }
+
       public void gxep_savepagev2( Guid aP0_AppVersionId ,
                                    Guid aP1_PageId ,
                                    string aP2_PageName ,
@@ -2232,6 +2262,7 @@ namespace GeneXus.Programs {
          restCliUpdateAppVersion = new GXRestAPIClient();
          restCliActivateAppVersion = new GXRestAPIClient();
          aP1_AppVersion = new SdtSDT_AppVersion();
+         restCliDeleteAppVersion = new GXRestAPIClient();
          restCliSavePageV2 = new GXRestAPIClient();
          restCliPublishAppVersion = new GXRestAPIClient();
          restCliCreateMenuPage = new GXRestAPIClient();
@@ -2313,6 +2344,7 @@ namespace GeneXus.Programs {
       protected GXRestAPIClient restCliCopyAppVersion ;
       protected GXRestAPIClient restCliUpdateAppVersion ;
       protected GXRestAPIClient restCliActivateAppVersion ;
+      protected GXRestAPIClient restCliDeleteAppVersion ;
       protected GXRestAPIClient restCliSavePageV2 ;
       protected GXRestAPIClient restCliPublishAppVersion ;
       protected GXRestAPIClient restCliCreateMenuPage ;

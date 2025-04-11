@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250411181448"
+  version: "20250411190113"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/api
 paths:
@@ -1294,6 +1294,31 @@ paths:
         404:
           description: "Not found"
 
+  /toolbox/v2/delete-version:
+    post:
+      tags:
+        - API_ResidentService  
+      operationId: "API_ResidentService.DeleteAppVersion"
+      summary: "Delete App Version"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeleteAppVersionInput"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteAppVersionOutput"
+        404:
+          description: "Not found"
+
   /toolbox/v2/save-page:
     post:
       tags:
@@ -2036,6 +2061,14 @@ components:
           description: "SDT_Error"
           $ref: "#/components/schemas/SDT_Error"
 
+    DeleteAppVersionOutput:
+      properties:
+        result:
+          type: "string"
+        error:
+          description: "SDT_Error"
+          $ref: "#/components/schemas/SDT_Error"
+
 
 
     CreateMenuPageOutput:
@@ -2318,6 +2351,12 @@ components:
           type: "string"
 
     ActivateAppVersionInput:  
+      properties:
+        AppVersionId:
+          type: "string"
+          format: "uuid"
+
+    DeleteAppVersionInput:  
       properties:
         AppVersionId:
           type: "string"

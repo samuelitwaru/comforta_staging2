@@ -485,6 +485,16 @@
 "Implementation":"Prc_ActivateAppVersion"
 },
 {
+"PathRegexp":"toolbox/v2/delete-version",
+"Path":"toolbox/v2/delete-version",
+"Verb":"POST",
+"Name":"deleteappversion",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_deleteappversion",
+"Implementation":"Prc_DeleteAppVersion"
+},
+{
 "Verb":"POST",
 "PathRegexp":"toolbox/v2/save-page",
 "Path":"toolbox/v2/save-page",
