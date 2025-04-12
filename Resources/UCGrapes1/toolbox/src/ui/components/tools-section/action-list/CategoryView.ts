@@ -83,9 +83,6 @@ export class CategoryView {
           return;
         }
 
-        console.log(page)
-        alert(this.categoryData.name)
-
         if (this.categoryData.name === "DynamicForm") {
           new ActionListController().handleDynamicForms(page);
         } 
