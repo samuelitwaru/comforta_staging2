@@ -45,28 +45,33 @@ namespace GeneXus.Programs {
       }
 
       public void execute( Guid aP0_AppVersionId ,
-                           out GXBaseCollection<SdtSDT_TrnAttributes> aP1_SDT_TrnAttributesCollection )
+                           GxSimpleCollection<Guid> aP1_PageIdCollection ,
+                           out GXBaseCollection<SdtSDT_TrnAttributes> aP2_SDT_TrnAttributesCollection )
       {
          this.AV11AppVersionId = aP0_AppVersionId;
+         this.AV14PageIdCollection = aP1_PageIdCollection;
          this.AV12SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20") ;
          initialize();
          ExecuteImpl();
-         aP1_SDT_TrnAttributesCollection=this.AV12SDT_TrnAttributesCollection;
+         aP2_SDT_TrnAttributesCollection=this.AV12SDT_TrnAttributesCollection;
       }
 
-      public GXBaseCollection<SdtSDT_TrnAttributes> executeUdp( Guid aP0_AppVersionId )
+      public GXBaseCollection<SdtSDT_TrnAttributes> executeUdp( Guid aP0_AppVersionId ,
+                                                                GxSimpleCollection<Guid> aP1_PageIdCollection )
       {
-         execute(aP0_AppVersionId, out aP1_SDT_TrnAttributesCollection);
+         execute(aP0_AppVersionId, aP1_PageIdCollection, out aP2_SDT_TrnAttributesCollection);
          return AV12SDT_TrnAttributesCollection ;
       }
 
       public void executeSubmit( Guid aP0_AppVersionId ,
-                                 out GXBaseCollection<SdtSDT_TrnAttributes> aP1_SDT_TrnAttributesCollection )
+                                 GxSimpleCollection<Guid> aP1_PageIdCollection ,
+                                 out GXBaseCollection<SdtSDT_TrnAttributes> aP2_SDT_TrnAttributesCollection )
       {
          this.AV11AppVersionId = aP0_AppVersionId;
+         this.AV14PageIdCollection = aP1_PageIdCollection;
          this.AV12SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20") ;
          SubmitImpl();
-         aP1_SDT_TrnAttributesCollection=this.AV12SDT_TrnAttributesCollection;
+         aP2_SDT_TrnAttributesCollection=this.AV12SDT_TrnAttributesCollection;
       }
 
       protected override void ExecutePrivate( )
@@ -78,6 +83,14 @@ namespace GeneXus.Programs {
          while ( (pr_default.getStatus(0) != 101) )
          {
             A523AppVersionId = P00E42_A523AppVersionId[0];
+            pr_default.dynParam(1, new Object[]{ new Object[]{
+                                                 A516PageId ,
+                                                 AV14PageIdCollection ,
+                                                 A525PageType ,
+                                                 A523AppVersionId } ,
+                                                 new int[]{
+                                                 }
+            });
             /* Using cursor P00E43 */
             pr_default.execute(1, new Object[] {A523AppVersionId});
             while ( (pr_default.getStatus(1) != 101) )
@@ -119,12 +132,12 @@ namespace GeneXus.Programs {
          AV12SDT_TrnAttributesCollection = new GXBaseCollection<SdtSDT_TrnAttributes>( context, "SDT_TrnAttributes", "Comforta_version20");
          P00E42_A523AppVersionId = new Guid[] {Guid.Empty} ;
          A523AppVersionId = Guid.Empty;
+         A516PageId = Guid.Empty;
+         A525PageType = "";
          P00E43_A523AppVersionId = new Guid[] {Guid.Empty} ;
          P00E43_A525PageType = new string[] {""} ;
          P00E43_A516PageId = new Guid[] {Guid.Empty} ;
          P00E43_A536PagePublishedStructure = new string[] {""} ;
-         A525PageType = "";
-         A516PageId = Guid.Empty;
          A536PagePublishedStructure = "";
          AV10SDT_TrnAttributes = new SdtSDT_TrnAttributes(context);
          AV8Attribute = new SdtSDT_TrnAttributes_Transaction_AttributeItem(context);
@@ -149,6 +162,7 @@ namespace GeneXus.Programs {
       private IGxDataStore dsDataStore1 ;
       private IGxDataStore dsGAM ;
       private IGxDataStore dsDefault ;
+      private GxSimpleCollection<Guid> AV14PageIdCollection ;
       private GXBaseCollection<SdtSDT_TrnAttributes> AV12SDT_TrnAttributesCollection ;
       private IDataStoreProvider pr_default ;
       private Guid[] P00E42_A523AppVersionId ;
@@ -158,11 +172,44 @@ namespace GeneXus.Programs {
       private string[] P00E43_A536PagePublishedStructure ;
       private SdtSDT_TrnAttributes AV10SDT_TrnAttributes ;
       private SdtSDT_TrnAttributes_Transaction_AttributeItem AV8Attribute ;
-      private GXBaseCollection<SdtSDT_TrnAttributes> aP1_SDT_TrnAttributesCollection ;
+      private GXBaseCollection<SdtSDT_TrnAttributes> aP2_SDT_TrnAttributesCollection ;
    }
 
    public class prc_addappversionpagesattributestosdt__default : DataStoreHelperBase, IDataStoreHelper
    {
+      protected Object[] conditional_P00E43( IGxContext context ,
+                                             Guid A516PageId ,
+                                             GxSimpleCollection<Guid> AV14PageIdCollection ,
+                                             string A525PageType ,
+                                             Guid A523AppVersionId )
+      {
+         System.Text.StringBuilder sWhereString = new System.Text.StringBuilder();
+         string scmdbuf;
+         short[] GXv_int1 = new short[1];
+         Object[] GXv_Object2 = new Object[2];
+         scmdbuf = "SELECT AppVersionId, PageType, PageId, PagePublishedStructure FROM Trn_AppVersionPage";
+         AddWhere(sWhereString, "(AppVersionId = :AppVersionId)");
+         AddWhere(sWhereString, "("+new GxDbmsUtils( new GxPostgreSql()).ValueList(AV14PageIdCollection, "PageId IN (", ")")+")");
+         AddWhere(sWhereString, "(( PageType = ( 'Menu')) or ( PageType = ( 'MyCare')) or ( PageType = ( 'MyLiving')) or ( PageType = ( 'MyService')))");
+         scmdbuf += sWhereString;
+         scmdbuf += " ORDER BY AppVersionId";
+         GXv_Object2[0] = scmdbuf;
+         GXv_Object2[1] = GXv_int1;
+         return GXv_Object2 ;
+      }
+
+      public override Object [] getDynamicStatement( int cursor ,
+                                                     IGxContext context ,
+                                                     Object [] dynConstraints )
+      {
+         switch ( cursor )
+         {
+               case 1 :
+                     return conditional_P00E43(context, (Guid)dynConstraints[0] , (GxSimpleCollection<Guid>)dynConstraints[1] , (string)dynConstraints[2] , (Guid)dynConstraints[3] );
+         }
+         return base.getDynamicStatement(cursor, context, dynConstraints);
+      }
+
       public ICursor[] getCursors( )
       {
          cursorDefinitions();
@@ -187,7 +234,7 @@ namespace GeneXus.Programs {
           };
           def= new CursorDef[] {
               new CursorDef("P00E42", "SELECT AppVersionId FROM Trn_AppVersion WHERE AppVersionId = :AV11AppVersionId ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00E42,1, GxCacheFrequency.OFF ,true,true )
-             ,new CursorDef("P00E43", "SELECT AppVersionId, PageType, PageId, PagePublishedStructure FROM Trn_AppVersionPage WHERE (AppVersionId = :AppVersionId) AND (( PageType = ( 'Menu')) or ( PageType = ( 'MyCare')) or ( PageType = ( 'MyLiving')) or ( PageType = ( 'MyService'))) ORDER BY AppVersionId ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00E43,100, GxCacheFrequency.OFF ,false,false )
+             ,new CursorDef("P00E43", "scmdbuf",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00E43,100, GxCacheFrequency.OFF ,false,false )
           };
        }
     }

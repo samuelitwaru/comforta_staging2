@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250411190113"
+  version: "20250412111736"
 servers:
   - url: https://staging.comforta.yukon.software/api
 paths:

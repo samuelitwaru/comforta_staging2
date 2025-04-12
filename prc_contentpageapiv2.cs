@@ -112,13 +112,15 @@ namespace GeneXus.Programs {
                   while ( AV26GXV1 <= AV11SDT_ContentPage.gxTpr_Content.Count )
                   {
                      AV15ContentItem = ((SdtSDT_ContentPage_ContentItem)AV11SDT_ContentPage.gxTpr_Content.Item(AV26GXV1));
-                     if ( StringUtil.StrCmp(AV15ContentItem.gxTpr_Contenttype, context.GetMessage( "Image", "")) == 0 )
+                     if ( StringUtil.StrCmp(AV15ContentItem.gxTpr_Contenttype, "Image") == 0 )
                      {
                         AV15ContentItem.gxTpr_Contentvalue = AV12BC_Trn_ProductService.gxTpr_Productserviceimage_gxi;
                      }
-                     else if ( StringUtil.StrCmp(AV15ContentItem.gxTpr_Contenttype, context.GetMessage( "Description", "")) == 0 )
+                     else if ( StringUtil.StrCmp(AV15ContentItem.gxTpr_Contenttype, "Description") == 0 )
                      {
-                        AV15ContentItem.gxTpr_Contentvalue = AV12BC_Trn_ProductService.gxTpr_Productservicedescription;
+                        GXt_char1 = "";
+                        new prc_getdynamictransation(context ).execute(  "Trn_ProductService",  AV9PageId,  "ProductServiceDescription",  context.GetMessage( "Dutch", ""),  AV12BC_Trn_ProductService.gxTpr_Productservicedescription, out  GXt_char1) ;
+                        AV15ContentItem.gxTpr_Contentvalue = GXt_char1;
                      }
                      else
                      {
@@ -171,12 +173,14 @@ namespace GeneXus.Programs {
                      AV14BC_Trn_Location.Load(AV10LocationId, AV8OrganisationId);
                      AV11SDT_ContentPage.gxTpr_Content.Clear();
                      AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
-                     AV15ContentItem.gxTpr_Contenttype = context.GetMessage( "Image", "");
+                     AV15ContentItem.gxTpr_Contenttype = "Image";
                      AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Locationimage_gxi;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                      AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
-                     AV15ContentItem.gxTpr_Contenttype = context.GetMessage( "Description", "");
-                     AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Locationdescription;
+                     AV15ContentItem.gxTpr_Contenttype = "Description";
+                     GXt_char1 = "";
+                     new prc_getdynamictransation(context ).execute(  "Trn_Location",  AV10LocationId,  "LocationDescription",  context.GetMessage( "Dutch", ""),  AV14BC_Trn_Location.gxTpr_Locationdescription, out  GXt_char1) ;
+                     AV15ContentItem.gxTpr_Contentvalue = GXt_char1;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                   }
                   if ( StringUtil.StrCmp(A525PageType, "Reception") == 0 )
@@ -184,12 +188,14 @@ namespace GeneXus.Programs {
                      AV14BC_Trn_Location.Load(AV10LocationId, AV8OrganisationId);
                      AV11SDT_ContentPage.gxTpr_Content.Clear();
                      AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
-                     AV15ContentItem.gxTpr_Contenttype = context.GetMessage( "Image", "");
+                     AV15ContentItem.gxTpr_Contenttype = "Image";
                      AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Receptionimage_gxi;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                      AV15ContentItem = new SdtSDT_ContentPage_ContentItem(context);
-                     AV15ContentItem.gxTpr_Contenttype = context.GetMessage( "Description", "");
-                     AV15ContentItem.gxTpr_Contentvalue = AV14BC_Trn_Location.gxTpr_Receptiondescription;
+                     AV15ContentItem.gxTpr_Contenttype = "Description";
+                     GXt_char1 = "";
+                     new prc_getdynamictransation(context ).execute(  "Trn_Location",  AV10LocationId,  "ReceptionDescription",  context.GetMessage( "Dutch", ""),  AV14BC_Trn_Location.gxTpr_Receptiondescription, out  GXt_char1) ;
+                     AV15ContentItem.gxTpr_Contentvalue = GXt_char1;
                      AV11SDT_ContentPage.gxTpr_Content.Add(AV15ContentItem, 0);
                   }
                   AV28GXV3 = 1;

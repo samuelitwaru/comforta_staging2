@@ -128,7 +128,7 @@ namespace GeneXus.Programs {
             AV8ResidentDetails.gxTpr_Medicalindicationid = A98MedicalIndicationId;
             AV8ResidentDetails.gxTpr_Medicalindicationname = A99MedicalIndicationName;
             AV12GAMUser.load( A71ResidentGUID);
-            AV8ResidentDetails.gxTpr_Residentlanguage = AV12GAMUser.gxTpr_Language;
+            AV8ResidentDetails.gxTpr_Residentlanguage = AV12GAMUser.gxTpr_Timezone;
             pr_default.readNext(0);
          }
          pr_default.close(0);
