@@ -81,7 +81,6 @@ export class DeletePageButton {
     
         deleteButton.addEventListener('click', (e)=>{
             this.toolboxService.deletePage(this.appVersion.appVersion.AppVersionId, this.pageData.PageId).then((res)=>{
-                console.log('fd', res)
                 if(!res.error.message) {
                     deleteModal.close();
                     localStorage.removeItem(`data-${this.pageData.PageId}`);
