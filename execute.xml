@@ -524,6 +524,12 @@
     <ObjLink>trn_dynamicformtranslationww.aspx</ObjLink>
   </Object>
   <Object>
+    <ObjCls>13</ObjCls>
+    <ObjName>WP_ToolboxTree</ObjName>
+    <ObjDesc>WP_Toolbox Tree</ObjDesc>
+    <ObjLink>wp_toolboxtree.aspx</ObjLink>
+  </Object>
+  <Object>
     <ObjCls>1</ObjCls>
     <ObjName>WWPBaseObjects.WWP_DownloadReport</ObjName>
     <ObjDesc>WWPBaseObjects.Download Report</ObjDesc>

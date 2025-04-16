@@ -56,6 +56,7 @@
 	
     <div class="tb-container">
         <!-- Editor Container -->
+		
         <div class="main-content">
             <div class="navigator page-navigator-left" style="display:none">
                 <span id="scroll-left"><i class="fa fa-arrow-left-long"></i></span>

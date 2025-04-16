@@ -37,10 +37,10 @@ export class ActionListController {
                        activePage.PageType === "MyLiving")) {
       secondCategory.push({
         id: "list-services",
-        name: "Services",
+        name: "Content",
         label: "Services",
         expandable: true,
-        action: () => this.getSubMenuItems(categoryData, "Services"),
+        action: () => this.getSubMenuItems(categoryData, "Content"),
       });
     }
     
@@ -70,6 +70,13 @@ export class ActionListController {
           action: async () => {
             this.createNewPage("Untitled");
           },
+        },{
+          id: "add-info-page",
+          label: "Information Page",
+          name: "",
+          action: async () => {
+            this.createNewInfoPage("Untitled");
+          },
         },
         {
           id: "add-content-page",
@@ -93,7 +100,6 @@ export class ActionListController {
   async getSubMenuItems(categoryData: any, type: string): Promise<MenuItem[]> {
     const category = categoryData.find((cat: any) => cat.name === type);
     const itemsList = category?.options || [];
-    console.log(type, itemsList)
     return itemsList.map((item: any) => {
       return({
         id: item.PageId,
@@ -119,6 +125,26 @@ export class ActionListController {
         PageType: res.MenuPage.PageType,
       };
       this.pageAttacher.attachToTile(page, "Menu", "Menu");
+    } else {
+      console.error("error", res.error.message);
+    }
+  }
+
+  async createNewInfoPage (title: string): Promise<void> {
+    const appVersion = await this.appVersionManager.getActiveVersion();
+    const res = await this.toolboxService.createInfoPage(
+      appVersion.AppVersionId,
+      title
+    );
+
+    if (!res.error.message) {
+      const page = {
+        PageId: res.MenuPage.PageId,
+        PageName: res.MenuPage.PageName,
+        TileName: res.MenuPage.PageName,
+        PageType: res.MenuPage.PageType,
+      };
+      this.pageAttacher.attachToTile(page, "Information", "Information");
     } else {
       console.error("error", res.error.message);
     }

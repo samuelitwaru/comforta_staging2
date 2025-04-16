@@ -126,7 +126,6 @@ namespace GeneXus.Programs {
                A536PagePublishedStructure = P00DM4_A536PagePublishedStructure[0];
                AV22PageName = A517PageName;
                AV11SDT_ContentPage.FromJSonString(A536PagePublishedStructure, null);
-               new prc_logtoserver(context ).execute(  context.GetMessage( "Content: ", "")+AV11SDT_ContentPage.ToJSonString(false, true)) ;
                if ( StringUtil.StrCmp(A525PageType, "Content") == 0 )
                {
                   AV12BC_Trn_ProductService.Load(AV9PageId, AV10LocationId, AV8OrganisationId);
@@ -187,7 +186,6 @@ namespace GeneXus.Programs {
                      AV29GXV2 = (int)(AV29GXV2+1);
                   }
                }
-               new prc_logtoserver(context ).execute(  context.GetMessage( "Content2: ", "")+AV11SDT_ContentPage.ToJSonString(false, true)) ;
                if ( ( ( StringUtil.StrCmp(A525PageType, "Location") == 0 ) ) || ( ( StringUtil.StrCmp(A525PageType, "Reception") == 0 ) ) )
                {
                   if ( StringUtil.StrCmp(A525PageType, "Location") == 0 )
@@ -262,8 +260,6 @@ namespace GeneXus.Programs {
             pr_default.readNext(1);
          }
          pr_default.close(1);
-         new prc_logtoserver(context ).execute(  context.GetMessage( "Content:>> ", "")) ;
-         new prc_logtoserver(context ).execute(  context.GetMessage( "Content:3 ", "")+AV20SDT_ContentPageV1.ToJSonString(false, true)) ;
          cleanup();
       }
 
