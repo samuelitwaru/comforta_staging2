@@ -32,6 +32,8 @@ namespace GeneXus.Programs
 			/* Constructor for serialization */
 			gxTv_SdtSDT_AppVersion_PagesItem_Pagename = "";
 
+			gxTv_SdtSDT_AppVersion_PagesItem_Pagethumbnailurl = "";
+
 			gxTv_SdtSDT_AppVersion_PagesItem_Pagestructure = "";
 
 			gxTv_SdtSDT_AppVersion_PagesItem_Pagetype = "";
@@ -67,6 +69,9 @@ namespace GeneXus.Programs
 
 
 			AddObjectProperty("PageName", gxTpr_Pagename, false);
+
+
+			AddObjectProperty("PageThumbnailUrl", gxTpr_Pagethumbnailurl, false);
 
 
 			AddObjectProperty("IsPredefined", gxTpr_Ispredefined, false);
@@ -117,6 +122,22 @@ namespace GeneXus.Programs
 			set {
 				gxTv_SdtSDT_AppVersion_PagesItem_Pagename = value;
 				SetDirty("Pagename");
+			}
+		}
+
+
+
+
+		[SoapElement(ElementName="PageThumbnailUrl")]
+		[XmlElement(ElementName="PageThumbnailUrl")]
+		public string gxTpr_Pagethumbnailurl
+		{
+			get {
+				return gxTv_SdtSDT_AppVersion_PagesItem_Pagethumbnailurl; 
+			}
+			set {
+				gxTv_SdtSDT_AppVersion_PagesItem_Pagethumbnailurl = value;
+				SetDirty("Pagethumbnailurl");
 			}
 		}
 
@@ -256,6 +277,7 @@ namespace GeneXus.Programs
 		public void initialize( )
 		{
 			gxTv_SdtSDT_AppVersion_PagesItem_Pagename = "";
+			gxTv_SdtSDT_AppVersion_PagesItem_Pagethumbnailurl = "";
 			gxTv_SdtSDT_AppVersion_PagesItem_Ispredefined = false;
 			gxTv_SdtSDT_AppVersion_PagesItem_Pagestructure = "";
 			gxTv_SdtSDT_AppVersion_PagesItem_Pagetype = "";
@@ -278,6 +300,9 @@ namespace GeneXus.Programs
 		 
 
 		protected string gxTv_SdtSDT_AppVersion_PagesItem_Pagename;
+		 
+
+		protected string gxTv_SdtSDT_AppVersion_PagesItem_Pagethumbnailurl;
 		 
 
 		protected bool gxTv_SdtSDT_AppVersion_PagesItem_Ispredefined;
@@ -338,7 +363,19 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="IsPredefined", Order=2)]
+		[DataMember(Name="PageThumbnailUrl", Order=2)]
+		public  string gxTpr_Pagethumbnailurl
+		{
+			get { 
+				return sdt.gxTpr_Pagethumbnailurl;
+
+			}
+			set { 
+				 sdt.gxTpr_Pagethumbnailurl = value;
+			}
+		}
+
+		[DataMember(Name="IsPredefined", Order=3)]
 		public bool gxTpr_Ispredefined
 		{
 			get { 
@@ -350,7 +387,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="PageStructure", Order=3)]
+		[DataMember(Name="PageStructure", Order=4)]
 		public  string gxTpr_Pagestructure
 		{
 			get { 
@@ -362,7 +399,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="PageType", Order=4)]
+		[DataMember(Name="PageType", Order=5)]
 		public  string gxTpr_Pagetype
 		{
 			get { 
@@ -374,7 +411,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="PageMenuStructure", Order=5, EmitDefaultValue=false)]
+		[DataMember(Name="PageMenuStructure", Order=6, EmitDefaultValue=false)]
 		public GeneXus.Programs.SdtSDT_MenuPage_RESTInterface gxTpr_Pagemenustructure
 		{
 			get { 
@@ -389,7 +426,7 @@ namespace GeneXus.Programs
 			}
 		}
 
-		[DataMember(Name="PageContentStructure", Order=6, EmitDefaultValue=false)]
+		[DataMember(Name="PageContentStructure", Order=7, EmitDefaultValue=false)]
 		public GeneXus.Programs.SdtSDT_ContentPage_RESTInterface gxTpr_Pagecontentstructure
 		{
 			get { 

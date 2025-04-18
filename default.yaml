@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250412111736"
+  version: "20250416163255"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
@@ -2409,6 +2409,9 @@ components:
           format: "uuid"
         PageName:
           description: "Page Name"
+          type: "string"
+        PageThumbnailUrl:
+          description: "Page Thumbnail Url"
           type: "string"
         IsPredefined:
           description: "Is Predefined"

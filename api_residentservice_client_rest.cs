@@ -1592,6 +1592,37 @@ namespace GeneXus.Programs {
          /* SavePageV2 Constructor */
       }
 
+      public void gxep_savepagethumbnail( Guid aP0_AppVersionId ,
+                                          Guid aP1_PageId ,
+                                          string aP2_PageThumbnailData ,
+                                          out SdtSDT_Error aP3_error )
+      {
+         restCliSavePageThumbnail = new GXRestAPIClient();
+         if ( restLocation == null )
+         {
+            InitLocation();
+         }
+         restLocation.ResourceName = "/toolbox/v2/save-page-thumbnail";
+         restCliSavePageThumbnail.Location = restLocation;
+         restCliSavePageThumbnail.HttpMethod = "POST";
+         restCliSavePageThumbnail.AddBodyVar("AppVersionId", (Guid)(aP0_AppVersionId));
+         restCliSavePageThumbnail.AddBodyVar("PageId", (Guid)(aP1_PageId));
+         restCliSavePageThumbnail.AddBodyVar("PageThumbnailData", (string)(aP2_PageThumbnailData));
+         restCliSavePageThumbnail.RestExecute();
+         if ( restCliSavePageThumbnail.ErrorCode != 0 )
+         {
+            gxProperties.ErrorCode = restCliSavePageThumbnail.ErrorCode;
+            gxProperties.ErrorMessage = restCliSavePageThumbnail.ErrorMessage;
+            gxProperties.StatusCode = restCliSavePageThumbnail.StatusCode;
+            aP3_error = new SdtSDT_Error();
+         }
+         else
+         {
+            aP3_error = restCliSavePageThumbnail.GetBodySdt<SdtSDT_Error>("error");
+         }
+         /* SavePageThumbnail Constructor */
+      }
+
       public void gxep_publishappversion( Guid aP0_AppVersionId ,
                                           bool aP1_Notify ,
                                           out SdtSDT_Error aP2_error )
@@ -2264,6 +2295,7 @@ namespace GeneXus.Programs {
          aP1_AppVersion = new SdtSDT_AppVersion();
          restCliDeleteAppVersion = new GXRestAPIClient();
          restCliSavePageV2 = new GXRestAPIClient();
+         restCliSavePageThumbnail = new GXRestAPIClient();
          restCliPublishAppVersion = new GXRestAPIClient();
          restCliCreateMenuPage = new GXRestAPIClient();
          aP2_MenuPage = new SdtSDT_AppVersion_PagesItem();
@@ -2346,6 +2378,7 @@ namespace GeneXus.Programs {
       protected GXRestAPIClient restCliActivateAppVersion ;
       protected GXRestAPIClient restCliDeleteAppVersion ;
       protected GXRestAPIClient restCliSavePageV2 ;
+      protected GXRestAPIClient restCliSavePageThumbnail ;
       protected GXRestAPIClient restCliPublishAppVersion ;
       protected GXRestAPIClient restCliCreateMenuPage ;
       protected GXRestAPIClient restCliCreateServicePage ;

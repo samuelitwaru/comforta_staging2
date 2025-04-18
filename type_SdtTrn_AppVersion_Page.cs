@@ -59,6 +59,7 @@ namespace GeneXus.Programs {
       public override GeneXus.Utils.GxStringCollection StateAttributes( )
       {
          GeneXus.Utils.GxStringCollection state = new GeneXus.Utils.GxStringCollection();
+         state.Add("gxTpr_Pagethumbnail_gxi");
          state.Add("gxTpr_Mode");
          state.Add("gxTpr_Modified");
          state.Add("gxTpr_Initialized");
@@ -66,6 +67,9 @@ namespace GeneXus.Programs {
          state.Add("gxTpr_Pagename_Z");
          state.Add("gxTpr_Ispredefined_Z");
          state.Add("gxTpr_Pagetype_Z");
+         state.Add("gxTpr_Pagethumbnail_gxi_Z");
+         state.Add("gxTpr_Pagethumbnail_N");
+         state.Add("gxTpr_Pagethumbnail_gxi_N");
          return state ;
       }
 
@@ -77,6 +81,8 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_AppVersion_Page_Pagename = sdt.gxTv_SdtTrn_AppVersion_Page_Pagename ;
          gxTv_SdtTrn_AppVersion_Page_Pagestructure = sdt.gxTv_SdtTrn_AppVersion_Page_Pagestructure ;
          gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure = sdt.gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure ;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail ;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi ;
          gxTv_SdtTrn_AppVersion_Page_Ispredefined = sdt.gxTv_SdtTrn_AppVersion_Page_Ispredefined ;
          gxTv_SdtTrn_AppVersion_Page_Pagetype = sdt.gxTv_SdtTrn_AppVersion_Page_Pagetype ;
          gxTv_SdtTrn_AppVersion_Page_Mode = sdt.gxTv_SdtTrn_AppVersion_Page_Mode ;
@@ -86,6 +92,9 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_AppVersion_Page_Pagename_Z = sdt.gxTv_SdtTrn_AppVersion_Page_Pagename_Z ;
          gxTv_SdtTrn_AppVersion_Page_Ispredefined_Z = sdt.gxTv_SdtTrn_AppVersion_Page_Ispredefined_Z ;
          gxTv_SdtTrn_AppVersion_Page_Pagetype_Z = sdt.gxTv_SdtTrn_AppVersion_Page_Pagetype_Z ;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z ;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N ;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N ;
          return  ;
       }
 
@@ -108,10 +117,13 @@ namespace GeneXus.Programs {
          AddObjectProperty("PageName", gxTv_SdtTrn_AppVersion_Page_Pagename, false, includeNonInitialized);
          AddObjectProperty("PageStructure", gxTv_SdtTrn_AppVersion_Page_Pagestructure, false, includeNonInitialized);
          AddObjectProperty("PagePublishedStructure", gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure, false, includeNonInitialized);
+         AddObjectProperty("PageThumbnail", gxTv_SdtTrn_AppVersion_Page_Pagethumbnail, false, includeNonInitialized);
+         AddObjectProperty("PageThumbnail_N", gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N, false, includeNonInitialized);
          AddObjectProperty("IsPredefined", gxTv_SdtTrn_AppVersion_Page_Ispredefined, false, includeNonInitialized);
          AddObjectProperty("PageType", gxTv_SdtTrn_AppVersion_Page_Pagetype, false, includeNonInitialized);
          if ( includeState )
          {
+            AddObjectProperty("PageThumbnail_GXI", gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi, false, includeNonInitialized);
             AddObjectProperty("Mode", gxTv_SdtTrn_AppVersion_Page_Mode, false, includeNonInitialized);
             AddObjectProperty("Modified", gxTv_SdtTrn_AppVersion_Page_Modified, false, includeNonInitialized);
             AddObjectProperty("Initialized", gxTv_SdtTrn_AppVersion_Page_Initialized, false, includeNonInitialized);
@@ -119,6 +131,9 @@ namespace GeneXus.Programs {
             AddObjectProperty("PageName_Z", gxTv_SdtTrn_AppVersion_Page_Pagename_Z, false, includeNonInitialized);
             AddObjectProperty("IsPredefined_Z", gxTv_SdtTrn_AppVersion_Page_Ispredefined_Z, false, includeNonInitialized);
             AddObjectProperty("PageType_Z", gxTv_SdtTrn_AppVersion_Page_Pagetype_Z, false, includeNonInitialized);
+            AddObjectProperty("PageThumbnail_GXI_Z", gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z, false, includeNonInitialized);
+            AddObjectProperty("PageThumbnail_N", gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N, false, includeNonInitialized);
+            AddObjectProperty("PageThumbnail_GXI_N", gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N, false, includeNonInitialized);
          }
          return  ;
       }
@@ -144,6 +159,18 @@ namespace GeneXus.Programs {
          {
             sdtIsNull = 0;
             gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure = sdt.gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure ;
+         }
+         if ( sdt.IsDirty("PageThumbnail") )
+         {
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N = (short)(sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N);
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail ;
+         }
+         if ( sdt.IsDirty("PageThumbnail") )
+         {
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N = (short)(sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N);
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi = sdt.gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi ;
          }
          if ( sdt.IsDirty("IsPredefined") )
          {
@@ -224,6 +251,69 @@ namespace GeneXus.Programs {
             SetDirty("Pagepublishedstructure");
          }
 
+      }
+
+      [  SoapElement( ElementName = "PageThumbnail" )]
+      [  XmlElement( ElementName = "PageThumbnail"   )]
+      [GxUpload()]
+      public string gxTpr_Pagethumbnail
+      {
+         get {
+            return gxTv_SdtTrn_AppVersion_Page_Pagethumbnail ;
+         }
+
+         set {
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N = 0;
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail = value;
+            gxTv_SdtTrn_AppVersion_Page_Modified = 1;
+            SetDirty("Pagethumbnail");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_SetNull( )
+      {
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N = 1;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail = "";
+         SetDirty("Pagethumbnail");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_IsNull( )
+      {
+         return (gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N==1) ;
+      }
+
+      [  SoapElement( ElementName = "PageThumbnail_GXI" )]
+      [  XmlElement( ElementName = "PageThumbnail_GXI"   )]
+      public string gxTpr_Pagethumbnail_gxi
+      {
+         get {
+            return gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi ;
+         }
+
+         set {
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N = 0;
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi = value;
+            gxTv_SdtTrn_AppVersion_Page_Modified = 1;
+            SetDirty("Pagethumbnail_gxi");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_SetNull( )
+      {
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N = 1;
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi = "";
+         SetDirty("Pagethumbnail_gxi");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_IsNull( )
+      {
+         return (gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N==1) ;
       }
 
       [  SoapElement( ElementName = "IsPredefined" )]
@@ -461,6 +551,93 @@ namespace GeneXus.Programs {
          return false ;
       }
 
+      [  SoapElement( ElementName = "PageThumbnail_GXI_Z" )]
+      [  XmlElement( ElementName = "PageThumbnail_GXI_Z"   )]
+      public string gxTpr_Pagethumbnail_gxi_Z
+      {
+         get {
+            return gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z ;
+         }
+
+         set {
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z = value;
+            gxTv_SdtTrn_AppVersion_Page_Modified = 1;
+            SetDirty("Pagethumbnail_gxi_Z");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z_SetNull( )
+      {
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z = "";
+         SetDirty("Pagethumbnail_gxi_Z");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z_IsNull( )
+      {
+         return false ;
+      }
+
+      [  SoapElement( ElementName = "PageThumbnail_N" )]
+      [  XmlElement( ElementName = "PageThumbnail_N"   )]
+      public short gxTpr_Pagethumbnail_N
+      {
+         get {
+            return gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N ;
+         }
+
+         set {
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N = value;
+            gxTv_SdtTrn_AppVersion_Page_Modified = 1;
+            SetDirty("Pagethumbnail_N");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N_SetNull( )
+      {
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N = 0;
+         SetDirty("Pagethumbnail_N");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N_IsNull( )
+      {
+         return false ;
+      }
+
+      [  SoapElement( ElementName = "PageThumbnail_GXI_N" )]
+      [  XmlElement( ElementName = "PageThumbnail_GXI_N"   )]
+      public short gxTpr_Pagethumbnail_gxi_N
+      {
+         get {
+            return gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N ;
+         }
+
+         set {
+            sdtIsNull = 0;
+            gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N = value;
+            gxTv_SdtTrn_AppVersion_Page_Modified = 1;
+            SetDirty("Pagethumbnail_gxi_N");
+         }
+
+      }
+
+      public void gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N_SetNull( )
+      {
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N = 0;
+         SetDirty("Pagethumbnail_gxi_N");
+         return  ;
+      }
+
+      public bool gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N_IsNull( )
+      {
+         return false ;
+      }
+
       [XmlIgnore]
       private static GXTypeInfo _typeProps;
       protected override GXTypeInfo TypeInfo
@@ -482,12 +659,15 @@ namespace GeneXus.Programs {
          gxTv_SdtTrn_AppVersion_Page_Pagename = "";
          gxTv_SdtTrn_AppVersion_Page_Pagestructure = "";
          gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure = "";
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail = "";
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi = "";
          gxTv_SdtTrn_AppVersion_Page_Ispredefined = false;
          gxTv_SdtTrn_AppVersion_Page_Pagetype = "";
          gxTv_SdtTrn_AppVersion_Page_Mode = "";
          gxTv_SdtTrn_AppVersion_Page_Pageid_Z = Guid.Empty;
          gxTv_SdtTrn_AppVersion_Page_Pagename_Z = "";
          gxTv_SdtTrn_AppVersion_Page_Pagetype_Z = "";
+         gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z = "";
          return  ;
       }
 
@@ -499,15 +679,20 @@ namespace GeneXus.Programs {
       private short sdtIsNull ;
       private short gxTv_SdtTrn_AppVersion_Page_Modified ;
       private short gxTv_SdtTrn_AppVersion_Page_Initialized ;
+      private short gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_N ;
+      private short gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_N ;
       private string gxTv_SdtTrn_AppVersion_Page_Mode ;
       private bool gxTv_SdtTrn_AppVersion_Page_Ispredefined ;
       private bool gxTv_SdtTrn_AppVersion_Page_Ispredefined_Z ;
       private string gxTv_SdtTrn_AppVersion_Page_Pagestructure ;
       private string gxTv_SdtTrn_AppVersion_Page_Pagepublishedstructure ;
       private string gxTv_SdtTrn_AppVersion_Page_Pagename ;
+      private string gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi ;
       private string gxTv_SdtTrn_AppVersion_Page_Pagetype ;
       private string gxTv_SdtTrn_AppVersion_Page_Pagename_Z ;
       private string gxTv_SdtTrn_AppVersion_Page_Pagetype_Z ;
+      private string gxTv_SdtTrn_AppVersion_Page_Pagethumbnail_gxi_Z ;
+      private string gxTv_SdtTrn_AppVersion_Page_Pagethumbnail ;
       private Guid gxTv_SdtTrn_AppVersion_Page_Pageid ;
       private Guid gxTv_SdtTrn_AppVersion_Page_Pageid_Z ;
    }
@@ -578,7 +763,21 @@ namespace GeneXus.Programs {
 
       }
 
-      [DataMember( Name = "IsPredefined" , Order = 4 )]
+      [DataMember( Name = "PageThumbnail" , Order = 4 )]
+      [GxUpload()]
+      public string gxTpr_Pagethumbnail
+      {
+         get {
+            return (!String.IsNullOrEmpty(StringUtil.RTrim( sdt.gxTpr_Pagethumbnail)) ? PathUtil.RelativeURL( sdt.gxTpr_Pagethumbnail) : StringUtil.RTrim( sdt.gxTpr_Pagethumbnail_gxi)) ;
+         }
+
+         set {
+            sdt.gxTpr_Pagethumbnail = value;
+         }
+
+      }
+
+      [DataMember( Name = "IsPredefined" , Order = 5 )]
       [GxSeudo()]
       public bool gxTpr_Ispredefined
       {
@@ -592,7 +791,7 @@ namespace GeneXus.Programs {
 
       }
 
-      [DataMember( Name = "PageType" , Order = 5 )]
+      [DataMember( Name = "PageType" , Order = 6 )]
       [GxSeudo()]
       public string gxTpr_Pagetype
       {

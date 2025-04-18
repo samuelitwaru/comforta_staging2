@@ -2,9 +2,9 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250412111736"
+  version: "20250416163255"
 servers:
-  - url: https://staging.comforta.yukon.software/api
+  - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/api
 paths:
   /auth/resident-login:
     post:
@@ -1345,6 +1345,32 @@ paths:
         404:
           description: "Not found"
 
+  /toolbox/v2/save-page-thumbnail:
+    post:
+      tags:
+        - API_ResidentService  
+      operationId: "API_ResidentService.SavePageThumbnail"
+      summary: "Save Page Thumbnail V2"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SavePageThumbnailInput"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SDT_Error"  
+
+        404:
+          description: "Not found"
+
   /toolbox/v2/publish-appversion:
     post:
       tags:
@@ -1834,7 +1860,7 @@ components:
       description: GAM OAuth 2
       flows:
         password:          
-          tokenUrl: https://staging.comforta.yukon.software/oauth/gam/v2.0/access_token
+          tokenUrl: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/oauth/gam/v2.0/access_token
           scopes: 
             fullcontrol: Full access
 
@@ -2068,6 +2094,7 @@ components:
         error:
           description: "SDT_Error"
           $ref: "#/components/schemas/SDT_Error"
+
 
 
 
@@ -2375,6 +2402,17 @@ components:
         PageType:
           type: "string"
         PageStructure:
+          type: "string"
+
+    SavePageThumbnailInput:  
+      properties:
+        AppVersionId:
+          type: "string"
+          format: "uuid"
+        PageId:
+          type: "string"
+          format: "uuid"
+        PageThumbnailData:
           type: "string"
 
     PublishAppVersionInput:  
@@ -3336,6 +3374,9 @@ components:
           format: "uuid"
         PageName:
           description: "Page Name"
+          type: "string"
+        PageThumbnailUrl:
+          description: "Page Thumbnail Url"
           type: "string"
         IsPredefined:
           description: "Is Predefined"

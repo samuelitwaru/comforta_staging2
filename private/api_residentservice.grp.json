@@ -506,6 +506,16 @@
 },
 {
 "Verb":"POST",
+"PathRegexp":"toolbox/v2/save-page-thumbnail",
+"Path":"toolbox/v2/save-page-thumbnail",
+"Name":"savepagethumbnail",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_savepagethumbnail",
+"Implementation":"Prc_SavePageThumbnail"
+},
+{
+"Verb":"POST",
 "PathRegexp":"toolbox/v2/publish-appversion",
 "Path":"toolbox/v2/publish-appversion",
 "Name":"publishappversion",

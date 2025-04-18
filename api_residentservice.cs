@@ -231,6 +231,10 @@ namespace GeneXus.Programs {
          {
             return GAMSecurityLevel.SecurityNone ;
          }
+         else if ( StringUtil.StrCmp(permissionMethod, "gxep_savepagethumbnail") == 0 )
+         {
+            return GAMSecurityLevel.SecurityNone ;
+         }
          else if ( StringUtil.StrCmp(permissionMethod, "gxep_publishappversion") == 0 )
          {
             return GAMSecurityLevel.SecurityNone ;
@@ -1243,6 +1247,21 @@ namespace GeneXus.Programs {
          aP5_error=this.AV69error;
       }
 
+      public void gxep_savepagethumbnail( Guid aP0_AppVersionId ,
+                                          Guid aP1_PageId ,
+                                          string aP2_PageThumbnailData ,
+                                          out SdtSDT_Error aP3_error )
+      {
+         this.AV92AppVersionId = aP0_AppVersionId;
+         this.AV37PageId = aP1_PageId;
+         this.AV136PageThumbnailData = aP2_PageThumbnailData;
+         AV69error = new SdtSDT_Error(context);
+         initialize();
+         /* SavePageThumbnail Constructor */
+         new prc_savepagethumbnail(context ).execute(  AV92AppVersionId,  AV37PageId,  AV136PageThumbnailData, out  AV69error) ;
+         aP3_error=this.AV69error;
+      }
+
       public void gxep_publishappversion( Guid aP0_AppVersionId ,
                                           bool aP1_Notify ,
                                           out SdtSDT_Error aP2_error )
@@ -1608,6 +1627,7 @@ namespace GeneXus.Programs {
       protected string AV39PageGJSHtml ;
       protected string AV40PageGJSJson ;
       protected string AV90PageStructure ;
+      protected string AV136PageThumbnailData ;
       protected string AV103ProductServiceDescription ;
       protected string AV105ProductServiceImageBase64 ;
       protected string AV123LocationDescription ;
