@@ -243,6 +243,10 @@ namespace GeneXus.Programs {
          {
             return GAMSecurityLevel.SecurityNone ;
          }
+         else if ( StringUtil.StrCmp(permissionMethod, "gxep_createinfopage") == 0 )
+         {
+            return GAMSecurityLevel.SecurityNone ;
+         }
          else if ( StringUtil.StrCmp(permissionMethod, "gxep_createservicepage") == 0 )
          {
             return GAMSecurityLevel.SecurityNone ;
@@ -1286,6 +1290,22 @@ namespace GeneXus.Programs {
          initialize();
          /* CreateMenuPage Constructor */
          new prc_createmenupage(context ).execute(  AV92AppVersionId,  AV43PageName, out  AV97MenuPage, out  AV69error) ;
+         aP2_MenuPage=this.AV97MenuPage;
+         aP3_error=this.AV69error;
+      }
+
+      public void gxep_createinfopage( Guid aP0_AppVersionId ,
+                                       string aP1_PageName ,
+                                       out SdtSDT_AppVersion_PagesItem aP2_MenuPage ,
+                                       out SdtSDT_Error aP3_error )
+      {
+         this.AV92AppVersionId = aP0_AppVersionId;
+         this.AV43PageName = aP1_PageName;
+         AV97MenuPage = new SdtSDT_AppVersion_PagesItem(context);
+         AV69error = new SdtSDT_Error(context);
+         initialize();
+         /* CreateInfoPage Constructor */
+         new prc_createinfopage(context ).execute(  AV92AppVersionId,  AV43PageName, out  AV97MenuPage, out  AV69error) ;
          aP2_MenuPage=this.AV97MenuPage;
          aP3_error=this.AV69error;
       }

@@ -1847,7 +1847,7 @@ namespace GeneXus.Programs {
          idxLst = 1;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?202541615591550", true, true);
+            context.AddJavascriptSource(StringUtil.RTrim( ((string)Form.Jscriptsrc.Item(idxLst))), "?20254228134658", true, true);
             idxLst = (int)(idxLst+1);
          }
          if ( ! outputEnabled )
@@ -1863,7 +1863,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("trn_appversionpagewc.js", "?202541615591551", false, true);
+         context.AddJavascriptSource("trn_appversionpagewc.js", "?20254228134658", false, true);
          context.AddJavascriptSource("DVelop/Bootstrap/Shared/DVelopBootstrap.js", "", false, true);
          context.AddJavascriptSource("DVelop/Shared/WorkWithPlusCommon.js", "", false, true);
          context.AddJavascriptSource("DVelop/DVPaginationBar/DVPaginationBarRender.js", "", false, true);
@@ -2028,6 +2028,7 @@ namespace GeneXus.Programs {
                cmbPageType.addItem("MyCare", context.GetMessage( "My Care", ""), 0);
                cmbPageType.addItem("MyLiving", context.GetMessage( "My Living", ""), 0);
                cmbPageType.addItem("MyService", context.GetMessage( "My Service", ""), 0);
+               cmbPageType.addItem("Information", context.GetMessage( "Information", ""), 0);
                if ( cmbPageType.ItemCount > 0 )
                {
                   A525PageType = cmbPageType.getValidValue(A525PageType);
@@ -2069,6 +2070,7 @@ namespace GeneXus.Programs {
          cmbPageType.addItem("MyCare", context.GetMessage( "My Care", ""), 0);
          cmbPageType.addItem("MyLiving", context.GetMessage( "My Living", ""), 0);
          cmbPageType.addItem("MyService", context.GetMessage( "My Service", ""), 0);
+         cmbPageType.addItem("Information", context.GetMessage( "Information", ""), 0);
          if ( cmbPageType.ItemCount > 0 )
          {
          }

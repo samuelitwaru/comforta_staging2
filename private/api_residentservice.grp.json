@@ -536,6 +536,16 @@
 },
 {
 "Verb":"POST",
+"PathRegexp":"toolbox/v2/create-info-page",
+"Path":"toolbox/v2/create-info-page",
+"Name":"createinfopage",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_createinfopage",
+"Implementation":"Prc_CreateInfoPage"
+},
+{
+"Verb":"POST",
 "PathRegexp":"toolbox/v2/create-service-page",
 "Path":"toolbox/v2/create-service-page",
 "Name":"createservicepage",

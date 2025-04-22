@@ -124,8 +124,16 @@ namespace GeneXus.Programs {
                }
                else
                {
-                  AV18SDT_ContentPage.FromJSonString(AV16PageStructure, null);
-                  AV10CleanedPageStructure = AV18SDT_ContentPage.ToJSonString(false, true);
+                  if ( StringUtil.StrCmp(A525PageType, "Information") == 0 )
+                  {
+                     AV22SDT_InfoContent.FromJSonString(AV16PageStructure, null);
+                     AV10CleanedPageStructure = AV22SDT_InfoContent.ToJSonString(false, true);
+                  }
+                  else
+                  {
+                     AV18SDT_ContentPage.FromJSonString(AV16PageStructure, null);
+                     AV10CleanedPageStructure = AV18SDT_ContentPage.ToJSonString(false, true);
+                  }
                }
                A518PageStructure = AV10CleanedPageStructure;
                if ( ! ( ( StringUtil.StrCmp(O518PageStructure, AV10CleanedPageStructure) == 0 ) ) )
@@ -179,6 +187,7 @@ namespace GeneXus.Programs {
          O518PageStructure = "";
          AV19SDT_MenuPage = new SdtSDT_MenuPage(context);
          AV10CleanedPageStructure = "";
+         AV22SDT_InfoContent = new SdtSDT_InfoContent(context);
          AV18SDT_ContentPage = new SdtSDT_ContentPage(context);
          pr_datastore1 = new DataStoreProvider(context, new GeneXus.Programs.prc_savepagev2__datastore1(),
             new Object[][] {
@@ -228,6 +237,7 @@ namespace GeneXus.Programs {
       private string[] P00BG3_A525PageType ;
       private string[] P00BG3_A518PageStructure ;
       private SdtSDT_MenuPage AV19SDT_MenuPage ;
+      private SdtSDT_InfoContent AV22SDT_InfoContent ;
       private SdtSDT_ContentPage AV18SDT_ContentPage ;
       private SdtSDT_Error aP5_SDT_Error ;
       private IDataStoreProvider pr_datastore1 ;

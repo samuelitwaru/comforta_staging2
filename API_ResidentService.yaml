@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: "API_ResidentService"
   description: "API Services"
-  version: "20250416163255"
+  version: "20250422051539"
 servers:
   - url: https://staging.comforta.yukon.software/api
 paths:
@@ -1422,6 +1422,31 @@ paths:
         404:
           description: "Not found"
 
+  /toolbox/v2/create-info-page:
+    post:
+      tags:
+        - API_ResidentService  
+      operationId: "API_ResidentService.CreateInfoPage"
+      summary: "Create Info Page"
+      security: 
+        - oAuthGXGAM: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateInfoPageInput"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateInfoPageOutput"
+        404:
+          description: "Not found"
+
   /toolbox/v2/create-service-page:
     post:
       tags:
@@ -2109,6 +2134,17 @@ components:
           description: "SDT_Error"
           $ref: "#/components/schemas/SDT_Error"
 
+    CreateInfoPageOutput:
+      properties:
+        MenuPage:
+          description: "Page"
+          type: array
+          items:
+            $ref: "#/components/schemas/SDT_AppVersion.Pages_PagesItem"
+        error:
+          description: "SDT_Error"
+          $ref: "#/components/schemas/SDT_Error"
+
     CreateServicePageOutput:
       properties:
         ContentPage:
@@ -2424,6 +2460,14 @@ components:
           type: "boolean"
 
     CreateMenuPageInput:  
+      properties:
+        AppVersionId:
+          type: "string"
+          format: "uuid"
+        PageName:
+          type: "string"
+
+    CreateInfoPageInput:  
       properties:
         AppVersionId:
           type: "string"
@@ -3375,9 +3419,6 @@ components:
         PageName:
           description: "Page Name"
           type: "string"
-        PageThumbnailUrl:
-          description: "Page Thumbnail Url"
-          type: "string"
         IsPredefined:
           description: "Is Predefined"
           type: "boolean"
@@ -3393,6 +3434,9 @@ components:
         PageContentStructure:
           description: "SDT_Content Page"
           $ref: "#/components/schemas/SDT_ContentPage"
+        PageInfoStructure:
+          description: "SDT_Info Content"
+          $ref: "#/components/schemas/SDT_InfoContent"
 
 
       x-gx-level: "SDT_AppVersion"

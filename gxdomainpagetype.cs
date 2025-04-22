@@ -5,11 +5,6 @@ using GeneXus.Resources;
 using GeneXus.Application;
 using GeneXus.Metadata;
 using GeneXus.Cryptography;
-using GeneXus.Reorg;
-using System.Threading;
-using GeneXus.Programs;
-using System.Data;
-using GeneXus.Data;
 using GeneXus.Data.ADO;
 using GeneXus.Data.NTier;
 using GeneXus.Data.NTier.ADO;
@@ -18,6 +13,7 @@ using GeneXus.Search;
 using GeneXus.Encryption;
 using GeneXus.Http.Client;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 namespace GeneXus.Programs {
    public class gxdomainpagetype
    {
@@ -37,6 +33,7 @@ namespace GeneXus.Programs {
          domain["MyCare"] = "My Care";
          domain["MyLiving"] = "My Living";
          domain["MyService"] = "My Service";
+         domain["Information"] = "Information";
       }
 
       public static string getDescription( IGxContext context ,
@@ -78,6 +75,7 @@ namespace GeneXus.Programs {
             domainMap["MyCare"] = "MyCare";
             domainMap["MyLiving"] = "MyLiving";
             domainMap["MyService"] = "MyService";
+            domainMap["Information"] = "Information";
          }
          return (string)domainMap[key] ;
       }

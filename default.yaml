@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: "Development"
-  version: "20250416163255"
+  version: "20250422051539"
 servers:
   - url: http://localhost:8083/Comforta_version20DevelopmentNETPostgreSQL/rest
 paths:
@@ -2410,9 +2410,6 @@ components:
         PageName:
           description: "Page Name"
           type: "string"
-        PageThumbnailUrl:
-          description: "Page Thumbnail Url"
-          type: "string"
         IsPredefined:
           description: "Is Predefined"
           type: "boolean"
@@ -2428,6 +2425,9 @@ components:
         PageContentStructure:
           description: "SDT_Content Page"
           $ref: "#/components/schemas/SDT_ContentPage"
+        PageInfoStructure:
+          description: "SDT_Info Content"
+          $ref: "#/components/schemas/SDT_InfoContent"
       x-gx-level: "SDT_AppVersion"
     SDT_CallToAction_SDT_CallToActionItem:
       properties:
@@ -2706,6 +2706,103 @@ components:
         message:
           description: "message"
           type: "string"
+    SDT_InfoContent:
+      properties:
+        InfoContent:
+          type: array
+          items:
+            description: InfoContentItem
+            $ref: "#/components/schemas/SDT_InfoContent.InfoContent_InfoContentItem"
+    SDT_InfoContent.InfoContent_InfoContentItem:
+      properties:
+        InfoId:
+          description: "Info Id"
+          type: "string"
+        InfoType:
+          description: "Info Type"
+          type: "string"
+        InfoValue:
+          description: "Info Value"
+          type: "string"
+        Tiles:
+          description: "SDT_Info Tile"
+          type: array
+          items:
+            $ref: "#/components/schemas/SDT_InfoTile_SDT_InfoTileItem"
+        CtaAttributes:
+          $ref: "#/components/schemas/SDT_InfoContent.InfoContent.CtaAttributes"
+      x-gx-level: "SDT_InfoContent"
+    SDT_InfoContent.InfoContent.CtaAttributes:
+      properties:
+        CtaId:
+          description: "Cta Id"
+          type: "string"
+        CtaType:
+          description: "Cta Type"
+          type: "string"
+        CtaLabel:
+          description: "Cta Label"
+          type: "string"
+        CtaAction:
+          description: "Cta Action"
+          type: "string"
+        CtaColor:
+          description: "Cta Color"
+          type: "string"
+        CtaBGColor:
+          description: "Cta BGColor"
+          type: "string"
+        CtaButtonType:
+          description: "Cta Button Type"
+          type: "string"
+        CtaButtonImgUrl:
+          description: "Cta Button Img Url"
+          type: "string"
+      x-gx-level: "SDT_InfoContent.InfoContent"
+    SDT_InfoTile_SDT_InfoTileItem:
+      properties:
+        Id:
+          description: "Id"
+          type: "string"
+        Name:
+          description: "Name"
+          type: "string"
+        Text:
+          description: "Text"
+          type: "string"
+        Color:
+          description: "Color"
+          type: "string"
+        Align:
+          description: "Align"
+          type: "string"
+        Icon:
+          description: "Icon"
+          type: "string"
+        BGColor:
+          description: "BGColor"
+          type: "string"
+        BGImageUrl:
+          description: "BGImage Url"
+          type: "string"
+        Opacity:
+          description: "Opacity"
+          type: "number"
+          format: "double"
+        Action:
+          $ref: "#/components/schemas/SDT_InfoTile.Action"
+    SDT_InfoTile.Action:
+      properties:
+        ObjectType:
+          description: "Object Type"
+          type: "string"
+        ObjectId:
+          description: "Object Id"
+          type: "string"
+        ObjectUrl:
+          description: "Object Url"
+          type: "string"
+      x-gx-level: "SDT_InfoTile"
     SDT_Location:
       properties:
         LocationId:

@@ -2,7 +2,7 @@
 	"Name": "UC_AppToolBox1",
 	"Target": "",
 	"IsControlType": false,
-	"Template": "<div class=\"preloader\" id=\"preloader\">   <div class=\"spinner\"></div></div><div id=\"tb-body\">   <!-- Navbar -->   <div class=\"tb-navbar\" id=\"tb-navbar\">      <!--<h3 id=\"navbar_title\"></h3>-->      <div class=\"navbar-buttons\" id=\"navbar-buttons-left\"></div>	<div class=\"navbar-buttons\" id=\"navbar-buttons\"></div>   </div>   <div class=\"tb-container\">      <!-- Editor Container -->      <div class=\"main-content\" id=\"main-content\"></div>	      <div class=\"sidebar sidebar-right\" id=\"tb-sidebar\">         <div id=\"tools-section\"></div>         <div id=\"mapping-section\" style=\"display: none;\">            <div class=\"mapping-header\">               <h3>                  <span id=\"sidebar_mapping_title\">                  </span>               </h3>            </div>            <div class=\"sidebar-section\">               <div class=\"page-form\" id=\"page-form\">                  <input type=\"text\" class=\"add-page-input\" id=\"page-title\"                     placeholder=\"Page name...\" />                  <button class=\"submit-button add-page-button\"                     id=\"page-submit\">                  Add                  </button>               </div>               <div class=\"mapping-sub-title\">                  <h5 id=\"current-page-title\">                     HOME                  </h5>               </div>               <div id=\"tree-container\" class=\"tb-list-container\">               </div>            </div>         </div>      </div>      <div class=\"tb-alerts-container\" id=\"tb-alerts-container\">      </div>   </div></div>", 
+	"Template": "<div class=\"preloader\" id=\"preloader\">   <div class=\"spinner\"></div></div><div id=\"tb-body\">   <!-- Navbar -->   <div class=\"tb-navbar\" id=\"tb-navbar\">      <!--<h3 id=\"navbar_title\"></h3>-->      <div class=\"navbar-buttons\" id=\"navbar-buttons-left\"></div>  <div class=\"navbar-buttons\" id=\"navbar-buttons\"></div>   </div>   <div class=\"tb-container\">      <!-- Editor Container -->      <div class=\"main-content\" id=\"main-content\"></div>        <div class=\"sidebar sidebar-right\" id=\"tb-sidebar\">         <div id=\"tools-section\"></div>         <div id=\"mapping-section\" style=\"display: none;\">            <div class=\"mapping-header\">               <h3>                  <span id=\"sidebar_mapping_title\">                  </span>               </h3>            </div>            <div class=\"sidebar-section\">               <div class=\"page-form\" id=\"page-form\">                  <input type=\"text\" class=\"add-page-input\" id=\"page-title\"                     placeholder=\"Page name...\" />                  <button class=\"submit-button add-page-button\"                     id=\"page-submit\">                  Add                  </button>               </div>               <div class=\"mapping-sub-title\">                  <h5 id=\"current-page-title\">                     HOME                  </h5>               </div>               <div id=\"tree-container\" class=\"tb-list-container\">               </div>            </div>         </div>      </div>      <div class=\"tb-alerts-container\" id=\"tb-alerts-container\">      </div>   </div></div>", 
 	"Events": [
 		{
 			"Name": "OnSave",
@@ -101,6 +101,12 @@
 			"Default": ""
 		} ,
 		{
+			"Id": "Current_Version",
+			"Name": "Current_Version",
+			"Type": "sdt",
+			"Default": ""
+		} ,
+		{
 			"Id": "OrganisationLogo",
 			"Name": "OrganisationLogo",
 			"Type": "string",
@@ -129,7 +135,7 @@
 		"Public": [
 			{
 				"Name": "SetProductToTile",
-				"Source": "		try {			console.log(this.app.ToolboxManager)			this.app.toolboxApp.toolboxManager.pageAttacher.attachNewServiceToTile(ProductServiceId)			}catch (e) {			console.error(e)		}			",
+				"Source": "    try {      console.log(this.app.ToolboxManager)      this.app.toolboxApp.toolboxManager.pageAttacher.attachNewServiceToTile(ProductServiceId)      }catch (e) {      console.error(e)    }      ",
 				"Return": "",
 				"Parameters": [
 					 {
@@ -140,7 +146,7 @@
 			} ,
 			{
 				"Name": "SetServiceCreationParentPageType",
-				"Source": "		this.ServiceCreationParentPageType = localStorage.getItem(\"ServiceCreationParentPageType\")			",
+				"Source": "    this.ServiceCreationParentPageType = localStorage.getItem(\"ServiceCreationParentPageType\")      ",
 				"Return": "",
 				"Parameters": [
 				]
@@ -153,7 +159,7 @@
 		"AfterShow": [
 			{
 				"Name": "Start",
-				"Source": "   try {	   	this.d3 = d3		const themes = this.BC_Trn_ThemeCollection.map(theme => {			let res = {				ThemeId: theme.Trn_ThemeId,				ThemeName: theme.Trn_ThemeName, 				ThemeFontFamily: theme.Trn_ThemeFontFamily,				ThemeColors: {},				ThemeIcons: theme.Icon,				ThemeCtaColors: theme.CtaColor			}			theme.Color.forEach(color => {				res.ThemeColors[color.ColorName] = color.ColorCode				})			return res		})		if (typeof App !== \'undefined\') {			localStorage.clear();			this.app = new App(				this,				themes,				this.SDT_ProductServiceCollection, 				this.SDT_DynamicFormsCollection, 				this.BC_Trn_MediaCollection,				this.Current_Theme,				this.OrganisationLogo,				this.Current_Language,				this.addServiceButtonEvent			);			window.app = this.app		} else {			console.error(\"App class is not defined. Check if bundle.js is loaded.\");		}	}catch(e) {		console.log(e)	}",
+				"Source": "	try {		const themes = this.BC_Trn_ThemeCollection.map(theme => {			this.d3 = d3;			let res = {				ThemeId: theme.Trn_ThemeId,				ThemeName: theme.Trn_ThemeName,				ThemeFontFamily: theme.Trn_ThemeFontFamily,				ThemeColors: {},				ThemeIcons: theme.Icon,				ThemeCtaColors: theme.CtaColor			}			theme.Color.forEach(color => {				res.ThemeColors[color.ColorName] = color.ColorCode  			})			return res			})			console.log(\"Version: \", this.Current_Version)			if (typeof App !== \'undefined\') {			localStorage.clear();			this.app = new App(				this,				themes,				this.SDT_ProductServiceCollection,				this.SDT_DynamicFormsCollection,				this.BC_Trn_MediaCollection,				this.Current_Theme,				this.Current_Version,				this.OrganisationLogo,				this.Current_Language,				this.addServiceButtonEvent			);			window.app = this.app			} else {			console.error(\"App class is not defined. Check if bundle.js is loaded.\");			}		}catch(e) {		console.log(e)	}	",
 				"AngularLocation": ""
 			} 
 		],
